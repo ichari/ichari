@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Ichari.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="IchariModelStoreContainer">
+          <EntitySet Name="Actions" EntityType="Ichari.Model.Store.Actions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RelRoleAction" EntityType="Ichari.Model.Store.RelRoleAction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RelUserRole" EntityType="Ichari.Model.Store.RelUserRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysRole" EntityType="Ichari.Model.Store.SysRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysUser" EntityType="Ichari.Model.Store.SysUser" store:Type="Tables" Schema="dbo" />
+          
+          
+        </EntityContainer>
+        <EntityType Name="Actions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="MenuCode" Type="varchar" MaxLength="100" />
+          <Property Name="MenuName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="IsMenu" Type="bit" Nullable="false" />
+          <Property Name="IsAjax" Type="bit" Nullable="false" />
+          <Property Name="ResourceKey" Type="varchar" MaxLength="100" />
+          <Property Name="IsNeedAuth" Type="bit" Nullable="false" />
+          <Property Name="SortNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="RelRoleAction">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ActionId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="ActionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelUserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SysUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LogonName" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="TrueName" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+        </EntityType>
+
+       
+        
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Ichari.Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AdminEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actions" EntityType="Ichari.Model.Actions" />
+          <EntitySet Name="RelRoleAction" EntityType="Ichari.Model.RelRoleAction" />
+          <EntitySet Name="RelUserRole" EntityType="Ichari.Model.RelUserRole" />
+          <EntitySet Name="SysRole" EntityType="Ichari.Model.SysRole" />
+          <EntitySet Name="SysUser" EntityType="Ichari.Model.SysUser" />
+        </EntityContainer>
+        <EntityType Name="Actions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="MenuCode" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MenuName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="IsMenu" Type="Boolean" Nullable="false" />
+          <Property Name="IsAjax" Type="Boolean" Nullable="false" />
+          <Property Name="ResourceKey" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IsNeedAuth" Type="Boolean" Nullable="false" />
+          <Property Name="SortNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RelRoleAction">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ActionId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="ActionId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelUserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          
+        </EntityType>
+        <EntityType Name="SysRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SysUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogonName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TrueName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IchariModelStoreContainer" CdmEntityContainer="AdminEntities">
+          <EntitySetMapping Name="Actions"><EntityTypeMapping TypeName="Ichari.Model.Actions"><MappingFragment StoreEntitySet="Actions">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="MenuCode" ColumnName="MenuCode" />
+            <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+            <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+            <ScalarProperty Name="IsMenu" ColumnName="IsMenu" />
+            <ScalarProperty Name="IsAjax" ColumnName="IsAjax" />
+            <ScalarProperty Name="ResourceKey" ColumnName="ResourceKey" />
+            <ScalarProperty Name="IsNeedAuth" ColumnName="IsNeedAuth" />
+            <ScalarProperty Name="SortNumber" ColumnName="SortNumber" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RelRoleAction"><EntityTypeMapping TypeName="Ichari.Model.RelRoleAction"><MappingFragment StoreEntitySet="RelRoleAction">
+            <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RelUserRole"><EntityTypeMapping TypeName="Ichari.Model.RelUserRole"><MappingFragment StoreEntitySet="RelUserRole">
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SysRole"><EntityTypeMapping TypeName="Ichari.Model.SysRole"><MappingFragment StoreEntitySet="SysRole">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SysUser"><EntityTypeMapping TypeName="Ichari.Model.SysUser"><MappingFragment StoreEntitySet="SysUser">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="LogonName" ColumnName="LogonName" />
+            <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="Phone" ColumnName="Phone" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Admin">
+        <EntityTypeShape EntityType="Ichari.Model.Actions" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7341113281249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ichari.Model.RelRoleAction" Width="1.5" PointX="2.75" PointY="0.75" Height="1.3969734700520835" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ichari.Model.RelUserRole" Width="1.5" PointX="2.75" PointY="3.75" Height="1.5879931640624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ichari.Model.SysRole" Width="1.5" PointX="4.75" PointY="0.75" Height="1.3969734700520817" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ichari.Model.SysUser" Width="1.5" PointX="4.75" PointY="3.75" Height="2.1610522460937496" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

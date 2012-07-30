@@ -1,0 +1,6 @@
+﻿@{
+    var uow = DependencyResolver.Current.GetService<Ichari.Uow.IAdminUow>();
+    var menu = uow.ActionsService.GetRoots();
+}
+
+@LeftMenu.GenMenu(menu)

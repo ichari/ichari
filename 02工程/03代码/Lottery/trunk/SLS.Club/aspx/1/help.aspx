@@ -1,0 +1,1 @@
+<%@ Page language="c#" AutoEventWireup="false" EnableViewState="false" Inherits="Discuz.Web.help" CodeFile="help.aspx.cs" %>

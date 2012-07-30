@@ -1,0 +1,25 @@
+﻿@model Ichari.Admin.ViewModel.RoleViewModel
+
+@{
+    ViewBag.Title = "角色授权";
+}
+
+<div class="search">
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>角色名称</td>
+            <td>@Html.TextBox("roleName")</td>
+            <td><input type="submit" value="查 询" /></td>
+        </tr>
+    </table>
+}
+</div>
+
+<div class="list">
+    角色名称：@Model.RoleModel.RoleName
+</div>
+
+
+

@@ -1,0 +1,184 @@
+﻿@model Ichari.Web.ViewModel.CharityViewModel
+@{
+    ViewBag.Title = "爱心捐赠";
+}
+@section Head{
+    <link type="text/css" rel="Stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/start/jquery-ui-1.8.20.custom.css" />
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+}
+
+           
+<div class="clears main">
+    <!-- 广告开始 -->
+    <div class="ad_box">
+        <img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/give_ad1.jpg" title="" />
+        <!--div class="ad_box_bg">
+        </div-->
+        <!--div class="ad_box_info">
+            <p><b>集善工程助学行动</b></p>
+            <p>中国残疾人福利基金会现已开通爱心捐赠网银支付平台,互联网用户可通过网上捐赠向中国残疾人福利基金会捐款。</p>
+        </div-->
+    </div>
+    <!-- 广告结束 -->
+    <!-- 活动开始 -->
+    <div class="activity">
+        <fieldset>
+            <legend>集天下之善心，谋残疾人之福祉。</legend>
+            <p><b>发起者：</b>中国残疾人福利基金会、中国银联股份有限公司、喜彩股份有限公司。</p>
+            <p><b>宗旨：</b>	“集合人道爱心，善待天下生命”---集善网是由中国残疾人福利基金会、中国银联股份有限公司、喜彩股份有限公司，共同创办并发起。通过接受公众在购物或其他支付结算时向中国残疾人福利基金会捐赠爱心零钱，募集善款以促进中国残疾人事业发展，开展和资助有利于残疾人康复、教育、劳动就业、文化生活、社会保障、社会服务和残疾预防等社会公益项目和活动等。本着取之于社会用之于社会，秉承着开放、透明、分享、责任”的慈善捐助理念服务于社会，以促进残疾人慈善公益事业和社会的和谐发展，为残疾人做实事，帮助残疾人解决困难的长期性公益捐赠活动。</p>
+            <div class="give_btn"><input type="button" class="btn_big" value="我要捐赠" id="btnGive" /></div>
+            @using (Html.BeginForm("GoPay", "Charity", FormMethod.Post, new { target = "_blank"}))
+            {
+            <!-- 当div需要隐藏时添加class="hidden" -->
+            <div id="divGive" class="go_box hidden">
+                <label>捐款金额：</label>
+                <!-- 默认状况下时去掉class="error" -->
+                <span class="error_box">
+                    @Html.TextBoxFor(m => m.Amount)
+                    @Html.ValidationMessageFor(m => m.Amount, "", new { @class = "icon_error" })
+                </span>
+                <span>
+                <input type="submit" class="btn_big" value="前往支付" id="btnGoPay" />
+                </span>
+            </div>
+            }
+        </fieldset>
+    </div>
+    <!-- 活动结束 -->
+    <!-- 照片开始 -->
+    <div class="give_img">
+        <ul>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/give_img1.jpg" title="img" /></li>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/give_img5.jpg" title="img" /></li>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/give_img3.jpg" title="img" /></li>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/give_img4.jpg" title="img" /></li>
+            <li class="last_child"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/give_img5.jpg" title="img" /></li>
+        </ul>
+    </div>
+    <!-- 照片结束 -->
+</div>
+<!--未登录提示-->
+<div id="divInfo" class="hidden">
+<!-- 登陆开始 宽350 -->
+    <div class="b_Tbox">
+        <div class="title">集善网用户登录 | <a href="/Account/Register?returnUrl=@Request.RawUrl">注册</a></div>
+        <div class="bor"></div>
+        @using (Ajax.BeginForm("login","account", new AjaxOptions() { OnComplete="__charity.onLogonSuccess" }))
+        {
+        <div class="i">
+            @*<input type="text" name="textfield" onclick="this.select()" id="textfield" value="请输入帐号" />*@
+            <strong> 帐号：</strong>
+            <span class="error_box">@Html.TextBoxFor(t => t.UserName)</span>
+        </div>
+        <div class="c">@Html.ValidationMessageFor(t => t.UserName, "", new { @class="icon_error"})</div>
+        <div class="i">
+            @*<input type="text" name="textfield2" onclick="this.select()" id="textfield2"  value="请输入密码"/>*@
+            <strong>密码：</strong>
+            <span class="error_box">@Html.PasswordFor(t => t.Password)</span>
+        </div>
+        <div class="c">@Html.ValidationMessageFor(t => t.Password, "", new { @class="icon_error"})</div>
+        <div class="b">
+            <div class="fl">@Html.CheckBoxFor(t => t.IsSaveCookie) 记住我的登录状态</div>
+            <div class="fr"><a href="/Home/ForgotPassword">忘记密码</a></div>
+        </div>
+        <div class="b">
+            <input name="button" type="submit" class="btn_big fr" id="button" value="登陆" />
+        </div>
+        }
+    </div>
+    <!-- 登陆结束 宽350 -->
+</div>
+<!--支付反馈-->
+<div id="divDialog" class="hidden">
+    <p class="ben_dog_t"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/ico_03.png" /><span>支付完成前请不要关闭此窗口。完成支付后根据您的情况点击下面的按钮：</span></p>
+    <strong>请在新开支付页面上完成支付后再选择。</strong>
+    <div class="ben_dog_a">
+    	<a href="/Account/MyDonations" target="_parent" seed="link-complete">支付成功</a>
+		<a href="#" target="_parent" seed="link-hasProblem">支付遇到问题</a>
+	</div>
+    <p class="ben_dog_f"><a style="cursor:pointer;" id="abtnReturn">返回重新输入捐赠金额</a></p>
+</div>
+
+<script type="text/javascript">
+<!--
+    var __charity = (function () {
+        var d = function(id){
+            return $("#" + id).data("dialog");
+        };
+
+        $(document).ready(function () {
+            $("#Amount").val("");
+            $("#btnGive").click(function () {
+            @if(Session[Ichari.Web.SessionKey.User] != null)
+            {
+                <text>
+                goPay();
+                </text>
+            }
+            else
+            {
+                <text>
+                $("#divInfo").dialog({
+                    width: 410,
+                    height: 335,
+                    modal: true,
+                    title: "登录"
+                });
+                </text>
+            }    
+            });
+            //支付
+            $("#btnGoPay").click(function () {
+                var b = this;
+                var validator = $($("form")[0]).data("validator");
+                if (validator.form()) {
+                    $("#divDialog").dialog({
+                        width: 480,
+                        height: 200,
+                        modal: true,
+                        title: "前往支付"
+                    });
+                    setTimeout(function(){
+                            $(b).attr("disabled",true).parent().addClass("dis");
+                        },500);
+                }
+
+            });
+            //重新输入支付金额
+            $("#abtnReturn").click(function(){
+                d("divDialog").close();
+                $("#btnGoPay").attr("disabled",false).parent().removeClass("dis");
+            });
+        });
+
+        var goPay = function(){
+            $("#btnGive").parent().hide();
+            $("#divGive").slideDown(500);
+        };
+
+        return {
+            onLogonSuccess : function(info){  
+                if(info){
+                    var r = eval('(' + info.responseText + ')');
+                    if(r.IsSuccess){
+                        d("divInfo").close();
+                        goPay();
+                        //调用js接口更新状态栏
+                        $.getScript("/home/checklogin?t=" + Math.random());
+                    }
+                    else {
+                        alert("登录失败");
+                    }
+                }
+            }
+        };
+    })();
+-->
+</script>
+
+@section FooterScript{
+    <script src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+    <script src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/jquery.validate.js" type="text/javascript"></script>
+    <script src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/jquery-ui-1.8.20.custom.min.js"></script>
+}

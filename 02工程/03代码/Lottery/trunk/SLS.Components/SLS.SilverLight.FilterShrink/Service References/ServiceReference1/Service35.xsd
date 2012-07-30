@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfT_PassRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_PassRate" nillable="true" type="tns:T_PassRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_PassRate" nillable="true" type="tns:ArrayOfT_PassRate" />
+  <xs:complexType name="T_PassRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Day" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EuropeFSP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EuropePSP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EuropeSSP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F01" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F01Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F02" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F02Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F03" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F03Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F04" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F04Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F05" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F05Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F12" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F12Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F13" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F13Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F14" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F14Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F15" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F15Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F23" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F23Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F24" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F24Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F25" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="F25Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FF" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="FFDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FNumberCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FP" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="FPDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FS" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="FSDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Flat" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="FlatDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fother" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="FotherDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Game" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuestTeam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="In0" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="In0Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="In1" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="In1Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="In2" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="In2Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="In3" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="In3Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="In4" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="In4Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="In5" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="In5Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="In6" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="In6Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="In7" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="In7Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InforMationGuestTeamID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="InforMationID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="InforMationMainTeamID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="InforMationMatchTypeID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IsCrs" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsHafu" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsHhad" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTtg" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lose" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="LoseDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainLoseball" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MainTeam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MatchID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MatchNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P00" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P00Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P11" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P11Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P22" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P22Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P33" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P33Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PF" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PFDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PNumberCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PP" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PPDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PS" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PSDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pother" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PotherDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S10" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S10Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S20" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S20Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S21" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S21Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S30" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S30Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S31" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S31Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S32" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S32Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S40" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S40Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S41" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S41Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S42" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S42Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S50" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S50Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S51" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S51Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S52" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S52Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SF" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="SFDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SNumberCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SP" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="SPDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SS" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="SSDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sother" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="SotherDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StopSellTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Win" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="WinDirection" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_PassRate" nillable="true" type="tns:T_PassRate" />
+</xs:schema>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6B79903-4D4A-4387-A9BD-A3C5259A59DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ichari.IRepository</RootNamespace>
+    <AssemblyName>Ichari.IRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\IActionsRepository.cs" />
+    <Compile Include="Admin\IRelRoleActionRepository.cs" />
+    <Compile Include="Admin\IRelUserRoleRepository.cs" />
+    <Compile Include="Admin\ISysRoleRepository.cs" />
+    <Compile Include="Admin\ISysUserRepository.cs" />
+    <Compile Include="ichari\IAccountLogRepository.cs" />
+    <Compile Include="ichari\IAccountRepository.cs" />
+    <Compile Include="ichari\IAddressRepository.cs" />
+    <Compile Include="ichari\IContentRepository.cs" />
+    <Compile Include="ichari\IDrawingsRepository.cs" />
+    <Compile Include="ichari\IFreeCardRepository.cs" />
+    <Compile Include="ichari\IFriendLinkRepository.cs" />
+    <Compile Include="ichari\ILoveChangeRepository.cs" />
+    <Compile Include="ichari\IOrderDetailRepository.cs" />
+    <Compile Include="ichari\IOrderRepository.cs" />
+    <Compile Include="ichari\IPayLogRepository.cs" />
+    <Compile Include="ichari\IPrizeCategoryRepository.cs" />
+    <Compile Include="ichari\IPrizeRepository.cs" />
+    <Compile Include="ichari\IUserInfoRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseRepository\BaseRepository.csproj">
+      <Project>{257F2384-6B85-451C-BF17-B4509F826BAE}</Project>
+      <Name>BaseRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.Model\Ichari.Model.csproj">
+      <Project>{4C0E0B41-1499-477F-9A1D-7D489F92D679}</Project>
+      <Name>Ichari.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

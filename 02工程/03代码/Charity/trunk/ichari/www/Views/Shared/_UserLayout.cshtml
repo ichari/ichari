@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var cur = ViewData[Ichari.Web.SessionKey.VwUserMenu] as string;
+    var accArr = new string[]{"summary","changepwd"};
+    var donateArr = new string[] { "uniondonation","mydonation","draw"};
+}
+
+
+@section Head{
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+}
+
+
+ <div class="clears main">
+    <div class="user">
+        <!-- SubNav Begin -->
+        <div class="w200 fl">
+            <h2>个人中心</h2>
+            <div @if(accArr.Contains(cur)){ <text> class="current"</text>}>
+                <h3><a href="#"><img class="icon_right" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/@if(accArr.Contains(cur)){<text>space_a.gif</text>}else{<text>space_b.gif</text>}" />我的资料</a></h3>
+                <ul>
+                    <li @if(cur == "summary"){ <text>class="c"</text>}><a href="/Account/Summary">修改基本资料</a></li>
+                    <li @if(cur == "changepwd"){ <text>class="c"</text>}><a href="/Account/ChangePassword">修改密码</a></li>
+                    @*<li><a href="#">手机验证</a></li>
+                    <li><a href="#">绑定银行卡</a></li>*@
+                </ul>
+            </div>
+           
+            <div @if(donateArr.Contains(cur)){ <text> class="current"</text>}>
+                <h3><a href="#"><img class="icon_right" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/@if(donateArr.Contains(cur)){<text>space_a.gif</text>}else{<text>space_b.gif</text>}" />爱心捐赠</a></h3>
+                <ul>
+                    <li @if(cur == "uniondonation"){ <text>class="c"</text>}><a href="/Account/UnionDonations">零钱捐赠</a></li>
+                    <li @if(cur == "mydonation"){ <text>class="c"</text>}><a href="/Account/MyDonations">爱心捐赠</a></li>
+                    <li @if(cur == "draw"){ <text>class="c"</text>}><a href="/Account/MyDrawings">我的抽奖</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3><a href="#"><img class="icon_right" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/space_b.gif" />爱心彩票</a></h3>
+                <ul>
+                    <li><a href="#">我的彩票</a></li>
+                    @*<li><a href="#">我的自动跟单</a></li>
+                    <li><a href="#">我的追号</a></li>
+                    <li><a href="#">我的站内信</a></li>*@
+                </ul>
+            </div>
+            @*<div>
+                <h3><a href="#"><img class="icon_right" src="images/space.gif" />我的推广</a></h3>
+                <ul>
+                    <li><a href="#">我推广的会员</a></li>
+                    <li><a href="#">佣金体现</a></li>
+                </ul>
+            </div>*@
+        </div>
+        <!-- SubNav End -->
+        <div class="w730 fr">
+            @RenderBody()
+        </div>
+        <div class="clears"></div>
+    </div>
+</div>
+

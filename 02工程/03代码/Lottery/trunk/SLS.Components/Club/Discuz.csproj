@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB94431F-32DE-4A72-B3D2-0A98789A3985}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Discuz</RootNamespace>
+    <AssemblyName>Discuz</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CookComputing.XmlRpc, Version=1.0.0.8, Culture=neutral, PublicKeyToken=a7d6e17aa302004d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SLS.Club\Bin\CookComputing.XmlRpc.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SQLDMO, Version=8.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SLS.Club\Bin\Interop.SQLDMO.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SLS.Club\Bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Shove, Version=1.0.3600.26080, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SLS.Club\Bin\Shove.dll</HintPath>
+    </Reference>
+    <Reference Include="SLS.Security, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SLS.Club\Bin\SLS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregation\AggregationCacheStrategy.cs" />
+    <Compile Include="Aggregation\AggregationData.cs" />
+    <Compile Include="Aggregation\AggregationDataSubject.cs" />
+    <Compile Include="Aggregation\AggregationFacade.cs" />
+    <Compile Include="Aggregation\ForumAggregationData.cs" />
+    <Compile Include="Cache\DefaultCacheStrategy.cs" />
+    <Compile Include="Cache\DNTCache.cs" />
+    <Compile Include="Cache\ICacheStrategy.cs" />
+    <Compile Include="Common\Arithmetic.cs" />
+    <Compile Include="Common\DNTException.cs" />
+    <Compile Include="Common\DNTRequest.cs" />
+    <Compile Include="Common\Encrypt.cs" />
+    <Compile Include="Common\FTP.cs" />
+    <Compile Include="Common\Generic\DiscuzDeque.cs" />
+    <Compile Include="Common\Generic\DiscuzDictionary.cs" />
+    <Compile Include="Common\Generic\DiscuzLinkedList.cs" />
+    <Compile Include="Common\Generic\DiscuzList.cs" />
+    <Compile Include="Common\Generic\DiscuzSortedList.cs" />
+    <Compile Include="Common\Generic\DiscuzVisitor.cs" />
+    <Compile Include="Common\Generic\IDiscuzGeneric.cs" />
+    <Compile Include="Common\Generic\Singleton.cs" />
+    <Compile Include="Common\ManagedThreadPool.cs" />
+    <Compile Include="Common\PageTemplate.cs" />
+    <Compile Include="Common\SerializationHelper.cs" />
+    <Compile Include="Common\SmiliesInfo.cs" />
+    <Compile Include="Common\SysInfo.cs" />
+    <Compile Include="Common\Thumbnail.cs" />
+    <Compile Include="Common\TypeFinder\DefaultTypeFinder.cs" />
+    <Compile Include="Common\TypeFinder\ITypeFinder.cs" />
+    <Compile Include="Common\Utils.cs" />
+    <Compile Include="Common\Utils\FirstUrl.cs" />
+    <Compile Include="Common\Utils\Log.cs" />
+    <Compile Include="Common\Utils\PerfCounter.cs" />
+    <Compile Include="Common\Utils\SynchronizeSessionID.cs" />
+    <Compile Include="Common\Utils\TypeParse.cs" />
+    <Compile Include="Common\XmlWriter.cs" />
+    <Compile Include="Common\Xml\InvalidXmlException.cs" />
+    <Compile Include="Common\Utils\XmlConfig.cs" />
+    <Compile Include="Common\Xml\XmlDocumentExtender.cs" />
+    <Compile Include="Common\Xml\XmlVisitor.cs" />
+    <Compile Include="Config\AggregationConfig.cs" />
+    <Compile Include="Config\AggregationConfigFileManager.cs" />
+    <Compile Include="Config\AggregationConfigInfo.cs" />
+    <Compile Include="Config\APIConfigFileManager.cs" />
+    <Compile Include="Config\APIConfigInfo.cs" />
+    <Compile Include="Config\APIConfigs.cs" />
+    <Compile Include="Config\ApplicationInfo.cs" />
+    <Compile Include="Config\ApplicationInfoCollection.cs" />
+    <Compile Include="Config\BaseConfigFileManager.cs" />
+    <Compile Include="Config\BaseConfigInfo.cs" />
+    <Compile Include="Config\BaseConfigInfoCollection.cs" />
+    <Compile Include="Config\BaseConfigs.cs" />
+    <Compile Include="Config\DefaultConfigFileManager.cs" />
+    <Compile Include="Config\EmailConfigFileManager.cs" />
+    <Compile Include="Config\EmailConfigInfo.cs" />
+    <Compile Include="Config\EmailConfigs.cs" />
+    <Compile Include="Config\FTPConfigFileManager .cs" />
+    <Compile Include="Config\FTPConfigInfo.cs" />
+    <Compile Include="Config\FTPConfigInfoCollection.cs" />
+    <Compile Include="Config\FTPConfigs.cs" />
+    <Compile Include="Config\GeneralConfigFileManager.cs" />
+    <Compile Include="Config\GeneralConfigInfo.cs" />
+    <Compile Include="Config\GeneralConfigs.cs" />
+    <Compile Include="Config\IConfigFileManager.cs" />
+    <Compile Include="Config\IConfigInfo.cs" />
+    <Compile Include="Config\MyAttachmentsTypeConfigFileManager.cs" />
+    <Compile Include="Config\MyAttachmentsTypeConfigInfo.cs" />
+    <Compile Include="Config\MyAttachmentsTypeConfigs.cs" />
+    <Compile Include="Config\Provider\ConfigProvider.cs" />
+    <Compile Include="Config\ScheduleConfigFileManager.cs" />
+    <Compile Include="Config\ScheduleConfigInfo.cs" />
+    <Compile Include="Config\ScheduleConfigs.cs" />
+    <Compile Include="Config\ScriptEventConfigFileManager.cs" />
+    <Compile Include="Config\ScriptEventConfigInfo.cs" />
+    <Compile Include="Config\ScriptEventConfigs.cs" />
+    <Compile Include="Config\SpaceActiveConfigFileManager.cs" />
+    <Compile Include="Config\SpaceActiveConfigInfo.cs" />
+    <Compile Include="Config\SpaceActiveConfigs.cs" />
+    <Compile Include="Config\TradeConfigFileManager.cs" />
+    <Compile Include="Config\TradeConfigInfo.cs" />
+    <Compile Include="Config\TradeConfigs.cs" />
+    <Compile Include="Control\Button.cs" />
+    <Compile Include="Control\Calendar.cs" />
+    <Compile Include="Control\CheckBoxList.cs" />
+    <Compile Include="Control\ColorPicker.cs" />
+    <Compile Include="Control\DataGrid.cs" />
+    <Compile Include="Control\DataList.cs" />
+    <Compile Include="Control\DropDownList.cs" />
+    <Compile Include="Control\DropDownTreeList.cs" />
+    <Compile Include="Control\Hint.cs" />
+    <Compile Include="Control\ListBox.cs" />
+    <Compile Include="Control\ListBoxTreeList.cs" />
+    <Compile Include="Control\RadioButtonList.cs" />
+    <Compile Include="Control\Repeater.cs" />
+    <Compile Include="Control\RepeaterWithPages.cs" />
+    <Compile Include="Control\tab\TabControl.cs" />
+    <Compile Include="Control\tab\TabControlDesigner.cs" />
+    <Compile Include="Control\tab\TabEditor.cs" />
+    <Compile Include="Control\tab\TabEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\tab\TabPage.cs" />
+    <Compile Include="Control\tab\TabPageCollection.cs" />
+    <Compile Include="Control\TextBox.cs" />
+    <Compile Include="Control\UpMediaFile.cs" />
+    <Compile Include="Control\WebControl.cs" />
+    <Compile Include="Data\DbException.cs" />
+    <Compile Include="Data\DbHelper.cs" />
+    <Compile Include="Data\DbProvider\DatabaseProvider.cs" />
+    <Compile Include="Data\DbProvider\IDataProvider.cs" />
+    <Compile Include="Data\DbProvider\IDbProvider.cs" />
+    <Compile Include="Data\DbProvider\IDbProviderFactory.cs" />
+    <Compile Include="Data\SqlServer\DataProvider.cs" />
+    <Compile Include="Data\SqlServer\GlobalManage.cs" />
+    <Compile Include="Data\SqlServer\HelpManage.cs" />
+    <Compile Include="Data\SqlServer\PostManage.cs" />
+    <Compile Include="Data\SqlServer\SqlServerProvider.cs" />
+    <Compile Include="Data\SqlServer\UserManage.cs" />
+    <Compile Include="Data\SqlServer\WebsiteManage.cs" />
+    <Compile Include="Entity\Aggregation\PhotoAggregationInfo.cs" />
+    <Compile Include="Entity\Forum\AdminGroupInfo.cs" />
+    <Compile Include="Entity\Forum\AdShowInfo.cs" />
+    <Compile Include="Entity\Forum\AdShowInfoCollection.cs" />
+    <Compile Include="Entity\Forum\AnnouncementInfo.cs" />
+    <Compile Include="Entity\Forum\AttachmentInfo.cs" />
+    <Compile Include="Entity\Forum\BatchSetParams.cs" />
+    <Compile Include="Entity\Forum\BonusLogInfo.cs" />
+    <Compile Include="Entity\Forum\CreditsOperationType.cs" />
+    <Compile Include="Entity\Forum\CustomEditorButtonInfo.cs" />
+    <Compile Include="Entity\Forum\DebateInfo.cs" />
+    <Compile Include="Entity\Forum\DebatePostExpandInfo.cs" />
+    <Compile Include="Entity\Forum\EnumValue.cs" />
+    <Compile Include="Entity\Forum\EnumValueCollection.cs" />
+    <Compile Include="Entity\Forum\FavoriteType.cs" />
+    <Compile Include="Entity\Forum\ForumInfo.cs" />
+    <Compile Include="Entity\Forum\IndexPageForumInfo.cs" />
+    <Compile Include="Entity\Forum\IndexPageForumInfoCollection.cs" />
+    <Compile Include="Entity\Forum\ModeratorInfo.cs" />
+    <Compile Include="Entity\Forum\MyAttachmentInfo.cs" />
+    <Compile Include="Entity\Forum\MyAttachmentInfoCollection.cs" />
+    <Compile Include="Entity\Forum\MySqlInfo.cs" />
+    <Compile Include="Entity\Forum\MyTopicInfo.cs" />
+    <Compile Include="Entity\Forum\MyTopicInfoCollection.cs" />
+    <Compile Include="Entity\Forum\OnlineUserInfo.cs" />
+    <Compile Include="Entity\Forum\OnlineUserInfoCollection.cs" />
+    <Compile Include="Entity\Forum\OrderDirection.cs" />
+    <Compile Include="Entity\Forum\PollInfo.cs" />
+    <Compile Include="Entity\Forum\PollOptionInfo.cs" />
+    <Compile Include="Entity\Forum\PollOptionInfoCollection.cs" />
+    <Compile Include="Entity\Forum\PostInfo.cs" />
+    <Compile Include="Entity\Forum\PostOrderType.cs" />
+    <Compile Include="Entity\Forum\PostpramsInfo.cs" />
+    <Compile Include="Entity\Forum\PrivateMessageInfo.cs" />
+    <Compile Include="Entity\Forum\PrivateMessageInfoCollection.cs" />
+    <Compile Include="Entity\Forum\ReceivePMSettingType.cs" />
+    <Compile Include="Entity\Forum\SearchCacheInfo.cs" />
+    <Compile Include="Entity\Forum\ShowbonusPagePostInfo.cs" />
+    <Compile Include="Entity\Forum\ShowforumPageTopicInfo.cs" />
+    <Compile Include="Entity\Forum\ShowforumPageTopicInfoCollection.cs" />
+    <Compile Include="Entity\Forum\ShowtopicPageAttachmentInfo.cs" />
+    <Compile Include="Entity\Forum\ShowtopicPageAttachmentInfoCollection.cs" />
+    <Compile Include="Entity\Forum\ShowtopicPagePostInfo.cs" />
+    <Compile Include="Entity\Forum\ShowtopicPagePostInfoCollection.cs" />
+    <Compile Include="Entity\Forum\TemplateInfo.cs" />
+    <Compile Include="Entity\Forum\TemplateInfoCollection.cs" />
+    <Compile Include="Entity\Forum\ThemeInfo.cs" />
+    <Compile Include="Entity\Forum\ThemeInfoCollection.cs" />
+    <Compile Include="Entity\Forum\ThumbnailType.cs" />
+    <Compile Include="Entity\Forum\TopicIdentify.cs" />
+    <Compile Include="Entity\Forum\TopicIdentifyCollection.cs" />
+    <Compile Include="Entity\Forum\TopicInfo.cs" />
+    <Compile Include="Entity\Forum\TopicView.cs" />
+    <Compile Include="Entity\Forum\TopicViewCollection.cs" />
+    <Compile Include="Entity\Forum\UserExtcreditsInfo.cs" />
+    <Compile Include="Entity\Forum\UserGroupInfo.cs" />
+    <Compile Include="Entity\Forum\UserInfo.cs" />
+    <Compile Include="Entity\Global\ConfigInfo.cs" />
+    <Compile Include="Entity\Global\SearchType.cs" />
+    <Compile Include="Entity\Global\StatInfo.cs" />
+    <Compile Include="Entity\Global\StatVarInfo.cs" />
+    <Compile Include="Entity\Global\TagInfo.cs" />
+    <Compile Include="Entity\Global\TagInfoCollection.cs" />
+    <Compile Include="Entity\Global\VerifyImageInfo.cs" />
+    <Compile Include="Entity\Help\HelpInfo.cs" />
+    <Compile Include="Event\ForumEvent.cs" />
+    <Compile Include="Event\ScriptEvent.cs" />
+    <Compile Include="Event\StatEvent.cs" />
+    <Compile Include="Event\TagsEvent.cs" />
+    <Compile Include="Forum\AdminGroups.cs" />
+    <Compile Include="Forum\Admin\AdminCaches.cs" />
+    <Compile Include="Forum\Admin\AdminCatchForumInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forum\Admin\AdminConfigs.cs" />
+    <Compile Include="Forum\Admin\AdminForums.cs" />
+    <Compile Include="Forum\Admin\AdminForumStats.cs" />
+    <Compile Include="Forum\Admin\AdminMedalLogs.cs" />
+    <Compile Include="Forum\Admin\AdminModeratorLogs.cs" />
+    <Compile Include="Forum\Admin\AdminPaymentLogs.cs" />
+    <Compile Include="Forum\Admin\AdminRateLogs.cs" />
+    <Compile Include="Forum\Admin\AdminTemplates.cs" />
+    <Compile Include="Forum\Admin\AdminTopicOperations.cs" />
+    <Compile Include="Forum\Admin\AdminTopics.cs" />
+    <Compile Include="Forum\Admin\AdminUserGroups.cs" />
+    <Compile Include="Forum\Admin\AdminUsers.cs" />
+    <Compile Include="Forum\Admin\AdminVistLogs.cs" />
+    <Compile Include="Forum\Admin\DiscuzControlContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forum\Admin\MenuManage.cs" />
+    <Compile Include="Forum\Admin\SpaceThemes.cs" />
+    <Compile Include="Forum\Advertisements.cs" />
+    <Compile Include="Forum\Announcements.cs" />
+    <Compile Include="Forum\Attachments.cs" />
+    <Compile Include="Forum\Bonus.cs" />
+    <Compile Include="Forum\Caches.cs" />
+    <Compile Include="Forum\CreditsLogs.cs" />
+    <Compile Include="Forum\Debates.cs" />
+    <Compile Include="Forum\Editors.cs" />
+    <Compile Include="Forum\Emails.cs" />
+    <Compile Include="Forum\Favorites.cs" />
+    <Compile Include="Forum\Feeds.cs" />
+    <Compile Include="Forum\Focuses.cs" />
+    <Compile Include="Forum\ForumCacheStrategy.cs" />
+    <Compile Include="Forum\ForumPageTemplate.cs" />
+    <Compile Include="Forum\Forums.cs" />
+    <Compile Include="Forum\ForumTags.cs" />
+    <Compile Include="Forum\ForumUtils.cs" />
+    <Compile Include="Forum\FTPs.cs" />
+    <Compile Include="Forum\Help.cs" />
+    <Compile Include="Forum\HttpModule.cs" />
+    <Compile Include="Forum\IpSearch.cs" />
+    <Compile Include="Forum\LoginLogs.cs" />
+    <Compile Include="Forum\Moderators.cs" />
+    <Compile Include="Forum\OnlineUsers.cs" />
+    <Compile Include="Forum\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forum\PaymentLogs.cs" />
+    <Compile Include="Forum\Polls.cs" />
+    <Compile Include="Forum\Posts.cs" />
+    <Compile Include="Forum\PrivateMessages.cs" />
+    <Compile Include="Forum\ScheduledEvents\Event.cs" />
+    <Compile Include="Forum\ScheduledEvents\EventLogs.cs" />
+    <Compile Include="Forum\ScheduledEvents\EventManager.cs" />
+    <Compile Include="Forum\ScheduledEvents\IEvent.cs" />
+    <Compile Include="Forum\Scoresets.cs" />
+    <Compile Include="Forum\Searches.cs" />
+    <Compile Include="Forum\Smilies.cs" />
+    <Compile Include="Forum\Statistics.cs" />
+    <Compile Include="Forum\Stats.cs" />
+    <Compile Include="Forum\Tags.cs" />
+    <Compile Include="Forum\Templates.cs" />
+    <Compile Include="Forum\TopicAdmins.cs" />
+    <Compile Include="Forum\Topics.cs" />
+    <Compile Include="Forum\TopicStats.cs" />
+    <Compile Include="Forum\UBB.cs" />
+    <Compile Include="Forum\Urls.cs" />
+    <Compile Include="Forum\UserCredits.cs" />
+    <Compile Include="Forum\UserGroups.cs" />
+    <Compile Include="Forum\Users.cs" />
+    <Compile Include="Plugin\IFeed.cs" />
+    <Compile Include="Plugin\IPost.cs" />
+    <Compile Include="Plugin\ISearch.cs" />
+    <Compile Include="Plugin\ITag.cs" />
+    <Compile Include="Plugin\IUser.cs" />
+    <Compile Include="Plugin\Mail\ISmtpMail.cs" />
+    <Compile Include="Plugin\Mail\SmtpEmailAttribute.cs" />
+    <Compile Include="Plugin\Mail\SmtpMail.cs" />
+    <Compile Include="Plugin\PluginBase.cs" />
+    <Compile Include="Plugin\Preview\IPreview.cs" />
+    <Compile Include="Plugin\Preview\PreviewHelper.cs" />
+    <Compile Include="Plugin\Preview\PreviewProvider.cs" />
+    <Compile Include="Plugin\VerifyImage\IVerifyImage.cs" />
+    <Compile Include="Plugin\VerifyImage\VerifyImage.cs" />
+    <Compile Include="Plugin\VerifyImage\VerifyImageProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Admin\AdminPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\Globals.cs" />
+    <Compile Include="Web\UI\AjaxPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\ArchiverPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\HelpPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\ImageConverterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\PageElement.cs" />
+    <Compile Include="Web\UI\RssPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\SitemapPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\VerifyImagePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Release\CookComputing.XmlRpc.dll" />
+    <Content Include="bin\Release\Interop.SQLDMO.dll" />
+    <Content Include="bin\Release\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\Shove.dll" />
+    <Content Include="bin\Release\SLS.Security.dll" />
+    <Content Include="Control\css\calendar.css" />
+    <Content Include="Control\css\colorpicker.css" />
+    <Content Include="Control\css\datagrid.css" />
+    <Content Include="Control\css\discuzmenu.css" />
+    <Content Include="Control\css\navmenu .css" />
+    <Content Include="Control\css\navmenu.css" />
+    <Content Include="Control\css\tab.CSS" />
+    <Content Include="Control\images\calendar.gif" />
+    <Content Include="Control\images\cal_nextMonth.gif" />
+    <Content Include="Control\images\cal_prevMonth.gif" />
+    <Content Include="Control\images\colorpicker.gif" />
+    <Content Include="Control\images\nav_bottom.gif" />
+    <Content Include="Control\images\nav_collapsed.gif" />
+    <Content Include="Control\images\nav_expanded.gif" />
+    <Content Include="Control\images\nav_linkarrow.gif" />
+    <Content Include="Control\images\nav_toptitle.gif" />
+    <Content Include="Control\images\submit.gif" />
+    <Content Include="Control\images\tab.active.gif" />
+    <Content Include="Control\images\tab_bg.gif" />
+    <Content Include="Control\images\tab_left_icon.gif" />
+    <Content Include="Control\images\tab_right_icon.gif" />
+    <Content Include="Control\js\calendar.js" />
+    <Content Include="Control\js\ColorPicker.js" />
+    <Content Include="Control\js\contextmenu.js" />
+    <Content Include="Control\js\navmenu.js" />
+    <Content Include="Control\js\tabStrip.js" />
+    <Content Include="Control\xml\contextmenu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Control\tab\TabEditorForm.resx">
+      <DependentUpon>TabEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

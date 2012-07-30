@@ -1,0 +1,52 @@
+^^^^^^^^^^^^--------2012-06-07 10:36:38,401 [8336] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_UserLayout.cshtml”呈现:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-07 10:36:45,030 [8336] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_UserLayout.cshtml”呈现:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-07 10:36:51,180 [7248] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_UserLayout.cshtml”呈现:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-07 10:37:45,366 [3892] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_UserLayout.cshtml”呈现:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-07 10:39:22,512 [4232] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 节已定义:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-07 10:39:31,677 [8648] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpParseException (0x80004005): 在“@”字符后面遇到了空格或换行符。只有有效的标识符、关键字、注释、“(”和“{”在代码块开头才有效，并且它们必须紧跟在“@”后面，中间没有空格。
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-07 10:39:51,613 [8392] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_UserLayout.cshtml”呈现:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-07 10:40:31,749 [8424] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_UserLayout.cshtml”呈现:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-07 11:33:48,336 [7384] FATAL Ichari.Web.AccountController (null) - [Error]
+System.InvalidOperationException: 未找到视图“UnionDonations”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/Account/UnionDonations.cshtml
+~/Views/Account/UnionDonations.vbhtml
+~/Views/Shared/UnionDonations.cshtml
+~/Views/Shared/UnionDonations.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-07 13:28:50,613 [8340] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NotImplementedException: 未实现该方法或操作。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-07 13:46:43,628 [8872] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): c:\Users\1\AppData\Local\Temp\Temporary ASP.NET Files\root\bdf1c430\4a615fc3\App_Web__pagebar.cshtml.639c3968.daz15jws.0.cs(35): error CS0234: 命名空间“Ichari”中不存在类型或命名空间名称“Admin”(是否缺少程序集引用?)
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-07 13:47:31,222 [8972] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): c:\Users\1\AppData\Local\Temp\Temporary ASP.NET Files\root\bdf1c430\4a615fc3\App_Web__pagebar.cshtml.639c3968.2l43fwm3.0.cs(35): error CS0234: 命名空间“Ichari”中不存在类型或命名空间名称“Admin”(是否缺少程序集引用?)
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-07 14:17:06,295 [5540] FATAL Ichari.Web.AccountController (null) - [Error]
+System.InvalidOperationException: 未找到分部视图“_PagerBar”或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/Account/_PagerBar.cshtml
+~/Views/Account/_PagerBar.vbhtml
+~/Views/Shared/_PagerBar.cshtml
+~/Views/Shared/_PagerBar.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-07 14:17:38,576 [5540] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): c:\Users\1\AppData\Local\Temp\Temporary ASP.NET Files\root\bdf1c430\4a615fc3\App_Web__pagebar.cshtml.639c3968.rqi4ewem.0.cs(35): error CS0234: 命名空间“Ichari.Web.ViewModel”中不存在类型或命名空间名称“PageBar”(是否缺少程序集引用?)
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$

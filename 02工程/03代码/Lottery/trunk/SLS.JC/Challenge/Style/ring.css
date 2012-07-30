@@ -1,0 +1,90 @@
+
+/******************************/
+.wrap{ width:1000px; height:auto; margin:0 auto; clear:both; font-family:微软雅黑; padding-top:8px;}
+/*擂台main_ring*/
+.main_ring{ width:744px; float:left; height:auto; margin-top:6px; padding:0 0 2px 0; background:#dbedff;}
+	.explain_nav{ height:35px; background:url(../images/tit_jc.gif) no-repeat 5px 4px;}
+		.explain_nav ul{ float:right; margin-top:4px;}
+		.explain_nav ul li{ float:left; height:27px; line-height:27px; font-weight:bold; margin:0 6px 0 0; text-align:center;}
+		.explain_nav ul li.curr{ width:88px; height:27px; }
+		.explain_nav ul li.curr a{ display:block; color:#fff; cursor:pointer; text-decoration:none;background:url(../images/explain_menu.gif) no-repeat left top;}
+		.explain_nav ul li.w88 a{ width:88px; height:27px; display:block; color:#3e79a9; text-decoration:none; background:url(../images/explain_menu.gif) no-repeat left -30px;}
+		.explain_nav ul li.w88 a:hover{ background-position:left -60px;}
+		.explain_nav ul li.w70 a{ width:70px; height:27px; display:block; color:#3e79a9; text-decoration:none; background:url(../images/explain_menu.gif) no-repeat left -90px;}
+		.explain_nav ul li.w70 a:hover{ background-position:left -120px;}
+		
+	.explain_cont { height:auto; margin:0 2px; padding:3px; font-size:12px; border:1px solid #aecfef; background:#ffffff;}
+		.explain_cont h1{ width:100px; height:96px; float:left;}
+			.explain_cont h1.explain_ico{background:url(../images/explain_ico.gif) no-repeat left 0px;}
+		.explain_cont dl{ width:600px;}
+		.explain_cont dl a{ color:#f60; text-decoration:underline;}
+		
+	.ringtab{ height:auto; margin:10px 2px 0 2px; font-size:12px; border:1px solid #aecfef; background:#ffffff;}
+		.ringtab_nav{ height:30px; line-height:30px; background:url(../images/ringtab_nav.gif) repeat-x left 0px;}
+			.ringtab_nav h2{ padding:0 0 0 10px; font-size:14px; color:#5b7e9b; width:auto; float:left; background:url(../images/ringtab_nav.gif) no-repeat left -30px;}
+			.ringtab_nav dl{ width:auto; float:right; padding:0 6px 0 0;}
+		.ringtab_cont { clear:both;}
+		.ringtab table{ text-align:center; line-height:30px;}
+			.zd1 {float: left; width: 92px; text-align:center;}
+			.zd2 {float: left;width: 28px; text-align:center;}
+		.table_t1 { border-bottom: 1px solid #ffe1ac; border-left: 1px solid #fff; background-color: #FFF; line-height:20px; }
+			.tre {border-bottom:#ece0ce 1px solid;}
+			.tre td { color:#ef9900; border-right:1px solid #fff; background:url(../images/ringtab_nav.gif) repeat-x left -60px;line-height:24px;}
+			.sk1 td { border-bottom:#ece0ce 1px solid; border-right:#fff 1px solid; empty-cells: show; line-height: 26px; }
+			.sk2 td { border-bottom:#ece0ce 1px solid; border-right:#fff 1px solid; background:#fbf8f2; empty-cells: show; line-height: 26px; }
+			.niDate { border-bottom:#ece0ce 1px solid; color:#333; font-weight: bold; background-color:#f6fbff; line-height: 24px; }
+		.btn_ring{ border:none; color:#999; width:70px; height:25px; line-height:25px; cursor:pointer; background:url(../images/btn_ring.gif) no-repeat left 0px;}
+		.btn_ring2{ border:none; color:#fff; width:70px; height:25px; line-height:25px; cursor:pointer; background:url(../images/btn_ring.gif) no-repeat left -30px;}
+		.topring_search{ clear:both; padding:10px 10px 5px 10px; line-height:22px; border-bottom:#efeeed 1px solid;}
+		.btn_ringso{ border:none; color:#6a6a6a; width:55px; height:22px; line-height:22px; cursor:pointer; background:url(../images/btn_ring.gif) no-repeat left -60px;}
+		.btn_bar{ padding:6px 10px 2px 10px; height:32px;}
+		.graph { width:200px; height:15px; background: url(../Images/uk.gif) top; float:left; margin-top: 5px; margin-left: 5px; }
+		.graph p { background-image: url(../Images/uk.gif); background-repeat: repeat-x; background-position: left -15px; float: left; width:200px; height:15px; }
+		.graph_f { font-family: Tahoma, Geneva, sans-serif; font-size: 11px; color: #F30; float: left; padding-left: 4px; font-weight: bold; }
+		
+.side_ring{ width:248px; float:right; margin-top:6px; height:auto;}
+	.side_nav { height:30px; line-height:30px; background:url(../images/ringtab_nav.gif) repeat-x left 0px;}
+		.side_nav h2{ padding:0 0 0 10px; font-size:14px; color:#5b7e9b; width:auto; float:left;}
+		.side_nav dl{ width:auto; float:right; padding:0 6px 0 0; font-size:12px;}
+	.sider_tabnav{ border:1px solid #dbdbdb; border-bottom:none; height:28px; line-height:28px; background:url(../images/ringtab_nav.gif) repeat-x left 0px;}
+		.sider_tabnav h2{ padding:0 0 0 10px; font-size:14px; color:#5b7e9b; width:auto; float:left;}
+		.sider_tabnav dl{ width:auto; float:right; padding:0 6px 0 0; font-size:12px;}
+	.notice_ring {height:146px;border:1px solid #aecfef; background:#f3f9ff;}
+		.notice_ring_list{ clear:both; margin:8px 6px 0 6px; font-size:12px;}
+		.notice_ring_list ul li{ padding:0 0 0 12px; line-height:20px; background:url(../images/li_icon.gif) no-repeat 3px 8px;}
+		.notice_ring_list ul li a{ color:#5b7e9b;}
+		.notice_ring_list ul li a:hover{ color:#f60;}
+	.side_tab { clear:both; margin:10px 0 0 0;}
+		.side_tabcont{ font-size:12px; text-align:center;}
+		.side_tabcont .table_c2{ border-top: 1px solid #dbdbdb; border-left: 1px solid #dbdbdb; background-color: #FFF; line-height:20px;}
+		.side_tabcont .table_c2 td { border-bottom:#dbdbdb 1px solid; border-right:#dbdbdb 1px solid; empty-cells: show; line-height:20px; }
+		.new_t2 td {background:url(../images/ringtab_nav.gif) repeat-x left -60px; COLOR: #666; line-height:20px; white-space:nowrap; font-weight: bold; }
+	.eyed_boy {height:220px; margin-top:10px;border:1px solid #aecfef; background:#f3f9ff;}
+		.eyed_boy_cont{ font-size:12px;}
+		.eyed_boy_cont a{ color:#f60;}
+/*pages*/
+.AspNetPager { padding-top: 10px; padding-bottom: 10px; clear: both; font-size:14px; font-family:Arial, Helvetica, sans-serif, 微软雅黑; }
+.AspNetPager .currentPage { padding: 2px 5px 2px 5px; border: solid 1px #ff8844; color: #ff0000; background-color: #FFFF95; }
+.AspNetPager a.AspNetPager:link, .AspNetPager a.AspNetPager:visited { border: solid 1px #bbb; color: #333; padding-top: 2px; padding-right: 6px; padding-bottom: 2px; padding-left: 6px; }
+.AspNetPager a.AspNetPager:hover { color: #FFF; background-color: #F60; text-decoration: none; border: 1px solid #F60; }
+
+/*排行榜*/
+.ring_topnav { width:auto; height:30px; margin:10px 2px 0 2px;}
+	#myTab0 li { float: left; width:100px; margin:0 5px 0 0; font-weight:bold; height:30px; line-height:30px; list-style-type: none; text-align:center;}
+	#myTab0 .active { cursor: pointer; color:#3e79a9; background:url(../images/btn_ring.gif) no-repeat left -90px;}
+	#myTab0 .normal { cursor: pointer; color:#909090; background:url(../images/btn_ring.gif) no-repeat left -120px;}
+	.fansearch{ float:right; font-size:12px; margin:0 10px 0 0; line-height:24px;}
+
+.ring_tipgz { color:#e39b00; background:#fffbeb; margin:10px 10px 5px 10px; line-height:20px; border: 1px solid #f6d53b; padding:3px 6px 1px 6px; font-size:12px; }
+.ring_help { line-height: 22px; clear: both; padding: 25px; }
+	.ring_help h2 { font-size: 14px; font-weight: bold; color: #333; margin-bottom: 4px; }
+	.ring_help p { padding-left:40px; margin-bottom: 15px; }
+		
+/*弹出*/
+.popuptab { clear:both; margin:0; padding:0; font-size:12px;}
+	.popuptab a{ color:#f60;}
+	.popuptab a:hover{ color:#ff0000;}
+.popuptab table{ text-align:center; line-height:30px;}
+	.pop_hh { font-size:14px; text-align:left; padding-left:10px; line-height:26px;border-bottom:#c7e2fd 1px solid;background:url(../Images/ringtab_nav.gif) repeat-x left 0px;}
+
+.sp_3 { background:#fff0ea;}

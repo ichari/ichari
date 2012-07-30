@@ -1,0 +1,26 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>彩票走势图-彩票走势图表和数据分析[竞彩足球，竞彩篮球，胜负彩，排列3/5，大乐透]－<%=_Site.Name %></title>
+    <meta name="keywords" content="彩票走势图、彩票走势图表和数据分析" />
+    <meta name="description" content="<%=_Site.Name %>提供包括竞彩足球，竞彩篮球，胜负彩，排列3/5，大乐透等福利彩票和体育彩票的走势图表和数据分析。">
+    <link rel="shortcut icon" href="../favicon.ico" />
+</head>
+<body>
+</body>
+
+<script>
+    var url = "SSQ/SSQ_CGXMB.aspx";
+    var str_url, str_pos, str_para;
+
+    str_url = window.location.href;
+
+    str_pos = str_url.indexOf("?");
+    str_para = str_url.substring(str_pos + 1);
+    if (str_pos > 0) {
+        url = url + "?" + str_para;
+    }
+    document.write("<meta http-equiv=\"refresh\" content=\"0; url=" + url + "\">")
+</script>
+
+</html>

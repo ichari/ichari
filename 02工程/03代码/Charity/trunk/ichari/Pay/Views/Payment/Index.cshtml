@@ -1,0 +1,41 @@
+﻿@model Ichari.Pay.ViewModel.PaymentViewModel
+@{
+    ViewBag.Title = "请确认支付信息，选择付款方式";
+}
+<div class="w980 png_bg2">
+    <!-- 内容开始 -->
+<div class="w970">
+    <div class="bs3">确认付款信息</div>
+    <div class="bs4">
+        @using (Html.BeginForm("Submit","Payment",FormMethod.Post))
+        {
+            @*form info*@
+            @Html.HiddenFor(m => m.OrderId)
+            @Html.HiddenFor(m => m.TradeNo)
+            @Html.HiddenFor(m => m.Source)    
+        <div class="title">@Model.OrderModel.CreateTime.ToString("yyyy-M-d HH:mm:ss")     爱心捐赠--中国残疾人基金会       <span>@Model.OrderModel.Total</span> 元</div>
+        <div class="info">
+            <p>
+            <strong>&nbsp;&nbsp;交易号：</strong> @Model.OrderModel.TradeNo<br />
+            <strong>价格详情：</strong> @Model.OrderModel.Total<br />
+            @*<strong>商品描述：</strong> 6岁白血病儿童深情呼唤：妈妈你在哪儿？<br />*@
+            <strong>对方信息：</strong> 中国残疾人福利基金会</p>
+        </div>
+        <div class="b_zf">
+        <p><strong>请您选择支付方式：</strong></p>
+          <input name="PayWayType" type="radio" id="radio" value="1" checked="checked" />
+          <label for="radio"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Pay.StaticKey.StaticServer))/Content/images/ico_01.png" width="136" height="51" /></label>
+        <input type="radio" name="PayWayType" id="radio2" value="2" />
+       <label for="radio2"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Pay.StaticKey.StaticServer))/Content/images/ico_02.png" width="136" height="51" /></label>
+       </div>
+            
+        <div class="an">
+            <input type="image" name="imageField" id="imageField" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Pay.StaticKey.StaticServer))/Content/images/ben_04.png" />
+        </div>
+        }
+    </div>
+
+</div>
+
+    <!-- 内容结束 -->
+</div>

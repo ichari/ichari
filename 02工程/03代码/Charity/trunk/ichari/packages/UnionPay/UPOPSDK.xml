@@ -1,0 +1,107 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+UPOPSDK
+</name>
+</assembly>
+<members>
+<member name="T:com.unionpay.upop.sdk.FrontPaySrv">
+	<summary>
+ 前台交易服务
+ </summary>
+	<remarks></remarks>
+</member><member name="F:com.unionpay.upop.sdk.UPOPSrv.TransType.CONSUME">
+	<summary>消费</summary>
+</member><member name="F:com.unionpay.upop.sdk.UPOPSrv.TransType.CONSUME_VOID">
+	<summary>消费撤销</summary>
+</member><member name="F:com.unionpay.upop.sdk.UPOPSrv.TransType.PRE_AUTH">
+	<summary>预授权</summary>
+</member><member name="F:com.unionpay.upop.sdk.UPOPSrv.TransType.PRE_AUTH_VOID">
+	<summary>预授权撤销</summary>
+</member><member name="F:com.unionpay.upop.sdk.UPOPSrv.TransType.PRE_AUTH_COMPLETE">
+	<summary>预授权完成</summary>
+</member><member name="F:com.unionpay.upop.sdk.UPOPSrv.TransType.PRE_AUTH_VOID_COMPLETE">
+	<summary>预授权完成撤销</summary>
+</member><member name="F:com.unionpay.upop.sdk.UPOPSrv.TransType.REFUND">
+	<summary>退货</summary>
+</member><member name="F:com.unionpay.upop.sdk.UPOPSrv.TransType.REGISTRATION">
+	<summary>实名认证</summary>
+</member><member name="T:com.unionpay.upop.sdk.UPOPSrv.SSLCertPolicy">
+	<summary>
+ 提供对https认证策略的多种支持
+ </summary>
+	<remarks></remarks>
+</member><member name="T:com.unionpay.upop.sdk.BackSrv">
+	<summary>
+ 后台服务
+ </summary>
+	<remarks></remarks>
+</member><member name="T:com.unionpay.upop.sdk.BackPaySrv">
+	<summary>
+ 后台交易服务
+ </summary>
+	<remarks></remarks>
+</member><member name="T:com.unionpay.upop.sdk.QuerySrv">
+	<summary>
+ 交易查询服务
+ </summary>
+	<remarks></remarks>
+</member><member name="P:com.unionpay.upop.sdk.My.Resources.Resources.ResourceManager">
+	<summary>
+  返回此类使用的缓存 ResourceManager 实例。
+</summary>
+</member><member name="P:com.unionpay.upop.sdk.My.Resources.Resources.Culture">
+	<summary>
+  为使用此强类型资源类的所有资源查找
+  重写当前线程的 CurrentUICulture 属性。
+</summary>
+</member><member name="T:com.unionpay.upop.sdk.My.Resources.Resources">
+	<summary>
+  强类型资源类，用于查找本地化字符串等。
+</summary>
+</member><member name="T:com.unionpay.upop.sdk.SrvResponse">
+	<summary>
+ 交易响应
+ </summary>
+	<remarks></remarks>
+</member><member name="M:com.unionpay.upop.sdk.Util.NameValueCollection2StrDict(System.Collections.Specialized.NameValueCollection)">
+	<summary>
+ 将NameValueCollection转换为Dictionary(Of String,String)
+ </summary>
+	<param name="nvcoll"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:com.unionpay.upop.sdk.Util.DictMerge``2(System.Collections.Generic.Dictionary{``0,``1},System.Collections.Generic.Dictionary{``0,``1})">
+	<summary>
+ 合并两个Dictionary，如果有重名key，则后一个覆盖前一个的值
+ </summary>
+	<typeparam name="T"></typeparam>
+	<typeparam name="T2"></typeparam>
+	<param name="dict1"></param>
+	<param name="dict2"></param>
+	<returns>合并后的Dictionary</returns>
+	<remarks></remarks>
+</member><member name="M:com.unionpay.upop.sdk.Util.MD5Hash(System.String,System.Text.Encoding)">
+	<summary>
+ 计算input字符串的MD5值
+ </summary>
+	<param name="input">要计算的字符串</param>
+	<param name="enc">编码，默认是Encoding.Default</param>
+	<returns>小写16进制表示的md5值</returns>
+	<remarks></remarks>
+</member><member name="M:com.unionpay.upop.sdk.Util.ParseQueryStrWithBranket(System.String)">
+	<summary>
+ 解析QueryString，将{}内的串作为一个整体来处理，不拆分。
+ </summary>
+	<param name="queryStr"></param>
+	<returns>解析好的key/value对</returns>
+	<remarks></remarks>
+</member><member name="T:com.unionpay.upop.sdk.Util.StrDictSerializable">
+	<summary>
+ 可序列化的Dictionary(Of String,String)
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

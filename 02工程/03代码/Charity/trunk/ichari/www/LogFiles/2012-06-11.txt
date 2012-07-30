@@ -1,0 +1,13 @@
+^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-11 13:36:29,327 [8672] FATAL Ichari.Web.CharityController (null) - [Error]
+System.InvalidOperationException: 此请求已被阻止，因为当用在 GET 请求中时，会将敏感信息透漏给第三方网站。若要允许 GET 请求，请将 JsonRequestBehavior 设置为 AllowGet。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-11 13:39:02,404 [8672] FATAL Ichari.Web.CharityController (null) - [Error]
+System.InvalidOperationException: 此请求已被阻止，因为当用在 GET 请求中时，会将敏感信息透漏给第三方网站。若要允许 GET 请求，请将 JsonRequestBehavior 设置为 AllowGet。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-11 17:32:50,929 [13204] FATAL Ichari.Web.HomeController (null) - [Error]
+System.ArgumentException: 正在分析“?returnUrl=(.*)&”－ 限定符 {x,y} 前没有任何内容。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-11 17:33:17,065 [11312] FATAL Ichari.Web.HomeController (null) - [Error]
+System.ArgumentException: 正在分析“?returnUrl=(.*)&”－ 限定符 {x,y} 前没有任何内容。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$

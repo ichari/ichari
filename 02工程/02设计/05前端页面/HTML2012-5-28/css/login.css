@@ -1,0 +1,193 @@
+@charset "utf-8";
+/* 会员登录
+ * Author: 朱茂华
+ * Created: 2011-7-26
+ */
+/* reset */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; word-wrap:break-word }
+body, html, input { color:#676666; font:14px/1.5 Tahoma, Arial, "\5B8B\4F53", Sans-serif;}
+img, fieldset, abbr, acronym { border:0; }
+table { border-collapse:collapse; border-spacing:0; }
+caption, th { text-align:left; }
+ol, ul, li { list-style:none; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:700; }
+input, button, textarea, select { font-size:inherit;font-family:inherit; }
+address, cite, dfn, em, code, var, caption, th, i { font-style:normal; font-weight:normal;}
+input, label, th { vertical-align:middle; }
+pre { white-space: pre-wrap; /* css-3 */ white-space: -moz-pre-wrap; /* Mozilla, since 1999 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ word-wrap: break-word; /* Internet Explorer 5.5+ */ }
+.white, .white a { color:#fff }
+.blue, .blue a { color:#004499 }
+.gray4, a.gray4 { color:#999 }
+.red, .red a, a.red { color:red; }
+.green { color:#0E774A }
+select optgroup { color:#CAC8BB; }
+/*通用样式*/
+.hidden { display:none; }
+.invisible { visibility:hidden; }
+.ib, .ib-a a { display:inline-block; zoom:1; *display:inline;}
+.cl { clear:both; height:0; margin:0; padding:0; font-size: 1px; line-height: 0px; }
+.fl, .lf { float:left !important; }
+.fr, .rt { float:right !important; }
+.hand{ cursor:pointer;}
+.f12 { font-size: 12px !important; }
+.f14 { font-size: 14px !important; }
+.f16 { font-size: 16px !important; }
+.f18 { font-size:18px }
+.f20 { font-size:20px }
+.lh20 { line-height: 20px }
+.lh22 { line-height: 22px }
+.lh24 { line-height: 24px }
+.lh26 { line-height: 26px }
+.lh28 { line-height: 28px }
+.fb { font-weight:bold }
+.fn { font-weight:normal }
+.w30{width:30px;}.w40{width:40px;}.w60{width:60px;}.w70{width:70px;}.w80{width:80px;}.w90{width:90px;}
+/* 截字 让多出的文字以省略号出现 */
+.t-fix { word-break:keep-all; text-overflow:ellipsis; -moz-text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+/* display */
+.dis { display:block; }
+.undis, .hide,.none { display:none; }
+/* form */
+fieldset legend { font-weight:700; }
+input, button, select { vertical-align:middle;}
+/*定义文字、链接颜色*/
+a { color:#676666; text-decoration:none; cursor:pointer; }
+a:hover { color:#f60; }
+a:link, a:visited { text-decoration:none; }
+a:hover, a:active { text-decoration:underline; }
+.c_333, .c_333 a { color:#333 !important; }
+a.c_333:hover, .c_333 a:hover { color:#346dff; text-decoration:underline; }
+.c_999, a.c_999, .c_999 a { color:#999999 !important; }
+a.c_999:hover, .c_999 a:hover { color:#f60; text-decoration:underline; }
+.c_red, a.c_red { color:#ff0000 !important; }
+.c_green, a.c_green { color:#359800 !important; }
+.c_org, a.c_org, .c_org a { color:#f60 !important; }
+a.c_org:hover { color:#ff0000; }
+.c_blu, .c_blu a { color:#057BD2; }
+a.c_blu:hover, .c_blu a:hover { color:#f60; text-decoration:underline; }
+
+body{ background:#f0f6fa;}
+/*header*/
+.login_header { width:100%; height: auto; margin:0; padding:0px; background:#f0f6fa url(../images/login_topbg.gif) left -1px repeat-x; }
+.login_topbar { width:980px; height:32px; padding:3px 0 0 0; font-size:12px; clear:both; overflow:hidden; line-height:30px; margin:0 auto;}
+	.t_leftnav { width:auto; float:left; padding:0 8px; height:28px; line-height:28px; text-align:left; color:#808080;}
+	.t_leftnav a{ color:#989898;}
+	.t_leftnav a:hover{ color:#ff6600; text-decoration:underline;}
+	.t_leftnav ul li{ float:left; padding:0 10px 0 8px; background:url(../images/t_leftnav_line.gif) no-repeat right 5px;}
+	.t_leftnav ul li.noline{ background:none;}
+	.login_nav { float:right;}
+	.login_nav dl{ float:left;}
+	.login_nav dl.ico_home{ margin:0 0 0 10px; padding:0 0 0 30px; background:url(../images/icon_login.gif) no-repeat left 7px;}
+	.login_nav dl a{ margin:0 3px; color:#016dd1; text-decoration:underline;}
+	.login_nav dl a:hover{ color:#ff6600;}
+	.login_nav dl.ico_home a{ margin:0 3px; color:#989898; text-decoration:none;}
+	.login_nav dl.ico_home a:hover{ color:#ff6600; text-decoration:underline;}
+		
+/*wrap*/
+.wrap { width:960px; height: auto; margin:0 auto; padding:25px 0 0 0; background:url(../images/login_banner.jpg) no-repeat center 87px;}
+	.login_main{ width:640px; float:left;}
+		.login_logo { clear:both; height:62px;}
+		.login_news{ clear:both; height:250px; color:#fff; font-size:12px;}
+		.login_news h2{ font-size:14px;}
+		.login_news ul li{ line-height:20px;}
+		.login_news ul li a{ color:#cccccc;}
+		.login_news ul li a:hover{ color:#fff;}
+			.news_lt{ width:230px; float:left; padding:40px 0 0 100px;}
+			.news_rt{ width:230px; float:right; padding:40px 0 0 0px;}
+		.zj_tip{ clear:both; height:30px; padding:5px 0 0 20px; font-size:12px; background:url(../images/icon_login.gif) no-repeat left -90px;}
+	.login_tab{ width:260px; height:370px; float:right; padding:20px 30px 0 0; font-size:14px;}
+		.login_cont{ height:350px; padding:0 12px; border:1px solid #89b8d8; background:#fff;}
+		.login_cont h1{ height:30px; margin:20px 0 0 0; padding:0px 0 0 50px; color:#005fbb; font-size:18px; border-bottom:1px solid #89b8d8; background:url(../images/icon_login.gif) no-repeat 20px -50px;}
+			.login_cont .tip{ height:30px; clear:both; line-height:30px; font-size:12px; text-align:center; color:#ff0000;}
+		.login_cont dl{ height:30px; padding:5px 0 0 0;}
+		.login_cont dl span{ float:left;}
+		.login_cont dl span.name{ width:65px; text-align:right;}
+		.login_cont dl input{ height:22px; line-height:20px; border:1px solid #d6d6d6; color:#000;}
+		.login_cont dl input.input_on{ background:#feffef; color:#02a2dc;}
+		.login_cont dl input.input_move{ border:2px solid #6bc2ed; background:#feffef; color:#02a2dc;}
+		.login_cont dl input.input_red{ border:2px solid #ff0000; background:#feffef; color:#ff0000;}
+			.tiptime{ width:auto; height:30px; clear:both; padding:0 0 0 65px; font-size:12px;}
+			.tiptime span{ width:auto; height:30px; float:left; overflow:hidden; padding:0 5px 0 0; line-height:18px;}
+			.tiptime span input{ vertical-align:middle;}
+			.login_btn{ height:30px; clear:both; padding:0 0 0 65px; font-size:12px;}
+			.login_btn span{ float:left; padding:0 10px 0 0; line-height:30px;}
+			.login_btn em a{ color:#005fab; line-height:30px;}
+			.login_btn em a:hover{ color:#ff6600;}
+				.btn_login{ width:86px; height:26px; padding:0; border:0; display:block; font-size:14px; font-weight:bold; color:#fff; cursor:pointer; overflow:hidden; background:url(../images/btn_loginbg.gif) no-repeat left top;}
+			.join { height:30px; margin:10px 0 0 0; padding:10px 0; font-size:12px; color:#7b7c7c; line-height:30px; text-align:center; border-top:1px dashed #acacac; border-bottom:1px dashed #acacac;}
+			.join em{ font-size:14px; font-weight:bold; padding:0 10px 0 0;}
+			.join em a{ color:#005fab;}
+			.join em a:hover{ color:#ff6600;}
+			.join_exc{ clear:both; padding:10px 0 0 0; line-height:30px;}
+			.join_exc h3{ width:120px; height:30px; font-size:12px; font-weight:normal; margin:0 auto; padding:0 0 0 20px; background:url(../images/icon_login.gif) no-repeat 0px -142px;}
+			.join_exc a{ color:#005fab;}
+			.join_exc a:hover{ color:#ff6600;}
+		.login_botbg{ height:20px; clear:both; background:url(../images/login_botbg.gif) no-repeat center top;}
+
+.reg_logo{ width:960px; height:60px; margin:0 auto; padding:20px 0 0 0;}
+/*reg_wrap*/
+.reg_wrap{ width:960px; height: auto; margin:0 auto;}
+	.reg_tab{ width:auto; clear:both; padding:0 0 30px 0; background:#fff url(../images/reg_tabbotbg.gif) no-repeat center bottom; font-size:12px;}
+		.reg_topflow{ clear:both; height:30px; padding:10px 0 0 10px;}
+		.reg_cont{ clear:both; padding:30px 0 0 0;}
+		.reg_cont dl{ height:auto; clear:both; padding:10px 0 0 0;*padding:5px 0 0 0; line-height:24px;}
+		.reg_cont dl dt{ margin:0; padding:0;}
+		.reg_cont dl dt.r_name{ width:160px; margin:4px 0 0 0; float:left; text-align:right; color:#000000;}
+		.reg_cont dl dt.r_txt{ width:800px; float:right; text-align:left;}
+		.reg_cont dl dt span{ float:left;}
+		.reg_cont dl dt p{ clear:both; color:#c8c8c8; font-size:12px;}
+			.reg_cont dl dt .r_tip{ float:left; margin:4px 0 0 0; padding:3px 0 0 5px; line-height:20px; font-size:12px;}
+			.reg_cont dl dt .regpw{ float:left; margin:4px 0 0 0; padding:3px 0 0 5px; line-height:20px; font-size:12px;}
+			.icon_correct{ width:16px; height:16px; display:block; margin:2px 3px 0 0; background:url(../images/btn_regyes.gif) no-repeat left 3px;}
+			.icon_wrong{ width:16px; height:16px; float:left; display:block; margin:2px 3px 0 0; background:url(../images/btn_regno.gif) no-repeat left 3px;}
+			.r_refresh { margin:8px 0 0 0;}
+			.r_refresh a{ color:#1e51a2;}
+			.r_yzm{ padding:6px 5px 0 5px;}
+			input.regip{ width:172px; height:30px; padding:6px 8px 0 8px; line-height:24px; border:none; background:url(../images/reg_input.gif) no-repeat left center; color:#02a2dc;}
+			input.regip2{ width:172px; height:30px; padding:6px 8px 0 8px; line-height:24px; border:none; background:url(../images/reg_input2.gif) no-repeat left center; color:#02a2dc;}
+			input.regip3{ width:172px; height:30px; padding:6px 8px 0 8px; line-height:24px; border:none; background:url(../images/reg_input3.gif) no-repeat left center; color:#ff0000;}
+			input.reg_yzip{ width:60px; height:24px; padding:0 3px; line-height:24px; border:1px solid #669ac4;}
+		.r_treaty { font-size:12px; line-height:20px; margin:0 0 0 220px;}
+		.r_treaty a{ color:#4664ff;}
+		.r_btn{ clear:both; margin:0 0 0 260px;}
+			.btn_reg{ width:104px; height:37px; padding:0; border:0; display:block; text-indent:-2000px; cursor:pointer; overflow:hidden; background:url(../images/btn_reg_green.gif) no-repeat left top;}
+		
+		.more_name{ clear:both; width:336px; height:auto; margin:0 0 0 160px; padding:12px 0 0 0; border-bottom:1px solid #918f90; background:url(../images/more_namebg.gif) no-repeat left top;}
+		.more_name h2{ padding:0 0 0 10px; line-height:20px; color:#ff0101; font-weight:normal;}
+		.more_name ul li{ padding:2px 10px; line-height:20px; clear:both; font-weight:bold;}
+		.more_name ul li span{ float:right; font-weight:normal;}
+	/*reg_rzcont*/
+	.reg_rzcont{ clear:both;}
+		.tipwin{ clear:both; height:24px; margin:30px 50px; padding:0 25px; line-height:24px; background:url(../images/btn_win.gif) no-repeat left 0px;}
+		.tipwin em{ color:#ff0000;}
+		.tipwin a{ color:#0469c7; text-decoration:underline;}
+		.tipwin a:hover{ color:#ff6600;}
+		
+		.rzTabTitle{ clear:both; height:65px; margin:0 50px; background:url(../images/rzTabTitlebg.gif) repeat-x left 48px;}
+			#rzTab{ margin:0 0 0 90px;}
+			#rzTab li{ width:180px; height:65px; float:left; margin:0 10px 0 0; line-height:48px; text-indent:-2000px; cursor:pointer;}
+			#rzTab li.active .email{ width:180px; height:65px; display:block; background:url(../images/rz_menubg.gif) no-repeat left 0px;}
+			#rzTab li.normal .email{ width:180px; height:65px; display:block; background:url(../images/rz_menubg.gif) no-repeat left -80px;}
+			#rzTab li.active .phone{ width:180px; height:65px; display:block; background:url(../images/rz_menubg.gif) no-repeat left -160px;}
+			#rzTab li.normal .phone{ width:180px; height:65px; display:block; background:url(../images/rz_menubg.gif) no-repeat left -240px;}
+		.rzTabContent{ height:250px; clear:both; margin:0 50px;}
+			.send_tip{ padding:20px 0 0 100px;}
+			.send_tip dl{ clear:both;}
+			.send_tip span{ float:left;}
+				.send_tip span.r_tip { padding:10px 0 0 0;}
+			.send_tip em{ color:#ff0000;}
+			.rz_repeat{ clear:both; padding:20px 0 0 150px;}
+			.rz_repeat span{ margin:0 14px;}
+				.btn_rzsend{ width:144px; height:30px; padding:0; border:0; text-align:center; color:#fff; cursor:pointer; overflow:hidden; background:url(../images/btn_rzrepeat.gif) no-repeat left top;}
+				.btn_caijin{ width:85px; height:30px; padding:0; border:0; text-align:center; color:#fff; cursor:pointer; overflow:hidden; background:url(../images/btn_caijin.gif) no-repeat left top;}
+			.reg_zfcont { height:350px; clear:both; padding:20px 0 0 0; text-align:center;}
+			.btn_zfen{ clear:both; padding:20px 0 0 350px; text-align:left;}
+			.reg_fenshu{ clear:both; padding:20px 0 20px 300px; text-align:left;}
+			.reg_fenshu dl span{ font-size:100px; padding:0 5px; font-weight:bold; font-family:"宋体"; color:#ff0000;}
+
+
+/*footer*/
+.footer_login{ width:980px; height:auto; margin:0 auto; margin-top:10px; clear:both; text-align:center; padding:10px 0 20px 0; font-size:12px; background:url(../images/login_botline.gif) no-repeat center top;}
+
+.txt_red{ border:2px solid #Red; background:Red; color:Red;}
+

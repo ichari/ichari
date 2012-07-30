@@ -1,0 +1,1 @@
+<%@ Page language="c#" AutoEventWireup="false" ValidateRequest="false" EnableViewState="false" Inherits="Discuz.Web.editpost" CodeFile="editpost.aspx.cs" %>

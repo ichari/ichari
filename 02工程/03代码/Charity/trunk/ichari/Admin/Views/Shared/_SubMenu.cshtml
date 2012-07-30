@@ -1,0 +1,18 @@
+﻿@try
+{
+    if (Model != null && Model.SubMenuList != null)
+    {
+    <div class="submenu">
+    <ul >
+    @foreach (var item in Model.SubMenuList)
+    {
+        <li class="@LeftMenu.IsCurrent(item)">@LeftMenu.GenUrl2(item)</li>
+    }
+    </ul>
+    </div>
+    <div style="clear:both;"></div>
+    }
+}
+catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException)
+{
+}

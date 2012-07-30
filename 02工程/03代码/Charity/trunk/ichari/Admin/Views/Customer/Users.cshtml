@@ -1,0 +1,63 @@
+﻿@model Ichari.Admin.ViewModel.CustomerViewModel
+
+@{
+    ViewBag.Title = "客户";
+}
+
+<div class="search">
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>用户名</td>
+            <td>@Html.TextBox("UserName")</td>
+            <td><input type="submit" value="查 询" /></td>
+        </tr>
+    </table>
+}
+</div>
+<div class="list">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>登录名</th>
+                <th>真实姓名</th>
+                <th>Email</th>
+                <th>身份证</th>
+                <th>手机</th>
+                <th>电话</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.CustomerList)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.UserName</td>
+                <td>@item.TrueName</td>
+                <td>@item.Email</td>
+                <td>@item.IdentityCardNo</td>
+                <td>@item.Phone</td>
+                <td>@item.Tel</td>
+                <td style="text-align:center;">
+                    @Html.ActionLink("编辑", "EditUser", new { id = item.Id })
+                    @Html.ActionLink("重置密码", "ResetPwd", new { id = item.Id })
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+@{
+   
+    Dictionary<string, object> pars = new Dictionary<string, object>();
+    pars.Add("roleName", ViewData["UserName"] as string);
+
+    Html.RenderPager("_PageBar", Model.CustomerList.Count, Model.PageCount, Model.PageIndex, "/Customer/Users", pars);
+}
+
+

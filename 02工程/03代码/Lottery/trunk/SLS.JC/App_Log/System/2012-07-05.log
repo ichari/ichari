@@ -1,0 +1,22 @@
+2012-07-05 11:04:11:848		Error, PageName: http://localhost:1934/Home/Room/OnlinePay/ChinaUnion/Send.aspx?PayMoney=10&bankPay=chinaunion&BuyID=0。 ErrorMsg: key [frontEndUrl] cannot be empty Source:UPOPSDK StackTrace:   在 com.unionpay.upop.sdk.UPOPSrv.Init(Dictionary`2 args) 位置 D:\works\svn\SDK\asp.net\UPOPSDK\UPOPSrv.vb:行号 150
+   在 com.unionpay.upop.sdk.FrontPaySrv..ctor(Dictionary`2 args) 位置 D:\works\svn\SDK\asp.net\UPOPSDK\FrontPaySrv.vb:行号 27
+   在 Home_Room_OnlinePay_Tenpay_Send.Page_Load(Object sender, EventArgs e) 位置 e:\ichari\02工程\03代码\Lottery\trunk\SLS.JC\Home\Room\OnlinePay\ChinaUnion\Send.aspx.cs:行号 172
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 RoomPageBase.OnLoad(EventArgs e) 位置 e:\ichari\02工程\03代码\Lottery\trunk\SLS.JC\App_Code\Pages\RoomPageBase.cs:行号 219
+   在 Home_Room_OnlinePay_Tenpay_Send.OnLoad(EventArgs e) 位置 e:\ichari\02工程\03代码\Lottery\trunk\SLS.JC\Home\Room\OnlinePay\ChinaUnion\Send.aspx.cs:行号 189
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)。
+
+2012-07-05 11:11:28:29		Error, PageName: http://localhost:1934/Home/Room/OnlinePay/ChinaUnion/PayOk.aspx。 ErrorMsg: 文件“/Home/Room/OnlinePay/ChinaUnion/PayOk.aspx”不存在。 Source:System.Web StackTrace:   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp, Boolean noAssert)
+   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.UI.PageHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   在 System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)。
+

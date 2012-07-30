@@ -1,0 +1,729 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
+using Shove.Database;
+using System.Web;
+using System.Xml;
+using System.IO;
+
+/// <summary>
+/// methods for dealing with eTickets goes here, changes to eTicket provider calls to the corrosponding method and file
+/// </summary>
+
+namespace eTicket
+{
+    public class eTickets
+    {
+        private etSunLotto eTicketProvider = new etSunLotto();
+        private Shove._IO.IniFile ini = new Shove._IO.IniFile(System.AppDomain.CurrentDomain.BaseDirectory + "Config.ini");
+        private string ConnectionString;
+        private System.Threading.Thread thread;
+        //private Message msg = new Message("ElectronTicket_HPSH");
+        private Log log = new Log("eTicket");
+        
+       
+        public int StateService = 0;   // 0 停止 1 运行中 2 置为停止
+
+        private int eCount = 10;
+        private int qCount = 120;
+        private int dCount = 0;
+
+        public eTickets()
+        {
+            ConnectionString = ini.Read("Options", "ConnectionString");
+            ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
+        }
+
+        public void Run()
+        {
+            string AgentID = ConfigurationManager.AppSettings["SunAgentID"];
+            string AgentPwd = ConfigurationManager.AppSettings["SunAgentPwd"];
+            string UrlPost = ConfigurationManager.AppSettings["SunPostAddr"];
+
+            if (string.IsNullOrEmpty(AgentID) || string.IsNullOrEmpty(AgentPwd) || string.IsNullOrEmpty(UrlPost))
+            {
+                //msg.Send("ElectronTicket_HPSH Task 参数配置不完整.");
+                log.Write("参数配置不完整.");
+                return;
+            }
+
+            // 已经启动
+            if (StateService == 1)
+            {
+                return;
+            }
+
+            lock (this) // 确保临界区被一个 Thread 所占用
+            {
+                //StateService = 1;
+
+                //thread = new System.Threading.Thread(new System.Threading.ThreadStart(Do));
+                //thread.IsBackground = true;
+                //thread.Start();
+
+                //msg.Send("Sun Lotto eTicket Start.");
+                log.Write("Sun Lotto eTicket Start.");
+            }
+        }
+
+        public void Exit()
+        {
+            StateService = 2;
+        }
+        
+        public void Do()
+        {
+            //while (true)
+            {
+                if (StateService == 2)
+                {
+                    //msg.Send("Sun Lotto eTicket Stop.");
+                    log.Write("Sun Lotto eTicket Stopped.");
+
+                    StateService = 0;
+
+                    Stop();
+
+                    return;
+                }
+
+                System.Threading.Thread.Sleep(1000);   // 1秒为单位
+                eCount++;
+                qCount++;
+                dCount++;
+
+                #region 10 秒，发送电子票数据
+
+                if (eCount >= 10)
+                {
+                    eCount = 0;
+                    try
+                    {
+                        WriteTickets();             // 满员方案拆分为票
+                        //msg.Send("WriteTickets ...... OK.");
+                    }
+                    catch (Exception e)
+                    {
+                        //msg.Send("WriteTickets failed warning: " + e.Message);
+                        log.Write("WriteTickets failed warning: " + e.Message);
+                    }
+
+                    try
+                    {
+                        //QueryTickets();             // 代购票查询
+                        //msg.Send("QueryTickets ...... OK.");
+                    }
+                    catch (Exception e)
+                    {
+                        //msg.Send("QueryTickets failed warning: " + e.Message);
+                        log.Write("QueryTickets failed warning: " + e.Message);
+                    }
+
+                    try
+                    {
+                        SendTickets();              // 发送代购电子票
+                       // msg.Send("SendTickets ...... OK.");
+                    }
+                    catch (Exception e)
+                    {
+                     //   msg.Send("SendTickets failed warning: " + e.Message);
+                        log.Write("SendTickets failed warning: " + e.Message);
+                    }
+                }
+
+                #endregion
+
+                #region 2 分钟，查询奖期状态
+
+                if (qCount >= 60 * 2)
+                {
+                    qCount = 0;
+
+                    try
+                    {
+                        QueryIsuseState();      // 查询奖期状态
+                        //msg.Send("QueryIsuseState ...... OK.");
+                    }
+                    catch (Exception e)
+                    {
+                        //msg.Send("QueryIsuseState is Fail: " + e.Message);
+                        log.Write("QueryIsuseState is Fail: " + e.Message);
+                    }
+                }
+
+                #endregion
+
+                #region 20 分钟，开奖查询
+
+                //if (dCount >= 60 * 20)
+                //{
+                //    dCount = 0;
+
+                //    try
+                //    {
+                    //    QueryIsuseOpen();      // 查询奖期开奖结果
+
+                //        msg.Send("QueryIsuseOpen ...... OK.");
+                //    }
+                //    catch (Exception e)
+                //    {
+                //        msg.Send("QueryIsuseOpen is Fail: " + e.Message);
+                //        log.Write("QueryIsuseOpen is Fail: " + e.Message);
+                //    }
+                //}
+
+                #endregion
+            }
+        }
+        
+        private void Stop()
+        {
+            if (thread != null)
+            {
+                thread.Abort();
+                thread = null;
+            }
+        }
+        
+        private void WriteTickets()
+        {   
+            DataTable dt = new DAL.Views.V_SchemeSchedules().Open(ConnectionString, "ID, LotteryID, PlayTypeID, LotteryNumber, Multiple, Money, (case LotteryID when 29 then -29 else LotteryID end) as LotteryID_2", "Buyed = 0 and (GetDate() between StartTime and EndTime) and BuyedShare >= Share and PrintOutType = 301 and State < 1 and dateadd(mi, 1, StateUpdateTime) <= GetDate() and LotteryID <> 29", "LotteryID_2, UserType desc, [ID]"); // and isnull(Identifiers, '') = '' removed from condition
+            if (dt == null)
+            {
+                //msg.Send("读取方案错误(WriteTickets)。");
+                log.Write("读取方案错误(WriteTickets)。");
+                return;
+            }
+
+            DAL.Tables.T_Schemes t_Schemes = new DAL.Tables.T_Schemes();
+            foreach (DataRow dr in dt.Rows)
+            {
+                long SchemeID = Shove._Convert.StrToLong(dr["ID"].ToString(), -1);
+                int LotteryID = Shove._Convert.StrToInt(dr["LotteryID"].ToString(), -1);
+                string LotterNumber = dr["LotteryNumber"].ToString();
+                int PlayTypeID = Shove._Convert.StrToInt(dr["PlayTypeID"].ToString(), -1);
+                int Multiple = Shove._Convert.StrToInt(dr["Multiple"].ToString(), -1);
+
+                if ((SchemeID < 0) || (LotteryID < 0) || (PlayTypeID < 0) || (Multiple < 1))
+                {
+                    //msg.Send("读取方案错误(WriteTickets)。方案号：" + SchemeID.ToString());
+                    log.Write("读取方案错误(WriteTickets)。方案号：" + SchemeID.ToString());
+                    continue;
+                }
+
+                double Money = 0;
+                etSunLotto.slTicket[] Tickets = null;
+                SLS.Lottery.Ticket[] tics = null;
+                try
+                {
+                    tics = new SLS.Lottery()[LotteryID].ToElectronicTicket_HPSH(PlayTypeID, LotterNumber, Multiple, 50, ref Money);
+                    Tickets = new etSunLotto().ToElectronicTicket(LotteryID, PlayTypeID, LotterNumber, Multiple, ref Money);
+                }
+                catch(Exception e)
+                {
+                    //msg.Send("拆票错误(WriteTickets)。方案号：" + SchemeID.ToString() + "，" + e.Message);
+                    log.Write("拆票错误(WriteTickets)。方案号：" + SchemeID.ToString() + "，" + e.Message);
+                    continue;
+                }
+
+                if (Tickets == null)
+                {
+                    //msg.Send("分解票错误(WriteTickets)。方案号：" + SchemeID.ToString());
+                    log.Write("分解票错误(WriteTickets)。方案号：" + SchemeID.ToString());
+                    continue;
+                }
+
+                if (Money != Shove._Convert.StrToDouble(dr["Money"].ToString(), -1))
+                {
+                    //msg.Send("异常警告！！！！(WriteTickets)。方案号： " + SchemeID.ToString() + " 的购买金额与实际票的金额不符合！！！！");
+                    log.Write("异常警告！！！！(WriteTickets)。方案号： " + SchemeID.ToString() + " 的购买金额与实际票的金额不符合！！！！");
+
+                    //SMS.Eucp.Gateway.CallResult SmsResult = segg.Send("13537697101", "异常警告！！！！(WriteTickets)。方案号： " + SchemeID.ToString() + " 的购买金额与实际票的金额不符合！！！！");
+                    //if (SmsResult.Code < 0)
+                    //{
+                    //    log.Write("Send is Fail: " + SmsResult.Description);
+                    //}
+                    //SmsResult = segg.Send("13612833534", "异常警告！！！！(WriteTickets)。方案号： " + SchemeID.ToString() + " 的购买金额与实际票的金额不符合！！！！");
+                    continue;
+                }
+
+                string TicketXML = "<Tickets>";
+                foreach (SLS.Lottery.Ticket ticket in tics)
+                {
+                    TicketXML += "<Ticket LotteryNumber=\"" + ticket.Number + "\" Multiple=\"" + ticket.Multiple + "\" Money=\"" + ticket.Money + "\" />";
+                }
+                TicketXML += "</Tickets>";
+
+                int ReturnValue = 0;
+                string ReturnDescription = "";
+                int Result = DAL.Procedures.P_SchemesSendToCenterAdd(SchemeID, PlayTypeID, TicketXML, ref ReturnValue, ref ReturnDescription);
+                if ((Result < 0) || (ReturnValue < 0))
+                {
+                    //msg.Send("票写入错误(WriteTickets)：方案号：" + SchemeID.ToString() + "，" + ReturnDescription);
+                    log.Write("票写入错误(WriteTickets)：方案号：" + SchemeID.ToString() + "，" + ReturnDescription);
+                }
+            }
+        }
+        
+        // 查询奖期状态
+        private void QueryIsuseState()
+        {
+            // 查询的几组条件说明：
+            //  1 有效期内未开奖、未开启的
+            //  2 已截止未开奖的 (2 days ago = 2280 minutes)
+            DataTable dt = new DAL.Views.V_Isuses().Open(ConnectionString, "[ID], LotteryID, [Name]", "((isOpened = 0 and (Getdate() between StartTime and EndTime) and State = 0) or (isOpened = 0 and DATEDIFF(MINUTE, Getdate(), EndTime) > -2280 AND GETDATE() > EndTime and State < 6)) and PrintOutType = 301", "EndTime");
+
+            if (dt == null)
+            {
+                //msg.Send("期号状态查询错误(QueryIsuseState)。");
+                log.Write("期号状态查询错误(QueryIsuseState)。");
+                return;
+            }
+
+            if (dt.Rows.Count < 1)
+            {
+                return;
+            }
+            etSunLotto SunLotto = new etSunLotto();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (i % 100 == 99)
+                {
+                    System.Threading.Thread.Sleep(1000);
+                }
+
+                #region 查询奖期 一次1期
+                // inquery xml here
+                int lottoID = 0;
+                if (!int.TryParse(dt.Rows[i]["LotteryID"].ToString(), out lottoID))
+                    continue;
+                string ReceiveString = null;
+                string ErrorCode = null;
+                try
+                {   // post to provider and wait for response
+                    ErrorCode = SunLotto.GetLotteryInfo(lottoID, dt.Rows[i]["Name"].ToString(), out ReceiveString);
+                }
+                catch{
+                    continue;
+                }
+                #endregion
+                if (ErrorCode == null || ReceiveString == null)
+                    continue;
+                if (ErrorCode != "0")
+                    continue;
+
+                #region 处理结果
+
+                XmlDocument XmlDoc = new XmlDocument();
+                XmlNodeList nodesIssue = null;
+
+                try
+                {
+                    XmlDoc.Load(new StringReader(ReceiveString));
+                    nodesIssue = XmlDoc.GetElementsByTagName("issue");
+                }
+                catch{
+                    continue;
+                }
+
+                if (nodesIssue == null || nodesIssue.Count == 0)
+                    continue;
+
+                DAL.Tables.T_Isuses t_Isuses = new DAL.Tables.T_Isuses();
+                string lotoid = null;
+                string issue = null;
+                string Status = null;
+                string lottoNum = null;
+                int LotteryID = 0;
+                string IssueName = null;
+
+                if (nodesIssue[0].Attributes.Count < 1){
+                    continue;
+                }
+                try
+                {
+                    lotoid = nodesIssue[0].Attributes["lotoid"].Value;
+                    issue = nodesIssue[0].Attributes["issue"].Value;
+                    Status = nodesIssue[0].Attributes["status"].Value;
+                    if (nodesIssue[0].Attributes["bonuscode"] != null)
+                        lottoNum = nodesIssue[0].Attributes["bonuscode"].Value;
+                    LotteryID = SunLotto.GetSystemLotteryID(lotoid);
+                    IssueName = SunLotto.ConvertIntoSystemIssue(lotoid, issue);
+                }
+                catch { continue; }
+                if ((LotteryID == 0)) { continue; }
+                
+                DataTable dtIsuse = t_Isuses.Open(ConnectionString, "ID, State, WinLotteryNumber", "LotteryID = " + LotteryID.ToString() + " and [Name] = '" + IssueName + "'", "");
+                if ((dtIsuse == null) || (dtIsuse.Rows.Count < 1)){ continue; }
+
+                bool isHasUpdate = false;
+                // 奖期状态：0 未开启 1 开始 2 暂停 3 截止 4 期结 5 返奖 6 返奖结束
+                // Sun : 0 未开启 1 已开新期 2 暂停 3 截止投注 4 摇出奖号 5 兑奖中 6 结期兑奖
+                if (dtIsuse.Rows[0]["State"].ToString() != Status)
+                {
+                    t_Isuses.State.Value = Status;
+                    t_Isuses.StateUpdateTime.Value = DateTime.Now;
+                    isHasUpdate = true;
+                }
+                string WinNumber = SunLotto.ConverToSystemLottoNum(lotoid, lottoNum);
+
+                if (!String.IsNullOrEmpty(WinNumber) && (dtIsuse.Rows[0]["WinLotteryNumber"].ToString() != WinNumber))
+                {
+                    t_Isuses.WinLotteryNumber.Value = WinNumber;
+                    isHasUpdate = true;
+
+                    if (LotteryID == SLS.Lottery.SHSSL.ID)
+                    {
+                        DataTable dtWinTypes = new DAL.Tables.T_WinTypes().Open(ConnectionString, "", "LotteryID =" + LotteryID.ToString(), "");
+                        double[] WinMoneyList = new double[dtWinTypes.Rows.Count * 2];
+                        for (int k = 0; k < dtWinTypes.Rows.Count; k++)
+                        {
+                            WinMoneyList[k * 2] = Shove._Convert.StrToDouble(dtWinTypes.Rows[k]["DefaultMoney"].ToString(), 1);
+                            WinMoneyList[k * 2 + 1] = Shove._Convert.StrToDouble(dtWinTypes.Rows[k]["DefaultMoneyNoWithTax"].ToString(), 1);
+                        }
+
+                        DataTable dtChaseTaskDetails = new DAL.Tables.T_ChaseTaskDetails().Open(ConnectionString, "", "IsuseID=" + dtIsuse.Rows[0]["ID"].ToString() + " and SchemeID IS NOT NULL", "");
+                        for (int k = 0; k < dtChaseTaskDetails.Rows.Count; k++)
+                        {
+                            string LotteryNumber = dtChaseTaskDetails.Rows[k]["LotteryNumber"].ToString();
+                            string Description = "";
+                            double WinMoneyNoWithTax = 0;
+                            double WinMoney = new SLS.Lottery()[LotteryID].ComputeWin(LotteryNumber, WinNumber, ref Description, ref WinMoneyNoWithTax, int.Parse(dtChaseTaskDetails.Rows[k]["PlayTypeID"].ToString()), WinMoneyList);
+
+                            if (WinMoney < 1){
+                                continue;
+                            }
+
+                            int ReturnValue = 0;
+                            string ReturnDescprtion = "";
+
+                            if (DAL.Procedures.P_ChaseTaskStopWhenWin(Shove._Convert.StrToLong(dtChaseTaskDetails.Rows[k]["SiteID"].ToString(), 1), Shove._Convert.StrToLong(dtChaseTaskDetails.Rows[k]["SchemeID"].ToString(), 0), WinMoney, ref ReturnValue, ref ReturnDescprtion) < 0)
+                            {
+                                //msg.Send("电子票撤销追号错误_P_ChaseTaskStopWhenWin。");
+                                log.Write("电子票撤销追号错误_P_ChaseTaskStopWhenWin。");
+                            }
+                        }
+                    }
+                }
+                
+                if (isHasUpdate)
+                {
+                    t_Isuses.Update(ConnectionString, "LotteryID = " + LotteryID.ToString() + " and [Name] = '" + IssueName + "'");
+                }
+
+                #endregion
+            }
+        }
+        
+        // 发送代购电子票
+        private void SendTickets()
+        {
+            DAL.Views.V_SchemesSendToCenter v_SchemesSendToCenter = new DAL.Views.V_SchemesSendToCenter();
+            //changed state = 1 to state = 0 for testing purposes
+            DataTable dt = v_SchemesSendToCenter.Open(ConnectionString, "distinct SchemeID, SiteID, UserType", "Buyed = 0 and (GetDate() between StartTime and EndTime) and Sends < 99 and HandleResult = 0 and State = 0 and LotteryID <> 29 and PrintOutType = 301", " UserType desc");
+
+            if (dt == null)
+            {
+                //msg.Send("发送代购票出错(SendTickets)：读取方案错误。");
+                log.Write("发送代购票出错(SendTickets)：读取方案错误。");
+                return;
+            }
+
+            DAL.Tables.T_SchemesSendToCenter t_SchemesSendToCenter = new DAL.Tables.T_SchemesSendToCenter();
+            etSunLotto SunLotto = new etSunLotto();
+            // each scheme that is waiting to be sent to provider
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (i % 10 == 9)
+                {
+                    System.Threading.Thread.Sleep(1000);
+                }
+                //changed to state = 0 from state = 1 for testing purposes
+                DataTable dtSchemesSend = v_SchemesSendToCenter.Open(ConnectionString, "", "SchemeID=" + dt.Rows[i]["SchemeID"].ToString() + " and Buyed = 0 and (GetDate() between StartTime and EndTime) and Sends < 99 and HandleResult = 0 and State = 0", "");
+                if (dtSchemesSend == null)
+                {
+                    //msg.Send("发送代购票出错(SendTickets)：读取方案错误。方案号：" + dt.Rows[i]["SchemeID"].ToString());
+                    log.Write("发送代购票出错(SendTickets)：读取方案错误。方案号：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                if (dtSchemesSend.Rows.Count < 1)
+                {
+                    continue;
+                }
+
+                string Sends = dtSchemesSend.Rows[0]["Sends"].ToString();
+                if (MSSQL.ExecuteNonQuery(ConnectionString, "update T_SchemesSendToCenter set Sends = Sends + 1 where SchemeID = " + dt.Rows[i]["SchemeID"].ToString()) < 0)
+                {
+                    //msg.Send("更新票发送状态时出错(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    log.Write("更新票发送状态时出错(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+
+                long schemeID = 0;
+                if (!long.TryParse(dt.Rows[0]["SchemeID"].ToString(), out schemeID))
+                {
+                    log.Write("票 Scheme ID 出错(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                // retrieve Scheme
+                DataTable dtSch = new DAL.Tables.T_Schemes().Open("SchemeNumber, IsuseID, PlayTypeID, InitiateUserID, Multiple, Money, LotteryNumber ", "ID = " + schemeID.ToString(), "");
+                if (dtSch.Rows.Count != 1)
+                {
+                    log.Write("Retrieve Scheme 出错(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                long IssueID = 0;
+                string LotteryNumber = null;
+                long usrID = 0;
+                int playTypeId = 0;
+                string Multiple = null;
+                double Money = 0;
+                string schemeNum = null;
+                try
+                {
+                    IssueID = long.Parse(dtSch.Rows[0]["IsuseID"].ToString());
+                    LotteryNumber = dtSch.Rows[0]["LotteryNumber"].ToString();
+                    usrID = long.Parse(dtSch.Rows[0]["InitiateUserID"].ToString());
+                    playTypeId = int.Parse(dtSch.Rows[0]["PlayTypeID"].ToString());
+                    schemeNum = dtSch.Rows[0]["SchemeNumber"].ToString();
+                    Multiple = dtSch.Rows[0]["Multiple"].ToString();
+                }
+                catch
+                {
+                    log.Write("Parsing Scheme Data 出错(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                //retrieve issue
+                DataTable dtIss = new DAL.Tables.T_Isuses().Open("LotteryID, Name ", "ID = " + IssueID.ToString(), "");
+                if (dtIss.Rows.Count != 1)
+                {
+                    log.Write("Retrieve Issues 出错(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                int LotteryID = 0;
+                string IssueName = null;
+                try
+                {
+                    LotteryID = int.Parse(dtIss.Rows[0]["LotteryID"].ToString());
+                    IssueName = dtIss.Rows[0]["Name"].ToString();
+                }
+                catch
+                {
+                    log.Write("Parsing Issue Data 出错(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                // retrieve user info
+                DataTable dtUsr = new DAL.Tables.T_Users().Open("Name, RealityName, IDCardNumber, Mobile ", "ID = " + usrID.ToString(), "");
+                if (dtUsr.Rows.Count != 1)
+                {
+                    log.Write("Retrieve User Info 出错(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                string RealityName = null;
+                string IDCardNumber = null;
+                string Mobile = null;
+                try
+                {
+                    RealityName = dtUsr.Rows[0]["RealityName"].ToString();
+                    IDCardNumber = dtUsr.Rows[0]["IDCardNumber"].ToString();
+                    Mobile = dtUsr.Rows[0]["Mobile"].ToString();
+                }
+                catch
+                {
+                    log.Write("Parsing User Data 出错(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                string bodyXML = HttpUtility.HtmlDecode(SunLotto.PrepareTickets(IDCardNumber, Mobile, RealityName, LotteryID, IssueName, schemeNum, playTypeId, LotteryNumber, Multiple, ref Money));
+                string orderXML = SunLotto.GenerateOrderXML(bodyXML, DateTime.Now.ToString("yyyyMMddhhmmss") + schemeNum);
+                string ReceiveString = null;
+                string ErrorCode = null;
+                
+                try
+                {
+                    ErrorCode = SunLotto.OrdereTicketSend(orderXML, out ReceiveString);
+                }
+                catch
+                {
+                    //    msg.Send("电子票-103 发送失败(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    log.Write("电子票-301 发送失败(SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+
+                if (ErrorCode == null)
+                {
+                    log.Write("电子票-301 发送 Error (SendTickets)。方案ID：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+
+                if (ErrorCode == "402") // IP restricted by provider, exit
+                {
+                    log.Write("IP Restricted 出错(SendTickets)：数据读写错误。票号：" + dt.Rows[i]["SchemeID"].ToString() + ", " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
+                    return;
+                }
+                // 109 - 10秒内禁止重复发单
+                if (ErrorCode == "109")
+                {
+                    System.Threading.Thread.Sleep(1000);
+                    continue;
+                }
+                // 重复发送的投注票
+                if (ErrorCode == "305"){
+                    log.Write("[" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "] 重复发送的投注票(SendTickets)：。票号：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                int err = 0;
+                if(!int.TryParse(ErrorCode, out err))
+                    continue;
+                if (err >= 100 && err <= 108)
+                    continue;
+                // Agent ID is blocked
+                if (ErrorCode == "112"){
+                    log.Write("[" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "] Agent ID 被禁止(SendTickets)：。票号：" + dt.Rows[i]["SchemeID"].ToString());
+                    continue;
+                }
+                // received string is valid process, error code = 0
+                int ReturnValue = 0;
+                string ReturnDescription = "";
+
+                if (ErrorCode == "0")
+                {
+                    int Result = DAL.Procedures.P_SchemesSendToCenterHandleUniteAnte(Shove._Convert.StrToLong(dt.Rows[i]["SchemeID"].ToString(), -1), DateTime.Now, true, ref ReturnValue, ref ReturnDescription);
+                    if ((Result < 0) || (ReturnValue < 0))
+                    {
+                        //msg.Send("对所发送的成功落地的代购票第一次处理出错(SendTickets)：数据读写错误。票号：" + dt.Rows[i]["SchemeID"].ToString() + "，" + ReturnDescription);
+                        log.Write("对所发送的成功落地的代购票第一次处理出错(SendTickets)：数据读写错误。票号：" + dt.Rows[i]["SchemeID"].ToString() + "，" + ReturnDescription);
+                        System.Threading.Thread.Sleep(1100);
+                        ReturnValue = 0;
+                        ReturnDescription = "";
+                        Result = DAL.Procedures.P_SchemesSendToCenterHandleUniteAnte(Shove._Convert.StrToLong(dt.Rows[i]["SchemeID"].ToString(), -1), DateTime.Now, true, ref ReturnValue, ref ReturnDescription);
+                        if ((Result < 0) || (ReturnValue < 0))
+                        {
+                            //msg.Send("对所发送的成功落地的代购票第二次处理出错(SendTickets)：数据读写错误。票号：" + dt.Rows[i]["SchemeID"].ToString() + "，" + ReturnDescription);
+                            log.Write("对所发送的成功落地的代购票第二次处理出错(SendTickets)：数据读写错误。票号：" + dt.Rows[i]["SchemeID"].ToString() + "，" + ReturnDescription);
+                        }
+                    }
+                    continue;
+                }
+                int SiteID = Shove._Convert.StrToInt(dt.Rows[i]["SiteID"].ToString(), 1);
+                /*
+                if (ReceiveString == "2032")     // 限号
+                {
+                    if (Shove._Convert.StrToInt(Sends, 0) < 99)
+                    {
+                        t_SchemesSendToCenter.Sends.Value = 99;
+                        t_SchemesSendToCenter.Update(ConnectionString, "SchemeID = " + dt.Rows[i]["SchemeID"].ToString());
+                    }
+                    else
+                    {
+                        int Result = DAL.Procedures.P_QuashScheme(SiteID, Shove._Convert.StrToLong(dt.Rows[i]["SchemeID"].ToString(), 0), true, false, ref ReturnValue, ref ReturnDescription);
+
+                        if ((Result < 0) || (ReturnValue < 0))
+                        {
+                            //msg.Send("对所发送落地失败的代购票【作撤单】处理出错(SendTickets)：数据读写错误。票号：" + dt.Rows[i]["SchemeID"].ToString() + "，" + code + "，" + ReturnDescription);
+                            log.Write("对所发送落地失败的代购票【作撤单】处理出错(SendTickets)：数据读写错误。票号：" + dt.Rows[i]["SchemeID"].ToString() + "，" + ReceiveString + "，" + ReturnDescription);
+                        }
+                    }
+                    continue;
+                }
+                */
+                t_SchemesSendToCenter.Sends.Value = 101;
+                t_SchemesSendToCenter.Update(ConnectionString, "SchemeID = " + dt.Rows[i]["SchemeID"].ToString());
+                if ("301 302 303 304 306 400 401".IndexOf(ErrorCode) >= 0) // need to cancel this scheme
+                {
+                    int Result = DAL.Procedures.P_QuashScheme(SiteID, Shove._Convert.StrToLong(dt.Rows[i]["SchemeID"].ToString(), 0), true, false, ref ReturnValue, ref ReturnDescription);
+
+                    if ((Result < 0) || (ReturnValue < 0))
+                    {
+                        //msg.Send("对所发送落地失败的代购票【作撤单】处理出错(SendTickets)：数据读写错误。票号：" + dt.Rows[i]["SchemeID"].ToString() + "，" + code + "，" + ReturnDescription);
+                        log.Write("对所发送落地失败的代购票【作撤单】处理出错(SendTickets)：数据读写错误。票号：" + dt.Rows[i]["SchemeID"].ToString() + "，" + ErrorCode + "，" + ReturnDescription);
+                    }
+                }
+            }
+        }
+
+        // 查询开奖信息并开奖。
+        /*
+        private void QueryIsuseOpen()
+        {
+            DataTable dt = new DAL.Views.V_Isuses().Open(ConnectionString, "[ID], LotteryID, [Name]", "IsOpened = 0 and State >= 5 and PrintOutType = 102", "EndTime");
+
+            if (dt == null)
+            {
+                //msg.Send("电子票查询开奖出错(QueryIsuseOpen)。");
+                log.Write("电子票查询开奖出错(QueryIsuseOpen)。");
+                return;
+            }
+
+            if (dt.Rows.Count < 1){
+                return;
+            }
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (i % 100 == 0)
+                {
+                    System.Threading.Thread.Sleep(1000);
+                }
+
+                string IsuseID = dt.Rows[i]["ID"].ToString();
+                string LotteryName = GetLotteryName(Shove._Convert.StrToInt(dt.Rows[i]["LotteryID"].ToString(), 0));
+                string IsuseName = dt.Rows[i]["Name"].ToString();
+
+                DateTime Now = DateTime.Now;
+                string MessageID = ElectronTicket_HPSH_UserName + Now.ToString("yyyyMMdd") + Now.ToString("HHmmss") + (i % 100).ToString().PadLeft(2, '0');
+                string Body = "<body><bonusQuery><issue gameName=\"" + LotteryName + "\" number=\"" + IsuseName + "\"/></bonusQuery></body>";
+                string TimeStamp = Now.ToString("yyyyMMdd") + Now.ToString("HHmmss");
+
+                string Message = "<?xml version=\"1.0\" encoding=\"GBK\"?>";
+                Message += "<message version=\"1.0\" id=\"" + MessageID + "\">";
+                Message += "<header>";
+                Message += "<messengerID>" + ElectronTicket_HPSH_UserName + "</messengerID>";
+                Message += "<timestamp>" + TimeStamp + "</timestamp>";
+                Message += "<transactionType>106</transactionType>";
+                Message += "<digest>" + Shove._Security.Encrypt.MD5(MessageID + TimeStamp + ElectronTicket_HPSH_UserPassword + Body, "gb2312") + "</digest>";
+                Message += "</header>";
+                Message += Body;
+                Message += "</message>";
+
+                //WriteElectronTicketLog(true, "106", "transType=106&transMessage=" + Message);
+
+                string ReceiveString = "";
+
+                try
+                {
+                    ReceiveString = PublicFunction.Post(ElectronTicket_HPSH_Getway, "transType=106&transMessage=" + Message, TimeoutSeconds);
+                }
+                catch
+                {
+                    continue;
+                }
+
+                if (ReceiveString.Length <= 10)
+                {
+                    continue;
+                }
+
+                string[] t_strs = ReceiveString.Split('&');
+
+                if ((t_strs == null) || (t_strs.Length < 2))
+                {
+                    continue;
+                }
+
+                string TransType = t_strs[0];
+                string TransMessage = t_strs[1];
+
+                TransType = TransType.Substring(10);
+                TransMessage = TransMessage.Substring(13);
+
+                WriteElectronTicketLog(false, TransType, ReceiveString);
+
+                GetSprize(IsuseID, TransMessage);
+            }
+        }
+        */
+    }
+}

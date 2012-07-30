@@ -1,0 +1,70 @@
+﻿@model Ichari.Web.ViewModel.ChariGameViewModel
+@{
+    ViewBag.Title = "爱心捐赠";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@*<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>*@
+    <div class="title bg1x bgp6"><span class="bg1x bgp1">爱心零钱捐赠记录</span></div>
+    <div class="content_box">
+    @Html.TipPartial()
+    <table style="margin: 10px; width:97%;" border="0" cellspacing="1" cellpadding="0">
+    <thead>
+        <tr>
+            <th style="width:150px;">捐赠单号</th>
+            <th style="width:60px;">金额</th>
+            <th>捐赠时间</th>
+            <th style="width:70px;">是否抽奖</th>
+            <th style="width:150px;">抽奖时间</th>
+            <th></th>
+        </tr>
+    </thead>
+    @{int i = 0;}
+    @foreach (var item in Model.PageList)
+    {
+        <tr class="@if(i%2==0){<text>bgffe</text>}else{<text>c</text>}">
+            <td >@item.UnionOrder</td>
+            <td >@item.Amount</td>
+            <td>@item.CreateTime</td>
+            <td>@if (item.IsGame)
+                {
+                    <text>是</text>
+                }
+                else
+                {
+                    <text>否</text>
+                }</td>
+            <td>@item.GameTime</td>
+            <td>
+            @if (!item.IsGame)
+            { 
+                @Html.ActionLink("抽奖", "ChariDraw", "Charity",null, new { target = "_blank"})
+            }
+            </td>
+        </tr>
+        i++;
+    }
+    </table>
+
+    @{
+        Html.RenderPager("_PageBar", Model.PageList.Count, Model.PageCount, Model.PageIndex, "/Account/UnionDonations", null);  
+    }
+    </div>
+    <div class="b_jzbd">
+    @using (Html.BeginForm())
+    {    
+        <p class="tit">捐赠绑定</p>
+        <label>捐赠单号:</label>@Html.TextBoxFor(m => m.DonationId) 
+        <label>金额:</label>@Html.TextBox("DonationAmount",Model.DonationAmount==0?"":Model.DonationAmount.ToString())
+        <input type="submit" class="btn_s" value="绑定" />
+        <div style="height:20px;">@Html.ValidationSummary()</div>
+    }
+    
+    </div>
+
+
+
+
+
+

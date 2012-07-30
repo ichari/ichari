@@ -1,0 +1,24 @@
+﻿<configuration>
+    <system.serviceModel>
+        <client>
+            <endpoint address="http://bet.demo.shovesoft.cn/Silverlight/Model.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IModel"
+                contract="ServiceModel.IModel" name="BasicHttpBinding_IModel" />
+            <endpoint address="http://bet.demo.shovesoft.cn/Silverlight/Service.svc/T_PassRate"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IService"
+                contract="ServiceReference1.IService" name="BasicHttpBinding_IService" />
+        </client>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IModel" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+    </system.serviceModel>
+</configuration>

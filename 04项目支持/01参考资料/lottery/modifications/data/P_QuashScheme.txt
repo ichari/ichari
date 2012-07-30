@@ -1,0 +1,184 @@
+
+if((select COUNT(*) from sys.procedures where name = 'P_QuashScheme')> 0)
+begin
+	drop procedure P_QuashScheme
+end
+
+go
+
+Create PROCEDURE [dbo].[P_QuashScheme]
+(
+	@SiteID  bigint,		-- 站点ID
+	@SchemeID bigint,		-- 方案ID
+	@isSystemQuash bit,		-- 是否系统撤单
+	@isRelation bit,		-- 是否关联撤单
+
+	@ReturnValue int output,
+	@ReturnDescription varchar(100) output
+)
+
+AS
+
+BEGIN
+	SET NOCOUNT ON;
+
+	set @ReturnValue = 0
+	set @ReturnDescription = ''
+
+	declare @UserID int
+	declare @AssureMoney money, @Money money
+	declare @Share int
+	declare @BuyedShare int
+	declare @QuashStatus smallint
+	declare @Buyed bit
+	declare @SchemeIsOpened bit
+	declare @isOpened bit
+	declare @StartTime datetime, @EndTime datetime, @SystemEndTime Datetime
+	declare @IsuseID bigint
+
+	set @UserID = null
+	select @UserID = InitiateUserID, @AssureMoney = isnull(AssureMoney,0), @Money=[Money], @Share = Share, @BuyedShare = BuyedShare,
+		@QuashStatus = QuashStatus, @Buyed = Buyed, @SchemeIsOpened = SchemeIsOpened, @isOpened = isOpened, @StartTime = StartTime, @EndTime = EndTime, @SystemEndTime = SystemEndTime,
+		@IsuseID = IsuseID
+		from V_SchemeSchedules
+		where SiteID = @SiteID and [ID] = @SchemeID
+
+	if @UserID is null
+	begin
+		set @ReturnValue = -1
+		set @ReturnDescription = '方案不存在'
+
+		return
+	end
+
+	if @QuashStatus <> 0
+	begin
+		set @ReturnValue = -2
+		set @ReturnDescription = '方案已被' + case @QuashStatus when 1 then '用户' when 2 then '系统' else '' end + '撤单'
+
+		return
+	end
+
+	if (@Buyed = 1) or (@isOpened = 1) or (@SchemeIsOpened = 1)
+	begin
+		set @ReturnValue = -3
+		set @ReturnDescription = '方案已经出票或者已经开奖'
+
+		return
+	end
+
+	if (@isSystemQuash = 0)
+	begin
+		if not (GetDate() between @StartTime and @SystemEndTime)
+		begin
+			set @ReturnValue = -4
+			set @ReturnDescription = '投注已经截止'
+
+			return
+		end
+
+		declare @Opt_QuashSchemeMaxNum int
+		declare @Opt_FullSchemeCanQuash bit
+
+		select @Opt_QuashSchemeMaxNum = Opt_QuashSchemeMaxNum, @Opt_FullSchemeCanQuash = Opt_FullSchemeCanQuash from T_Sites where [ID] = @SiteID
+
+		if (@Opt_FullSchemeCanQuash = 0) and (@BuyedShare >= @Share)
+		begin
+			set @ReturnValue = -5
+			set @ReturnDescription = '方案已经满员'
+
+			return
+		end
+
+		declare @QuashCount int
+		select @QuashCount = isnull(count(*), 0) from T_Schemes where SiteID = @SiteID and InitiateUserID = @UserID and QuashStatus = 1 and IsuseID = @IsuseID
+
+		if (@QuashCount >= @Opt_QuashSchemeMaxNum)
+		begin
+			set @ReturnValue = -6
+			set @ReturnDescription = '每人每期最多只能撤单 ' + cast(@Opt_QuashSchemeMaxNum as varchar(20)) + ' 次'
+
+			return
+		end
+	end
+
+	declare @QuashedDescription varchar(50)
+	declare @QuashedType int
+
+	if @isSystemQuash = 1
+	begin
+		set @QuashedDescription = '系统撤单'
+		set @QuashedType = dbo.F_GetDetailsOperatorType('系统撤单')
+		set @QuashStatus = 2
+	end
+	else
+	begin
+		set @QuashedDescription = '发起人撤单'
+		set @QuashedType = dbo.F_GetDetailsOperatorType('发起人撤单')
+		set @QuashStatus = 1
+	end
+
+	--开始撤单
+
+	--解除发起人冻结，当有保底以及没有满员时才解除，因为满员的时候已经解除了冻结
+	if @AssureMoney <> 0 and (@BuyedShare < @Share)
+	begin
+		update T_Users set Balance = Balance + @AssureMoney, Freeze = Freeze - @AssureMoney where [ID] = @UserID
+		insert into T_UserDetails (SiteID, UserID, OperatorType, [Money], SchemeID, [Memo])
+			values (@SiteID, @UserID, dbo.F_GetDetailsOperatorType('解除保底冻结'), @AssureMoney, @SchemeID, @QuashedDescription)
+	end
+
+	-- 更新为已撤单标志
+	update T_Schemes set QuashStatus = @QuashStatus, BuyedShare = 0, Schedule = 0, ReSchedule = 0, AtTopStatus = 0, UpdateDatetime = GETDATE() where [ID] = @SchemeID
+
+	declare @UserName varchar(50)
+	declare @IsEmailValided bit
+	declare @Email varchar(50)
+	declare @IsMobileValided bit
+	declare @Mobile varchar(50)
+	declare @Email_QuashScheme varchar(max)
+	declare @StationSMS_QuashScheme varchar(max)
+	declare @SMS_QuashScheme varchar(max)
+
+	select @UserName = Name,@IsEmailValided = isEmailValided,@Email = Email,@IsMobileValided = isMobileValided,@Mobile = Mobile from T_Users where ID = @UserID
+	select @Email_QuashScheme = TemplateEmail_QuashScheme,@StationSMS_QuashScheme = TemplateStationSMS_QuashScheme,@SMS_QuashScheme = TemplateSMS_QuashScheme from T_Sites where ID = @SiteID
+	
+	insert T_SendNoticeForQuashScheme values(@SchemeID,@UserID,@UserName,@IsEmailValided,@Email,@IsMobileValided,@Mobile,@Email_QuashScheme,@StationSMS_QuashScheme,@SMS_QuashScheme,0)
+	
+	--撤销用户购买记录
+	declare @ShareMoney money
+	set @ShareMoney = @Money / @Share
+
+	declare @Cur cursor
+	declare @BuyDetailID bigint
+
+	set @Cur = cursor FAST_FORWARD for select [ID], UserID, Share from T_BuyDetails where SchemeID = @SchemeID and QuashStatus = 0
+	open @Cur
+
+	fetch next from @Cur into @BuyDetailID, @UserID, @Share
+	while @@fetch_status=0
+	begin
+		update T_Users set Balance = Balance + (@ShareMoney * @Share) where [ID] = @UserID
+		insert into T_UserDetails (SiteID, UserID, OperatorType, [Money], SchemeID, [Memo]) values (@SiteID, @UserID, @QuashedType, (@ShareMoney * @Share), @SchemeID, @QuashedDescription)
+
+		fetch next from @Cur into @BuyDetailID, @UserID, @Share
+	end
+
+	close @Cur
+
+	update T_BuyDetails set QuashStatus = @QuashStatus where SchemeID = @SchemeID and QuashStatus = 0
+
+	-- 如果是追号执行发起的任务，还要操作追号明细表
+	declare @ChaseDetailID bigint
+	set @ChaseDetailID = null
+
+	select top 1 @ChaseDetailID = [ID] from T_ChaseTaskDetails where SchemeID = @SchemeID
+	if not (@ChaseDetailID is null)
+	begin
+		update T_ChaseTaskDetails set QuashStatus = @QuashStatus where [ID] = @ChaseDetailID
+	end
+	
+	set @ReturnValue = 0
+	set @ReturnDescription = ''
+END
+

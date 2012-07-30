@@ -1,0 +1,22 @@
+^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-26 10:20:34,791 [6760] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-26 10:21:57,719 [8876] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-26 10:27:11,203 [7620] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-26 15:33:22,797 [10352] FATAL Ichari.Web.AccountController (null) - [Error]
+System.ArgumentException: 已添加了具有相同键的项。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-26 15:35:06,223 [10352] FATAL Ichari.Web.AccountController (null) - [Error]
+System.ArgumentException: 已添加了具有相同键的项。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-26 15:35:09,431 [9576] FATAL Ichari.Web.AccountController (null) - [Error]
+System.ArgumentException: 已添加了具有相同键的项。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-26 15:42:18,783 [12980] FATAL Ichari.Web.AccountController (null) - [Error]
+System.ArgumentException: 已添加了具有相同键的项。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$

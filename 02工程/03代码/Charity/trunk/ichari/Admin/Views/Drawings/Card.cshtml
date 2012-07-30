@@ -1,0 +1,47 @@
+﻿@model Ichari.Admin.ViewModel.BaseViewModel<Ichari.Model.FreeCard>
+@{
+    ViewBag.Title = "卡卷列表";
+}
+
+<div class="list">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>类别</th>
+                <th>卡号</th>
+                <th>密码</th>
+                <th>创建时间</th>
+                <th>分发时间</th>
+                @*<th>是否使用</th> *@               
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.PageList)
+        {
+            <tr>
+                <td style="width:220px;">@item.Id</td>
+                <td style="width:170px;">@{WriteLiteral(Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.FreeCardType>(item.CardType));}</td>
+                <td style="width:50px;">@item.CardNo</td>
+                <td style="width:50px;">@item.Password</td>
+                <td style="width:150px;color:">@item.CreateTime</td>
+                <td style="width:150px;">@item.DeliverTime</td>
+                @*<td>@item.IsDelivery</td>*@
+                
+                <td style="width:130px;">
+                    
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+@{Html.RenderPager(null, Model.PageList.Count, Model.PageCount, Model.PageIndex, "/Drawings/Card", null);}
+
+<div>
+    <p>
+        @*<span>@Html.ActionLink("返回列表","Index")</span>*@
+        <span>@Html.ActionLink("新增","AddCard")</span>
+    </p>
+</div>

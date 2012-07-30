@@ -1,0 +1,743 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*  ================= Common =================  */
+body, div, ul, ol, li, h1, h2, h3,h4,p, form, fieldset, legend, input, button {
+	margin:0;
+	padding:0;
+}
+body,button,input,select,textarea{ 
+	font:12px/150% Arial,Helvetica,sans-serif;
+	color:#373738;
+}
+body{ 
+	background:#fff;
+}
+ul,ol,li{ 
+	list-style:none outside none;
+} 
+fieldset,img,outline{
+	border:0;
+}
+input,
+select{
+	line-height:12px;
+	vertical-align:middle;
+	padding:2px;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clears{ 
+	clear:both;
+}
+.hidden{
+	display:none;
+}
+.mt10{
+	margin-top:10px;
+}
+/*  ================= Font ================= */
+a, a:visited{
+	color:#126ED6;
+	text-decoration:underline;
+}
+a:hover, a:active{
+	color:#116ed6;
+	text-decoration:underline;
+}
+.red, .red:hover, .red:visited{
+	color:#dd0a0d;
+}
+.blue, .blue:hover, .blue:visited{
+	color:#126ed6;
+}
+.big_red{
+	font-weight:bold;
+	font-size:30px;
+	color:#dd0a0d;
+}
+.green{
+	color:#559236;
+}
+/* ================= Background =================  */
+.logo_home,
+.icon_phone,
+.crumbs span,
+.crumbs span.current{
+	background:url(../images/bg.gif);
+}
+.nav,
+.nav a,
+.nav a:visited,
+.nav a:hover,
+.nav .current a, .nav .current a:visited, .nav .current a:hover,
+.user .w200 h2,
+.title_box,
+.title_box_c{
+	background:url(../images/bg_nav.gif) repeat-x;
+	text-decoration:none;
+}
+.icon_error,
+.icon_right,
+.current .icon_right,
+.user .w200 li.active{
+	background:url(../images/bg.png);
+}
+input.btn_big,
+input.btn_big:hover,
+input.btn_s,input.btn_s_red{
+	background:url(../images/bg_btn.gif) 0 0 no-repeat;
+}
+
+/*  ================= Base ================= */
+.bg{
+	background: #f0efef url(../images/bg_main.gif) left top repeat-x;
+	width:100%;
+	height:100%;
+}
+.bg_short{
+	background: #f0efef url(../images/bg_main_short.gif) left top repeat-x;
+	width:100%;
+	height:100%;
+}
+.wrapper{
+	width:970px;
+	margin:0 auto;
+}
+
+.w200{
+	width:200px;
+	border:1px solid #e4e4e5;
+}
+.w730{
+	width:730px;
+}
+.title_box,
+.title_box_c{
+	background-position:0 -176px;
+	height:32px;
+	line-height:32px;
+	border:1px solid #e4e4e5;
+	border-width:1px 1px 0 1px;
+}
+.title_box_c{
+	background-position:0 0;
+	color:#fff;
+	font-size:14px;
+	font-weight:bold;
+	padding:8px 20px;
+}
+.content_box{
+	background:#fff;
+	border:1px solid #e4e4e5;
+}
+.content_box_t{
+	background:#d0e2f7;
+	height:30px;
+	overflow:hidden;
+}
+.content_box_t li{
+	float:left;
+	padding:5px 20px;
+}
+.content_box_t li a, .content_box_t li a:visited{
+	color:#373738;
+	text-decoration:none;
+}
+.content_box_t li a:hover{
+	color:#126ed6;
+	text-decoration:underline;
+}
+.content_box_t li.current{
+	background:#fff;
+	border-top:5px solid #d0e2f7;
+}
+.bg_content{
+	padding:5px 20px;
+	background:#f7f7f7;
+	border:1px solid #e4e4e5;
+	margin-top:10px;
+}
+.notice{
+	background:#ecf3fc;
+	border:1px solid #126ed6;
+	color:#126ed6;
+	padding:10px 20px;
+	margin-top:10px;
+}
+.notice li{
+	list-style:decimal inside;
+}
+.bg_content b{
+	color:#dd0a0d;
+}
+.cover{
+	background:#373738;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	padding:4px 0;
+}
+.cover li{
+	float:right;
+	border-right:1px solid #f0efef;
+}
+.cover li.last_child{
+	border:0;
+}
+.cover a,
+.cover a:visited{
+	padding:0 8px;
+	color:#f0efef;
+	text-decoration:none;
+}
+.cover a:hover{
+	text-decoration:underline;
+}
+/* Error */
+.field-validation-error{
+	color:#c90304;
+	float:left;
+}
+.input-validation-error{
+	border:1px solid #c90304;
+	color:#c90304;
+}
+
+.icon_error{
+	width:15px;
+	height:17px;
+	background-position:-405px -259px;
+	vertical-align:middle;
+	margin-right:5px;
+}
+.icon_right,
+.current .icon_right{
+	background-position:-250px -370px;
+	width:9px;
+	height:9px;
+}
+.current .icon_right{
+	background-position:-232px -370px;
+}
+/* ================= Button =================  */
+.btn_search{
+	height:20px;
+	border:0;
+	background:#5f5f60;
+	color:#fff;
+	cursor:pointer;
+	padding:2px 8px;
+}
+input.btn_big,
+input.btn_big:hover{
+	width:113px;
+	height:33px;
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	text-decoration:none;
+	border:0;
+	cursor:pointer;
+}
+input.btn_big:hover{
+	background-position:0 -33px;
+}
+input.btn_s,input.btn_s_red{
+	width:75px;
+	height:23px;
+	line-height:23px;
+	color:#fff;
+	border:0;
+	cursor:pointer;
+}
+input.btn_s{
+	background-position:0 -66px;
+}
+input.btn_s_red{
+	background-position:0 -89px;
+}
+.inp_normal{
+	padding:5px;
+	width:220px;
+}
+.inp_short{
+	padding:5px;
+	width:90px;
+}
+
+/*  ================= Header =================  */
+.header{
+	padding:50px 0 20px 0;
+}
+.header_right{
+	float:right;
+	padding-top:15px;
+	font-size:14px;
+	margin-right:10px;
+}
+.header_right a,
+.header_right span{
+	float:right;
+	margin-left:5px;
+	text-decoration:none;
+	font-weight:bold;
+}
+.header_right a:hover{
+	text-decoration:underline;
+}
+.logo_home{
+	width: 283px;
+	height: 48px;
+	background-position:0 0;
+	overflow:hidden;
+	text-indent:-999px;
+	float:left;
+}
+/*  ================= Navigation =================  */
+.nav{
+	width:100%;
+	height:32px;
+}
+.nav,
+.nav a,
+.nav a:visited{
+	background-position:0 0;
+	color:#fff;
+	font-size:14px;
+	font-weight:bold;
+}
+.nav a:hover{
+	background-position:0 -44px;
+	color:#fff;
+	text-decoration:none;
+}
+.nav li.current a, .nav .current a:visited, .nav .current a:hover{
+	background-position:0 -88px;
+}
+.nav li.current a{
+	margin-top:-3px;
+	height:21px;
+	cursor:default;
+}
+.nav li{
+	float:left;
+	border-right:1px solid #268be0;
+}
+.nav li.last_child,
+.nav li.current{
+	border:0;
+}
+.nav li a{
+	padding:7px 25px;
+	display:inline-block;
+}
+.nav .location li{
+	margin-left:20px;
+}
+
+.ad_box{
+	width:975px;
+	height:295px;
+	background:url(../images/bg_ad.gif) 0 -5px no-repeat;
+	position:relative;
+}
+.ad_box_bg{
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:960px;
+	height:50px;
+	background:#000;
+	filter:alpha(opacity=50);            /* 用于IE浏览器－透明度为50%*/
+	-moz-opacity:0.5;                    /*  用于Moz + Firefox－透明度为50%*/
+	opacity: 0.5;                        /* 用于支持CSS3的浏览器－透明度为50%*/
+	margin:5px 5px 10px 5px;
+}
+.ad_box_info{
+	position:absolute;
+	left:20px;
+	bottom:15px;   
+	color:#fff;
+	width:920px;
+	height:40px;
+}
+.ad_box img{
+	margin:5px 5px 10px 5px;
+	width:960px;
+	height:280px;
+}
+.ad_box_btn{
+	padding-top:5px;
+}
+.ad_box_btn a{
+	float:right;
+	margin-right:10px;
+	width:14px;
+	height:14px;
+}
+
+
+.cause{
+	padding:15px 5px 10px 5px;
+	_padding-top:10px;
+	line-height:40px;
+	font-size:14px;
+	font-weight:bold;
+	border-bottom:1px solid #abaaaa;
+}
+.cause span,
+.cause img{
+	float:left;
+	margin-right:10px;
+}
+.icon_phone{
+	width:40px;
+	height:38px;
+	background-position:-293px 0;
+	margin-left:100px;
+	display:inline;
+}
+.cause .big_red{
+	float:right;
+	margin:0;
+}
+.ad2{
+	border-top:1px solid #fff;
+	border-bottom:1px solid #abaaaa;
+	padding:10px 5px;
+}
+.ad2 ul{
+	background:#fff;
+	padding:10px;
+}
+.ad2 li{
+	display:inline-block;
+	_display:inline;
+	border-right:1px solid #d5d4d4;
+	height:44px;
+	padding:0 10px;
+	font-size:14px;
+	font-weight:bold;
+}
+.ad2 li.last_child{
+	border:0;
+}
+.ad2 li span{
+	float:left;
+	line-height:44px;
+}
+.team{
+	padding-bottom:15px;
+	border-top:1px solid #fff;
+	text-decoration:none;
+}
+.team p{
+	margin-top:10px;
+	font-size:14px;
+	font-weight:bold;
+}
+.team a,
+.team a:visited{
+	margin-left:15px;
+	color:#373738;
+	text-decoration:none;
+}
+.team a:hover{
+	color:#116ed6;
+	text-decoration:underline;
+	}
+.footer{
+	background:#fff;
+	padding:20px 0;
+	text-align:center;
+	width:100%;
+}
+.footer a,
+.footer a:visited{
+	margin:0 10px;
+	color:#373738;
+}
+.footer a:hover{
+	color:#116ed6;
+	}
+/* Login */
+.mainbox{
+	background:#fff;
+	width:100%;
+	min-height:400px;
+	_height:400px;
+}
+.guide{
+	background:#ebebeb;
+	border-bottom:8px solid #d9d9d9;
+	padding:20px 80px;
+}
+.login{
+	padding: 50px 80px 100px 80px;
+}
+.reg{
+	padding-top:20px;
+}
+.reg label{
+	float:left;
+}
+.reg span.fl{
+	width:250px;
+}
+.reg span.fl .field-validation-error{
+	padding-top:5px;
+}
+.check span.fl{
+	width:110px;
+}
+.reg input,
+.check img,
+.check a{
+	float:left;
+	margin-right:5px;
+}
+.login p{
+	padding-top:20px;
+	clear:both;
+}
+.login label{
+	width:100px;
+}
+
+.login .btn_big{
+	margin-left:100px;
+}
+.login a.forgot_text{
+	margin-left:60px;
+}
+.crumbs{
+	padding:30px 80px;
+}
+.crumbs span{
+	float:left;
+	width:270px;
+	height:85px;
+}
+.crumbs span{
+	background-position:0 -67px;
+}
+.crumbs .one .current{
+	width:160px;
+}
+.crumbs .two .current{
+	width:320px;
+}
+.crumbs span.current{
+	background-position:0 -170px;
+}
+.login label.statement{
+	width:500px;
+	margin-left:100px;
+}
+.congra{
+	font-weight:bold;
+	padding:30px 80px 0 80px;
+	font-size:14px;
+}
+.congra img,
+.change_ok img{
+	vertical-align:middle;
+	margin-right:20px;
+}
+.change_ok{
+	padding:80px
+}
+
+.err span{
+    color: Red;
+}
+/* 爱心捐赠 */
+.activity{
+	margin-top:20px;
+	padding:50px;
+	background:#fff;
+	border:1px solid #e4e4e5;
+}
+.activity fieldset legend{
+	font-size:26px;
+	color:#c90304;
+	padding-bottom:30px;
+	font-weight:bold;
+}
+.activity fieldset p{
+	padding:5px;
+}
+.activity .give_btn{
+	padding:20px 0 0 0;
+	text-align:center;
+}
+.activity .go_box{
+	padding:20px 0 0 0;
+}
+.activity .go_box input{
+	float:left;
+}
+.activity .go_box label{
+	font-weight:bold;
+	font-size:20px;
+	float:left;
+	padding-top:8px;
+}
+.activity .go_box input[type="text"]{
+	padding:8px 10px;
+	width:240px;
+	margin-right:10px;
+}
+.activity .go_box p{
+	clear:both;
+}
+.give_img{
+	padding:20px 0;
+}
+.give_img li{
+	float:left;
+	margin-right:10px;
+}
+.give_img li.last_child{
+	margin:0;
+}
+.give_img li img{
+	width:169px!important;
+	width:185px;
+	height:130px;
+	border:8px solid #e4e4e5;
+}
+/* 爱心抽奖 */
+.lucky,
+.user{
+	padding:50px 20px;
+	margin-bottom:30px;
+	background:#fff;
+	border:1px solid #e4e4e5;
+}
+/* 用户中心 */
+.user{
+	padding:10px 10px 40px 10px;
+}
+.user .w200 h2{
+	background-position:0 -135px;
+	color:#fff;
+	font-size:14px;
+	padding:7px 0 7px 20px ;
+	height:17px!important;
+	height:31px;
+}
+.user .w200 h3{
+	font-size:12px;
+	background:#f0efef;
+	padding:7px 40px;
+}
+.user .w200 h3 img{
+	vertical-align:middle;
+	margin-right:10px;
+}
+.user .w200 h3 a, .user .w200 h3 a:visited, .user .w200 h3 a:hover,
+.user .w200 li a, .user .w200 li a:visited{
+	color:#373738;
+	text-decoration:none;
+}
+.user .w200 h3 a:hover,
+.user .w200 li a:hover{
+	color:#126ed6;
+	text-decoration:underline;
+}
+.user .w200 .current h3 a, .user .w200 .current h3 a:visited, .user .w200 .current h3 a:hover{
+	color:#126ed6;
+	text-decoration:none;
+}
+.user .w200 ul{
+	padding: 5px 10px 5px 50px;
+	overflow:hidden;
+}
+.user .w200 li{
+	padding:3px 10px;
+}
+.user .w200 li.active{
+	background-position:0 -412px;
+	width:154px;
+	height:23px;
+	font-weight:bold;
+}
+.user_in{
+	background:url(../images/bg_gray.gif) 0 0 repeat-x;
+	padding:15px 10px;
+	border:1px solid #e4e4e5;
+}
+.user_img{
+	width:50px;
+	height:64px;
+	float:left;
+	margin-left:10px;
+}
+.user_in .fr{
+	width:630px;
+}
+.welcom{
+	font-weight:bold;
+}
+.welcom label{
+	font-size:14px;
+	margin:0 5px;
+}
+.welcom input{
+	margin-left:10px;
+}
+.user_in .info_box{
+	width:600px!important;
+	width:620px;
+	border:1px solid #e4e4e5;
+	background:#fff;
+	padding:5px 10px;
+	margin-top:10px;
+}
+.user_in .info_box span{
+	margin-right:30px;
+}
+.user_in .info_box a,.user_in .info_box a:visited{
+	margin-right:30px;
+	color:#373738;
+	text-decoration:none;
+}
+.user_in .info_box a:hover{
+	color:#126ed6;
+	text-decoration:underline;
+}
+/* User Pay */
+.pay_box{
+	padding:30px 50px;
+}
+.pay_box p,
+.pay_box .error{
+	padding:10px 0;
+}
+.pay_box p.field-validation-error{
+	clear:both;
+	padding:0;
+}
+.pay_box .error label{
+	float:left;
+	width:60px;
+}
+.pay_box .error span{
+	float:left;
+}
+.pay_box .error input[type="text"]{
+	padding:5px 10px;
+	margin-right:10px;
+	width:100px;
+	float:left;
+}
+.pay_box p .btn_big{
+	margin-left:60px;
+}

@@ -1,0 +1,74 @@
+﻿@*
+该辅助方法用于生成左侧菜单
+*@
+@helper GenMenu(List<Ichari.Model.Admin.Actions> roots)
+{
+    if(roots == null){
+        return;
+    }    
+    foreach (var m in roots)
+    {
+        <div class="menuitem @IsCurrent(m)">
+            @GenUrl(m)
+            @if (m.SubNodes != null && m.SubNodes.Count() > 0)
+            {
+                <ul>
+                @foreach (var n in m.SubNodes)
+                {
+                    <li class="@IsCurrent(n)">
+                        @GenUrl(n)
+                        @if(n.SubNodes != null)
+                        {
+                            @GenMenu(n.SubNodes)
+                        }
+                    </li>
+                }
+                </ul>
+            }
+        </div>
+    }
+}
+
+@helper GenUrl(Ichari.Model.Admin.Actions act)
+{
+    if(act.IsMenu)
+    {
+        if(string.IsNullOrEmpty(act.MenuCode)) {
+            @act.MenuName
+            return;
+        }
+        var cc = act.MenuCode.Split('_');
+        var url = string.Format("/{0}/{1}", cc[0], cc[1]);
+        <a href="@url">@act.MenuName</a>
+    }
+    else
+    {
+        @act.MenuName
+    }
+}
+
+@helper GenUrl2(Ichari.Model.Admin.Actions act)
+{
+    if(string.IsNullOrEmpty(act.MenuCode)) {
+       @act.MenuName
+       return;
+    }
+    var cc = act.MenuCode.Split('_');
+    var url = string.Format("/{0}/{1}", cc[0], cc[1]);
+        <a href="@url">@act.MenuName</a>
+}
+
+@helper IsCurrent(Ichari.Model.Admin.Actions act)
+    {
+    if (string.IsNullOrEmpty(act.MenuCode))
+    {
+        return;
+    }
+
+    var c = HttpContext.Current.Request.RequestContext.RouteData.GetRequiredString("controller");
+    var a = HttpContext.Current.Request.RequestContext.RouteData.GetRequiredString("action");
+    if (act.MenuCode.Equals(string.Format("{0}_{1}", c, a), StringComparison.CurrentCultureIgnoreCase))
+    {
+        @: current
+    }
+}

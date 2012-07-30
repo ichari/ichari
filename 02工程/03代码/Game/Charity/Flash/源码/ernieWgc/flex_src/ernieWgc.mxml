@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="690" minHeight="690"
+			   creationComplete="application_creationCompleteHandler(event)"
+			   contentBackgroundAlpha="0" backgroundAlpha="0" backgroundColor="#ffffff">
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处
+		<fx:XML source="config.xml" id="config"/>
+		-->
+		<s:RemoteObject id="ernieServiceId" destination="ernieService" result="remoteHello_resultHandler(event)" fault="ernieServiceId_faultHandler(event)"></s:RemoteObject>
+		
+		<mx:HTTPService id="ernieHttpService"      useProxy="false"    resultFormat="text"   fault="ernieServiceId_faultHandler(event)" result="remoteHello_resultHandler(event)"/>
+		
+	</fx:Declarations>
+	
+	<fx:Style>
+
+		@namespace s "library://ns.adobe.com/flex/spark";
+		
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		
+		@namespace code "http://code.google.com/p/flexlib/";
+		
+		@namespace bar "component.*";
+		
+		mx|Alert {
+			
+			modal-transparency: 0.0;
+			
+		}
+		
+		global { 
+			
+			modalTransparencyBlur: 0; modalTransparency: 0; 
+			
+		}
+		
+	</fx:Style>
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import com.AwardPlate;
+			import com.BackSound;
+			import com.Config;
+			import com.LoadImage;
+			import com.ResultBean;
+			import com.adobe.serialization.json.JSON;
+			
+			import flashx.textLayout.elements.GlobalSettings;
+			
+			import mx.controls.Alert;
+			import mx.core.FlexGlobals;
+			import mx.events.FlexEvent;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			
+			import spark.skins.spark.ApplicationSkin;
+			
+			public var basePath:String = "http://localhost:9090/ernieWgc/";
+			private var endpoint:String = basePath + "messagebroker/amf";
+			private var flashObj:Object ;
+			private var angle:Number ;
+			
+			private var userId:String = "";
+			private var resultBean:ResultBean ;
+			private var isCurrentCall:Boolean = false ;//是否正在调用
+			
+			public var config:XML ;
+			public var configBean:Config ;
+			private var cofigStr:String = "config.xml?redom="+Math.random() ;
+			public var backSound:BackSound ;
+			
+			protected function application_creationCompleteHandler(event:FlexEvent):void{
+				ApplicationSkin(skin).backgroundRect.alpha = 0;
+				//获得html中传过来的参数   baseUrl
+				//Alert.show("============"+FlexGlobals.topLevelApplication.parameters.baseUrl);
+				if(undefined != FlexGlobals.topLevelApplication.parameters.baseUrl){
+					basePath = FlexGlobals.topLevelApplication.parameters.baseUrl ;
+					endpoint = basePath+"messagebroker/amf";
+				}
+				userId = FlexGlobals.topLevelApplication.parameters.userId ;
+				resultBean = new ResultBean();
+				resultBean.userId = userId ;
+				
+				//加载xml
+				var req:URLRequest = new URLRequest(basePath+cofigStr);
+				var UrlLoad:URLLoader = new URLLoader(req);
+				UrlLoad.addEventListener(Event.COMPLETE,urlXmlComplete);
+				
+				ExternalInterface.addCallback("sendErnie",button_clickHandler);
+				
+				//解决不能输入中文问题
+				this.addEventListener(MouseEvent.ROLL_OUT,setSRF);  
+				
+				var a:LoadImage = new LoadImage(this);
+			}
+			
+			/**
+			 * 加载xml成功
+			 **/
+			private function urlXmlComplete(event:Event):void{
+				config = XML(event.currentTarget.data);
+				configBean = new Config(config,basePath);
+				awardPlate.load("awardPlateMain.swf");
+				awardPlate.addEventListener(Event.COMPLETE,awardPlate_creationCompleteHandler);
+			}
+			
+			/**
+			 * 返回结果
+			 * type 的值为checkLogin		检测登陆
+			 * type 
+			 * */
+			protected function remoteHello_resultHandler(event:ResultEvent):void{
+				setSRF();
+				//去除字符串前后空格
+				var result:String = event.result.toString().replace(/^\s*|\s*$/g,"");
+				trace("result = "+result);
+				var resultObj:Object = JSON.decode(result) as Object; 
+				//				trace(result);
+				
+				resultBean.type = resultObj.type ;
+				resultBean.status = resultObj.status ;
+				resultBean.massage = resultObj.massage ;
+				resultBean.url = resultObj.url ;
+				resultBean.target = resultObj.target ;
+				resultBean.angle = resultObj.angle ;
+				
+				if(resultObj.type == "checkLogin")
+					checkLoginRerult(resultObj);
+				else
+					endErnieRerult(resultObj);
+			}
+			
+			//开始摇奖
+			private function checkLoginRerult(resultObj:Object):void{
+				if(resultObj.status == 1 || resultObj.status == "1"){
+					if(resultObj.angle as Number){
+						backSound.soundStop();
+						/**旋转的时候播放声音*/
+						new BackSound(basePath+config.sound.ernie,1);
+						angle = resultObj.angle ;
+						flashObj.callRotation(null,angle);
+					}
+					/*if(null != resultObj.massage && undefined != resultObj.massage && "" != resultObj.massage){
+					Alert.show(resultObj.massage);
+					setSRF();
+					}*/
+				}else{
+					isCurrentCall = false ;
+					ExternalInterface.call("asCallJsErnieFailure",resultBean.massage,resultBean.url,resultBean.target);
+				}
+			}
+			
+			//结束抽奖
+			private function endErnieRerult(resultObj:Object):void{
+				if(null != resultObj.massage && undefined != resultObj.massage && "" != resultObj.massage){
+					Alert.show(resultObj.massage);
+					setSRF();
+				}
+			}
+			
+			
+			//摇奖结束  调用java类方法
+			public function sendErnie():void{
+				//ernieServiceId.sendErnie(angle);
+				if(null != resultBean.massage && undefined != resultBean.massage && "" != resultBean.massage){
+					//ExternalInterface.call("asCallJsEndErnie",resultBean.massage,resultBean.url,resultBean.target);
+					flashObj.showAlertWinning(resultBean);
+					isCurrentCall = false ;
+				}
+			}
+			//调用java类开始摇奖
+			public function button_clickHandler(event:MouseEvent=null):void{
+				setSRF();
+				//ernieServiceId.checkLogin();
+				if(!isCurrentCall){
+					var random:Number = Math.random() ;
+					ernieHttpService.url = config.sendErnie+"?userId="+userId+"&random="+random ;
+					//Alert.show(ernieHttpService.url);
+					isCurrentCall = true ;
+					ernieHttpService.send();
+				}
+				
+			}
+			
+			
+			//加载swf 成功
+			protected function awardPlate_creationCompleteHandler(event:Event):void{
+				flashObj = Object(awardPlate.content);
+				flashObj.setApplication(this);
+				
+				//添加背景音乐
+				backSound = new BackSound(basePath+config.sound.background);
+			}
+			
+			
+			protected function ernieServiceId_faultHandler(event:FaultEvent):void{
+				Alert.show("后台交互错误："+endpoint);
+			}
+			
+			
+			/**  
+			 * 当光标离开Flash时开启设置系统的输入法  
+			 * */  
+			private function setSRF(event:MouseEvent=null):void{  
+				if(Capabilities.hasIME){  
+					try{  
+						if(!IME.enabled){  
+							IME.enabled=true;  
+						}  
+						IME.conversionMode="CHINESE";  
+					}catch(error:Error){  
+					}  
+				}  
+			}
+			
+			
+		]]>
+	</fx:Script>
+	
+	<mx:SWFLoader id="awardPlate" width="690" height="690"  x="0" y="0" />
+	
+</s:Application>

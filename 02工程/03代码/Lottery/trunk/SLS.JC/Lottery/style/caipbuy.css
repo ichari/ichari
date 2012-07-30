@@ -1,0 +1,229 @@
+@charset "utf-8";
+/* 湖体_购买彩票
+* Author: 朱茂华
+* Created: 2011-7-22
+*/
+.user_mainboth{ width:1002px; height:auto; margin:0 auto; clear:both; font-size:12px;}
+.main_buy{ width:722px; float:left;}
+.topcai { width:auto; height:86px; margin:8px 0 0 0; border:1px solid #c0cfde; background:url(/Lottery/Images/topcaibg.gif) repeat-x left bottom;}
+.topcai h1{ width:70px; float:left; padding:0 10px 0 10px}
+.topcai dl{ width:630px; float:right; padding:5px 0 0 0;}
+.kaijiang{ clear:both; color:#333333;}
+.kaijiang em{ color:#ff0000; font-weight:bold; letter-spacing:4px;}
+.ad500{ float:right; padding:0 10px 0 20px; color:#999999; font-weight:bold; background:url(/Lottery/Images/icon_money.gif) no-repeat left 1px;}
+.ad500 em{ color:#ff0000; font-weight:bold; letter-spacing:1px;}
+.caip_numb { clear:both; height:30px; padding:10px 0 0 0;}
+.caip_numb em{ float:left;}
+.caip_numb a{ width:98px; display:block; float:left; text-align:center; color:#0060af; text-decoration:none;}
+.caip_numb a.on{ width:108px; height:29px; display:block; margin:0 10px 0 0; float:left; line-height:20px; font-weight:bold; color:#b54800; text-align:center; background:url(/Lottery/Images/caip_currbg.gif) no-repeat left top;}
+/*大乐透*/
+.kaijiang_ball{ clear:both; padding:3px 0 0 0; color:#333333; line-height:25px;}
+.kaijiang_ball em{ float:right; padding:0 10px 0 0;}
+.kaijiang_ball em a{ color:#0060af;}
+.kaijiang_ball em a:hover{ color:#ff6600;}
+.kaijiang_ball span{ float:left; margin:0 5px 0 0;}
+
+.redball{ width:25px; height:25px; display:block; text-align:center; line-height:25px; font-size:14px; color:#fff; font-weight:bold; background:url(/Lottery/Images/zfb_redball.gif) no-repeat left center;}
+.redball1{ width:25px; height:25px; display:block; text-align:center; line-height:25px; font-size:14px; color:#fff; font-weight:bold; background:url(/Lottery/Images/zfb_redball.gif) no-repeat left center;}
+.blueball{ width:25px; height:25px; display:block; text-align:center; line-height:25px; font-size:14px; color:#fff; font-weight:bold; background:url(/Lottery/Images/zfb_blueball.gif) no-repeat left center;}
+.caip_ad{ clear:both; padding:3px 0 1px 20px;  line-height:25px; font-size:18px; font-weight:bold; color:#0060af; background:url(/Lottery/Images/icon_money.gif) no-repeat left 6px;}
+
+/*七星彩*/
+.ball_7xing{ width:550px; float:left;}
+.ball_7xing h2{ width:100%; height:24px; line-height:24px; clear:both; text-align:center; font-size:14px; color:#b54800; background:url(/Lottery/Images/ball_qiantitbg.gif) no-repeat center bottom;}
+.ball_7xing ul { clear:both; padding:0px 0 5px 88px;}
+.ball_7xing ul li{ width:32px; height:34px; float:left;}
+.ball_7xing ul li span { width:25px; height:25px; display:block; overflow:hidden; cursor:pointer; margin:0 auto; text-align:center; line-height:25px; font-size:14px; color:#000; font-weight:bold;background:url(/Lottery/Images/zfb_huiball.gif) no-repeat left center;}
+.ball_7xing ul li span.redball{ color:#fff; background:url(/Lottery/Images/zfb_redball.gif) no-repeat left center;}
+.ball_7xing ul li em { width:25px; height:25px; line-height:25px; font-weight:bold; color:#0060af; display:block; overflow:hidden;}
+
+.touzhu_box{ width:auto;}
+.tz_tit{ width:70px; float:left; padding:0; text-align:right; color:#999;}
+.tz_cont{ width:640px; float:right;}
+.t_xianhaobg{ width:60px; height:22px; float:right; line-height:22px; margin:35px 0 0 0; padding:0 8px 0 0; background:url(/Lottery/Images/t_xianhaobg.gif) no-repeat right top;}
+.ball_qian{ width:450px; float:left;}
+.ball_qian h2{ width:100%; height:24px; line-height:24px; clear:both; text-align:center; font-size:14px; color:#b54800; background:url(/Lottery/Images/ball_qiantitbg.gif) no-repeat center bottom;}
+.ball_qian ul { padding:10px 0 0 0;}
+.ball_qian ul li{ width:37px; height:30px; float:left;}
+.ball_qian ul li span { width:25px; height:25px; display:block; overflow:hidden; cursor:pointer; margin:0 auto; text-align:center; line-height:25px; font-size:14px; color:#000; font-weight:bold;background:url(/Lottery/Images/zfb_huiball.gif) no-repeat left center;}
+.ball_qian ul li span.redball{ color:#fff; background:url(/Lottery/Images/zfb_redball.gif) no-repeat left center;}
+.ball_hou{ width:150px; float:right; padding:0 10px 0 0;}
+.ball_hou h2{ width:100%; height:24px; line-height:24px; clear:both; text-align:center; font-size:14px; color:#0060af; background:url(/Lottery/Images/ball_houtitbg.gif) no-repeat center bottom;}
+.ball_hou ul { padding:10px 0 0 0;}
+.ball_hou ul li{ width:36px; height:30px; float:left;}
+.ball_hou ul li span { width:25px; height:25px; display:block; overflow:hidden; cursor:pointer; margin:0 auto; text-align:center; line-height:25px; font-size:14px; color:#000; font-weight:bold;background:url(/Lottery/Images/zfb_huiball.gif) no-repeat left center;}
+.ball_hou ul li span.blueball{ color:#fff; background:url(/Lottery/Images/zfb_blueball.gif) no-repeat left center;}
+.ball_qian_d{ width:450px; float:left;}
+.ball_qian_d h2{ width:100%; height:24px; line-height:24px; clear:both; text-align:center; font-size:14px; color:#b54800; background:url(/Lottery/Images/ball_qiantitbg.gif) no-repeat center bottom;}
+.ball_qian_d ul { padding:10px 0 0 0;}
+.ball_qian_d ul li{ width:37px; height:30px; float:left;}
+.ball_qian_d ul li span { width:25px; height:25px; display:block; overflow:hidden; cursor:pointer; margin:0 auto; text-align:center; line-height:25px; font-size:14px; color:#000; font-weight:bold;background:url(/Lottery/Images/zfb_huiball.gif) no-repeat left center;}
+.ball_qian_d ul li span.redball{ color:#fff; background:url(/Lottery/Images/zfb_redball.gif) no-repeat left center;}
+.ball_qian_t{ width:450px; float:left;}
+.ball_qian_t h2{ width:100%; height:24px; line-height:24px; clear:both; text-align:center; font-size:14px; color:#b54800; background:url(/Lottery/Images/ball_qiantitbg.gif) no-repeat center bottom;}
+.ball_qian_t ul { padding:10px 0 0 0;}
+.ball_qian_t ul li{ width:37px; height:30px; float:left;}
+.ball_qian_t ul li span { width:25px; height:25px; display:block; overflow:hidden; cursor:pointer; margin:0 auto; text-align:center; line-height:25px; font-size:14px; color:#000; font-weight:bold;background:url(/Lottery/Images/zfb_huiball.gif) no-repeat left center;}
+.ball_qian_t ul li span.redball{ color:#fff; background:url(/Lottery/Images/zfb_redball.gif) no-repeat left center;}
+.ball_hou_dt{ width:150px; float:right; padding:0 10px 0 0;}
+.ball_hou_dt h2{ width:100%; height:24px; line-height:24px; clear:both; text-align:center; font-size:14px; color:#0060af; background:url(/Lottery/Images/ball_houtitbg.gif) no-repeat center bottom;}
+.ball_hou_dt ul { padding:10px 0 0 0;}
+.ball_hou_dt ul li{ width:36px; height:30px; float:left;}
+.ball_hou_dt ul li span { width:25px; height:25px; display:block; overflow:hidden; cursor:pointer; margin:0 auto; text-align:center; line-height:25px; font-size:14px; color:#000; font-weight:bold;background:url(/Lottery/Images/zfb_huiball.gif) no-repeat left center;}
+.ball_hou_dt ul li span.blueball{ color:#fff; background:url(/Lottery/Images/zfb_blueball.gif) no-repeat left center;}
+.curr_xianhao{ width:420px; clear:both; height:24px; line-height:24px; margin:0 auto; margin-top:5px; font-size:12px; color:#999999; text-align:center; border:1px solid #d0e8ff; background:#f0f9ff;}
+.curr_xianhao span{ font-weight:bold; color:#ff6600;}
+.curr_xianhao_add{ width:420px; clear:both; height:32px; line-height:24px; margin:0 auto; margin-top:15px; text-align:center;}
+.t_dlt { width:480px; clear:both; margin:0 auto;}
+.t_dlt dl{ padding:5px 0 0 0; line-height:20px;}
+.t_dlt dl.tip{ width:468px; clear:both; margin:8px 0 0 0; padding:5px 0 3px 10px; border:1px solid #e2e2e2; background:#fffedf;}
+.t_dlt dl.tip span{ color:#ff6600;}
+
+.buyTabTitle{ clear:both; height:30px; margin:8px 0 0 0;}
+#buyTab li{ float:left; width:89px; height:30px; margin:0 5px 0 0; cursor:pointer; font-weight:bold; text-align:center; line-height:30px;}
+#buyTab li.active{background:url(/Lottery/Images/buyTab.gif) no-repeat left 0px; color:#0060af;}
+#buyTab li.normal{background:url(/Lottery/Images/buyTab.gif) no-repeat left -30px; color:#999;}
+.buyTabContent{ clear:both; border:1px solid #accbe9; background:#fff;}
+.tab_mai{ clear:both;}
+.tab_mai a{ color:#0060af;}
+.tab_mai a:hover{ color:#ff6600;}
+.tab_mai tr{background:#f4f4f4 url(/Lottery/Images/tab_trbg.gif) repeat-x left -36px;}
+.tab_mai th{ height:30px; line-height:30px; border-bottom:1px solid #dddfe7; text-align:center; color:#999;background:url(/Lottery/Images/nav_hemai.gif) repeat-x left -58px;}
+.tab_mai td{ margin:1px 0 0 0; border-bottom:1px solid #dddfe7; text-align:center; line-height:35px;}
+.tab_mai td img{ vertical-align:middle; line-height:35px;}
+.tab_mai .th_even{background:#efefef url(/Lottery/Images/tab_trbg.gif) repeat-x left 0px;}
+.tab_mai .th_on{ background:#ffffe8;}
+.tab_mai .th_on em{ color:#ff0000;}
+.tab_mai input[type="text"]{height:16px;line-height:16px;padding:1px 3px;border:1px solid #BEC4C8; background:#fff; font-family: Verdana, Geneva, sans-serif,"宋体";font-size:12px;}
+.ballbox{ width:96px; height:25px; overflow:hidden; margin:0 auto;}
+.ballbox_four{ width:131px; height:25px; overflow:hidden; margin:0 auto;}
+.ball_num { font-family: "tahoma"; height:25px; width:25px; margin:0 3px; overflow:hidden; line-height:25px; display:block; float:left; text-align:center; font-weight: bold; font-size: 12px; color: #000; cursor: pointer; background-image: url(/Lottery/Images/zfb_huiball.gif); background-repeat: no-repeat; background-position: center; border:none;}
+.ball_num_red { font-family: "tahoma"; height:25px; width:25px; margin:0 3px; overflow:hidden; line-height:25px; display:block; float:left; text-align:center; font-weight: bold; font-size: 12px; color: #fff; cursor: pointer; background-image: url(/Lottery/Images/zfb_redball.gif); background-repeat: no-repeat; background-position: center; border:none;}
+.tabball{ margin:0 auto; background:#ffffe8;}
+.tabball td{ border:none;}
+.tab_mai .th_on span.ball_num{ color:#000;}
+.tab_mai .th_on span.ball_num_red{ color:#fff;}
+
+.btn_caipadd{ clear:both; height:30px; padding:8px 0 0 0; line-height:24px;}
+.btn_caipadd dl{ width:auto; float:left; padding:0 0 0 10px; color:#999;}
+.btn_caipadd dl span{ color:#ff6600;}
+.btn_caipadd dt{ width:115px; float:right;}
+
+.cp_touzhu{ clear:both; height:auto; padding:10px 0 0 0;}
+.t_tit{ width:60px; float:left; text-align:right; color:#b54800; font-weight:bold;}
+.t_cont{ width:650px; float:right;}
+.t_cont dl{ padding:5px 0 0 0; line-height:20px;}
+.t_cont dl.tip{ width:450px; margin:8px 0 0 0; padding:5px 0 3px 10px; border:1px solid #e2e2e2; background:#fffedf;}
+.t_cont dl.tip span{ color:#ff6600;}
+.buy_way{ clear:both; height:32px; padding:6px 0 3px 0; background:#fff url(/Lottery/Images/buy_way.gif) repeat-x left 26px;}
+.buy_way dl { width:80px; text-align:right; float:left; padding:0 5px 0 0; color:#0060af;}
+.buy_way ul { float:left; width:620px;}
+.buy_way ul li{ float:left; width:auto; _width:70px; text-align:center; height:26px; margin:0 5px 0 5px; padding:0; color:#999; background:url(/Lottery/Images/buy_way.gif) no-repeat center -30px;}
+.buy_way ul li span{ height:18px; margin:0; padding:2px 8px 0 8px; display:block;  cursor: pointer; line-height:18px; border-left:1px solid #d7d7d7; border-right:1px solid #d7d7d7;}
+.buy_way ul li.curr{background:url(/Lottery/Images/buy_way.gif) no-repeat center -60px; color:#b54800; font-weight:bold;}
+.buy_way ul li.curr span{border-left:1px solid #ffc385; border-right:1px solid #ffc385;}
+
+.buy_together{ clear:both; height:auto; margin:10px 0 0 0; padding:5px 0 0 0; line-height:24px; border-top:1px solid #e1e1e1; border-bottom:1px solid #fff; background:#f8f8f8 url(/Lottery/Images/buy_togetherbg.gif) repeat-x left top;}
+.buy_baomi{ clear:both; height:30px; padding:5px 0 0 0; line-height:24px; border-top:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1; background:#fff;}
+.btn_touzhu{ clear:both; height:auto; padding:5px 0 20px 70px;}
+.btn_touzhu dl{ padding:3px 0 5px 0;}
+.btn_touzhu dl a{ color:#0060af;}
+.btn_touzhu dl a:hover{ color:#ff6600;}
+.btn_butnow{display:block; width:156px; height:28px; line-height:28px; text-align:center; text-indent:-2000px; cursor:pointer; border:none; background:url(/Lottery/Images/btn_touzhu.gif) no-repeat left top;}
+.buy_together_more{ clear:both; height:auto; margin:0px; padding:3px 0 2px 0; line-height:24px; border-top:1px solid #e1e1e1; border-bottom:1px solid #fff; background:#f8f8f8 url(/Lottery/Images/buy_togetherbg.gif) repeat-x left top;}
+.buy_together_more input{ height:16px; line-height:16px; font-size:12px; vertical-align:middle; margin-right:3px;}
+
+/*rightbar*/
+.rightbar{ width:270px; float:right;}
+.RrclockB { margin-top: 8px; float: right; width: 268px; border: 1px solid #DBDBDB;}
+.titleClock .ConA { width: 268px; float: left; }
+.titleClock { background-image: url(/Lottery/Images/rbuterback.jpg); background-repeat: repeat-x; background-position: left center; height: 23px; }
+.titleRB a:link, .titleRB a:visited, .titleRB a:hover { height: 23px; float: left; width: 56px; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; background-color: #FFFFFF; font-weight: bold; color: #0060AF; line-height: 23px; padding-left: 10px; text-decoration: none; }
+.moreRB a:link, .moreRB a:visited { float: right; color: #5B7E9B; text-decoration: none; padding-right: 6px; padding-top:2px; }
+.blue12b { color: #B54800; font-weight: bold; }
+.bluel12b { color: #0F3F94; font-weight: bold; }
+.bluel14b { color: #0F3F94; font-weight: bold; font-size: 14px; }
+.zjimg { float: left; width: 59px; }
+.ConRBtop { padding-top: 10px; }
+.ConRB2 { float: left; width: 248px; padding-bottom: 15px; padding-right: 10px; padding-left: 10px; }
+.ConRB1 { border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #CCCCCC; padding-bottom: 15px; float: left; width: 248px; padding-right: 10px; padding-left: 10px; }
+.ConRBa, .ConRBb { float: left; width: 248px; }
+.ConRBb { padding-top: 10px; }
+.zjimg { float: left; width: 59px; padding: 3px; border: 1px solid #BFD5E0; }
+.textzj2 { float: right; width: 172px; }
+.textrr { float: right; color: #0F3F94; }
+.textzj2 { padding-top: 10px; }
+.titleConRBb { height: 16px; background-color: #EAEDF4; line-height: 16px; }
+.titlefh { background-image: url(/Lottery/Images/titleb.gif); background-repeat: no-repeat; background-position: left center; float: left; height: 16px; width: 54px; line-height: 16px; padding-left: 5px; color: #FFFFFF; margin-right: 8px; }
+.contij2 { padding-top: 8px; }
+.yellow12 { color: #FF3300; font-family: Arial; }
+.leftcock { margin-top: 8px; }
+.titleL { float: left; width: 220px; background-image: url(/Lottery/Images/titleL.jpg); background-repeat: no-repeat; background-position: left bottom; height: 25px; padding-left: 10px; }
+.moreLB { float: right; font-weight: normal; }
+
+.ConA ul { float:left; width: 258px; float: left; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; }
+.ConA li { line-height:24px;}
+.ConA li a{ color:#0060af;}
+.ConA li a:hover{ color:#ff6600;}
+
+.last_time{ height:11px; padding:5px 4px 4px 4px;  background:#333; color:#22fa05;}
+
+.luck_number{ margin:8px 0 0 0; border:1px solid #accbe9; background:#fff url(/Lottery/Images/luck_number_contbg.gif) repeat-x left bottom;}
+.nav_buycai{ clear:both; height:25px; padding:0 0 0 10px; color:#585858; line-height:24px; background:url(/Lottery/Images/nav_buycai.gif) repeat-x left top;}
+.nav_buycai h2{ width:auto; float:left;}
+.nav_buycai dl{ width:auto; float:right; padding:0 8px 0 0;}
+.luck_number_cont { clear:both; height:156px;}
+.luckTitle{ height:23px; background:url(/Lottery/Images/nav_buycai.gif) repeat-x left -25px;}
+#luckTab li{ height:23px; float:left; cursor:pointer; color:#8e8e8e; line-height:23px; padding:0 15px; border-right:1px solid #d9edff;}
+#luckTab li.active{ height:23px; background:#fff; color:#5b7e9b;}
+.luckTabContent{ width:210px; margin:0 auto; padding:10px 0 0 0;}
+.kaij_number{ margin:8px 0 0 0; border:1px solid #accbe9;}
+.kaij_number_dlt{ clear:both; height:300px;}
+.kaij_number_dlt dl{ clear:both; height:24px; line-height:24px; border-bottom:1px solid #fff; background:#f6f6f6;}
+.kaij_number_dlt ul{ clear:both; border-top:1px solid #eaeaea; background:#fff;}
+.kaij_number_dlt ul li{ width:100%; clear:both; height:24px; line-height:24px; border-bottom:1px solid #eaeaea;}
+.kaij_number_dlt span{ float:left;}
+.kaij_number_dlt span.dlt_qh{ width:60px; text-align:center;}
+.kaij_number_dlt span.dlt_hm{ width:190px; text-align:center;}
+.kaij_number_dlt span.dlt_hmred{ width:130px; text-align:center; color:#ff0000;}
+.kaij_number_dlt span.dlt_hmblue{ width:70px; text-align:center; color:#0060af;}
+.kaij_number_dlt span em{ padding:0 5px; font-weight:bold;}
+.kaij_number_dlt dt{ clear:both; padding:0 10px 0 0; line-height:24px;}
+.kaij_number_dlt dt span{ float:right;}
+
+.kaij_number_qixing{ clear:both; height:300px;}
+.kaij_number_qixing dl{ clear:both; height:24px; line-height:24px; border-bottom:1px solid #fff; background:#f6f6f6;}
+.kaij_number_qixing ul{ clear:both; border-top:1px solid #eaeaea; background:#fff;}
+.kaij_number_qixing ul li{ width:100%; clear:both; height:24px; line-height:24px; border-bottom:1px solid #eaeaea;}
+.kaij_number_qixing span{ float:left;}
+.kaij_number_qixing span.qixing_qh{ width:60px; text-align:center;}
+.kaij_number_qixing span.qixing_hm{ width:120px; text-align:center;}
+.kaij_number_qixing span.qixing_hmred{ width:130px; text-align:center; color:#ff0000;}
+.kaij_number_qixing span.qixing_date{ width:60px; text-align:center; color:#0060af;}
+.kaij_number_qixing span em{ padding:0 5px; font-weight:bold;}
+.kaij_number_qixing dt{ clear:both; padding:0 10px 0 0; line-height:24px;}
+.kaij_number_qixing dt span{ float:right;}
+
+.news_buycai{ margin:8px 0 0 0; border:1px solid #accbe9;}
+.newslist_buycai{ clear:both; height:197px;}
+.newslist_buycai ul{ padding:5px 10px;}
+.newslist_buycai ul li{ line-height:22px; padding:0 0 0 10px; background:url(/Lottery/Images/li_icon.gif) no-repeat left 10px;}
+.newslist_buycai ul li a{ color:#0060af;}
+.newslist_buycai ul li a:hover{ color:#ff6600;}
+
+/*上传粘贴boxbg*/
+.boxbg{ width:546px; padding:10px; margin:0 auto; background:#eef8ff;}
+.up_main{ width:544px; border:1px solid #9fccf8; background:#fff;}
+.up_nav { height:29px; border-bottom:1px solid #9fccf8; background:url(/Lottery/Images/icon_divtu.gif) repeat-x left top;}
+.up_nav h2{ line-height:28px; font-size:12px; color:#005ba6; padding:0 0 0 10px;}
+.up_nav h2 span{ color:#ff6600;}
+.up_cont{ clear:both; padding:5px 10px;}
+.ttcont{ width:524px; height:150px;}
+.up_btn{ clear:both; font-size:12px; color:#606060; padding:5px 10px;}
+.up_tip{ clear:both; padding:5px 10px; font-size:12px; color:#999999; line-height:20px;}
+.up_tip em{ color:#ff6600;}
+.up_tip a{ color:#005ba6;}
+.up_tip a:hover{ color:#ff6600;}
+.up_bar { clear:both; padding:5px 10px;}
+.up_bar span{ padding: 0 10px 0 0;}
+.btn_upon{ width:76px; height:24px; border:none; cursor:pointer; color:#fff; line-height:24px; text-align:center; font-size:12px; font-weight:bold; background:url(/Lottery/Images/icon_divtu.gif) no-repeat left -30px; margin-left:10px;}

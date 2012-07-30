@@ -1,0 +1,16 @@
+﻿@{
+    var nav = ViewData[Ichari.Web.SessionKey.VwCurrentNav] as string;
+}
+
+
+<div class="w970 b_nav">
+        <a @if(nav == "home"){<text>class="current"</text>}  href="/home">首页</a>
+        <a @if(nav == "charity"){<text>class="current"</text>} href="/charity">爱心捐赠</a>
+        <a @if(nav == "game"){<text>class="current"</text>} href="/charity/charidraw">爱心抽奖</a>
+        <a @if(nav == "caipiao"){<text>class="current"</text>} href="@System.Configuration.ConfigurationManager.AppSettings[Ichari.Web.StaticKey.AkLotteryUrl]" target="_blank">彩票频道</a>
+        <a @if(nav == "shop"){<text>class="current"</text>} href="#">购物频道</a>
+        <a @if(nav == "jp"){<text>class="current"</text>} href="#">机票频道</a>
+        <a @if(nav == "hotel"){<text>class="current"</text>} href="#">酒店频道</a>
+        <a @if(nav == "promo"){<text>class="current"</text>} href="/home/promotions">优惠献礼</a>
+        <a @if(nav == "about"){<text>class="current"</text>}else{<text>class="last_child"</text>} href="/home/aboutus">关于我们</a>
+</div>

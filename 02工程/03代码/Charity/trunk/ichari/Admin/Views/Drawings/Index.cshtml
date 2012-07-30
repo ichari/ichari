@@ -1,0 +1,87 @@
+﻿@model Ichari.Admin.ViewModel.DrawingsViewModel
+
+@{
+    ViewBag.Title = "Drawings";
+}
+<div class="search">
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>交易号</td>
+            <td>@Html.TextBox("orderNo")</td>
+            <td>是否中奖</td>
+            <td>@Html.DropDownList("isWin", Model.YesOrNo, new { })</td>
+            <td>抽奖来源</td>
+            <td>@Html.DropDownList("source",Ichari.Common.Helper.EnumHelper.EnumToSelectList<Ichari.Model.Enum.GameSource>((int)Ichari.Model.Enum.GameSource.ChangeOfCare,false))</td>
+        </tr>
+        <tr>
+            
+            <td> <input type="submit" value="查 询" /></td>
+        </tr>
+    </table>
+}
+</div>
+<div class="list">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th style="width:50px;">编号</th>
+                <th style="width:70px;">奖品名称</th>
+                <th style="width:170px;">捐款单号</th>
+                <th style="width:70px;">用户名</th>
+                <th style="width:60px;">是否确认</th>
+                <th style="width:60px;">是否中奖</th>
+                <th style="width:60px;">是否领奖</th>
+                <th style="width:90px;">抽奖来源</th>
+                <th style="">抽奖时间</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.PageList)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.PrizeName</td>
+                <td>@item.OrderNo</td>
+                <td><a href="/Customer/EditUser/@item.UserId">@item.UserName</a></td>
+                <td style="color:@(item.IsConfirmed == true ? "Blue;" : "Black;")">@(item.IsConfirmed == true ? "是" : "否")</td>
+                <td style="color:@(item.IsWin ? "Red;" : "Black;")">@(item.IsWin ? "是" : "否")</td>
+                <td style="color:@(item.IsHandled == true ? "Green;" : "Black;")">@(item.IsHandled == true ? "是" : "否")</td>
+                <td>
+                @{var s = Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.GameSource>(item.Source);}
+                @s
+                </td>
+                <td>@item.DrawTime</td>
+                <td>
+                @if(item.IsWin)
+                {
+                    if(item.OrderState > (int)Ichari.Model.Enum.OrderState.Paid)
+                    {
+                        <a href="/Drawings/Detail/@item.Id">详情</a>
+                    }
+                    else
+                    {
+                        <a href="/Drawings/Freight/@item.Id">发货</a>
+                    }
+                }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+@{
+    var pars = new Dictionary<string, object>();
+    pars.Add("orderNo", ViewData["orderNo"] as string);
+    pars.Add("source",ViewData["source"]);
+    pars.Add("isWin",ViewData["isWin"]);
+
+    Html.RenderPager("_PageBar", Model.PageList.Count, Model.PageCount, Model.PageIndex, "/drawings/index", pars);
+}
+
+
+

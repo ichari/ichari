@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <data>
+	<sendErnie>http://localhost:9090/ernieWgc/ernie/ernieData.jsp</sendErnie>
+	
+	<!-- 中奖图片 -->
+	<winningImg>
+		<bgImg>images/bgImg.png</bgImg><!-- 奖品背景 -->
+		<winning>images/1.png</winning><!-- 0度奖品图片路径 -->
+		<winning>images/1.png</winning><!-- 30度奖品图片路径 -->
+		<winning>images/1.png</winning>
+		<winning>images/1.png</winning>
+		<winning>images/1.png</winning>
+		<winning>images/1.png</winning>
+		<winning>images/1.png</winning>
+		<winning>images/1.png</winning>
+		<winning>images/1.png</winning>
+		<winning>images/1.png</winning>
+		<winning>images/1.png</winning>
+		<winning>images/1.png</winning>
+	</winningImg>
+</data> 
+<!--<data>
+	<news>http://localhost:8080/digitCity/map/newTouPiao.jsp?txtMessage=</news>
+	<all>http://localhost:8080/digitCity/map/allTotalTubiao.jsp?txtMessage=</all>
+	<xiangxi>http://localhost:8080/digitCity/map/xiangXiTuBiao.jsp?txtMessage=</xiangxi>
+</data>-->

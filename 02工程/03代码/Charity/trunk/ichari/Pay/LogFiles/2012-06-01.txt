@@ -1,0 +1,36 @@
+^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 10:33:45,948 [10008] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\Pay\Views\Payment\Index.cshtml(9): error CS1061: “Ichari.Pay.ViewModel.PaymentViewModel”不包含“OrderModel”的定义，并且找不到可接受类型为“Ichari.Pay.ViewModel.PaymentViewModel”的第一个参数的扩展方法“OrderModel”(是否缺少 using 指令或程序集引用?)
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 10:33:57,644 [2804] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\Pay\Views\Payment\Index.cshtml(9): error CS0012: 类型“System.Data.Objects.DataClasses.EntityObject”在未被引用的程序集中定义。必须添加对程序集“System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089”的引用。
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 10:35:11,358 [10000] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\Pay\Views\Payment\Index.cshtml(9): error CS0012: 类型“System.Data.Objects.DataClasses.EntityObject”在未被引用的程序集中定义。必须添加对程序集“System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089”的引用。
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 10:35:29,778 [6692] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\Pay\Views\Payment\Index.cshtml(9): error CS0012: 类型“System.Data.Objects.DataClasses.EntityObject”在未被引用的程序集中定义。必须添加对程序集“System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089”的引用。
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 10:38:51,800 [7948] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\Pay\Views\Payment\Index.cshtml(9): error CS0012: 类型“System.Data.Objects.DataClasses.EntityObject”在未被引用的程序集中定义。必须添加对程序集“System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089”的引用。
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 10:39:18,905 [6692] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\Pay\Views\Payment\Index.cshtml(9): error CS0012: 类型“System.Data.Objects.DataClasses.EntityObject”在未被引用的程序集中定义。必须添加对程序集“System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089”的引用。
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 11:47:10,514 [7300] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 11:49:58,718 [2916] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.ArgumentNullException: 值不能为 null。
+参数名: stringToUnescape
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 12:57:13,176 [3616] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.ArgumentNullException: 值不能为 null。
+参数名: stringToUnescape
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 13:01:57,273 [6968] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.Exception: key [backEndUrl] cannot be empty
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-01 14:47:13,018 [10988] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.IO.DirectoryNotFoundException: 未能找到路径“E:\ichari\02工程\03代码\Charity\trunk\ichari\Pay\payment\notify_data.txt”的一部分。
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$

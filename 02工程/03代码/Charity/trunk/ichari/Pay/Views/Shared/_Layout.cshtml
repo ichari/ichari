@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Pay.StaticKey.StaticServer))/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Pay.StaticKey.StaticServer))/content/css/public.css" />
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Pay.StaticKey.StaticServer))/Content/css/part_a.css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+</head>
+
+<body class="gybg">
+    <script type="text/javascript" src="@Ichari.Common.WebUtils.GetAppSettingValue("JsHeaderUrl")/home/top"></script>
+    <div class="w970 b_btop">
+	    <h1 class="fl"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Pay.StaticKey.StaticServer))/Content/images/logo.png" width="284" height="46" /></h1>
+    </div>
+
+<div class="w970 b_nav">
+<a class="current ml10" href="#">支付信息</a>
+</div>
+
+
+@RenderBody()
+<div class=" w980 png_bg1"></div>
+<!--支持单位&合作媒体-->
+<script type="text/javascript" src="@Ichari.Common.WebUtils.GetAppSettingValue("JsHeaderUrl")/home/support"></script>
+<!-- Footer开始 -->
+<script type="text/javascript" src="@Ichari.Common.WebUtils.GetAppSettingValue("JsHeaderUrl")/home/bottom"></script>
+<!-- Footer结束 -->
+    
+    <!--IE6下支持PNG-->
+    <!--[if IE 6]>
+    <script src="js/DD_belatedPNG.js"></script>
+    <script>
+      DD_belatedPNG.fix('.png_bg1,.png_bg2');
+    </script>
+    <![endif]-->
+</body>
+</html>

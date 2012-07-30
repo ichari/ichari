@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4f29843a-5289-4a30-ab66-b1d7bd8531f8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://bet.demo.shovesoft.cn/Silverlight/Model.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Model3.xsd" MetadataType="Schema" ID="6591ceed-1553-4e0a-b2b7-7a578d182fe8" SourceId="1" SourceUrl="http://bet.demo.shovesoft.cn/Silverlight/Model.svc?xsd=xsd2" />
+    <MetadataFile FileName="Model31.xsd" MetadataType="Schema" ID="7ac693e8-c540-4ef3-9de3-575a2e08d672" SourceId="1" SourceUrl="http://bet.demo.shovesoft.cn/Silverlight/Model.svc?xsd=xsd1" />
+    <MetadataFile FileName="Model1.disco" MetadataType="Disco" ID="5daf1a1a-31e6-4fc1-ba6c-7eae95a53d98" SourceId="1" SourceUrl="http://bet.demo.shovesoft.cn/Silverlight/Model.svc?disco" />
+    <MetadataFile FileName="Model32.xsd" MetadataType="Schema" ID="8bf0b32b-2bb8-4102-9483-d72b0cb368aa" SourceId="1" SourceUrl="http://bet.demo.shovesoft.cn/Silverlight/Model.svc?xsd=xsd0" />
+    <MetadataFile FileName="Model1.wsdl" MetadataType="Wsdl" ID="ff57b974-906f-4cf9-b66e-6a9c8b7762bd" SourceId="1" SourceUrl="http://bet.demo.shovesoft.cn/Silverlight/Model.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

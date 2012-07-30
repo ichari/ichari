@@ -1,0 +1,51 @@
+﻿@model Ichari.Model.UserInfo
+
+@{
+    ViewBag.Title = "个人中心";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    <h3 class="guide">
+        基本资料
+    </h3>
+    <div class="clears"></div>
+    <fieldset class="login" style="border:0px none White;padding :10px 10px 10px 20px;">
+        <div style="color:red;height:20px;">@Html.ValidationSummary(true)</div>
+        <p>
+            <label>用户名：</label><span class="error_box">@Html.TextBoxFor(m => m.UserName, new { @class = "inp_normal", @readonly = "readonly" })</span>
+        </p>
+        <p>
+            <label>姓名：</label><span class="error_box">@Html.TextBoxFor(m => m.TrueName, new { @class = "inp_normal", @readonly = "readonly" })</span>
+        </p>
+        <div style="padding-left:100px; padding-top:4px; color:#333; line-height:15px;"><span class="af00">*</span>请连络管理员更改姓名与身份证</div>
+        <p>
+            <label>身份证：</label><span class="error_box">@Html.TextBoxFor(m => m.IdentityCardNo, new { @class = "inp_normal", @readonly = "readonly" })</span>
+        </p>
+        <p>
+            <label>邮箱地址：</label><span class="error_box">@Html.TextBoxFor(m => m.Email, new { name = "email", @class = "inp_normal" })
+            @Html.ValidationMessageFor(m => m.Email,"", new { @class = "icon_error" })
+            </span>
+        </p>
+        <p>
+            <label>手机：</label><span class="error_box">
+            @Html.TextBoxFor(m => m.Phone, new { name = "phone", @class = "inp_normal" })
+            
+            @Html.ValidationMessageFor(m => m.Phone,"", new { @class = "icon_error" })
+            </span>
+        </p>
+        <div style="padding-left:100px; padding-top:4px; color:#333; line-height:15px;"><span class="af00">*</span>中奖后会通过手机短信或者电话及时通知您</div>
+        <p>
+            <label>电话：</label>@Html.TextBoxFor(m => m.Tel, new { name = "tel", @class = "inp_normal" })
+            <span class="err">@Html.ValidationMessageFor(m => m.Tel)</span>
+        </p>
+        <p>
+            <input type="submit" class="btn_big" value="修改确认" />
+        </p>
+    </fieldset>
+}

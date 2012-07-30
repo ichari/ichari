@@ -1,0 +1,44 @@
+﻿@model Ichari.Web.ViewModel.ChariGameViewModel
+@{
+    Layout = null;
+}
+<script type="text/javascript">
+    $.getScript("/home/checklogin?t=" + Math.random());
+</script>
+<input id="hidCnt" type="hidden" value=@Model.Count />
+<div style="width:230px;height:116px;margin: 10px auto 0 auto;border: 1px solid #E3E3E4;" class="ui-corner-all">
+    <table cellpadding="2" cellspacing="0" style="font-size:12px;margin: 3px auto 3px auto;width:210px;">
+        <caption>未抽奖记录</caption>
+        <thead>
+            <tr>
+                <th style="width:150px;text-align:left;">总类</th>
+                <th style="width:50px;text-align:right;">数量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align:left;">爱心零钱</td>
+                <td style="text-align:right;">@Model.DList.Count</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;">爱心捐赠</td>
+                <td style="text-align:right;">@Model.OList.Count</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="font-size:12px;margin: 5px auto 5px auto;width:210px;height:22px;text-align:center;">
+    @if(Model.Count == 0)
+    {
+        <span style="color:Red;">对不起，您已经没有抽奖机会</span>
+    }
+    else
+    {
+        <span>您还有<span style="color:Red;"> @Model.Count </span>次抽奖的机会</span>
+    }
+</div> 
+<div style="text-align:center;padding: 5px;">
+    @Html.ActionLink("中奖查询", "MyDrawings", "Account", new { isWin = true}, new { @class = "btn_s", style = "" })
+    @Html.ActionLink("抽奖记录", "MyDrawings", "Account", null, new { @class = "btn_s", style = "" })
+</div>
+ 

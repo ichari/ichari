@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "生成卡卷";
+}
+
+@using (Html.BeginForm()) {
+        
+        <fieldset class="leng">
+            <legend>新增卡卷</legend>
+           
+            
+            <div class="editor-label">
+                卡卷种类
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("cardType",Ichari.Common.Helper.EnumHelper.EnumToSelectList<Ichari.Model.Enum.FreeCardType>(null,false))
+                
+            </div>
+
+            <div class="editor-label">
+                数量
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("cardCount")
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Card")
+    </div>

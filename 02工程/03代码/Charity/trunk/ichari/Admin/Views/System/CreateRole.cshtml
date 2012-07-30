@@ -1,0 +1,31 @@
+﻿@model Ichari.Admin.ViewModel.RoleViewModel
+
+@{
+    ViewBag.Title = "CreateRole";
+}
+
+<div class="form">
+@using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>创建角色</legend>
+            
+            @Html.HiddenFor(model => model.RoleModel.Id)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RoleModel.RoleName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RoleModel.RoleName)
+                @Html.ValidationMessageFor(model => model.RoleModel.RoleName)
+            </div>
+    
+            
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+</div>
+

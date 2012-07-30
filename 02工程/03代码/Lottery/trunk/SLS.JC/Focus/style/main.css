@@ -1,0 +1,21 @@
+﻿/*图集*/
+.FootballBox{margin:0 auto; padding:0px; overflow:hidden; width:1002px;}
+
+.bg2{border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-color: #DFDFDF;border-bottom-color: #DFDFDF;border-left-color: #DFDFDF;float:left;text-align:center;width:1000px;padding-bottom:20px}
+
+.BigImgBox{float:left;margin-left:20px; margin-bottom:5px; display:inline}
+.BigImg{width:302px;height:220px;border:1px #DCDCDC solid; padding-top:3px; padding-left:2px; padding-bottom:2px; padding-right:3px;}
+.BigImgText{text-align:center;margin-top:5px}
+.BigImgText a{color:#464646}
+.BigImgText a:hover{color:#FF0000}
+
+.SmallImgBox{float:left;margin: 0 0 10px 20px;text-align:center;display:inline}
+.SmallImg a{width:135px;height:90px;border:1px #DCDCDC solid;padding:2px;display:block;margin:0 0 5px 0}
+.SmallImg a:hover{width:135px;height:90px;border:1px #FF9C00 solid;padding:2px;margin:0 0 5px 0}
+
+.FootballTitleBg{background:url(Images/jiaodianzhanbg2.jpg) no-repeat;width:1002px;height:29px;padding-top:7px;}
+.month{color:#0A97AD;margin:3px 0 0 300px;float:left;position:absolute}
+.month a{color:#0A97AD}
+.month a:hover{color:#FFFFFF}
+.select{float:right;position:relative; margin-top:-17px; margin-right:12px;}
+.month2{color:#FF0000;padding:2px 4px 2px 4px;background:#FFFFFF}

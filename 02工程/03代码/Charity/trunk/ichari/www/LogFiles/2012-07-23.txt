@@ -1,0 +1,7 @@
+^^^^^^^^^^^^--------2012-07-23 11:26:17,634 [12820] ERROR Memcached.ClientLibrary.SockIOPool (null) - Failed to get SockIO obj for: 218.249.153.73:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   在 Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) 位置 C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:行号 163
+   在 Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) 位置 C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:行号 105
+   在 Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) 位置 C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:行号 562
+--------2012-07-23 11:26:17,676 [12820] ERROR Memcached.ClientLibrary.SockIOPool (null) - Failed to create connection to: 218.249.153.73:11211 -- only 0 created
+$$$$$$$$$$$$

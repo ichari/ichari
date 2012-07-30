@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23B770BE-C4D1-481F-80FA-19EEB2B3C2D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SLS.Notify</RootNamespace>
+    <AssemblyName>SLS.Notify</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\Lib\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Shove">
+      <HintPath>..\Lib\Shove\Shove.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiRequest.cs" />
+    <Compile Include="DataProvider\ApiLotteryDataProvider.cs" />
+    <Compile Include="Const\CommandType.cs" />
+    <Compile Include="Const\GlobalDefin.cs" />
+    <Compile Include="Const\IssueState.cs" />
+    <Compile Include="Const\RequestCmdName.cs" />
+    <Compile Include="Const\SunlotXmlDefin.cs" />
+    <Compile Include="DataProvider\IGetOpenData.cs" />
+    <Compile Include="DataProvider\LotteryDataProvider.cs" />
+    <Compile Include="LotteryOpenNotify.cs" />
+    <Compile Include="LotterySchemaNotify.cs" />
+    <Compile Include="NotifyBase.cs" />
+    <Compile Include="NotifyWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataProvider\SnifferLotteryDataProvider.cs" />
+    <Compile Include="XmlResult\OpenLotteryXmlResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SLS.Common\SLS.Common.csproj">
+      <Project>{81ABCDC8-B0CC-40B3-B6DC-FEA3A3566332}</Project>
+      <Name>SLS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SLS.Components\SLS.Lottery\SLS.Lottery.csproj">
+      <Project>{35590594-EA3D-4BBC-A111-35A561F1CEC3}</Project>
+      <Name>SLS.Lottery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SLS.Dal\SLS.Dal.csproj">
+      <Project>{E12C6F16-19E5-4B66-BFDE-BE5DDAD829B0}</Project>
+      <Name>SLS.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xml\Request.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xml\Schema.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xml\OpenUrl.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xml\OpenTemplate.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

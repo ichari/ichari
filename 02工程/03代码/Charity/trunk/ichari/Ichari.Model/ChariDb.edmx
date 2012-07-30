@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Ichari.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="IchariModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Ichari.Model.Store.Account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AccountLog" EntityType="Ichari.Model.Store.AccountLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Address" EntityType="Ichari.Model.Store.Address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Content" EntityType="Ichari.Model.Store.Content" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Drawings" EntityType="Ichari.Model.Store.Drawings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FreeCard" EntityType="Ichari.Model.Store.FreeCard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FriendLink" EntityType="Ichari.Model.Store.FriendLink" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LoveChange" EntityType="Ichari.Model.Store.LoveChange" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="Ichari.Model.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderDetail" EntityType="Ichari.Model.Store.OrderDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PayLog" EntityType="Ichari.Model.Store.PayLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Prize" EntityType="Ichari.Model.Store.Prize" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PrizeCategory" EntityType="Ichari.Model.Store.PrizeCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserInfo" EntityType="Ichari.Model.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ORDERDET_订单-订单明细_ORDER" Association="Ichari.Model.Store.FK_ORDERDET_订单-订单明细_ORDER">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="UserLevel" Type="int" Nullable="false" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="IsStop" Type="bit" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+          <Property Name="FrozenAmount" Type="decimal" Nullable="false" Scale="2" />
+        </EntityType>
+        <EntityType Name="AccountLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="OrderId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="AccountWay" Type="int" Nullable="false" />
+          <Property Name="Ip" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="AdminRemark" Type="varchar" MaxLength="300" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="PayWay" Type="int" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="TrueName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Tel" Type="varchar" MaxLength="20" />
+          <Property Name="Mobile" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Province" Type="nvarchar" MaxLength="10" />
+          <Property Name="City" Type="nvarchar" MaxLength="20" />
+          <Property Name="Area" Type="nvarchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="PostCode" Type="varchar" MaxLength="6" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="LinkUrl" Type="varchar" MaxLength="1000" />
+          <Property Name="PicUrl" Type="varchar" MaxLength="200" />
+          <Property Name="AltName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TagName" Type="varchar" MaxLength="20" />
+          <Property Name="ContentType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Drawings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PrizeId" Type="bigint" />
+          <Property Name="OrderNo" Type="varchar" MaxLength="30" />
+          <Property Name="IsConfirrmed" Type="bit" />
+          <Property Name="IsWinner" Type="bit" Nullable="false" />
+          <Property Name="IsHandled" Type="bit" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="bigint" />
+          <Property Name="Source" Type="int" Nullable="false" />
+          <Property Name="AddressId" Type="bigint" />
+          <Property Name="CardId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="FreeCard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CardType" Type="int" Nullable="false" />
+          <Property Name="CardNo" Type="varchar" MaxLength="30" />
+          <Property Name="Password" Type="varchar" MaxLength="30" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="IsCatch" Type="bit" Nullable="false" />
+          <Property Name="DeliverTime" Type="datetime" />
+          <Property Name="IsDelivery" Type="bit" Nullable="false" />
+          <Property Name="IsCost" Type="bit" Nullable="false" />
+          <Property Name="CostTime" Type="datetime" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="ValidTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FriendLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="LinkUrl" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="PicUrl" Type="varchar" MaxLength="500" />
+          <Property Name="OrderNo" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoveChange">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UnionOrder" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="TrueName" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsSuccess" Type="bit" />
+          <Property Name="IsGame" Type="bit" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="GameTime" Type="datetime" />
+          <Property Name="UserId" Type="bigint" />
+          <Property Name="State" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OrderType" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="TrueName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Mobile" Type="varchar" MaxLength="20" />
+          <Property Name="IdentityCard" Type="varchar" MaxLength="20" />
+          <Property Name="Total" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="PayWay" Type="int" Nullable="false" />
+          <Property Name="Ip" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="PayTime" Type="datetime" />
+          <Property Name="Remark" Type="varchar" MaxLength="300" />
+          <Property Name="AdminRemark" Type="varchar" MaxLength="300" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="TradeNo" Type="char" MaxLength="20" />
+          <Property Name="IsGame" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Name="OrderDetailId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Price" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="ProductCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PayLog">
+          <Key>
+            <PropertyRef Name="PayId" />
+          </Key>
+          <Property Name="PayId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TransactionId" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="PayWay" Type="int" Nullable="false" />
+          <Property Name="PayMoney" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="PayUrl" Type="varchar(max)" />
+          <Property Name="BackUrl" Type="varchar(max)" />
+          <Property Name="PayResult" Type="varchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="ImgUrl" Type="varchar" MaxLength="300" />
+          <Property Name="PrizeCount" Type="int" Nullable="false" />
+          <Property Name="UsedCount" Type="int" Nullable="false" />
+          <Property Name="Probability" Type="int" Nullable="false" />
+          <Property Name="Angle" Type="int" Nullable="false" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="IsVirtual" Type="bit" Nullable="false" />
+          <Property Name="FreeCardType" Type="int" />
+        </EntityType>
+        <EntityType Name="PrizeCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="TrueName" Type="nvarchar" MaxLength="10" />
+          <Property Name="IdentityCardNo" Type="varchar" MaxLength="18" />
+          <Property Name="Tel" Type="varchar" MaxLength="20" />
+          <Property Name="Phone" Type="varchar" MaxLength="11" />
+          <Property Name="RegFrom" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+          <Property Name="LotteryUserId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ORDERDET_订单-订单明细_ORDER">
+          <End Role="Order" Type="Ichari.Model.Store.Order" Multiplicity="1" />
+          <End Role="OrderDetail" Type="Ichari.Model.Store.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Ichari.Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ChariDbContainner" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Account" EntityType="Ichari.Model.Account" />
+          <EntitySet Name="Content" EntityType="Ichari.Model.Content" />
+          <EntitySet Name="FriendLink" EntityType="Ichari.Model.FriendLink" />
+          <EntitySet Name="AccountLog" EntityType="Ichari.Model.AccountLog" />
+          <EntitySet Name="PayLog" EntityType="Ichari.Model.PayLog" />
+          <EntitySet Name="PrizeCategory" EntityType="Ichari.Model.PrizeCategory" />
+          <EntitySet Name="Order" EntityType="Ichari.Model.Order" />
+          <EntitySet Name="OrderDetail" EntityType="Ichari.Model.OrderDetail" />
+          <AssociationSet Name="FK_ORDERDET_订单_订单明细_ORDER" Association="Ichari.Model.FK_ORDERDET_订单_订单明细_ORDER">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <EntitySet Name="Address" EntityType="Ichari.Model.Address" />
+          <EntitySet Name="LoveChange" EntityType="Ichari.Model.LoveChange" />
+          <EntitySet Name="Prize" EntityType="Ichari.Model.Prize" />
+          <EntitySet Name="FreeCard" EntityType="Ichari.Model.FreeCard" />
+          <EntitySet Name="Drawings" EntityType="Ichari.Model.Drawings" />
+          <EntitySet Name="UserInfo" EntityType="Ichari.Model.UserInfo" />
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="UserLevel" Type="Int32" Nullable="false" />
+          <Property Name="Score" Type="Int32" Nullable="false" />
+          <Property Name="IsStop" Type="Boolean" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="UpdateTime" Type="DateTime" Nullable="false" />
+          <Property Name="FrozenAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="PicUrl" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="AltName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TagName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ContentType" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FriendLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="LinkUrl" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="PicUrl" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="OrderNo" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Type="Int32" Name="LogId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="UserId" Nullable="false" />
+          <Property Type="Guid" Name="OrderId" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="AccountWay" Nullable="false" />
+          <Property Type="String" Name="Ip" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AdminRemark" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateTime" />
+          <Property Type="Int32" Name="PayWay" />
+        </EntityType>
+        <EntityType Name="PayLog">
+          <Key>
+            <PropertyRef Name="PayId" />
+          </Key>
+          <Property Type="Int32" Name="PayId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="OrderId" Nullable="false" />
+          <Property Type="String" Name="TransactionId" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="PayWay" Nullable="false" />
+          <Property Type="Decimal" Name="PayMoney" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="PayUrl" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BackUrl" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PayResult" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PrizeCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Type="Guid" Name="OrderId" Nullable="false" />
+          <Property Type="Int32" Name="OrderType" Nullable="false" />
+          <Property Type="Int64" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TrueName" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdentityCard" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="PayWay" Nullable="false" />
+          <Property Type="String" Name="Ip" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+          <Property Type="DateTime" Name="PayTime" />
+          <Property Type="String" Name="Remark" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AdminRemark" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UpdateTime" />
+          <Property Type="String" Name="TradeNo" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Type="Boolean" Name="IsGame" Nullable="false" />
+          <NavigationProperty Name="OrderDetail" Relationship="Ichari.Model.FK_ORDERDET_订单_订单明细_ORDER" FromRole="Order" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Type="Int64" Name="OrderDetailId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="OrderId" Nullable="false" />
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="ProductCount" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Ichari.Model.FK_ORDERDET_订单_订单明细_ORDER" FromRole="OrderDetail" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK_ORDERDET_订单_订单明细_ORDER">
+          <End Type="Ichari.Model.Order" Role="Order" Multiplicity="1" />
+          <End Type="Ichari.Model.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="TrueName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tel" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Mobile" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Province" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Area" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address1" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostCode" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsDefault" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoveChange">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UnionOrder" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="6" Scale="2" />
+          <Property Type="String" Name="TrueName" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSuccess" />
+          <Property Type="Boolean" Name="IsGame" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+          <Property Type="DateTime" Name="GameTime" />
+          <Property Type="Int64" Name="UserId" />
+          <Property Type="Int32" Name="State" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImgUrl" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PrizeCount" Nullable="false" />
+          <Property Type="Int32" Name="UsedCount" Nullable="false" />
+          <Property Type="Int32" Name="Probability" Nullable="false" />
+          <Property Type="Int32" Name="Angle" Nullable="false" />
+          <Property Type="Boolean" Name="IsEnabled" Nullable="false" />
+          <Property Type="Boolean" Name="IsVirtual" Nullable="false" />
+          <Property Type="Int32" Name="FreeCardType" />
+        </EntityType>
+        <EntityType Name="FreeCard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="CardType" Nullable="false" />
+          <Property Type="String" Name="CardNo" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+          <Property Type="Boolean" Name="IsCatch" Nullable="false" />
+          <Property Type="DateTime" Name="DeliverTime" />
+          <Property Type="Boolean" Name="IsDelivery" Nullable="false" />
+          <Property Type="Boolean" Name="IsCost" Nullable="false" />
+          <Property Type="DateTime" Name="CostTime" />
+          <Property Type="Boolean" Name="IsEnabled" Nullable="false" />
+          <Property Type="DateTime" Name="ValidTime" />
+        </EntityType>
+        <EntityType Name="Drawings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="PrizeId" />
+          <Property Type="String" Name="OrderNo" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsConfirrmed" />
+          <Property Type="Boolean" Name="IsWinner" Nullable="false" />
+          <Property Type="Boolean" Name="IsHandled" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+          <Property Type="Int64" Name="UserId" />
+          <Property Type="Int32" Name="Source" Nullable="false" />
+          <Property Type="Int64" Name="AddressId" />
+          <Property Type="Guid" Name="CardId" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TrueName" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IdentityCardNo" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tel" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="RegFrom" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+          <Property Type="DateTime" Name="UpdateTime" Nullable="false" />
+          <Property Type="Int64" Name="LotteryUserId" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IchariModelStoreContainer" CdmEntityContainer="ChariDbContainner">
+          <EntitySetMapping Name="Account"><EntityTypeMapping TypeName="Ichari.Model.Account"><MappingFragment StoreEntitySet="Account">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="Amount" ColumnName="Amount" />
+            <ScalarProperty Name="UserLevel" ColumnName="UserLevel" />
+            <ScalarProperty Name="Score" ColumnName="Score" />
+            <ScalarProperty Name="IsStop" ColumnName="IsStop" />
+            <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+            <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+            <ScalarProperty Name="FrozenAmount" ColumnName="FrozenAmount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Content"><EntityTypeMapping TypeName="Ichari.Model.Content"><MappingFragment StoreEntitySet="Content">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+            <ScalarProperty Name="PicUrl" ColumnName="PicUrl" />
+            <ScalarProperty Name="AltName" ColumnName="AltName" />
+            <ScalarProperty Name="TagName" ColumnName="TagName" />
+            <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FriendLink"><EntityTypeMapping TypeName="Ichari.Model.FriendLink"><MappingFragment StoreEntitySet="FriendLink">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+            <ScalarProperty Name="PicUrl" ColumnName="PicUrl" />
+            <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+            <ScalarProperty Name="Type" ColumnName="Type" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AccountLog">
+            <EntityTypeMapping TypeName="Ichari.Model.AccountLog">
+              <MappingFragment StoreEntitySet="AccountLog">
+                <ScalarProperty Name="PayWay" ColumnName="PayWay" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="AdminRemark" ColumnName="AdminRemark" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="AccountWay" ColumnName="AccountWay" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PayLog">
+            <EntityTypeMapping TypeName="Ichari.Model.PayLog">
+              <MappingFragment StoreEntitySet="PayLog">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="PayResult" ColumnName="PayResult" />
+                <ScalarProperty Name="BackUrl" ColumnName="BackUrl" />
+                <ScalarProperty Name="PayUrl" ColumnName="PayUrl" />
+                <ScalarProperty Name="PayMoney" ColumnName="PayMoney" />
+                <ScalarProperty Name="PayWay" ColumnName="PayWay" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="PayId" ColumnName="PayId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrizeCategory">
+            <EntityTypeMapping TypeName="Ichari.Model.PrizeCategory">
+              <MappingFragment StoreEntitySet="PrizeCategory">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="Ichari.Model.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="IsGame" ColumnName="IsGame" />
+                <ScalarProperty Name="TradeNo" ColumnName="TradeNo" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="AdminRemark" ColumnName="AdminRemark" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="PayTime" ColumnName="PayTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="PayWay" ColumnName="PayWay" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="IdentityCard" ColumnName="IdentityCard" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetail">
+            <EntityTypeMapping TypeName="Ichari.Model.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="ProductCount" ColumnName="ProductCount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="Ichari.Model.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Address1" ColumnName="Address" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoveChange">
+            <EntityTypeMapping TypeName="Ichari.Model.LoveChange">
+              <MappingFragment StoreEntitySet="LoveChange">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="GameTime" ColumnName="GameTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="IsGame" ColumnName="IsGame" />
+                <ScalarProperty Name="IsSuccess" ColumnName="IsSuccess" />
+                <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="UnionOrder" ColumnName="UnionOrder" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prize">
+            <EntityTypeMapping TypeName="Ichari.Model.Prize">
+              <MappingFragment StoreEntitySet="Prize">
+                <ScalarProperty Name="FreeCardType" ColumnName="FreeCardType" />
+                <ScalarProperty Name="IsVirtual" ColumnName="IsVirtual" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="Angle" ColumnName="Angle" />
+                <ScalarProperty Name="Probability" ColumnName="Probability" />
+                <ScalarProperty Name="UsedCount" ColumnName="UsedCount" />
+                <ScalarProperty Name="PrizeCount" ColumnName="PrizeCount" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FreeCard">
+            <EntityTypeMapping TypeName="Ichari.Model.FreeCard">
+              <MappingFragment StoreEntitySet="FreeCard">
+                <ScalarProperty Name="ValidTime" ColumnName="ValidTime" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="CostTime" ColumnName="CostTime" />
+                <ScalarProperty Name="IsCost" ColumnName="IsCost" />
+                <ScalarProperty Name="IsDelivery" ColumnName="IsDelivery" />
+                <ScalarProperty Name="DeliverTime" ColumnName="DeliverTime" />
+                <ScalarProperty Name="IsCatch" ColumnName="IsCatch" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+                <ScalarProperty Name="CardType" ColumnName="CardType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drawings">
+            <EntityTypeMapping TypeName="Ichari.Model.Drawings">
+              <MappingFragment StoreEntitySet="Drawings">
+                <ScalarProperty Name="CardId" ColumnName="CardId" />
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="IsHandled" ColumnName="IsHandled" />
+                <ScalarProperty Name="IsWinner" ColumnName="IsWinner" />
+                <ScalarProperty Name="IsConfirrmed" ColumnName="IsConfirrmed" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="PrizeId" ColumnName="PrizeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfo">
+            <EntityTypeMapping TypeName="Ichari.Model.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="LotteryUserId" ColumnName="LotteryUserId" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="RegFrom" ColumnName="RegFrom" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="IdentityCardNo" ColumnName="IdentityCardNo" />
+                <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ChariDb">
+        <EntityTypeShape EntityType="Ichari.Model.Account" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7341113281249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ichari.Model.Content" Width="1.5" PointX="4.75" PointY="0.75" Height="2.5430916341145835" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ichari.Model.FriendLink" Width="1.5" PointX="0.75" PointY="4.75" Height="2.1610522460937496" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ichari.Model.AccountLog" Width="1.5" PointX="3.75" PointY="4.75" Height="2.7341113281250031" />
+        <EntityTypeShape EntityType="Ichari.Model.PayLog" Width="1.5" PointX="2.75" PointY="8.75" Height="2.9251310221354174" />
+        <EntityTypeShape EntityType="Ichari.Model.PrizeCategory" Width="1.5" PointX="9.375" PointY="3.75" Height="1.3969734700520888" />
+        <EntityTypeShape EntityType="Ichari.Model.Order" Width="1.5" PointX="7.375" PointY="9" Height="4.6443082682291745" />
+        <EntityTypeShape EntityType="Ichari.Model.OrderDetail" Width="1.5" PointX="9.625" PointY="10.25" Height="2.3520719401041674" />
+        <AssociationConnector Association="Ichari.Model.FK_ORDERDET_订单_订单明细_ORDER" >
+          <ConnectorPoint PointX="8.875" PointY="11.426035970052084" />
+          <ConnectorPoint PointX="9.625" PointY="11.426035970052084" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Ichari.Model.Address" Width="1.5" PointX="11.375" PointY="4.75" Height="3.3071704101562531" />
+        <EntityTypeShape EntityType="Ichari.Model.LoveChange" Width="1.5" PointX="3.375" PointY="12.75" Height="2.9251310221354174" />
+        <EntityTypeShape EntityType="Ichari.Model.Prize" Width="1.5" PointX="12.375" PointY="9.75" Height="3.1161507161458388" />
+        <EntityTypeShape EntityType="Ichari.Model.FreeCard" Width="1.5" PointX="13.375" PointY="0.75" Height="3.3071704101562531" />
+        <EntityTypeShape EntityType="Ichari.Model.Drawings" Width="1.5" PointX="0.75" PointY="12.75" Height="3.1161507161458388" />
+        <EntityTypeShape EntityType="Ichari.Model.UserInfo" Width="1.5" PointX="6.375" PointY="4.75" Height="3.3071704101562531" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

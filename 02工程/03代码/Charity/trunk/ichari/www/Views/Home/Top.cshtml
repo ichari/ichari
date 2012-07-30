@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+    var user = Session[Ichari.Web.SessionKey.User] as Ichari.Model.UserInfo;
+    var reffer = HttpContext.Current.Request.UrlReferrer;
+    var refferUrl = reffer == null ? "" : reffer.AbsoluteUri;
+    if(refferUrl.IndexOf("404.html",StringComparison.CurrentCultureIgnoreCase) > -1 || refferUrl.IndexOf("account/login",StringComparison.CurrentCultureIgnoreCase) > -1)
+    {
+        refferUrl = string.Empty;
+    }
+}
+
+document.write('<div class="b_top">');
+document.write('<div class="w970">');
+document.write('<div id="__header" class="fr afff">');
+@if(user == null)
+{
+    <text>
+    document.write('<a href="/account/login?returnUrl=@if(ViewData["returnUrl"] != null){@ViewData["returnUrl"]}else{@refferUrl}">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="/account/register?returnUrl=@if(ViewData["returnUrl"] != null){@ViewData["returnUrl"]}else{@HttpContext.Current.Request.UrlReferrer}">注册</a>');
+
+    </text>
+}
+else
+{
+    <text>
+    document.write('<a href="/account/summary">欢迎您，@user.UserName</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="/account/logout">退出</a>');
+    
+    
+    </text>
+}
+@*document.write('<li><a href="#">English</a></li>');*@
+document.write('</div>');
+document.write('</div>');
+document.write('</div>');
+
+@*<div class="cover">
+    <ul class="wrapper">
+        <li class="last_child"><a href="#">IPAD版本</a></li>
+        <li><a href="#">手机版本</a></li>
+        <li><a href="#">English</a></li>
+    </ul>background:#373738;width:100%;position:absolute;left:0px;top:0px;padding:4px 0px;
+</div>*@

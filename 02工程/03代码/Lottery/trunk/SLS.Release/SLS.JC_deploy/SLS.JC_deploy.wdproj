@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Microsoft Visual Studio 2008 Web Deployment Project 
+  http://go.microsoft.com/fwlink/?LinkID=104956
+
+-->
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B04AC52A-C3BB-405F-ADD6-484F491AC21A}</ProjectGuid>
+    <SourceWebPhysicalPath>..\..\SLS.JC</SourceWebPhysicalPath>
+    <SourceWebProject>{82D54998-983E-47D7-8674-926891026743}|C:\SLS.7ien\SLS.TWZT</SourceWebProject>
+    <SourceWebVirtualPath>/SLS.TWZT</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Release\SLS.TWZT\</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>SLS.TWZT</SingleAssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>..\..\..\Release\</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>SLS.JC</SingleAssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SLS.Common\SLS.Common.csproj">
+      <Project>{81ABCDC8-B0CC-40B3-B6DC-FEA3A3566332}</Project>
+      <Name>SLS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SLS.Components\SLS.Lottery\SLS.Lottery.csproj">
+      <Project>{35590594-EA3D-4BBC-A111-35A561F1CEC3}</Project>
+      <Name>SLS.Lottery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SLS.Dal\SLS.Dal.csproj">
+      <Project>{E12C6F16-19E5-4B66-BFDE-BE5DDAD829B0}</Project>
+      <Name>SLS.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SLS.Notify\SLS.Notify.csproj">
+      <Project>{23B770BE-C4D1-481F-80FA-19EEB2B3C2D3}</Project>
+      <Name>SLS.Notify</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WebDeployment\v10.0\Microsoft.WebDeployment.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.WebDeployment.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="BeforeMerge">
+  </Target>
+  <Target Name="AfterMerge">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

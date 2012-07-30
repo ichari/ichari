@@ -1,0 +1,281 @@
+﻿@model Ichari.Common.PageBar
+
+@using System.Text
+
+@{
+    
+    if(Model.PageIndex < 1)
+    {
+        Model.PageIndex = 1;
+    }
+    if(Model.PageIndex > Model.PageCount && Model.TotalCount > 0)
+    {
+        Model.PageIndex = Model.PageCount;
+    }
+    int next = (Model.PageIndex + 1) > Model.PageCount ? Model.PageCount : Model.PageIndex + 1;
+    int prev = (Model.PageIndex - 1) == 0 ? 1 : Model.PageIndex - 1;
+    
+    int pRange = Model.TotalCount % 10 == 0 ? Model.TotalCount / 10 : Model.TotalCount / 10 + 1;
+    //页码上下限
+    int start, end;
+    if(Model.PageIndex <= 10)
+    {
+        
+        start = 1;
+        end = 10;
+        if(Model.PageCount < 10)
+        {
+            end = Model.PageCount;
+        }
+    }
+    else
+    {
+        if(Model.PageIndex % 10 != 0)
+        {
+            
+            start = (Model.PageIndex / 10) * 10 + 1;
+            end = (Model.PageIndex / 10) * 10 + 10;
+            if (Model.PageIndex >= Model.PageCount || end > Model.PageCount)
+            {
+                end = Model.PageCount; 
+            }
+        }
+        else
+        {
+            start = Model.PageIndex - 10 + 1;
+            end = Model.PageIndex;
+        }
+    }
+    
+    StringBuilder queryString = new StringBuilder();
+    if(!(Model.Url.IndexOf("?") > -1))
+    {
+        queryString.Append("?");
+    }
+    if(Model.Params != null)
+    {
+        foreach(var p in Model.Params)
+        {
+            queryString.Append("&");
+            queryString.Append(p.Key);
+            queryString.Append("=");
+            queryString.Append(p.Value);
+        }
+    }
+    Model.Url += queryString.ToString();
+}
+
+<div class="t-grid-pager t-grid-bottom" id="__divPagerBar"
+@if(Model.TotalCount <= 0)
+{
+    @: style="display:none;"
+}
+else
+{
+    @: style=""
+}
+>
+    
+        <div class="t-pager t-reset" style="float:left;">            
+            @if (Model.PageIndex == 1)
+            {
+                @: <a pageno="1" class="t-link t-state-disabled">
+            }
+            else
+            {
+                @: <a 
+                if(!Model.IsAjax)
+                {
+                    @: href="@(Model.Url)&pageIndex=1" 
+                }
+                      
+                @: pageno="1" class="t-link">
+            }
+            
+                <span class="t-icon t-arrow-first">&lt;&lt;</span>
+            </a>
+            <a  pageno="@prev"
+            @if (Model.PageIndex == 1)
+            {
+                @: class="t-link t-state-disabled"
+            }
+            else
+            {
+                @: class="t-link" 
+                if(!Model.IsAjax)
+                {
+                    @: href="@(Model.Url)&pageIndex=@prev"
+                }
+            }
+            >    <span class="t-icon t-arrow-prev">&lt;</span>
+            </a>
+            <div class="t-numeric">
+                @if (Model.PageIndex > 10)
+                {
+                    if (Model.IsAjax)
+                    {
+                        @: <a class="t-link" pageno="@(start - 1)">...</a> 
+                    }
+                    else
+                    {
+                        @: <a class="t-link" pageno="@(start - 1)" href="@string.Format("{0}&pageIndex={1}", Model.Url, (start - 1))">...</a> 
+                    }
+                }
+                @for (var i = start; i <= end; i++)
+                {
+                    if (i == Model.PageIndex)
+                    { 
+                        <span class="t-state-active">@i</span>
+                    }
+                    else
+                    {
+                        if (!Model.IsAjax)
+                        {
+                            
+                            @: <a class="t-link" pageno="@i" href="@string.Format("{0}&pageIndex={1}", Model.Url, i)">@i</a>
+                        }
+                        else
+                        {
+                            @: <a class="t-link" pageno="@i">@i</a>
+                        }
+                    }
+                }
+                @if (Model.PageCount > 10 && end + 10 < Model.PageCount)
+                {
+                    if (Model.IsAjax)
+                    {
+                        @: <a class="t-link" pageno="@(end + 1)">...</a> 
+                    }
+                    else
+                    {
+                        @: <a class="t-link" pageno="@(end + 1)" href="@string.Format("{0}&pageIndex={1}", Model.Url, (end + 1))">...</a> 
+                    }
+                }
+            
+            </div>
+            <a pageno="@next"
+            @if (Model.PageIndex >= Model.PageCount)
+            {
+                @: class="t-link t-state-disabled"
+            }
+            else
+            {
+                @: class="t-link"
+                if (!Model.IsAjax)
+                {
+                    @: href="@string.Format("{0}&pageIndex={1}", Model.Url, next)"
+                }
+                else
+                {
+                }
+            }
+            >
+                <span class="t-icon t-arrow-next">&gt;</span>
+            </a>
+            <a pageno="@Model.PageCount"
+            @if (Model.PageIndex == Model.PageCount)
+            {
+                @: class="t-link t-state-disabled"
+            }
+            else
+            {
+                @: class="t-link" 
+                if (!Model.IsAjax)
+                {                    
+                    @: href="@string.Format("{0}&pageIndex={1}", Model.Url, Model.PageCount)"
+                }
+                else
+                {
+                }
+            }
+            >
+                <span class="t-icon t-arrow-last">&gt;&gt;</span>
+            </a>
+        </div>
+        <div class="t-status-text" style="float:right;">当前显示 @Model.CurrentPageInfo 总共 @Model.TotalCount</div>
+
+</div>
+
+
+
+@if (Model.IsAjax)
+{
+    
+    <script type="text/javascript">
+    <!--
+        if (!window.__pagerBar) {
+            var __pagerBar = function (obj) {
+                this.target = obj.updateTarget;
+                this.url = obj.url;
+                this.data = obj.data;
+                this.tableContainerId = obj.tableContainerId;
+                //this.beforeFunc = obj.beforeFunc;
+            };
+            //翻页执行的事件
+            __pagerBar.prototype.paging = function (pageToIndex) {
+
+                if (this.beforeFunc) {
+                    this.beforeFunc();
+                }
+
+                var ctId = this.tableContainerId;
+                $("#" + ctId).html("<img style='margin:10px;' src='/content/images/loading.gif' />");
+                this.pageTo(pageToIndex);
+            };
+            //绑定翻页事件
+            __pagerBar.prototype.bindPageEvent = function (beforePaging, afterPaging) {  //beforePaging，在触发翻页事件之前触发的方法
+                if (beforePaging) {
+                    this.beforeFunc = beforePaging;
+                }
+                if (afterPaging) {
+                    this.afterFunc = afterPaging;
+                }
+                var ctId = this.tableContainerId;
+                var p = this;
+
+                $("#__divPagerBar .t-pager").find("a.t-link").click(function () {
+                    var pageToIndex = $(this).attr("pageno");
+                    p.paging(pageToIndex);
+
+                    //                    if (beforePaging) {
+                    //                        //缓存beforePaging
+                    //                        p.beforeFunc = beforePaging;
+                    //                        beforePaging();
+                    //                    }
+
+                    //                    if (afterPaging) {
+                    //                        p.afterFunc = afterPaging;
+                    //                    }
+                    //                    $("#" + ctId).html("<img style='margin:10px;' src='/content/images/loading.gif' />");
+                    //                    p.pageTo(pageToIndex);
+                });
+            };
+            //翻页
+            __pagerBar.prototype.pageTo = function (index, afterPaging) {    //index为翻到第几页
+                var p = this;
+                this.setIndex(index);
+                var tid = this.target;  //调用成功后更新的容器ID
+                $.post(this.url, this.data, function (d) {
+                    $("#" + tid).html(d);
+                    //翻页的html被重新render，需要再绑定事件
+
+                    p.bindPageEvent(p.beforeFunc);
+                    if (p.afterFunc) {
+                        p.afterFunc();
+                    }
+                })
+            };
+            __pagerBar.prototype.setIndex = function (index) {
+                this.data.pageIndex = index;
+            };
+            //获取当前页码
+            __pagerBar.prototype.getCurIndex = function () {
+                return $("#__divPagerBar span.t-state-active").text();
+            };
+            window.__pagerBar = __pagerBar;
+
+        }
+    -->
+    </script>
+
+}

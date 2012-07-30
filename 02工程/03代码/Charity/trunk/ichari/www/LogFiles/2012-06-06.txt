@@ -1,0 +1,25 @@
+^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-06 14:29:43,669 [8584] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Data.EntityException: 基础提供程序在 Commit 上失败。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+The request failed to run because the batch is aborted, this can be caused by abort signal sent from client, or another request is running in the same session, which makes the session busy.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.TdsExecuteTransactionManagerRequest(Byte[] buffer, TransactionManagerRequestType request, String transactionName, TransactionManagerIsolationLevel isoLevel, Int32 timeout, SqlInternalTransaction transaction, TdsParserStateObject stateObj, Boolean isDelegateControlRequest)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransactionYukon(TransactionRequest transactionRequest, String transactionName, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransaction(TransactionRequest transactionRequest, String name, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   在 System.Data.SqlClient.SqlInternalTransaction.Commit()
+   在 System.Data.SqlClient.SqlTransaction.Commit()
+   在 System.Data.EntityClient.EntityTransaction.Commit()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-06 16:17:23,439 [10964] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_UserLayout.cshtml”呈现:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-06 18:05:42,186 [8436] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_UserLayout.cshtml”呈现:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-06 18:06:14,196 [6544] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_UserLayout.cshtml”呈现:“Head”。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$

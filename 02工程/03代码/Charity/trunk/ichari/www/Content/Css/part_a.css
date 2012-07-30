@@ -1,0 +1,500 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+/* 爱心抽奖 */
+.bs_bg{background:url(/Content/images/ben_01.jpg) repeat-x;}
+.bs1{position:relative; width:970px; height:716px;}
+/*.bs1 iframe{width:414px; height:716px; z-index:2; position:absolute; right:0; top:0;}*/
+.bs1 .abd{position:absolute; z-index:3; width:395px; height:716px; right:0; top:0;}
+.bs1 .abd h1{padding-top:40px; text-align:right; padding-right:5px;}
+.bs1 .abd .lists{width:256px; padding-top:10px; padding-left:124px;}
+.bs1 .abd .list{border:#e3e3e4 1px solid; background:#FFF; width:253px; border-top:0px; padding:10px 0px;}
+.bs1 .abd .list ul{overflow:hidden; zoom:1; text-align:center;}
+.bs1 .abd .list ul li{width:33.3%; float:left;}
+
+.bs1 .abd .inof{border:#E3E3E5 1px solid; margin-top:10px; background:#FFF}
+.bs1 .abd .inof .title{height:32px; line-height:32px; padding-left:10px; color:#FFF; font-weight:bold;}
+.bs1 .abd #gameinfo{padding:10px;}
+.bs1 .tab_top{overflow:hidden; zoom:1;}
+.bs1 .tab_top li{float:left; line-height:24px; background:#E3E3E5; padding:0px 10px; cursor:pointer;}
+.bs1 .tab_top li.c{background:#F8C304; font-weight:bold;}
+.bs1 .tab_cen{border:#E3E3E5 1px solid; padding:10px 10px 0px;}
+.bs1 .tab_cen div{padding-bottom:10px;}
+.bs1 .tab_cen div.a input{width:210px; height:24px; line-height:24px; border:#E3E3E5 1px solid;}
+
+
+.bs2{width:940px; margin:auto;}
+.bs2 .title{background:url(/Content/images/ben_02.jpg) repeat-x; border-right:#e3e3e4 1px solid;}
+.bs2 .text{width:938px; border:#e3e3e4 1px solid; border-top:0px; padding-bottom:20px;}
+.bs2 .text p{padding:5px 15px 0px;}
+
+
+
+/* 支付信息 */
+
+.bs3{background:#ebebeb; border-bottom:#d9d9d9 10px solid; padding:15px 40px; font-size:14px; font-weight:bold;}
+.bs4{padding:25px 50px 60px;}
+.bs4 .title{font-size:14px; font-weight:bold;}
+.bs4 .title span{color:#F00;}
+.bs4 .info{border:#CCC 1px solid; margin-top:20px; background:url(/Content/images/ben_03.jpg); height:125px;}
+.bs4 .info p{padding:20px 25px; line-height:26px;}
+.bs4 .b_zf{padding:15px 0px;}
+.bs4 .b_zf p{padding:5px 0px;}
+.bs4 .b_zf img{cursor:pointer;}
+.bs4 .an{padding-top:10px;}
+.bs5{font-size:14px; color:#373738; font-weight:bold; padding:15px 35px 10px; margin:auto;}
+
+/* 关于我们 */
+.bs6{width:202px; margin-left:10px; _display:inline;}
+.bs6 .title{padding-left:12px; line-height:32px; font-size:14px; font-weight:bold; color:#FFF;}
+.bs6 .lists{border:#e3e3e4 1px solid; border-top:0; background:#f0efef; width:200px;}
+.bs6 .lists li{border-bottom:#FFF 1px solid; line-height:32px; padding-left:50px; color:#373738; background-image:url(/Content/images/bg_list.gif); background-position:32px -35px; background-repeat:no-repeat;}
+.bs6 .lists li.c{color:#126ed6; font-weight:bold;background-position:32px 10px;}
+
+.bs7{width:739px; margin-left:10px; _display:inline;}
+.bs7 .title{line-height:32px; font-size:14px; font-weight:bold; color:#FFF; border-right:#e4e4e5 1px solid;}
+.bs7 .title span{height:32px; width:145px; text-align:center; display:inline-block;}
+.bs7 .text{border:#e4e4e5 1px solid;border-top:#e4e4e5 1px solid; padding:30px 0px;}
+.bs7 .text p{padding:5px 20px;}
+
+/* 支付错误信息 */
+.bs8{padding:25px 50px 60px;}
+.bs8 .ere{border:#bc0a0a 1px solid; background:#fcefe9; padding:20px 40px;}
+.bs9{margin-top:30px;}
+.bs9 .title{line-height:32px; font-size:14px; font-weight:bold; color:#FFF; border-right:#e4e4e5 1px solid;}
+.bs9 .title span{height:32px; width:145px; text-align:center; display:inline-block;}
+.bs9 .text{border:#e4e4e5 1px solid;border-top:#e4e4e5 1px solid; padding:30px 0px;}
+.bs9 .text p{padding:5px 20px;}
+
+/* 优惠献礼 */
+
+.bs11{margin:30px 50px 20px;}
+.bs11 .title{line-height:32px; font-size:14px; font-weight:bold; color:#FFF; border-right:#e4e4e5 1px solid;}
+.bs11 .title span{height:32px; width:145px; text-align:center; display:inline-block;}
+.bs11 .text{border:#e4e4e5 1px solid;border-top:#e4e4e5 1px solid; padding:30px 0px;}
+.bs11 .text p{padding:5px 20px;}
+.bs11 .text h1{padding:20px; text-align:center; color:#c90304}
+
+
+/* 支付成功 */
+.bs12{padding:25px 50px 230px;}
+.bs12 .ere{border:#CCC 1px solid; margin-top:20px; background:url(/Content/images/ben_03.jpg); height:85px; padding:20px; line-height:25px;}
+.bs12 .ere span{font-size:14px; font-weight:bold;}
+.bs12 .ere span strong{font-size:28px; color:#348732}
+
+
+.bs13{border:#E5E5E6 1px solid; width:500px; margin:100px auto 0px; background:url(/Content/images/404_bg.gif); height:125px; padding:20px;}
+.bs13 .list{line-height:1.8; padding-left:20px; padding-top:18px;}
+.bs13 .list a,.bs13 .list a:hover{text-decoration:underline; color:#00F;}
+.bs13 .list .a{font-size:22px; font-weight:bold; font-family:"黑体"}
+.bs13 .list .b{font-size:14px; font-weight:bold;}
+
+/* style.css */
+fieldset{border:0;}
+/*  ================= Base ================= */
+.bg{
+	background: #f0efef url(/Content/images/bg_main.gif) left top repeat-x;
+	width:100%;
+	height:100%;
+}
+.bg_short{
+	background: #f0efef url(/Content/images/bg_main_short.gif) left top repeat-x;
+	width:100%;
+	height:100%;
+}
+
+
+/* Error */
+.field-validation-error{
+	color:#c90304;
+}
+.input-validation-error{
+	border:1px solid #c90304;
+	color:#c90304;
+}
+.icon_right,
+.current .icon_right{
+	background-position:-250px -370px;
+	width:9px;
+	height:9px;
+}
+.current .icon_right{
+	background-position:-232px -370px;
+}
+.error_box{
+	display:inline-block;
+	vertical-align:top;
+}
+.icon_error{
+	background:url(/Content/images/error.png) left top no-repeat;
+	margin-top: 5px;
+    padding-left: 20px;
+	display:inline-block;
+	line-height:16px;
+}
+/* ================= Button =================  */
+.btn_search{
+	height:20px;
+	border:0;
+	background:#5f5f60;
+	color:#fff;
+	cursor:pointer;
+	padding:2px 8px;
+}
+input.btn_big,
+input.btn_big:hover{
+	width:113px;
+	height:33px;
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	text-decoration:none;
+	border:0;
+	cursor:pointer;
+}
+input.btn_big:hover{
+	background-position:0 -33px;
+}
+input.btn_s,input.btn_s_red{
+	width:75px;
+	height:23px;
+	line-height:23px;
+	color:#fff;
+	border:0;
+	cursor:pointer;
+}
+input.btn_s{
+	background-position:0 -66px;
+}
+input.btn_s_red{
+	background-position:0 -89px;
+}
+.inp_normal{
+	padding:5px;
+	width:220px;
+}
+.inp_short{
+	padding:5px;
+	width:90px;
+}
+
+/*  ================= Header =================  */
+.header{
+	padding:50px 0 20px 0;
+}
+.header_right{
+	float:right;
+	padding-top:15px;
+	font-size:14px;
+	margin-right:10px;
+}
+.header_right a,
+.header_right span{
+	float:right;
+	margin-left:5px;
+	text-decoration:none;
+	font-weight:bold;
+}
+.header_right a:hover{
+	text-decoration:underline;
+}
+.logo_home{
+	width: 283px;
+	height: 48px;
+	background-position:0 0;
+	overflow:hidden;
+	text-indent:-999px;
+	float:left;
+}
+.ad_box{
+	width:975px;
+	height:295px;
+	background:url(/Content/images/bg_ad.gif) 0 -5px no-repeat;
+	position:relative;
+}
+.ad_box_bg{
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:960px;
+	height:50px;
+	background:#000;
+	filter:alpha(opacity=50);            /* 用于IE浏览器－透明度为50%*/
+	-moz-opacity:0.5;                    /*  用于Moz + Firefox－透明度为50%*/
+	opacity: 0.5;                        /* 用于支持CSS3的浏览器－透明度为50%*/
+	margin:5px 5px 10px 5px;
+}
+.ad_box_info{
+	position:absolute;
+	left:20px;
+	bottom:15px;   
+	color:#fff;
+	width:920px;
+	height:40px;
+}
+.ad_box img{
+	margin:5px 5px 10px 5px;
+	width:960px;
+	height:280px;
+}
+.ad_box_btn{
+	padding-top:5px;
+}
+.ad_box_btn a{
+	float:right;
+	margin-right:10px;
+	width:14px;
+	height:14px;
+}
+
+
+.cause{
+	padding:15px 5px 10px 5px;
+	_padding-top:10px;
+	line-height:40px;
+	font-size:14px;
+	font-weight:bold;
+	border-bottom:1px solid #abaaaa;
+}
+.cause span,
+.cause img{
+	float:left;
+	margin-right:10px;
+}
+.icon_phone{
+	width:40px;
+	height:38px;
+	background-position:-293px 0;
+	margin-left:100px;
+	display:inline;
+}
+.cause .big_red{
+	float:right;
+	margin:0;
+}
+.ad2{
+	border-top:1px solid #fff;
+	border-bottom:1px solid #abaaaa;
+	padding:10px 5px;
+}
+.ad2 ul{
+	background:#fff;
+	padding:10px;
+}
+.ad2 li{
+	display:inline-block;
+	_display:inline;
+	border-right:1px solid #d5d4d4;
+	height:44px;
+	padding:0 10px;
+	font-size:14px;
+	font-weight:bold;
+        float:left;
+}
+.ad2 li.last_child{
+	border:0;
+}
+.ad2 li span{
+	float:left;
+	line-height:44px;
+}
+.footer{
+	background:#fff;
+	padding:20px 0;
+	text-align:center;
+	width:100%;
+}
+.footer a{
+	margin:0 10px;
+	color:#373738;
+}
+.footer a:hover{
+	color:#116ed6;
+	}
+/* Login */
+.mainbox{
+	background:#fff;
+	width:100%;
+	min-height:400px;
+	_height:400px;
+}
+.guide{
+	background:#ebebeb;
+	border-bottom:8px solid #d9d9d9;
+	padding:20px 80px;
+}
+.login{
+	padding: 50px 80px 100px 80px;
+}
+.reg{
+	padding-top:20px;
+}
+.reg .error_box{
+	width:240px;
+}
+.reg .check .error_box{
+	width:110px;
+}
+.login p{
+	padding-top:20px;
+	clear:both;
+}
+.login label{
+	width:100px;
+	display:inline-block;
+	text-align:right;
+}
+.login .check label{
+	vertical-align:top;
+}
+.login .btn_big{
+	margin-left:100px;
+}
+.login a.forgot_text{
+	margin-left:60px;
+}
+.crumbs{
+	padding:30px 80px;
+}
+.crumbs span{
+	float:left;
+	width:270px;
+	height:85px;
+}
+.crumbs span{
+	background-position:0 -67px;
+	background-image:url(/Content/images/bg.png);
+}
+.crumbs .one .current{
+	width:160px;
+}
+.crumbs .two .current{
+	width:320px;
+}
+.crumbs span.current{
+	background-position:0 -170px;
+	background-image:url(/Content/images/bg.png);
+}
+.b_crumbs{background:#eee; border:#D9D9D9 1px dashed; padding:20px 80px; margin-top:15px;}
+.login label.statement{
+	width:500px;
+	margin-left:108px;
+	text-align:left;
+}
+.congra{
+	font-weight:bold;
+	padding:30px 80px 0 80px;
+	font-size:14px;
+}
+.congra img,
+.change_ok img{
+	vertical-align:middle;
+	margin-right:20px;
+}
+.change_ok{
+	padding:80px
+}
+
+.err span{
+    color: Red;
+}
+/* 爱心捐赠 */
+.activity{
+	margin-top:20px;
+	padding:50px;
+	background:#fff;
+}
+.activity fieldset legend{
+	font-size:26px;
+	color:#c90304;
+	padding-bottom:30px;
+	font-weight:bold;
+}
+.activity fieldset p{
+	padding:5px;
+}
+.activity .give_btn{
+	padding:20px 0 0 0;
+	text-align:center;
+}
+.activity .go_box{
+	padding:20px 0 0 0;
+}
+.activity .go_box label{
+	font-weight:bold;
+	font-size:20px;
+	padding-top:8px;
+}
+.activity .go_box input[type="text"]{
+	padding:8px 10px;
+	width:240px;
+	margin-right:10px;
+}
+.activity .error_box{
+	width:270px;
+}
+.give_img{
+	padding:20px 0;
+}
+.give_img li{
+	float:left;
+	margin-right:10px;
+}
+.give_img li.last_child{
+	margin:0;
+}
+.give_img li img{
+	width:169px!important;
+	width:185px;
+	height:130px;
+	border:8px solid #e4e4e5;
+}
+/* 爱心抽奖 */
+.lucky{
+	padding:50px 20px;
+	margin-bottom:30px;
+	background:#fff;
+	border:1px solid #e4e4e5;
+}
+
+/**
+  * 首页幻灯
+*/
+
+.index #slides {
+	position:relative;width:960px;height:285px; overflow:hidden;
+}
+
+.index #slides .next,.index #slides .prev {
+	position:absolute;top:107px;width:24px;height:43px;display:block;z-index:101;
+}
+.index #slides .prev {
+	left:-100px;
+}
+.index #slides .next {
+	right:-100px;
+}
+.index .pagination {
+	margin:26px auto 0;position:absolute;bottom:10px;right:10px;z-index:150;
+}
+.index .pagination li {
+	float:left;margin:0 1px;list-style:none;
+}
+.index .pagination li a {
+	display:block;width:14px;height:0px;padding-top:14px;background-image:url(/Content/images/bg_png_24b.png);background-position:right 0px;float:left;overflow:hidden; background-repeat:no-repeat; margin-right:10px;
+}
+.index .pagination li.current a {
+	background-position:left 0px;
+}
+.index .caption {
+	z-index:500;position:absolute;bottom:0px;left:0;height:30px;padding:5px 20px 0;background:#000;opacity:0.7; filter:Alpha(Opacity=70);width:920px;font-size:1.3em;line-height:1.33;color:#fff;border-top:1px solid #000;text-shadow:none;
+}
+
+.inof_list{margin:20px 30px; padding:10px;  border:#E3E3E4 1px solid;}
+.inof_list h2{line-height:35px; color:#F00; border-bottom:#E3E3E4 2px solid;}
+.inof_list #ulAddr{line-height:32px; padding:10px 10px 20px; }
+.inof_list #ulAddr li{border-bottom:#E3E3E4 1px dashed;}
+.inof_list .login{border-top:#E3E3E4 2px solid; padding:10px;}
+.inof_list .login p{padding-top:10px;border-bottom:#E3E3E4 1px dashed; padding-bottom:5px;}
+.inof_list .login .btn_big{margin-left:90px;}

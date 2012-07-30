@@ -1,0 +1,7 @@
+^^^^^^^^^^^^--------2012-06-06 14:33:22,800 [6496] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.Exception: param [signature] and [signMethod] not found
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-06 14:46:52,651 [4312] FATAL Ichari.Pay.PaymentController (null) - [Error]
+System.Exception: param [signature] and [signMethod] not found
+   在 Ichari.Pay.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Pay\Controller\BaseController.cs:行号 29
+$$$$$$$$$$$$

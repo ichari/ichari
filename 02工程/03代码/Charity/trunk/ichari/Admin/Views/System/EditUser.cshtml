@@ -1,0 +1,66 @@
+﻿@model Ichari.Admin.ViewModel.SysUserViewModel
+
+<div class="form">
+@using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>创建/编辑用户</legend>
+            
+            @Html.HiddenFor(m => m.UserModel.Id)
+            @Html.HiddenFor(m => m.UserModel.Password)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserModel.LogonName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserModel.LogonName)
+                @Html.ValidationMessageFor(model => model.UserModel.LogonName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserModel.TrueName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserModel.TrueName)
+                @Html.ValidationMessageFor(model => model.UserModel.TrueName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserModel.Phone)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserModel.Phone)
+                @Html.ValidationMessageFor(model => model.UserModel.Phone)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserModel.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserModel.Email)
+                @Html.ValidationMessageFor(model => model.UserModel.Email)
+            </div>
+
+            <div class="editor-label">
+                角色列表
+            </div>
+            <div class="editor-field">
+                <ul>
+                @foreach (var item in Model.RoleList)
+                {
+                    <li><input name="haveRoles" type="checkbox" value="@item.Id" @if(Model.HaveRoles.Contains(item.Id)){ <text>checked="checked"</text>} />@item.RoleName</li>
+                }
+                </ul>
+            </div>
+    
+            <p>
+                <input type="submit" value="提 交" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "User")
+    </div>
+
+</div>

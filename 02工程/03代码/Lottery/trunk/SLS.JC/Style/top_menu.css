@@ -1,0 +1,123 @@
+﻿/* new design css, added 4/20 Jay */
+/* head bar 1 */
+.top_login_bar
+{
+    width: 960px;
+    height: 26px;
+    font-size: 9pt;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    color: White;
+    line-height: 24px;
+
+}
+.login_content
+{
+    display: none;
+    float: left;
+    line-height: 24px;
+    color: White;
+    margin-left: 5px;
+}
+.top_login_bar a, .top_login_bar a:visited
+{
+    color: White;
+}
+
+.top_status
+{
+    
+}
+.top_status li
+{
+    float: left;   
+}
+.top_red
+{
+    color: Red;
+}
+/* head bar 2 */
+.lotto_menu_bar
+{
+    margin:0 auto 0 auto;
+    width: 960px;
+    height: 68px;
+    background-image: url('/Images/_New/lotto_strip.png');
+    background-repeat: repeat-x;
+    border: 1px solid #DE0A0C;
+    vertical-align: middle;
+    color: #DE0A0C;
+}
+.lotto_menu_bar a, .lotto_menu_bar a:visited
+{
+    color: #DE0A0C;
+}
+.lotto_menu_sep
+{
+    width: 1px;
+    height: 68px;
+    background-color: #DE0A0C;
+}
+.lotto_bar_left
+{
+    width: 37px;
+    color: White;
+    font-size: 11pt;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    height: 68px;
+    background-color: #DE0A0C;
+}
+.lotto_bar_right
+{
+    width: 36px;
+    color: White;
+    font-size: 9pt;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 15px;
+    background-color: #DE0A0C;
+}
+.top_menu_bar
+{
+    color: White;
+    font-size: 13pt;
+    font-weight: bold;
+    margin: 0 auto 0 auto;
+    background-image: url('/Images/_New/menu_strip.png');
+    width: 960px;
+    height: 33px;
+    background-repeat: repeat-x;
+    vertical-align: middle;
+    line-height: 33px;
+}
+.top_menu_bar div
+{
+    margin: 0 0 0 13px;
+    float: left;
+}
+/*
+.top_menu_bar div:hover
+{
+    background-color: Red;
+    color:White;
+}
+*/
+.top_menu_bar a, .top_menu_bar a:visited
+{
+    color: White;
+}
+
+.top_menu_bar :hover
+{
+    color: Red;
+}
+
+.top_menu_sep
+{
+    width: 1px;
+    height: 33px;
+    background-image: url('/Images/_New/menu_bar.png');
+}

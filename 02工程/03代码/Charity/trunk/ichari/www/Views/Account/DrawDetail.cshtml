@@ -1,0 +1,112 @@
+﻿@model Ichari.Web.ViewModel.DrawDetailViewModel
+
+@{
+    ViewBag.Title = "领奖详情";
+}
+@section Head{
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+}
+
+<h3 class="guide">
+        领奖详情
+ </h3>
+
+ <table class="ben_table_c" width="100%" border="0" cellspacing="1" cellpadding="0">
+	<tr>
+		<th>奖品名称：</th>
+		<td class="c">@Model.DrawDetail.PrizeName</td>
+	</tr>
+    @if (Model.DrawDetail.IsVirtual)
+    {
+        <tr>
+		    <th>卡号：</th>
+		    <td>@Model.FreeCard.CardNo</td>
+	    </tr>
+        <tr>
+		    <th>密码：</th>
+		    <td>@Model.FreeCard.Password</td>
+	    </tr>
+        <tr>
+		    <th>有效期：</th>
+		    <td>@Model.FreeCard.ValidTime</td>
+	    </tr>
+    }
+    else
+    {
+	<tr>
+		<th>姓名：</th>
+		<td>@Model.DrawDetail.Name</td>
+	</tr>
+	<tr>
+		<th>手机：</th>
+		<td>@Model.DrawDetail.Phone</td>
+	</tr>
+	<tr>
+		<th>固定电话：</th>
+		<td>@Model.DrawDetail.Tel</td>
+	</tr>
+	<tr>
+		<th>邮箱地址：</th>
+		<td>@Model.DrawDetail.Email</td>
+	</tr>
+    <tr>
+		<th>详细地址：</th>
+		<td><span>@Model.DrawDetail.Province</span>
+            <span>@Model.DrawDetail.City</span>
+            <span>@Model.DrawDetail.Area</span>
+            <span>@Model.DrawDetail.Street</span>
+        </td>
+	</tr>
+
+    <tr>
+		<th>邮箱地址：</th>
+		<td>@Model.DrawDetail.Email</td>
+	</tr>
+    }
+
+	<tr class="a">
+		<td colspan="2">
+        @if (Model.DrawDetail.IsVirtual)
+        {
+            @Html.TipPartial() 
+            <p>
+                同时该卡号密码已经发送到您的Email:<strong>@Model.User.Email</strong>
+            </p>
+        }
+        else
+        {
+            if (Model.Draw.Source == (int)Ichari.Model.Enum.GameSource.ChangeOfCare)
+            {
+
+                if (Model.LcModel.State <= (int)Ichari.Model.Enum.OrderState.Paid)
+                { 
+                    <p>
+                    奖品将在30个工作日内发出，发货后将会给您的Email:<span>@Model.DrawDetail.Email</span> 发送一封电子邮件，请注意查收。
+                    </p>
+                }
+                else
+                {
+                    <strong>奖品已发出</strong> 
+                }
+            }
+            else if (Model.Draw.Source == (int)Ichari.Model.Enum.GameSource.IchariDonation)
+            {
+                if (Model.OrderModel.Status <= (int)Ichari.Model.Enum.OrderState.Paid)
+                { 
+                    <p>
+                    奖品将在30个工作日内发出，发货后将会给您的Email:<span>@Model.DrawDetail.Email</span> 发送一封电子邮件，请注意查收。
+                    </p>
+                }
+                else
+                {
+                    <strong>奖品已发出</strong> 
+                }
+            }
+        }
+        </td>
+	</tr>
+
+    <tr class="b">
+		<td colspan="2"><a class="btn_big" href="/Account/MyDrawings">返回抽奖列表</a></td>
+	</tr>
+</table>

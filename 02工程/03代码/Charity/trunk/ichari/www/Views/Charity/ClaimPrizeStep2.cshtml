@@ -1,0 +1,177 @@
+﻿@model Ichari.Model.Validation.AddressValidation
+
+@{
+    ViewBag.Title = "确认领奖信息";
+    var prize = ViewData["prize"] as Ichari.Model.Prize;
+    var addrList = ViewData["addrList"] as IList<Ichari.Model.Address>;
+    var user = Session[Ichari.Web.SessionKey.User] as Ichari.Model.UserInfo;
+}
+
+@section Head{
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class="clears main">
+    <div id="step1" class="mainbox">
+        <h3 class="guide">
+            请填写您的奖品收货地址，以便您更快收到奖品！
+        </h3>
+        <div class="inof_list">
+        <h2>恭喜您获得 @prize.Name 一份</h2>
+        @if (prize.IsVirtual)
+        {
+            var fc = ViewData["freeCard"] as Ichari.Model.FreeCard;
+            <ul id="ulAddr">
+            <li><p><strong>卡&nbsp;&nbsp;号：</strong>@fc.CardNo</p></li>
+            <li><p><strong>密&nbsp;&nbsp;码：</strong>@fc.Password</p></li>
+            <li><p><strong>有效期：</strong>@fc.ValidTime</p></li>
+            </ul>
+            using(Html.BeginForm("SendCard","Charity"))
+            {
+                @Html.Hidden("drawId",Request.QueryString["drawId"])
+                if(string.IsNullOrEmpty(user.Email))
+                {
+                    <label>需要填写您的Email地址：</label>
+                    <span class="error_box">
+                            @Html.TextBoxFor(model => model.Email, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "icon_error" })
+                        </span>
+                }
+                <p>
+                <input type="submit" value="领 取" class="btn_big" />
+                </p>
+            }
+        }
+        else
+        {
+            if (addrList.Count > 0)
+            {
+                using (Html.BeginForm())
+                {
+                 @*选择收货地址*@
+                @Html.Partial("_addrList", addrList)
+                <p style="margin:10px;" id="psubmit">
+                 <input type="submit" value="确认" class="btn_big" />
+                </p>
+                }
+            }
+            using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <fieldset class="login @if (addrList.Count > 0) {<text>hidden</text>}" id="formAddr">
+                    <p>
+                        <span class="error_box">
+                            @Html.CheckBoxFor(m => m.DefaultAddr, new { @checked = "checked" })
+                            默认地址
+                        </span>
+                    </p>
+                    <p>
+                        @Html.LabelFor(model => model.Name)
+                        <span class="error_box">
+                            @Html.TextBoxFor(model => model.Name, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "icon_error" })
+                        </span>
+                    </p>
+                    <p>
+                        @Html.LabelFor(model => model.Email)
+                        <span class="error_box">
+                            @Html.TextBoxFor(model => model.Email, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "icon_error" })
+                        </span>
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(model => model.Tel)
+                        <span class="error_box">
+                            @Html.TextBoxFor(model => model.Tel, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "icon_error" })
+                        </span>
+                    </p>
+
+                   <p>
+                        @Html.LabelFor(model => model.Cell)
+                        <span class="error_box">
+                            @Html.TextBoxFor(model => model.Cell, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.Cell, "", new { @class = "icon_error" })
+                        </span>
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(model => model.Province)
+                        <span class="error_box">
+                            @Html.TextBoxFor(model => model.Province, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.Province, "", new { @class = "icon_error" })
+                        </span>
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(model => model.City)
+                        <span class="error_box">
+                            @Html.TextBoxFor(model => model.City, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.City, "", new { @class = "icon_error" })
+                        </span>
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(model => model.Area)
+                        <span class="error_box">
+                            @Html.TextBoxFor(model => model.Area, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.Area, "", new { @class = "icon_error" })
+                        </span>
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(model => model.Street)
+                        <span class="error_box">
+                            @Html.TextBoxFor(model => model.Street, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.Street, "", new { @class = "icon_error" })
+                        </span>
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(model => model.Postal)
+                        <span class="error_box">
+                            @Html.TextBoxFor(model => model.Postal, new { @class = "inp_normal" })<br />
+                            @Html.ValidationMessageFor(model => model.Postal, "", new { @class = "icon_error" })
+                       </span>
+                    </p>
+                    @Html.HiddenFor(t => t.DrawId)
+                    <div style="margin:20px;">
+                        <input type="submit" value="确认" class="btn_big" />
+                    </div>
+                </fieldset>
+            
+            
+            }
+        }
+        </div>
+
+
+
+    </div>
+</div>
+
+<script type="text/javascript">
+<!--
+    var __claimPrize = (function ($) {
+        $(document).ready(function () {
+            $("#ulAddr input[type='radio']").click(function () {
+                if ($(this).val() == "on") {
+                    $("#formAddr").removeClass("hidden");
+                    $("#psubmit").hide();
+                }
+                else {
+                    $("#formAddr").addClass("hidden");
+                    $("#psubmit").show();
+                }
+            });
+
+
+        });
+    })(jQuery);
+-->
+</script>

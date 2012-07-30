@@ -1,0 +1,17 @@
+^^^^^^^^^^^^--------2012-06-15 13:32:59,867 [10160] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-15 17:46:39,960 [11288] FATAL Ichari.Web.CharityController (null) - [Error]
+System.ArgumentNullException: 值不能为 null。
+参数名: String
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-15 17:57:25,179 [8472] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-15 18:00:05,823 [8472] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-15 18:02:17,079 [7288] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$

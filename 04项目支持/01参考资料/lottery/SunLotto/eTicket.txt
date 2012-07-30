@@ -1,0 +1,6 @@
+代理商ID:800060
+代理商名称：喜彩股份
+代理商密码：xicaigufen
+加密方式：MD5
+彩宝ID：xicaigufen
+测试环境接口地址：http://221.123.166.226:7070/billservice/sltAPI

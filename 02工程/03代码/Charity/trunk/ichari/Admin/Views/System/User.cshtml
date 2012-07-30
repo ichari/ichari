@@ -1,0 +1,58 @@
+﻿@model Ichari.Admin.ViewModel.SysUserViewModel
+
+@{
+    ViewBag.Title = "User";
+}
+
+<div class="search">
+@using (Html.BeginForm())
+{
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>用户名</td>
+            <td>@Html.TextBox("logonName")</td>
+            <td><input type="submit" value="查 询" /></td>
+        </tr>
+    </table>
+}
+</div>
+
+<div class="list">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>登录名</th>
+                <th>真实姓名</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.SysUserList)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.LogonName</td>
+                <td>@item.TrueName</td>
+                <td>@item.Email</td>
+                <td>
+                    @Html.ActionLink("编辑", "EditUser", new { id = item.Id})
+                    @Html.ActionLink("重置密码", "ResetPwd", new { id = item.Id})
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+@{
+    
+    Dictionary<string, object> pars = new Dictionary<string, object>();
+    pars.Add("roleName", ViewData["logonName"] as string);
+
+
+    
+    Html.RenderPager("_PageBar", Model.SysUserList.Count, Model.PageCount, Model.PageIndex, "/system/user", pars);
+}

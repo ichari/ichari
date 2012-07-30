@@ -1,0 +1,27 @@
+﻿@model Ichari.Model.Order
+<div class="w980 png_bg2">
+    <!-- 内容开始 -->
+<div class="w970">
+	<div class="bs3">支付成功</div>
+    <div class="bs12">
+    	<div class="ere">
+        	<p class="fl pt5"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Pay.StaticKey.StaticServer))/Content/images/ben_07.png" width="37" height="33" /></p>
+            <p class="fl pl15"><span>您已成功支付<strong>@Model.Total</strong>元</span><br />
+              <strong>感谢您对中国残疾人事业的关心与支持</strong><br />
+            您还可以：   <a href="@string.Format("{0}/Account/MyDonations",Ichari.Common.WebUtils.GetAppSettingValue("JsHeaderUrl"))" target="_blank">查看我的捐款记录</a></p>
+            <p class="fl pl20 pt20"><a class="btn_big" href="@string.Format("{0}/Charity/ChariDraw",Ichari.Common.WebUtils.GetAppSettingValue("JsHeaderUrl"))">立即抽奖</a></p>
+            
+      </div>
+      
+    
+    </div>
+    
+    
+    
+    
+    
+</div>
+    <!-- 内容结束 -->
+</div>
+
+

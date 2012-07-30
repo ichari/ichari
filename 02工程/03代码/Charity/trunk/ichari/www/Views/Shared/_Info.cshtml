@@ -1,0 +1,49 @@
+﻿@{
+    bool al = (bool)ViewData["alwaysDisplay"];
+    
+    
+    //type为提示信息的类型
+    //1-成功 2-失败 3-提醒，分别对应不同的样式
+    int type = 0;
+    if(TempData[Ichari.Web.StaticKey.TmpGlobalInfoType] != null)
+    {
+        type = (int)TempData[Ichari.Web.StaticKey.TmpGlobalInfoType];
+    }
+   
+}
+@if (@TempData[Ichari.Web.StaticKey.TmpGlobalInfo] != null || al)
+{
+<div id="global_info" class="ben_info">
+    <span @if(type == 1)
+          {
+              @: class="t"
+          }
+          else if(type  == 2)
+          {
+              @: class="f"
+          }
+          else if(type == 3)
+          {
+              @: class="i"
+          }
+    >
+          @if(type == 1)
+          {
+              @: 操作成功！
+          }
+          else if(type  == 2)
+          {
+              @: 操作失败！
+          }
+          else if(type == 3)
+          {
+          }
+    @TempData[Ichari.Web.StaticKey.TmpGlobalInfo]
+    </span>
+</div>
+<script type="text/javascript">
+    setTimeout(function () {
+        $("#global_info").slideUp(500);
+    }, 3000);
+</script>
+}

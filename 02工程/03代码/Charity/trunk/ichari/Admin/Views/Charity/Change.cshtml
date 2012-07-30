@@ -1,0 +1,65 @@
+﻿@model Ichari.Admin.ViewModel.LoveChangeViewModel
+
+@{
+    ViewBag.Title = "爱心零钱管理";
+}
+
+<div class="search">
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>订单号</td>
+            <td>@Html.TextBox("unionOrder")</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>捐款人姓名</td>
+            <td>@Html.TextBox("trueName")</td>
+            <td><input type="submit" value="查 询" /></td>
+        </tr>
+    </table>
+}
+</div>
+
+<div class="list">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>银联订单号</th>
+                <th>捐款金额</th>
+                <th>捐款人姓名</th>
+                <th>捐款结果</th>
+                <th>是否抽奖</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.RecordList)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.UnionOrder</td>
+                <td>@item.Amount</td>
+                <td>@item.TrueName</td>
+                <td>@item.IsSuccess</td>
+                <td>@item.IsGame</td>
+                <td class="optd">
+                    
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+@{
+    
+    Dictionary<string, object> pars = new Dictionary<string, object>();
+    pars.Add("roleName", ViewData["roleName"] as string);
+
+
+    Html.RenderPager("_PageBar", Model.RecordList.Count, Model.PageCount, Model.PageIndex, "/Charity/Change", pars);
+}

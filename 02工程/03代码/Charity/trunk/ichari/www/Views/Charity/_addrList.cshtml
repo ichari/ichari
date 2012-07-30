@@ -1,0 +1,21 @@
+﻿@model IList<Ichari.Model.Address>
+<ul id="ulAddr">
+    <li>请选择收货地址</li>
+    @foreach (var item in Model)
+    {
+        <li>
+            <input type="radio" name="selectedAddr" @if(item.IsDefault){<text>checked="checked"</text>} value="@item.Id" />
+            <span>@item.TrueName</span>
+            <span>@item.Mobile</span>
+            <span>@item.Province</span>
+            <span>@item.City</span>
+            <span>@item.Area</span>
+            <span>@item.Address1</span>
+            <span>@item.PostCode</span>
+        </li> 
+    }
+    <li>
+        <input type="radio" name="selectedAddr" />
+        <span>输入新地址</span>
+    </li>
+</ul>

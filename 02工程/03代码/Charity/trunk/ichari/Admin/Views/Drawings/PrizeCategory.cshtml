@@ -1,0 +1,37 @@
+﻿@model Ichari.Admin.ViewModel.PrizeCategoryViewModel
+
+@{
+    ViewBag.Title = "Prize Category";
+}
+
+<div class="list">
+    <table  cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>类别名称</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.PrizeCategoryList)
+        {
+            <tr>
+                <td style="width:50px;">@item.Id</td>
+                <td style="width:200px;">@item.Name</td>
+                <td>@Html.ActionLink("编辑", "EditPrizeCategory", new { id = item.Id })</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@{
+    Ichari.Common.PageBar bar = new Ichari.Common.PageBar();
+    bar.TotalCount = Model.PrizeCategoryList.Count;
+    bar.PageSize = Model.PageCount;
+    bar.PageIndex = Model.PageIndex;
+    bar.Url = "/Drawings/PrizeCategory";
+
+    Html.RenderPartial("_PageBar", bar);
+}

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "联系我们";
+}
+
+@section Head{
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+}
+
+<div class="pt10"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/0000000_2.jpg" width="970" height="141" /></div>
+    <div class="pt10">
+    <div class="fl bs6">
+        <div class="title bg1x bgp3">关于我们</div>
+        <ul class="lists">
+            <li><a href="/Home/AboutUs">关于我们</a></li>
+            <li><a href="/Home/CustomerSupport">客户服务</a></li>
+            <li><a href="/Home/Careers">招聘</a></li>
+            <li class="c">联系我们</li>            
+        </ul>
+    </div>
+    <div class="fl bs7">
+    <div class="title bg1x bgp6"><span class="bg1x bgp1">联系我们</span></div>
+        <div class="text">
+            <p>
+                <strong>公司名称：</strong>喜彩股份有限公司<br />
+                <strong>公司地址：</strong>北京市朝阳区东三环北路19号中青大厦17层1703室 <br />
+                <strong>网站网址：</strong>http://www.charilot.com/<br />
+                <strong>邮政编码：</strong>100020<br />
+                <strong>公司总机：</strong>010-95999328<br />
+                <strong>客服热线：</strong>010-85999355（按实际通话收取费用）（早8:30&#8212;凌晨1:00）&nbsp;
+            </p>
+            <p class="tc"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/center_08.png" width="504" height="402" /></p>
+        </div>
+    </div>
+</div>
+

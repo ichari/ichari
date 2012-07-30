@@ -1,0 +1,104 @@
+﻿@model Ichari.Model.Admin.Actions
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ViewPage1</title>
+</head>
+<body>
+    
+    
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Actions</legend>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ID)
+                @Html.ValidationMessageFor(model => model.ID)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.MenuCode)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MenuCode)
+                @Html.ValidationMessageFor(model => model.MenuCode)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.MenuName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MenuName)
+                @Html.ValidationMessageFor(model => model.MenuName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ParentID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ParentID)
+                @Html.ValidationMessageFor(model => model.ParentID)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IsMenu)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IsMenu)
+                @Html.ValidationMessageFor(model => model.IsMenu)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IsAjax)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IsAjax)
+                @Html.ValidationMessageFor(model => model.IsAjax)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ResourceKey)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ResourceKey)
+                @Html.ValidationMessageFor(model => model.ResourceKey)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IsNeedAuth)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IsNeedAuth)
+                @Html.ValidationMessageFor(model => model.IsNeedAuth)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SortNumber)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SortNumber)
+                @Html.ValidationMessageFor(model => model.SortNumber)
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
+

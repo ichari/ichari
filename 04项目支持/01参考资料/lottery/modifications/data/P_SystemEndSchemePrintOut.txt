@@ -1,0 +1,53 @@
+/****** Object:  StoredProcedure [dbo].[P_SystemEndSchemePrintOut]
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		spring
+-- Create date: 2009-11-02
+-- Description:	
+-- =============================================
+ALTER PROCEDURE [dbo].[P_SystemEndSchemePrintOut]
+(
+	@ReturnValue int output,
+	@ReturnDescription varchar(100) output
+)
+
+AS
+
+BEGIN
+	SET NOCOUNT ON;
+
+	set @ReturnValue = 0
+	set @ReturnDescription = ''
+
+	declare @SiteID bigint
+	declare @SchemeID bigint
+	declare @LotteryID int
+	declare @LotteryNumber varchar(MAX)
+	declare @Cur cursor
+
+	declare @ReturnValue_2 int
+	declare @ReturnDescription_2 varchar(100)
+
+	set @Cur = cursor FAST_FORWARD for select top 20 [ID], SiteID, LotteryNumber, LotteryID
+		from V_Schemes with(nolock) where GetDate() >  SystemEndTime and QuashStatus = 0 and Buyed = 0 and SchemeIsOpened = 0 and isOpened = 0
+			and BuyedShare >= Share and lotteryID = 62
+	open @Cur
+
+	fetch next from @cur into @SchemeID, @SiteID, @LotteryNumber, @LotteryID
+	while @@fetch_status = 0
+	begin		
+		exec P_SchemePrintOut @SiteID, @SchemeID, 1, 1, '', 1, @ReturnValue_2 output, @ReturnDescription_2 output
+		
+		fetch next from @Cur into @SchemeID, @SiteID, @LotteryNumber, @LotteryID
+	end
+	close @Cur
+
+	set @ReturnValue = 0
+	set @ReturnDescription = ''
+END
+
+go

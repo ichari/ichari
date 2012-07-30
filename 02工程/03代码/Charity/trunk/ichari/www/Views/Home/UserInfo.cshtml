@@ -1,0 +1,76 @@
+﻿@model Ichari.Model.UserInfo
+
+@{
+    ViewBag.Title = "用户资料";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <!-- 导航开始 -->
+    @*<div class="nav">
+        <ul class="location">
+            <li class="current"><a href="#">注册中心</a></li>
+        </ul>
+    </div>*@
+    <!-- 导航结束 -->
+    <div class="clears main">
+        <!-- 注册成功开始 -->
+        <div id="step3" class="mainbox">
+            <h3 class="guide">
+                为了您的帐户安全，请如实填写以下资料，或 <a href="#">以后再提醒</a>。
+            </h3>
+            <div class="crumbs">
+                <!-- 当状态为“创建帐号”时，class="one","激活帐号"=“two”,"注册成功"去掉class -->
+                <span>
+                    <span class="current"></span>
+                </span>
+            </div>
+            <div class="clears"></div>
+            <p class="congra">
+                <img src="/Content/images/hi.jpg" />Hi, <span class="red">@Html.DisplayFor(m => m.UserName)</span>
+            </p>
+            <fieldset class="login reg">
+                <p>
+                    <label>姓名：</label>@Html.TextBoxFor(m => m.UserName, new { name = "name", @class = "inp_normal" })
+                    <span>领奖和提款的重要依据！姓名填写后不可修改</span>
+                </p>
+                <p>
+                    <label>身份证：</label>@Html.TextBoxFor(m => m.UserName, new { name = "name", @class = "inp_normal" })
+                    <span>领奖人身份证号码，必须与姓名一致</span>
+                    <!-- <span class="red"><img src="images/wrong.png" />身份证格式不正确</span> -->
+                </p>
+                <p>
+                    <label>电话：</label>@Html.TextBoxFor(m => m.UserName, new { name = "name", @class = "inp_normal" })
+                    <span>中奖后会通过手机短信或者电话及时通知您</span>
+                </p>
+                <p>
+                    <input type="submit" class="btn_big" value="保存信息" />   或者   <a href="#">以后再填</a>
+                </p>
+            </fieldset>
+        </div>
+        <!-- 注册成功结束 -->
+        <div class="team">  
+            <p>支持单位：
+                <a href="#">民政部</a>
+                <a href="#">文化部</a>
+                <a href="#">工信部</a>
+                <a href="#">教育部</a>
+                <a href="#">中国残疾人联合会</a>
+                <a href="#">国家旅游局</a>
+                <a href="#">中国福利彩票</a>
+                <a href="#">中国体育彩票</a>
+                <a href="#">新濠集团</a>
+            </p>
+            <p>合作媒体：
+                <a href="#">新华网</a>
+                <a href="#">凤凰网</a>
+                <a href="#">华夏时报</a>
+            </p>
+        </div>
+    </div>
+}
+

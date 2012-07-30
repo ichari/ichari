@@ -1,0 +1,12 @@
+﻿@model Ichari.Admin.ViewModel.IndexViewModel
+@{
+   
+}
+
+<div class="q_dst">
+当前共募集爱心捐款：<span class="q_all">￥@Model.AllDonationAmount</span>
+    <ul>
+        <li>爱心零钱：<span><a href="/charity/change">@Model.ChangeOfCareCount</a></span> 笔，合计<span>￥@Model.ChangeOfCareAmt</span></li>
+        <li>爱心捐赠：<span><a href="/charity/donation">@Model.DonationCount</a></span> 笔，合计<span>￥@Model.DonationAmt</span></li>
+    </ul>
+</div>

@@ -1,0 +1,17 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost/tupop/vb/">
+    <file relUrl="bin/SampleVB.pdb" publishTime="09/06/2011 17:06:11" />
+    <file relUrl="bin/SampleVB.dll" publishTime="09/06/2011 17:06:11" />
+    <file relUrl="bin/UPOPSDK.xml" publishTime="09/06/2011 17:06:11" />
+    <file relUrl="bin/UPOPSDK.dll" publishTime="09/06/2011 17:06:11" />
+    <file relUrl="Web.config" publishTime="09/06/2011 14:42:01" />
+    <file relUrl="Default.aspx" publishTime="09/06/2011 14:43:33" />
+    <file relUrl="PayQuery.aspx" publishTime="09/06/2011 15:31:00" />
+    <file relUrl="App_Data/conf.xml.config" publishTime="09/02/2011 15:52:31" />
+    <file relUrl="bin/SampleVB.xml" publishTime="09/06/2011 17:06:11" />
+    <file relUrl="NotifyCallback.aspx" publishTime="09/06/2011 15:30:43" />
+    <file relUrl="FrontPay.aspx" publishTime="09/06/2011 15:30:32" />
+    <file relUrl="BackPay.aspx" publishTime="09/06/2011 15:28:18" />
+    <file relUrl="bin/UPOPSDK.pdb" publishTime="09/06/2011 17:06:11" />
+  </publishTarget>
+</publishData>

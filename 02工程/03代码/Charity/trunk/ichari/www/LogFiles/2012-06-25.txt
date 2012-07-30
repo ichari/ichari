@@ -1,0 +1,110 @@
+^^^^^^^^^^^^--------2012-06-25 11:52:04,758 [8244] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpRequestValidationException (0x80004005): 从客户端(UserName="<a>fuck</a>")中检测到有潜在危险的 Request.Form 值。
+
+Server stack trace: 
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.ValidationUtility.CollectionReplacer.<>c__DisplayClass12.<ReplaceCollection>b__d(String value, String key)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyEvaluatedNameObjectEntry.ValidateObject()
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyValidatingHashtable.get_Item(Object key)
+   在 System.Collections.Specialized.NameObjectCollectionBase.FindEntry(String key)
+   在 System.Collections.Specialized.NameValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.<>c__DisplayClass4.<.ctor>b__0()
+   在 System.Lazy`1.CreateValue()
+
+Exception rethrown at [0]: 
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-25 11:53:51,423 [8228] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpRequestValidationException (0x80004005): 从客户端(UserName="<a>fuck</a>")中检测到有潜在危险的 Request.Form 值。
+
+Server stack trace: 
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.ValidationUtility.CollectionReplacer.<>c__DisplayClass12.<ReplaceCollection>b__d(String value, String key)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyEvaluatedNameObjectEntry.ValidateObject()
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyValidatingHashtable.get_Item(Object key)
+   在 System.Collections.Specialized.NameObjectCollectionBase.FindEntry(String key)
+   在 System.Collections.Specialized.NameValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.<>c__DisplayClass4.<.ctor>b__0()
+   在 System.Lazy`1.CreateValue()
+
+Exception rethrown at [0]: 
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-25 11:55:09,050 [3580] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpRequestValidationException (0x80004005): 从客户端(UserName="<a>fuck</a>")中检测到有潜在危险的 Request.Form 值。
+
+Server stack trace: 
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.ValidationUtility.CollectionReplacer.<>c__DisplayClass12.<ReplaceCollection>b__d(String value, String key)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyEvaluatedNameObjectEntry.ValidateObject()
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyValidatingHashtable.get_Item(Object key)
+   在 System.Collections.Specialized.NameObjectCollectionBase.FindEntry(String key)
+   在 System.Collections.Specialized.NameValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.<>c__DisplayClass4.<.ctor>b__0()
+   在 System.Lazy`1.CreateValue()
+
+Exception rethrown at [0]: 
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-25 11:56:43,691 [9028] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpRequestValidationException (0x80004005): 从客户端(UserName="<a>fuck</a>")中检测到有潜在危险的 Request.Form 值。
+
+Server stack trace: 
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.ValidationUtility.CollectionReplacer.<>c__DisplayClass12.<ReplaceCollection>b__d(String value, String key)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyEvaluatedNameObjectEntry.ValidateObject()
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyValidatingHashtable.get_Item(Object key)
+   在 System.Collections.Specialized.NameObjectCollectionBase.FindEntry(String key)
+   在 System.Collections.Specialized.NameValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.<>c__DisplayClass4.<.ctor>b__0()
+   在 System.Lazy`1.CreateValue()
+
+Exception rethrown at [0]: 
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-25 12:00:12,173 [8836] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpRequestValidationException (0x80004005): 从客户端(UserName="<a>fuck</a>")中检测到有潜在危险的 Request.Form 值。
+
+Server stack trace: 
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.ValidationUtility.CollectionReplacer.<>c__DisplayClass12.<ReplaceCollection>b__d(String value, String key)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyEvaluatedNameObjectEntry.ValidateObject()
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyValidatingHashtable.get_Item(Object key)
+   在 System.Collections.Specialized.NameObjectCollectionBase.FindEntry(String key)
+   在 System.Collections.Specialized.NameValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.<>c__DisplayClass4.<.ctor>b__0()
+   在 System.Lazy`1.CreateValue()
+
+Exception rethrown at [0]: 
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-25 12:06:14,324 [4280] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpRequestValidationException (0x80004005): 从客户端(UserName="<a>fuck</a>")中检测到有潜在危险的 Request.Form 值。
+
+Server stack trace: 
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.ValidationUtility.CollectionReplacer.<>c__DisplayClass12.<ReplaceCollection>b__d(String value, String key)
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyEvaluatedNameObjectEntry.ValidateObject()
+   在 Microsoft.Web.Infrastructure.DynamicValidationHelper.LazilyValidatingHashtable.get_Item(Object key)
+   在 System.Collections.Specialized.NameObjectCollectionBase.FindEntry(String key)
+   在 System.Collections.Specialized.NameValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.<>c__DisplayClass4.<.ctor>b__0()
+   在 System.Lazy`1.CreateValue()
+
+Exception rethrown at [0]: 
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-25 17:58:05,246 [10884] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-25 18:01:08,891 [7740] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-25 18:38:31,952 [9812] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Account\UnionDonations.cshtml(68): error CS0103: 当前上下文中不存在名称“m”
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-25 18:38:42,507 [9236] FATAL Ichari.Web.AccountController (null) - [Error]
+System.ArgumentException: 值不能为 null 或为空。
+参数名: name
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$

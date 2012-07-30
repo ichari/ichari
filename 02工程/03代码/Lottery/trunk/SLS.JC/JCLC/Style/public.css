@@ -1,0 +1,115 @@
+/* 全局CSS定义 */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,table,tr,th,td,img,dd,dl,dt {margin:0; padding:0; border:0;}
+body {font-size:12px; color:#4d4d4d;}
+table {font-family:Tahoma,Helvetica,Arial,"宋体",sans-serif;}
+th {font-weight:normal;}
+ul,ol {list-style-type:none;}
+input,slect,img {vertical-align:middle;}
+
+/* Loong Add*/
+em{ font-style:normal;}
+a{ color:#5e5e5e;}
+.none{ display:none;}
+
+/* */
+.f14 {font-size:14px;}
+.f16 {font-size:16px;}
+.bold {font-weight:bold;}
+.red,a.reg:link,a.reg:visited {color:#f00;}
+.bred {color:#f00; font-weight:bold;}
+.red2 {color:#D90000;}
+.green {color:#deff00;}
+.green2 {color:#090;}
+.r14px {color:#f00; font-size:14px; font-weight:bold;}
+.gray {color:#666;}
+.gray_l{color:#dadada;margin:0 2px;}
+.gray2 {color:#888;}
+
+/* */
+
+/*  */
+.fl {float:left;}
+.fr {float:right;}
+.left {text-align:left;}
+.center {text-align:center;}
+.vcenter {vertical-align:middle;}
+.right {text-align:right; padding-right:7px;}
+.block {display:block;}
+.hidden {display:none;}
+.hand {cursor:pointer;}
+.blank {margin-top:10px;}
+.clear:after {content:"."; display:block; font-size:0; clear:both; height:0; visibility:hidden;}
+.clear {zoom:1;}
+
+/* */
+#header,#main_nav,.navlist li {background:url(http://jccp.chnlott.com/images/main/linebg.png) repeat-x;}
+.login_btn,.cz_btn,.n_l,.n_r,.navlist .nav1,.navlist .nav2,.service a,.service a:hover {background:url(http://jccp.chnlott.com/images/main/main.png) no-repeat;}
+#header {width:100%; height:130px; background-position:0 -1px;}
+#wrap,#wrapper {width:1002px; margin:0 auto;}
+#contentA,#contentB,#contentC {width:1002px; margin:8px auto 0 auto;}
+.banner_bg {height:92px; background:url(http://jccp.chnlott.com/images/main/top_bg.jpg) no-repeat;}
+#logo a {position:relative; width:165px; height:70px; top:12px; left:16px; display:block; text-indent:-9999px; overflow:hidden;}
+.login {width:362px; padding:20px 15px 0 0;}
+.login li {height:30px;}
+.pwd {padding-left:13px;}
+.login img {padding-left:6px;}
+.login_btn {width:80px; margin:0 6px 0 8px; padding:3px 0; border:none; color:#fff; font-weight:bold; background-position:-90px 3px;}
+/* .login_btn {width:63px; margin:0 5px; padding:3px 0; border:none; color:#fff; font-weight:bold; background-position:-87px -88px;} */
+.cz_btn {width:51px; margin:0 5px; height:23px; line-height:23px; border:none; font-size:12px; color:#fff; font-weight:bold; background-position:-176px -144px; }
+.logout {padding-left:20px;}
+.cz_pad {padding-left:10px;}
+.myaccount {width:364px; margin-top:20px; padding:10px 0 10px 0; }
+.myaccount li {height:25px;}
+.myaccount li input{margin:0;padding:0;display:inline;}
+.myaccount .username {font-size:12px; font-weight:bold; color:#485D92;}
+
+/*  */
+#main_nav {width:1002px; margin:0 auto; height:37px; background-position:0 -140px;}
+.n_l {width:4px; height:37px; background-position:-79px -6px;}
+.n_r {width:4px; height:37px; background-position:-84px -6px;}
+.navlist {height:37px; line-height:37px; padding-left:13px; overflow:hidden;}
+.navlist li {float:left; padding:0 10px 0 10px; background-position:0 -580px; background-repeat:no-repeat;}
+.navlist .nav1 {width:66px; margin-top:6px; height:32px; line-height:30px; text-align:center; font-size:14px; color:#790000; font-weight:bold; display:block; cursor:pointer; background-position:-80px -50px;}
+.navlist .nav2 {width:77px; margin-top:6px; height:32px; line-height:30px; display:block; cursor:pointer; text-align:center; font-size:14px; color:#790000; font-weight:bold;  background-position:0 -50px;}
+.navlist .nav3 {width:86px; margin-top:6px; height:32px; line-height:30px; display:block; cursor:pointer; text-align:center; font-size:14px; color:#790000; font-weight:bold;  background:url(..http://jccp.chnlott.com/images/main/nav3.png) no-repeat;}
+.navlist .nobg {margin-right:8px; padding:0; background:none; width:66px;}
+.navlist a:link,.navlist a:visited {text-decoration:none; font-size:13px; color:#fff; display:block; text-align:center;}
+.navlist a.gcolor:link,.navlist a.gcolor:visited {color:#ff0; font-weight:bold;}
+
+/* .navlist .service {width:83px; height:22px; margin:8px 0 0 115px; padding:0; background:none;}
+.navlist .service a:link,.navlist .service a:visited {width:83px; height:22px; line-height:22px; display:block; text-indent:24px; font-size:12px; color:#900; background-position:0 -87px;}
+.navlist .service a:hover {background-position:-91px -23px; text-decoration:none;}*/
+
+/*  */
+#position{width:1002px; margin:0 auto; height:34px; line-height:34px;}
+#position .fa a:link,#position .fa a:visited {color:#0266a7; text-decoration:none;}
+#position .fa a:hover {color:#f00; text-decoration:underline;}
+#position .sub_t {color:#666;}
+
+/*  */
+.previous,.first,.next,.last {background:url(..http://jccp.chnlott.com/images/myaccount/myaccount.png) no-repeat;}
+.page {margin:15px 0 15px 190px; height:23px; overflow:hidden;}
+.page li {float:left; margin-left:4px; text-align:center; display:inline;}
+.page li a:link,.page li a:visited {display:block; width:20px; height:20px; line-height:20px; text-decoration:none; color:#757575; border:solid #c8c8c8 1px;}
+.page li a:hover {display:block; border:solid #999 1px;}
+.page .slect_r {width:20px; height:20px; line-height:20px; background:#FF2524; color:#fff; font-weight:bold; border:solid #FF2524 1px;}
+.page .first {background-position:-247px -153px; text-indent:-9999px; overflow:hidden;}
+.page .previous {background-position:-248px -173px; text-indent:-9999px; overflow:hidden;}
+.page .next {background-position:-248px -194px; text-indent:-9999px; overflow:hidden;}
+.page .last {background-position:-247px -216px; text-indent:-9999px; overflow:hidden;}
+.page .input3 {width:60px; height:18px; text-align:center; border:0; border:solid #c8c8c8 1px;}
+.page .totel {padding:3px 6px; border:solid #c8c8c8 1px;}
+
+/**/
+#footer {width:1002px; margin:15px auto; padding:10px 0 25px 0; text-align:center; line-height:25px; border-top:solid #EAEAEA 1px; color:#666;}
+
+/* 2010.11.11 足篮切换 m*/
+.prize_box h3 .l { float:left;}
+.prize_box h3 .r { float:right; width:102px; overflow:hidden; height:22px; line-height:24px; position:relative;top:7px; text-indent:0;}
+.prize_box h3 .r li { float:left; font-weight:normal; color:#000; cursor:default; width:45px; text-align:center; margin-right:5px;}
+.prize_box h3 .r .t1 { background:url(http://jccp.chnlott.com/images/main/tab_paihang.png)}
+.prize_box h3 .r .t2 { background:url(http://jccp.chnlott.com/images/main/tab_paihang.png) no-repeat -45px 0;}
+.tab_paihang { overflow:hidden; height:32px; line-height:28px; font-size:14px; position:absolute; margin:-40px 0 0 20px;}
+.tab_paihang li { float:left; font-weight:normal; color:#000; cursor:default; width:100px; text-align:center; margin-right:10px;}
+.tab_paihang .t1 { background:url(http://jccp.chnlott.com/images/main/tab_paihang2.png); color:#db6500; font-weight:bold;}
+.tab_paihang .t2 { background:url(http://jccp.chnlott.com/images/main/tab_paihang2.png) no-repeat -100px 0;}

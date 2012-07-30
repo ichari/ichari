@@ -1,0 +1,159 @@
+/* jclq*/
+#gc_bg,.nav_button,.choice,.gg_form_tr_01,.gg_form_tr_02,.form_tr,.listh1 {background:url(../Images/linebg2.png) repeat-x;}
+.butt1 a,.butt2 a,.listh1 span {background:url(../Images/trade.png) no-repeat;}
+#gc_bg {width:1002px; background-position:0 -220px; background-color:#FAFAFA; margin-right: auto;margin-left: auto; margin-top:0px;}
+
+/* 导航按钮 */
+.nav_button {height:30px; background-position:0 27px;}
+.nav_button li {float:left; width:96px; margin-right:4px; line-height:29px; height:29px; text-align:center;}
+.nav_button .butt1 a:link, .nav_button .butt1 a:visited {display:block; line-height:29px; font-size:14px; font-weight:bold; color:#FFF; text-decoration:none;}
+.nav_button .butt2 a:link,.nav_button .butt2 a:visited {display:block; width:96px; height:29px; line-height:29px; display:block; text-decoration:none; background-position:0 -27px;}
+.nav_button .time {float:right; width:auto; padding-right:10px; padding-left:18px; }
+.nav_button a{ color:#5e5e5e;}
+
+/* 滚动时间 */
+.reply_type_01 .time_scroll {}
+.reply_type_01 .time_scroll2 {float:right; width:102px; text-align:center; height:18px; line-height:18px; background:#000; color:#0f0;}
+.reply_type_01 {height:28px;line-height:28px; padding-left:2px;}
+
+/* 选择玩法 */
+.touzhu {border:solid #D7C0A8 1px;}
+.choice {height:28px; padding-top:6px; border:solid #DADADA; border-width:0 1px; padding-left:10px; background-position:0 -6px;}
+.ss_slect {position:absolute; margin-top:-4px; margin-right:0px; margin-bottom:0px; margin-left:0px;}
+
+.showodds {border-top:solid #E6E6E6 1px; text-align:center;}
+.showodds .gg_form_tr_01 {background-position:0 -48px;}
+.showodds .gg_form_tr_02 {background-position:0 -68px;}
+.showodds .form_tr4 {height:30px; line-height:25px; background:#F7F7F7;}
+.showodds .form_tr4_2 {height:30px; line-height:25px; background:#F2F2F2;}
+.showodds .form_tr4 td,.showodds .form_tr4_2 td,.showodds .hoverbg td {border-bottom:solid #DBDBDB 1px;}
+.showodds .form_tr5 {height:30px; background:#EFEFEF;}
+.showodds .form_tr5 td {border-bottom:solid #DBDBDB 1px;}
+.showrate {border-top:solid #E6E6E6 1px; text-align:center;}
+.showrate .gg_form_tr_01 {background-position:0 -48px;}
+.showrate .gg_form_tr_02 {background-position:0 -68px;}
+.showrate .form_tr4 {height:30px; line-height:25px; background:#F7F7F7;}
+.showrate .form_tr4_2 {height:30px; line-height:25px; background:#F2F2F2;}
+.showrate .form_tr4 td,.showrate .form_tr4_2 td,.showrate .hoverbg td {border-bottom:solid #DBDBDB 1px;}
+.showrate .form_tr5 {height:30px; background:#EFEFEF;}
+.showrate .form_tr5 td {border-bottom:solid #DBDBDB 1px;}
+
+.bd_touzhu {margin:0px auto;}
+.showodds .hoverbg, .showrate .hoverbg {height:30px; line-height:25px; background:#FFFBDF;}
+.td_click {background:#FDD59A; font-weight:bold; }
+.gg_form_tr_02 .s{width:75px;}
+.team1 a:link,.team1 a:visited {color:#fff;}
+.table_jczqtz_gg {border:solid #AFCEA4 1px;}
+.table_jczqtz_gg .jczqtouzu_title_gg {height:23px; color:#333; font-weight:bold; background:#BFE48E; text-indent:13px;}
+.table_bdtz_gg {margin-bottom:5px;}
+.table_bdtz_gg .t02 td {height:26px; background:#E3F8DE; border-bottom:solid #AFCEA4 1px;}
+.table_bdtz_gg .t03 td {height:30px; border:solid #AFCEA4; border-width:0 1px 1px 0;}
+.table_bdtz_gg .t03 .bnone {border-right:none;}
+.table_bdtz_gg .t04 td {padding-left:13px; height:27px; background:#E3F8DE; border-bottom:solid #AFCEA4 1px;}
+.table_bdtz_gg .t05 td {padding-left:13px; height:30px; border-bottom:solid #AFCEA4 1px;}
+.table_bdtz_gg .td_pad {padding:8px 0 0 13px; line-height:25px;}
+.touz_btn {width:139px; margin:15px auto;}
+.sg_text01 {padding:15px 0 15px 15px; background:#F8F8F8; line-height:22px;}
+.sp img { cursor:pointer;}
+.sp_box { border:#B5A58D solid 2px; padding:2px;}
+.sp_table { background:#ccc; line-height:16px;}
+.ttd .sp_table td { border:0;}
+.sp_3 { background:#fff0ea;}
+.sp_1 { background:#fffeed;}
+.sp_0 { background:#f1f8ff;}
+.sp_n { text-align:left; width:70px; margin:auto;}
+.sp_bg { font-weight:bold;}
+.ttd td.sp_sbg { border:#f39700 solid 1px; background:#ffdaa4}
+
+/* 我的方案 */
+.mybox {}
+.mybox .form_tr {height:28px; border-bottom:solid #DBDBDB 1px; background-position:0 -6px;}
+.mybox .form_tr .form_title {border:solid #DBDBDB; border-width:0 1px 1px 0; text-align:center;}
+.mybox .form_tr2 {height:30px; background:#f5f5f5; text-align:center;}
+.mybox .form_tr1 {height:30px; line-height:220%; background-color:#F6F6F6; text-align:center;}
+
+/* 确认代购 */
+.listh1 {height:33px; background-position:0 -183px;}
+.listh1 span {width:94px; margin-left:20px; height:33px; display:block; background-position:0 -375px; text-indent:-9999px;}
+.listtable_t { height:35px; background:#F3F3F3; border-bottom:#E4E4E4 solid 1px; border-top:#fff solid 1px; text-align:center; padding:5px 10px; width:130px;}
+.listtable_c { height:35px; background:#fff; border-bottom:#E4E4E4 solid 1px; border-top:#fff solid 1px; padding:5px 10px;}
+.none_line {border-bottom:none;}
+.dg_trbg1 {line-height:30px; text-align:center; background:#F8F7F1;}
+.dg_trbg2 {line-height:30px; text-align:center; background:#fff;}
+.gg_form_trt_01 td {height:24px; color:#4E672D; text-align:center;}
+.gg_form_trt_02 td {height:24px; background:#C1E591; color:#4E672D; text-align:center}
+
+/* 用户协议 */
+.xieyi {margin:40px auto; width:410px; border:solid #D8805F 3px; padding:15px 0;}
+.xieyi h2 {height:30px; font:bold 16px/30px Tahoma, Geneva, sans-serif; color:#666; text-align:center;}
+.xieyi p {line-height:21px; padding:10px 19px;}
+.close_widows {text-align:center;}
+
+/*竞彩篮球*/
+.gg_form_tr_01_lq { background:#fae1c2;}
+.gg_form_tr_02_lq { background:#fae1c2;}
+.jczqtouzu_title_gg_lq {height:23px; color:#333; font-weight:bold; background:#f8d9b6; text-indent:13px;}
+.table_jczqtz_gg_lq {border:solid #dec8a8 1px;}
+.table_bdtz_gg_lq {margin-bottom:5px;}
+.table_bdtz_gg_lq .t02 td {height:26px; background:#fff7ee; border-bottom:solid #ddc7a6 1px;}
+.table_bdtz_gg_lq .t03 td {height:30px; border:solid #ddc7a6; border-width:0 1px 1px 0;}
+.table_bdtz_gg_lq .t03 .bnone {border-right:none;}
+.table_bdtz_gg_lq .t04 td {padding-left:13px; height:27px; background:#fff7ee; border-bottom:solid #e0ccae 1px;}
+.table_bdtz_gg_lq .t05 td {padding-left:13px; height:30px; border-bottom:solid #e0ccae 1px;}
+.table_bdtz_gg_lq .td_pad {padding:8px 0 0 13px; line-height:25px;}
+
+/* 导航按钮_篮球 */
+.nav_button_lq li { float:left; width:96px; margin-right:4px; line-height:29px; height:29px; text-align:center;}
+.nav_button_lq .butt1_lq a:link, .nav_button_lq .butt1_lq a:visited {display:block; line-height:29px; font-size:14px; font-weight:bold; color:#FFF; text-decoration:none; background:url(http://jccp.chnlott.com/images/trade/butt1_lq.png) no-repeat top}
+.nav_button_lq .butt2 a:link,.nav_button_lq .butt2 a:visited {display:block; width:96px; height:29px; line-height:29px; display:block; text-decoration:none; background-position:0 -27px;}
+.nav_button_lq .butt2 a:hover {background-position:0 -54px;}
+.nav_button_lq .time {float:right; width:auto; padding-right:10px; padding-left:18px; }
+.gg_form_trt_02_lq td {height:24px; background:#f7d9b5; text-align:center}
+
+/*20100929 add for plan detail*/
+.ml-none{margin:0;margin-top:10px;}
+
+/*table*/
+.at-wrap .tb{width:100%;background:#fff;border-collapse :collapse;}
+.at-wrap .tb th,.at-wrap .tb td{line-height:28px;padding:0 4px;text-align:center;vertical-align:middle;border-style:solid;border-width:1px;}
+.at-wrap .tb th{background:#EE851F;font-weight:normal;color:#FDFFFF;border-color:#fff;border-top-color:#EE851F;}
+
+.at-wrap .tb th.blc{border-left-color:#EE851F;}
+.at-wrap .tb th.brc{border-right-color:#EE851F;}
+.at-wrap .tb th.fix-ie{border-top-color:#fff;}
+.at-wrap .tb td{background:#fff;border-color:#E4E4E4;}
+.at-wrap .tb td a{text-decoration:none;color:#0366CB;}
+.at-wrap .tb td a:hover{text-decoration:underline;}
+
+
+.table_BetInfo td {height:30px; border:solid #ddc7a6; border-width:0 1px 1px 0; padding:0 0 0 3px;}
+
+/********/
+.betr label{ width:80px;}
+.side_touzhu { width:220px;}
+.side_touzhu a{ color:#333333; text-decoration:none;}
+.side_touzhu a:hover{ color:#ff6600; text-decoration:underline;}
+	.tz_toptit{ height:40px; text-align:center; line-height:36px; color:#333333; background:url(/JCLC/Images/tz_topbg.gif) no-repeat center top;}
+	.tz_toptit span{ color:#ff0000;}
+	.tz_content { clear:both; margin:0; padding:0 0 10px 0 0; border:1px solid #b4d8fc; border-top:none;}
+	.tz_content h2{ height:24px; line-height:24px; padding:0 0 0 5px; color:#ffffff; font-size:12px; font-weight:bold; background:#6eacdd;}
+		.tz_table{ clear:both;}
+		.tz_table th{line-height:30px; font-size:12px; font-weight:normal; color:#999999; border-bottom:1px solid #ececec; background:#f1f1f1;}
+		.tz_table td{ line-height:30px; text-align:center; border-bottom:1px solid #ececec;}
+		.tz_table td.tl{ text-align:left;}
+			.gray{ color:#999999;}
+			
+	.x_s { cursor:pointer; margin:0 2px 0 0; padding:1px; border:1px solid #ffb74a; background:#ffe0b2; font-family:微软雅黑; font-style:inherit;}
+			.nx_s {background: #F7C06D;border-color: #F1A22B;text-decoration: line-through; font-family:微软雅黑; font-style:inherit;}
+		.gtitle{ clear:both; height:28px; line-height:28px;border-top:1px solid #b4d8fc; background:url(/JCLC/Images/guan_navbg.jpg) repeat-x left bottom;}
+		.gtitle ul li{ width: auto; float:left; text-align:center; cursor:pointer;}
+		.gtitle ul li.active{ width:119px; background:#fff;}
+		.gtitle ul li.normal{ width:118px; font-weight:bold; color:#0f3f94;}
+		.gTabContent { clear:both; padding:10px 5px 5px 5px}
+		.gTabContent label{ width:65px; height:24px; float:left;}
+		.tz_qr { clear:both; padding:10px 5px 5px 5px; line-height:24px;}
+		.tz_r_btn{ clear:both; line-height:30px; text-align:center;margin:10px auto; height:30px;}
+		.tz_r_btn a,.tz_r_btn a:hover{ color:#fff; text-decoration:none;}
+		.tz_r_btn span{ float:left; }
+			.btn_tzbuy{ width:85px; height:30px; line-height:30px; display:block; text-align:center; font-size:14px; font-weight:bold; color:#fff; background:url(/JCLC/Images/btn_caijin.gif) no-repeat left top;}
+		.tz_tip { clear:both; line-height:20px; padding:10px 5px 10px 5px; color:#999999;}

@@ -1,0 +1,166 @@
+^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 11:45:29,640 [6808] FATAL Ichari.Web.CharityController (null) - [Error]
+System.InvalidOperationException: 传入字典的模型项的类型为“Ichari.Model.Validation.AddressValidation”，但此字典需要类型“System.Collections.Generic.IList`1[Ichari.Model.Address]”的模型项。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 11:45:56,894 [7724] FATAL Ichari.Web.CharityController (null) - [Error]
+System.InvalidOperationException: 传入字典的模型项的类型为“Ichari.Model.Validation.AddressValidation”，但此字典需要类型“System.Collections.Generic.IList`1[Ichari.Model.Address]”的模型项。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 11:48:01,738 [7724] FATAL Ichari.Web.CharityController (null) - [Error]
+System.InvalidOperationException: 传入字典的模型项的类型为“Ichari.Model.Validation.AddressValidation”，但此字典需要类型“System.Collections.Generic.IList`1[Ichari.Model.Address]”的模型项。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 11:49:22,945 [8500] FATAL Ichari.Web.CharityController (null) - [Error]
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 无法将类型“Ichari.Model.Validation.AddressValidation”隐式转换为“System.Collections.IEnumerable”。存在一个显式转换(是否缺少强制转换?)
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 11:49:38,557 [388] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 11:50:02,379 [748] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 11:51:41,278 [3592] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 11:52:25,707 [8500] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 11:53:28,419 [9020] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 12:28:42,541 [8376] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 12:51:12,272 [7152] FATAL Ichari.Web.CharityController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 16:47:02,712 [11508] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:47:57,274 [4744] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:48:56,326 [1852] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:49:11,567 [11724] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:49:22,635 [11508] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:49:33,212 [9332] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:49:50,680 [5832] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:50:36,976 [8836] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:52:28,501 [9012] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 16:53:01,698 [9332] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:54:15,636 [7456] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:55:03,496 [9332] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:56:27,003 [9332] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:58:21,191 [8500] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 16:59:14,970 [8500] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 16:59:43,136 [6356] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:00:34,940 [7456] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:01:36,475 [6356] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:02:39,422 [11296] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:03:04,902 [8500] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:04:11,097 [8500] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:05:43,341 [11296] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:06:18,373 [11312] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:06:21,774 [10692] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Exception: ad
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 17:37:52,780 [8380] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:39:00,303 [10328] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:39:59,567 [8380] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:40:26,630 [1608] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:40:35,467 [9360] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:41:03,307 [8380] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:42:21,997 [10760] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 17:42:52,390 [10760] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:43:13,854 [8524] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:43:23,682 [8524] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:43:44,701 [10960] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:44:00,281 [1608] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:44:23,208 [10760] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:45:07,585 [10760] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:45:53,781 [10800] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:46:14,237 [8524] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-16 17:47:58,830 [10676] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:48:17,143 [8240] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:48:50,620 [8524] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+--------2012-06-16 17:49:47,925 [8524] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\ClaimPrizeStep2.cshtml(44): error CS0746: 无效的匿名类型成员声明符。匿名类型成员必须使用赋值、简单名称或成员访问来声明。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 32
+$$$$$$$$$$$$

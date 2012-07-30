@@ -1,0 +1,35 @@
+﻿@model Ichari.Web.ViewModel.ChariGameViewModel
+
+@{
+     Layout = null;
+}
+
+<div style="width:230px;height:116px;margin: 10px auto 0 auto;border: 1px solid #E3E3E4;" class="ui-corner-all">
+    <table cellpadding="2" cellspacing="0" style="font-size:12px;margin: 3px auto 3px auto;width:210px;">
+        <caption>您的捐款单</caption>
+        <thead>
+            <tr>
+                <th style="width:150px;text-align:left;">编号</th>
+                <th style="width:50px;text-align:right;">金额</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align:left;">@Model.DonationId</td>
+                <td style="text-align:right;">@Model.DonationAmount</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="font-size:12px;margin:5px auto 5px auto;width:210px;height:52px;text-align:center;">
+    @if(ViewBag.DonPlayed)
+    {
+        <p style="color:Red;">对不起，此捐款单已抽过奖</p>
+        <p style="color:Red;">请<a href="/account/login">登录</a>查询中奖记录。</p>
+    }
+    else
+    {
+        <span>您有<span style="color:Red;"> 1 </span>次抽奖的机会</span>
+    }
+</div>
+@*<div style="text-align:center;">@Html.ActionLink("前往领奖", "PrizeClaim", null, new { @class = "btn_big", style = "color:White;" })</div>*@

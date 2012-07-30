@@ -1,0 +1,25 @@
+﻿@{
+    var user = Session[Ichari.Web.SessionKey.User] as Ichari.Model.UserInfo;
+}
+@*<div class="header">
+    <a class="logo_home" href="/" title="集善网 - 中国银联 中国残疾人福利">集善网 - 中国银联 中国残疾人福利</a>
+    <div class="header_right">
+        @*<div class="search">
+            <input class="inp_search" type="text" value="最新活动" /><input class="btn_search" type="button" value="搜索" />
+        </div>
+        @if (user == null)
+        {
+            <a class="blue" href="/Account/Register">注册</a>
+            <span>|</span>
+            <a class="red" href="/Account/Login">登录</a>
+        }
+    </div>
+    <div class="clears"></div>
+</div>*@
+
+<div class="w970 b_btop">
+	<h1 class="fl"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo.png" width="284" height="46" /></h1>
+    <div class="fr w300 mt15">
+    	@*<div class="fr fs14"><a class="af00" href="#">登录</a>&nbsp;|&nbsp;<a class="a000f" href="#">注册</a></div>*@
+    </div>
+</div>

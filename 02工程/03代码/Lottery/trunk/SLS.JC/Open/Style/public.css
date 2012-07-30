@@ -1,0 +1,69 @@
+/* 全局CSS定义 */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,table,tr,th,td,img,em,dd,dl,dt {margin:0; padding:0; border:0;}
+body {font-size:12px; color:#333;}
+table {font-family:Tahoma,Helvetica,Arial,"宋体",sans-serif;}
+th {font-weight:normal;}
+ul,ol {list-style-type:none;}
+input,slect,img {vertical-align:middle;}
+
+/* 字体样式 */
+.f14 {font-size:14px;}
+.f16 {font-size:16px;}
+.bold {font-weight:bold;}
+.red,a.reg:link,a.reg:visited {color:#f00;}
+.white12 {color:#ffffff;}
+.bred {color:#f00; font-weight:bold;}
+.red2 {color:#D90000;}
+.green {color:#090; font-weight:bold;}
+.green2 {color:#090;}
+.r14px {color:#f00; font-size:14px; font-weight:bold;}
+.gray {color:#666;}
+.gray_l{color:#dadada;margin:0 2px;}
+.gray2 {color:#888;}
+
+/* 字体连接样式 */
+a:link,a:visited {font-size:12px; color:#0F3F94; text-decoration:none;}
+.alink,a.alink:link,a.alink:visited {color:#0F3F94;}
+a:hover,a.alink:hover {color:#f00; text-decoration:underline;}
+
+/* 公用样式 */
+.fl {float:left;}
+.fr {float:right;}
+.left {text-align:left;}
+.center {text-align:center;}
+.vcenter {vertical-align:middle;}
+.right {text-align:right; padding-right:7px;}
+.block {display:block;}
+.hidden {display:none;}
+.hand {cursor:pointer;}
+.blank {margin-top:10px;}
+.clear:after {content:"."; display:block; font-size:0; clear:both; height:0; visibility:hidden;}
+.clear {zoom:1;}
+
+/* 头部 */
+#wrap,#wrapper {width:1002px; margin:0 auto;}
+#contentA,#contentB,#contentC {width:1002px; margin:8px auto 0 auto;}
+.myaccount {width:364px; margin-top:20px; padding:10px 0 10px 0; }
+.myaccount li {height:25px;}
+.myaccount li input{margin:0;padding:0;display:inline;}
+.myaccount .username {font-size:12px; font-weight:bold; color:#485D92;}
+
+/* 位置 */
+#position{width:1002px; margin:0 auto; height:34px; line-height:34px;}
+#position .fa a:link,#position .fa a:visited {color:#0266a7; text-decoration:none;}
+#position .fa a:hover {color:#f00; text-decoration:underline;}
+#position .sub_t {color:#666;}
+
+/* 分页 */
+.previous,.first,.next,.last {background:url(../../images/myaccount.png) no-repeat;}
+.page {margin:15px 0 15px 190px; height:23px; overflow:hidden;}
+.page li {float:left; margin-left:4px; text-align:center; display:inline;}
+.page li a:link,.page li a:visited {display:block; width:20px; height:20px; line-height:20px; text-decoration:none; color:#757575; border:solid #c8c8c8 1px;}
+.page li a:hover {display:block; border:solid #999 1px;}
+.page .slect_r {width:20px; height:20px; line-height:20px; background:#FF2524; color:#fff; font-weight:bold; border:solid #FF2524 1px;}
+.page .first {background-position:-247px -153px; text-indent:-9999px; overflow:hidden;}
+.page .previous {background-position:-248px -173px; text-indent:-9999px; overflow:hidden;}
+.page .next {background-position:-248px -194px; text-indent:-9999px; overflow:hidden;}
+.page .last {background-position:-247px -216px; text-indent:-9999px; overflow:hidden;}
+.page .input3 {width:60px; height:18px; text-align:center; border:0; border:solid #c8c8c8 1px;}
+.page .totel {padding:2px 6px; border:solid #c8c8c8 1px;}

@@ -1,0 +1,135 @@
+﻿@model Ichari.Admin.ViewModel.OrderViewModel
+
+<fieldset>
+    <legend>订单详情</legend>
+            
+            
+    <div class="editor-label">
+        交易号
+    </div>
+    <div class="editor-field">
+        @Model.Order.TradeNo            
+    </div>
+    
+    <div class="editor-label">
+        Email
+    </div>
+    <div class="editor-field">
+        @Model.Order.Email            
+    </div>
+
+    <div class="editor-label">
+        真实姓名
+    </div>
+    <div class="editor-field">
+        @Model.Order.TrueName            
+    </div>
+
+    <div class="editor-label">
+        手机
+    </div>
+    <div class="editor-field">
+        @Model.Order.Mobile            
+    </div>
+
+    <div class="editor-label">
+        总金额
+    </div>
+    <div class="editor-field">
+        <strong class="amount">@Model.Order.Total</strong>            
+    </div>
+           
+    <div class="editor-label">
+        支付方式
+    </div>
+    <div class="editor-field">
+        @{var pn = Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.PayWay>(Model.Order.PayWay);}
+        @pn          
+    </div>
+
+    <div class="editor-label">
+        订单状态
+    </div>
+    <div class="editor-field">
+        @{var state = Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.OrderState>(Model.Order.Status);}
+        @state          
+    </div>
+
+    <div class="editor-label">
+        订单备注
+    </div>
+    <div class="editor-field">
+        @Model.Order.Remark            
+    </div>
+
+    <div class="editor-label">
+        管理员备注
+    </div>
+    <div class="editor-field">
+        @Model.Order.AdminRemark            
+    </div>
+
+    <div class="editor-label">
+        创建时间
+    </div>
+    <div class="editor-field">
+        @Model.Order.CreateTime            
+    </div>
+
+    <div class="editor-label">
+        支付时间
+    </div>
+    <div class="editor-field">
+        @Model.Order.PayTime            
+    </div>
+
+    <div class="list"><span class="tt">产品明细列表</span>
+    <table>
+        <thead>
+            <tr>
+                <th>产品名称</th>
+                <th>单价</th>
+                <th>数量</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Order.OrderDetail)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Price</td>
+                    <td>@item.ProductCount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+
+    <div class="list"><span class="tt">支付记录</span>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>支付方式</th>
+                <th>支付金额</th>
+                <th>支付结果</th>
+                <th>支付时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PayLogList)
+            {
+                <tr>
+                    <td>@item.PayId</td>
+                    @{var pn2 = Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.PayWay>(item.PayWay);}
+                    <td>@pn2</td>
+                    <td>@item.PayMoney</td>
+                    <td>@item.PayResult</td>
+                    <td>@item.CreateTime</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+
+</fieldset> 

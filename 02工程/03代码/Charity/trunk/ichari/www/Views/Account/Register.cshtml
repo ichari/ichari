@@ -1,0 +1,133 @@
+﻿@model Ichari.Model.UserInfo
+
+@section Head{
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+}
+@{
+    ViewBag.Title = "用户注册";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+<script src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/MicrosoftAjax.js"　type="text/javascript"></script>
+<script src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/MicrosoftMvcAjax.js"　type="text/javascript"></script>
+<script src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "form1", name = "form1" }))
+{
+    <div class="clears main">
+        <!-- 创建帐号开始 -->
+        <div id="step1" class="mainbox">
+            <h3 class="guide">
+                如果您已经有了一个积善网的帐号，即可在此 @Html.ActionLink("登录", "Login")
+            </h3>
+            <div class="crumbs">
+                <span class="one">
+                    <span class="current"></span>
+                </span>
+            </div>
+            <div class="clears"></div>
+            <fieldset class="login reg">
+                <div style="color:red;height:20px;">@Html.ValidationSummary(true)</div>
+                <p>
+                    <label>用户名：</label>
+                    <span class="error_box">
+                        @Html.TextBoxFor(m => m.UserName, new { name = "name", @class = "inp_normal" })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "icon_error" })
+                    </span>
+                    <span id="spInfo">4-16个字符，可以使用字母，汉字，数字，下划线</span>
+                </p>
+                <p>
+                    <label>登录密码：</label>
+                    <span class="error_box">
+                        @Html.PasswordFor(m => m.Password, new { name = "pwd", @class = "inp_normal" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "icon_error" })
+                    </span>
+                    <span>6-16个字符，建议使用字母、数字组合，混合大小写</span>
+                    
+                </p>
+                <p>
+                    <label>确认密码：</label>
+                    <span class="error_box">
+                        @Html.PasswordFor(m => m.ConfirmPwd, new { @class = "inp_normal" })
+                        @Html.ValidationMessageFor(m => m.ConfirmPwd, "", new { @class = "icon_error" })
+                    </span>
+                    <span>请再次输入密码</span>
+                </p>
+                <p>
+                    <label>邮箱地址：</label>
+                    <span class="error_box">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "inp_normal" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "icon_error" })
+                    </span>
+                    <span>请输入正确邮箱地址</span>
+                </p>
+                <p style="height:42px;">
+                    <label>验证码：</label>
+                    <span class="error_box" style="width:105px;">
+                        @Html.TextBoxFor(m => m.Captcha, new { @class = "inp_short" })
+                        @Html.ValidationMessageFor(m => m.Captcha, "", new { @class = "icon_error" })
+                    </span>
+                    <span id="gn" class="cp_img"><img id="capImg" src="@Url.Action("CaptchaImg")" alt="验证码" style="vertical-align:top;" /></span>
+                    @Ajax.ActionLink("换一张", "ChangeCaptcha", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "gn" })
+                </p>
+                <p>
+                    <label class="statement" for="statement"><input id="agreement" name="agreement" type="checkbox" />
+                    我已年满18周岁而且同意《<a href="#">网站用户条款</a>》。
+                    <span class="err"></span></label>
+                </p>
+                <p>                
+                    <span class="dis"><input id="btnSubmit" type="button" class="btn_big" value="立即注册" onclick="precheck();" disabled="disabled" /></span>
+                </p>
+            </fieldset>
+        </div>
+        <!-- 创建帐号结束 -->
+        
+    </div>
+}
+@section Support{
+<script type="text/javascript" src="/home/support"></script>
+}
+
+@section FooterScript{
+    <script type="text/javascript">
+        function precheck(x) {
+            if ($('#agreement').is(':checked')) {
+                $('#form1').submit();
+            } else {
+                alert('请勾选同意网站用户条款！');
+                return false;
+            }
+        }
+        $(document).ready(function () {
+            $("#agreement").click(function () {
+                var t = $(this).attr("checked");
+                if (t) {
+                    $("#btnSubmit").attr("disabled", false).parent().removeClass("dis");
+                }
+                else {
+                    $("#btnSubmit").attr("disabled", true).parent().addClass("dis");
+                }
+            });
+            //check username
+            $("#UserName").blur(function () {
+                $.post("/Account/Checkun", {
+                    un: escape($("#UserName").val())
+                }, function (d) {
+                    if (!d.IsSuccess) {
+                        $("#spInfo").html("该用户名已经注册").css({
+                            "color": "red"
+                        });
+                    }
+
+                });
+            }).focus(function () {
+                $("#spInfo").html("4-16个字符，可以使用字母，汉字，数字，下划线").css({
+                    "color": "black"
+                });
+            });
+        });
+</script>
+}

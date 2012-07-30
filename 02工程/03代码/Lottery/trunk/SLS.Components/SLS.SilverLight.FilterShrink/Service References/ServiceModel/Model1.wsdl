@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="Model" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://bet.demo.shovesoft.cn/Silverlight/Model.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://bet.demo.shovesoft.cn/Silverlight/Model.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://bet.demo.shovesoft.cn/Silverlight/Model.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IModel_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="IModel_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModel_GetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModel" />
+  </wsdl:message>
+  <wsdl:message name="IModel_GetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModel_InsertModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertModel" />
+  </wsdl:message>
+  <wsdl:message name="IModel_InsertModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModel_GetModelByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelByID" />
+  </wsdl:message>
+  <wsdl:message name="IModel_GetModelByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModel_DelModelByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelModelByID" />
+  </wsdl:message>
+  <wsdl:message name="IModel_DelModelByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelModelByIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IModel">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModel/DoWork" message="tns:IModel_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModel/DoWorkResponse" message="tns:IModel_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModel/GetModel" message="tns:IModel_GetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModel/GetModelResponse" message="tns:IModel_GetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModel/InsertModel" message="tns:IModel_InsertModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModel/InsertModelResponse" message="tns:IModel_InsertModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModel/GetModelByID" message="tns:IModel_GetModelByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModel/GetModelByIDResponse" message="tns:IModel_GetModelByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelModelByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModel/DelModelByID" message="tns:IModel_DelModelByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModel/DelModelByIDResponse" message="tns:IModel_DelModelByID_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IModel" type="tns:IModel">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/IModel/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModel">
+      <soap:operation soapAction="http://tempuri.org/IModel/GetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertModel">
+      <soap:operation soapAction="http://tempuri.org/IModel/InsertModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelByID">
+      <soap:operation soapAction="http://tempuri.org/IModel/GetModelByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelModelByID">
+      <soap:operation soapAction="http://tempuri.org/IModel/DelModelByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Model">
+    <wsdl:port name="BasicHttpBinding_IModel" binding="tns:BasicHttpBinding_IModel">
+      <soap:address location="http://bet.demo.shovesoft.cn/Silverlight/Model.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

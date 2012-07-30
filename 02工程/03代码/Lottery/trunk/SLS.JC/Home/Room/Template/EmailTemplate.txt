@@ -1,0 +1,19 @@
+﻿<html>
+<head></head>
+<body style="width:600px;word-wrap:break-word;word-break:normal;">
+<div style="font-weight:bold;">尊敬的{0}客户, {1}:</div>
+<p style="margin:10px 0 10px 0;">您好!</p>
+<p>系统已收到您的邮箱激活申请，</p>
+<p>请点击 [ <a href="{2}" target="_blank">激活连接</a> ]，或是复制下列连接</p>
+<p>{2}</p>
+<p>校验您的身份。</p>
+<p>为了您的安全，该邮件通知连接将在 24 小时后失效，谢谢您的合作。</p>
+<p>此邮件由系统发出，请勿直接回复!</p>
+<div style="font-size:10pt;color:#999;">
+<hr/>
+<div>{0} {3}</div>
+<div>{4} 版权所有&copy; 2012</div>
+<div>彩票有风险，投注需谨慎。不向未满18周岁的青少年出售彩票！</div>
+</div>
+</body>
+</html>

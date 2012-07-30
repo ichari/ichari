@@ -1,0 +1,5 @@
+^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-05-30 21:45:45,267 [10784] FATAL Ichari.Web.AccountController (null) - [Error]
+System.IO.FileNotFoundException: 未能找到文件“E:\ichari\02工程\03代码\Charity\trunk\ichari\www\bin\key”。
+文件名:“E:\ichari\02工程\03代码\Charity\trunk\ichari\www\bin\key”
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$

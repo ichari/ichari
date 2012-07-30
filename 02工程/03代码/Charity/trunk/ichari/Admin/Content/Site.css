@@ -1,0 +1,236 @@
+
+
+fieldset 
+{
+    border:1px solid #DEE5EC;
+    padding:0 1.4em 1.4em 1.4em;
+    margin:0 0 1.5em 0;
+}
+
+legend 
+{
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+.editor-label 
+{
+    margin: 1em 0 0 0;
+    font-weight: bold;
+	
+}
+
+.editor-field 
+{
+    margin:0.5em 0 0 0;
+}
+.editor-field .amount {
+	color:Green;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* customer */
+.search {border: solid 1px #DEE5EC;margin-top:10px;padding:5px;}
+
+.list,.form,.t-grid-pager {margin-top:10px;}
+.list table {border:solid 1px #DEE5EC;border-collapse:collapse; line-height:24px; color:#333;}
+.list table thead{background:#6688a7; color:#FFF;}
+.list table thead th {border:solid 1px #DEE5EC;vertical-align:middle;padding-left:8px;text-align:left;}
+.list table tbody td {border:solid 1px #DEE5EC;vertical-align:middle;padding-left:8px;}
+.list .optd a {color:Blue;}
+
+.list span.tt {margin-bottom:5px;display:block;color:Blue;}
+/* pager */
+/* Grid : : paging */
+
+.t-grid-pager
+{
+    padding: .2em .6em;
+    line-height: 1.8em;
+    overflow: auto;
+}
+
+.t-grid-top
+{
+    border-width: 0 0 1px;
+    border-style: solid;
+	border-color:#DEE5EC;
+}
+
+.t-grid-bottom
+{
+    border-width: 1px 0 0;
+    border-style: solid;
+	border-color:#DEE5EC;
+    
+}
+
+* html .t-grid-pager input { vertical-align: middle; }
+*+html .t-grid-pager input { vertical-align: middle; }
+
+.t-grid .t-pager,
+.t-grid .t-status,
+.t-grid .t-status-text,
+.t-pager .t-numeric,
+.t-pager .t-page-i-of-n,
+.t-pager .t-link,
+.t-pager span,
+.t-pager input,
+.t-pager .t-page-size,
+.t-grouping-row p
+{
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+}
+
+.t-pager .t-page-size
+{
+    line-height:1.2em;
+}
+
+.t-footer-template td
+{
+    border-width: 1px 1px 0 0;
+    border-style: solid;
+}
+
+.t-group-footer td,
+.t-group-footer .t-last
+{
+    border-width: 1px 0;
+    border-style: solid;
+	border-color:#DEE5EC;
+}
+
+.t-grid-footer
+{
+    border-style: solid;
+    border-width: 1px 0 0;
+	border-color:#DEE5EC;
+}
+
+.t-grid-footer td
+{
+    border-top-width: 0;
+}
+
+.t-grid .t-status
+{
+    float: left;
+    margin: -.2em .6em -.2em -.6em;
+    padding: .2em .6em;
+    height: 1.85em;
+    border-right-width: 1px;
+    border-right-style: solid;
+	border-color:#DEE5EC;
+}
+
+.t-grid .t-pager
+{
+    float: left;
+    cursor: default;
+}
+
+.t-grid .t-status-text
+{
+    float: right;
+    margin-right: .2em;
+}
+
+.t-pager .t-link
+{
+    text-decoration: none;
+    padding: 1px;
+    margin-top: .2em;
+    border: 0;
+    line-height: 16px;
+}
+
+.t-pager .t-state-active,
+.t-pager .t-state-hover
+{
+    padding: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#DEE5EC;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.t-pager span,
+.t-pager .t-link
+{
+    vertical-align: top;
+}
+
+.t-pager .t-numeric,
+.t-pager .t-page-i-of-n
+{
+    margin: 0 7px;
+    vertical-align: top;
+}
+
+.t-numeric .t-link,
+.t-numeric .t-state-active
+{
+    margin-top: 0;
+    padding: 0 5px;
+    line-height: 22px;
+    vertical-align: top;
+}
+
+.t-numeric .t-state-active,
+.t-numeric .t-state-hover
+{
+    padding: 0 4px;
+    line-height: 20px;
+}
+
+.t-page-i-of-n input
+{
+    width: 2em;
+    vertical-align: baseline;
+    font-size: 1em;
+}
+
+.t-grid-pager .t-status .t-icon
+{
+    vertical-align: top;
+    margin-top: 3px;
+}

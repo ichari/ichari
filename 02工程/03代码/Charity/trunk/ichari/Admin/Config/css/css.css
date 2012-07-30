@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{font-family:"宋体","Arial Narrow"; font-size:12px; line-height:22px;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,button,textarea,p,th,td{margin:0;padding:0;}
+img{border:0;}
+input,button,textarea,select,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+ol,ul{list-style:none;}
+div{overflow:hidden; _zoom:1}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+/**
+  *常用浮动
+*/
+.fl{float:left;}
+.fr{float:right;}
+.fld{float:left;_display:inline;}
+.frd{float:right;_display:inline;}
+
+.bg{background:#1D3647;}
+
+.fott{font-size:44px; font-family:"黑体"; color:#046FB5;}

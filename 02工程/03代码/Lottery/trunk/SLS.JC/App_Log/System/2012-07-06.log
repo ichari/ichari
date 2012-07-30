@@ -1,0 +1,46 @@
+2012-07-06 16:36:57:939		Error, PageName: http://localhost:1934/ElectronTicket/SunLotto/Receive.aspx。 ErrorMsg: TransType格式不正确 Source:SLS.Notify StackTrace:   在 SLS.Notify.NotifyWrapper.get_Current() 位置 E:\ichari\02工程\03代码\Lottery\trunk\SLS.Notify\NotifyWrapper.cs:行号 28
+   在 ElectronTicket_SunLotto_Receive.Page_Load(Object sender, EventArgs e) 位置 e:\ichari\02工程\03代码\Lottery\trunk\SLS.JC\ElectronTicket\SunLotto\Receive.aspx.cs:行号 44
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)。
+
+2012-07-06 16:37:10:838		Error, PageName: http://localhost:1934/ElectronTicket/SunLotto/Receive.aspx?transtype=1000。 ErrorMsg: TransType格式不正确 Source:SLS.Notify StackTrace:   在 SLS.Notify.NotifyWrapper.get_Current() 位置 E:\ichari\02工程\03代码\Lottery\trunk\SLS.Notify\NotifyWrapper.cs:行号 28
+   在 ElectronTicket_SunLotto_Receive.Page_Load(Object sender, EventArgs e) 位置 e:\ichari\02工程\03代码\Lottery\trunk\SLS.JC\ElectronTicket\SunLotto\Receive.aspx.cs:行号 44
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)。
+
+2012-07-06 16:37:24:465		Error, PageName: http://localhost:1934/ElectronTicket/SunLotto/Receive.aspx?cmd=1000。 ErrorMsg: 值不能为空。
+参数名: value Source:mscorlib StackTrace:   在 System.String.IndexOf(String value, Int32 startIndex, Int32 count, StringComparison comparisonType)
+   在 System.String.Contains(String value)
+   在 SLS.Notify.NotifyBase.InitRequest() 位置 E:\ichari\02工程\03代码\Lottery\trunk\SLS.Notify\NotifyBase.cs:行号 53
+   在 SLS.Notify.NotifyBase..ctor() 位置 E:\ichari\02工程\03代码\Lottery\trunk\SLS.Notify\NotifyBase.cs:行号 36
+   在 SLS.Notify.LotterySchemaNotify..ctor()
+   在 SLS.Notify.NotifyWrapper.get_Current() 位置 E:\ichari\02工程\03代码\Lottery\trunk\SLS.Notify\NotifyWrapper.cs:行号 23
+   在 ElectronTicket_SunLotto_Receive.Page_Load(Object sender, EventArgs e) 位置 e:\ichari\02工程\03代码\Lottery\trunk\SLS.JC\ElectronTicket\SunLotto\Receive.aspx.cs:行号 44
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)。
+
+2012-07-06 16:55:39:315		Error, PageName: http://localhost:1934/ElectronTicket/SunLotto/Receive.aspx?cmd=1000。 ErrorMsg: 缺少根元素。 Source:System.Xml StackTrace:   在 System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   在 System.Xml.XmlTextReaderImpl.ThrowWithoutLineInfo(String res)
+   在 System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   在 System.Xml.XmlDocument.Load(XmlReader reader)
+   在 System.Xml.XmlDocument.Load(TextReader txtReader)
+   在 SLS.Notify.LotterySchemaNotify.IsuseNotice(String TransMessage) 位置 E:\ichari\02工程\03代码\Lottery\trunk\SLS.Notify\LotterySchemaNotify.cs:行号 25
+   在 SLS.Notify.LotterySchemaNotify.Recieve() 位置 E:\ichari\02工程\03代码\Lottery\trunk\SLS.Notify\LotterySchemaNotify.cs:行号 15
+   在 ElectronTicket_SunLotto_Receive.Page_Load(Object sender, EventArgs e) 位置 e:\ichari\02工程\03代码\Lottery\trunk\SLS.JC\ElectronTicket\SunLotto\Receive.aspx.cs:行号 44
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)。
+

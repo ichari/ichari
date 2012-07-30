@@ -1,0 +1,95 @@
+﻿@model Ichari.Web.ViewModel.ChariDrawViewModel
+
+@{
+    Layout = null;
+}
+
+<script type="text/javascript">
+    function DonFailed() {
+        $('#donId').val("");
+        $('#donAmt').val("");
+        alert('请重新确认您的捐款单号。（或凭证号）');
+        $('#donId').focus();
+    }
+    function LogFailed() {
+        $('#uname').val("");
+        $('#pwd').val("");
+        alert('登录失败，请重新填写。');
+        $('#uname').focus();
+    }
+</script>
+<script type="text/javascript" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/content/Scripts/ben_class.js"></script>
+<script type="text/javascript">
+function scrollDoor() { }
+scrollDoor.prototype = {
+    sd: function (menus, divs, openClass, closeClass, sEventType) {
+        var _this = this;
+        if (menus.length != divs.length) { alert("菜单层数量和内容层数量不一样!"); return false; }
+        for (var i = 0; i < menus.length; i++) {
+            _this.$(menus[i]).value = i;
+            _this.$(menus[i])["on" + sEventType] = function (){
+                for (var j = 0; j < menus.length; j++){
+                    _this.$(menus[j]).className = closeClass;
+                    _this.$(divs[j]).style.display = "none";
+                }
+                _this.$(menus[this.value]).className = openClass;
+                _this.$(divs[this.value]).style.display = "block";
+            }
+        }
+    },
+    $: function (oid) {
+        if (typeof (oid) == "string")
+            return document.getElementById(oid);
+        return oid;
+    }
+}
+</script>
+<input type="hidden" value="@ViewBag.hid" />
+	<ul class="tab_top">
+		<li id="tab_01" class="c">用户登录</li>
+		<li id="tab_02">捐赠单</li>
+	</ul>
+	<div id="tab_c01" class="tab_cen">
+    @using (Ajax.BeginForm("GameLogin", new AjaxOptions { UpdateTargetId = "gameinfo", OnFailure = "LogFailed" }))
+    {
+        <p>
+            @Html.LabelFor(m => m.UserName)
+        </p>
+        <div class="a">
+            @Html.TextBoxFor(m => m.UserName, new { id = "uname" })
+        </div>
+        <p>
+            @Html.LabelFor(m => m.Password)
+        </p>
+        <div class="a">
+            @Html.PasswordFor(m => m.Password, new { id = "pwd" })
+        </div>
+        <div class="b">
+            <input type="submit" class="btn_big fr" value="登录" />
+        </div>
+    }            
+	</div>
+	<div id="tab_c02" class="tab_cen" style="display:none;">
+    @using (Ajax.BeginForm("GameVerify", new AjaxOptions { UpdateTargetId = "gameinfo", OnFailure = "DonFailed" }))
+    {
+        <p>
+            @Html.LabelFor(m => m.DonatioinId)
+        </p>
+        <div class="a">
+            @Html.TextBoxFor(m => m.DonatioinId, new { id = "donId" })
+        </div>
+        <p>
+            @Html.LabelFor(m => m.DonAmount)
+        </p>
+        <div class="a">
+            @Html.TextBoxFor(m => m.DonAmount, new { id = "donAmt" })
+        </div>
+        <div class="b">
+            <input type="submit" class="btn_big fr" value="提交" />
+        </div>
+    }
+	</div>
+<script type="text/javascript">
+var SDmodel = new scrollDoor();
+SDmodel.sd(["tab_01", "tab_02"], ["tab_c01", "tab_c02"], "c", "", "click");
+</script>

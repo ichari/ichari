@@ -1,0 +1,129 @@
+<controls:ChildWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+                      xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     x:Class="SLS.SilverLight.FilterShrink.BFChildWindow.bfgatherfilter" Width="750" Height="400" Title="bfgatherfilter" mc:Ignorable="d">
+    <controls:ChildWindow.Resources>
+        <!--datagrid模板-->
+        <DataTemplate x:Key="DataTemplate">
+            <Grid Width="400" Height="91" x:Name="Grid1" HorizontalAlignment="Left" Margin="0">
+                <StackPanel Width="400" Height="100" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Height="17" Margin="0,3,0,0">
+                        <TextBlock Text="{Binding Number}" Margin="2,0,0,0" Foreground="Blue" FontSize="12" />
+                        <TextBlock Text="{Binding HomeField}" Margin="2,0,0,0" Foreground="Blue" FontSize="12"/>
+                        <TextBlock Text=" vs " Foreground="Blue" FontSize="12"/>
+                        <TextBlock Text="{Binding VisitingField}" Foreground="Blue" FontSize="12"/>
+                    </StackPanel>
+
+                    <StackPanel Height="66" Width="370" Margin="0,2,0,0" HorizontalAlignment="Left">
+                        <!--胜-->
+                        <StackPanel Height="20" Margin="0,2,0,0" Orientation="Horizontal" Width="370">
+                            <Button ToolTipService.ToolTip="{Binding Sother}" Height="20" HorizontalAlignment="Left" Margin="0" Width="25" Content="WW" BorderThickness="1" FontSize="10" RenderTransformOrigin="0.5,0.5" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S10}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="10" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S20}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="20" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S21}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="21" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S30}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="30" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S31}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="31" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S32}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="32" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S40}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="40" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S41}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="41" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S42}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="42" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S50}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="50" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S51}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="51" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding S52}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="52" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                        </StackPanel>
+                        <!--平-->
+                        <StackPanel Orientation="Horizontal" Width="370" Height="20" Margin="0,1,0,0">
+                            <Button ToolTipService.ToolTip="{Binding Pother}" Height="20" HorizontalAlignment="Left" Margin="0" Width="25" Content="DD" BorderThickness="1" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding P00}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="00" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding P11}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="11" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding P22}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="22" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding P33}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="33" FontSize="10.667" BorderBrush="Black" Background="#FFEBF1F5" Click="Button_Click" FontWeight="Bold"/>
+                        </StackPanel>
+                        <!--负-->
+                        <StackPanel Orientation="Horizontal" Width="370" Height="20" Margin="0,1,0,0">
+                            <Button ToolTipService.ToolTip="{Binding Fother}" Height="20" HorizontalAlignment="Left" Margin="0" Width="25" Content="LL" BorderThickness="1" FontSize="10.667" Background="#FFEBF1F5" Foreground="Black" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F01}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="01" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F02}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="02" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F03}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="12" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F04}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="03" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F05}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="13" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F12}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="23" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F13}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="04" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F14}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="14" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F15}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="24" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F23}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="05" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F24}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" FontSize="10.667" Content="15" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                            <Button ToolTipService.ToolTip="{Binding F25}" BorderThickness="1" Height="20" HorizontalAlignment="Left" Margin="1,0,0,0" Width="25" Content="25" FontSize="10.667" Background="#FFEBF1F5" BorderBrush="Black" Click="Button_Click" FontWeight="Bold"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!--分割线-->
+                    <Rectangle Width="400" Height="1" Margin="0,0,0,0" Fill="#FF6987BF" HorizontalAlignment="Left" />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </controls:ChildWindow.Resources>
+
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" MinHeight="32"/>
+        </Grid.RowDefinitions>
+
+        <Grid Height="335">
+            <StackPanel Orientation="Horizontal" Height="335">
+                <!--左边的datagrid-->
+                <StackPanel Width="400" Height="315">
+                    <StackPanel Orientation="Horizontal" Height="30">
+                        <TextBlock Text="场次" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3,0,0,0" Foreground="Black" FontSize="10.667" />
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="对阵" Margin="50,0,0,0" Foreground="Black" FontSize="10.667" />
+                        <ComboBox x:Name="cbo" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150,0,0,0" Width="90" SelectedIndex="0" Foreground="Black" FontSize="10.667" Height="18">
+                            <ComboBoxItem Content="竞彩赔率"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <!--DataGrid控件-->
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="0" HorizontalScrollBarVisibility="Disabled" Height="290" BorderBrush="#FFFDFAF8">
+                        <data:DataGrid HeadersVisibility="None" VerticalScrollBarVisibility="Disabled" Margin="0" x:Name="dgMatchInfo" AutoGenerateColumns="false" HorizontalScrollBarVisibility="Disabled" Height="Auto" BorderBrush="#FFFEFEFE" Background="White" AlternatingRowBackground="White" RowBackground="White" Width="399">
+                            <data:DataGrid.Columns>
+                                <data:DataGridTemplateColumn x:Name="DataCoumn1" CanUserReorder="False" CanUserResize="False" CanUserSort="False" CellTemplate="{StaticResource DataTemplate}" />
+                            </data:DataGrid.Columns>
+                        </data:DataGrid>
+                    </ScrollViewer>
+
+                </StackPanel>
+
+                <Grid Margin="7,0,0,0" Height="315" Width="320" Background="White">
+                    <StackPanel Width="320" Height="315" VerticalAlignment="Top">
+                        <!--显示文本框-->
+                        <StackPanel Orientation="Horizontal" Width="270" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <ComboBox x:Name="cbStart" Width="80" Margin="0,4,0,0" Foreground="Black"></ComboBox>
+                            <TextBlock x:Name="tbName" Height="18" Margin="5,5,0,0" Width="100" Text="&lt;=命中场次范围&lt;=" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="10.667" Foreground="Black"/>
+                            <ComboBox x:Name="cbEnd" Width="80" Margin="5,4,0,0" Foreground="Black"></ComboBox>
+                        </StackPanel>
+
+                        <!--显示4个按钮-->
+                        <StackPanel Orientation="Horizontal" Width="300" Height="40" Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Button x:Name="btnAdd" Margin="25,0,0,0" Width="45" Content="添加" Height="25" Click="btnAdd_Click"/>
+                            <Button x:Name="btnShift" Margin="25,0,0,0" Width="45" Content="替换" Height="25" Click="btnShift_Click"/>
+                            <Button x:Name="btnDelete" Margin="25,0,0,0" Width="45" Height="25" Content="删除" Click="btnDelete_Click"/>
+                            <Button x:Name="btnAllDel" Margin="25,0,0,0" Width="45" Content="全删" Height="25" Click="btnAllDel_Click"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,10,0,0" Width="320" Height="232">
+                            <ListBox x:Name="lbResult" Height="230" Margin="0" Width="310" FontSize="10" RenderTransformOrigin="0.513,0.508" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+                        </StackPanel>
+                        <TextBox Visibility="Collapsed" x:Name="HidResult"></TextBox>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <Button x:Name="CancelButton" Content="取 消" Click="CancelButton_Click" Width="50" Height="20" HorizontalAlignment="Center" Margin="55,12,0,0" Grid.Row="1" VerticalAlignment="Center" FontSize="10.667"/>
+        <Button x:Name="OKButton" Content="确 定" Click="OKButton_Click" Width="50" Height="20" HorizontalAlignment="Center" Margin="0,12,79,0" Grid.Row="1" VerticalAlignment="Top" FontSize="10.667"/>
+
+    </Grid>
+</controls:ChildWindow>

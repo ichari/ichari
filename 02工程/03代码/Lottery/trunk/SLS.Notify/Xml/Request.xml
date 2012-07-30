@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<msg v="1.0" id="{0}">
+  <ctrl>
+    <agentID>800060</agentID>
+    <cmd>{1}</cmd>
+    <timestamp>{2}</timestamp>
+    <md>{3}</md>
+  </ctrl>
+  <body>{4}</body>
+</msg>

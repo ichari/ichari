@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "出错啦";
+    var msg = ViewData["errMsg"] as string;
+    var internalMsg = ViewData["internalErrStackTrace"] as string;
+}
+@section Head{
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+}
+
+
+
+<div class="w980 png_bg2">
+<!-- 内容开始 -->
+<div class="w970">
+  <div class="bs12">
+   	  <div class="bs13">
+      	<div class="fl img"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/404_ico.gif" width="126" height="120" /></div>
+        <div class="fl list">
+       	  <span class="a">出错啦！</span><br />
+          <div class="b">@msg</div><br />
+          <span class="b hidden">@Html.Encode(internalMsg)</span><br />
+        您可以：   <a href="@Request.RawUrl">返回刚才页面 </a>&nbsp;&nbsp;<a  href="http://www.ichari.com">去首页</a>&nbsp;&nbsp;<a href="javascript:window.opener=null;window.open('','_self','');window.close();">关闭本页面</a></div>     
+      </div>
+    </div>
+    
+    
+    
+    
+    
+</div>
+<!-- 内容结束 -->
+</div>

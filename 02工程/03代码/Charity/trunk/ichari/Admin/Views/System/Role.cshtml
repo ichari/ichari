@@ -1,0 +1,52 @@
+﻿@model Ichari.Admin.ViewModel.RoleViewModel
+
+@{
+    ViewBag.Title = "Role";
+}
+
+<div class="search">
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>角色名称</td>
+            <td>@Html.TextBox("roleName")</td>
+            <td><input type="submit" value="查 询" /></td>
+        </tr>
+    </table>
+}
+</div>
+
+<div class="list">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>角色名称</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.RoleList)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.RoleName</td>
+                <td class="optd">
+                    @Html.ActionLink("编辑", "CreateRole", new { id = item.Id})
+                    @Html.ActionLink("授权", "SetAction", new { id = item.Id})
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+@{
+    
+    Dictionary<string, object> pars = new Dictionary<string, object>();
+    pars.Add("roleName", ViewData["roleName"] as string);
+
+    Html.RenderPager("_PageBar", Model.RoleList.Count, Model.PageCount, Model.PageIndex, "/system/role", pars);
+}

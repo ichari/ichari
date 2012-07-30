@@ -1,0 +1,162 @@
+﻿@model Ichari.Web.ViewModel.ChariWinnerViewModel
+
+@{
+    ViewBag.Title = "爱心抽奖";
+}
+
+@section Head{
+    <link type="text/css" rel="Stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/start/jquery-ui-1.8.20.custom.css" />
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+}
+
+<script type="text/javascript" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/content/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script type="text/javascript" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/content/Scripts/jquery-ui-1.8.20.custom.min.js"></script>
+<script type="text/javascript">
+(function () {
+    $(document).ready(function () {
+        $('#gameinfo').load('@Url.Content("~/Charity/LoginPanel?t=")' + Math.random());
+        $('#lconf').dialog({
+            width: 350,
+            height: 170,
+            modal: true,
+            autoOpen: false,
+            title : "Thank You"
+        });
+        $('#wconf').dialog({
+            width: 350,
+            height: 170,
+            modal: true,
+            autoOpen: false,
+            title : "中奖啦"
+        });
+    });
+})();
+function thisMovie(movieName) {
+    if (navigator.appName.indexOf("Microsoft") != -1) {
+        return window[movieName];
+    } else {
+        return document[movieName];
+    }
+}
+var flashObj = thisMovie("ernie");
+function sendErnie() {
+    flashObj.sendErnie();
+}
+function asCallJsGotoAward(massage, url, target) {
+    $('#gameinfo').load('@Url.Content("~/Charity/LoginPanel/")' + Math.random());
+    //winning and losing both calls this method.
+    if (url == 'win') {
+        //donation won, claim prize
+        $('#wprz').text(massage);
+        $('#wconf').dialog('open');
+    }
+    else if (url == 'lose') {
+        //donation lose, show message
+        $('#lconf').dialog('open');
+    }
+    if($("#hidCnt").val() > 0)
+        flashObj.updateSendErnieBtn();
+}
+function asCallJsErnieFailure(message, url, target) {
+    alert(message);
+    if (url == 'login')
+        $('#uname').focus();
+}
+</script>
+<!-- 内容开始 -->
+<div class="w970 bs_bg">
+<div class="bs1">
+    <div style="width:690px;">
+        @if (Model.IsFromChinaUnion){
+            @Html.TipPartial()
+        }
+        <object id="ernie" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="690" height="690">
+            <param name="movie" value="/Content/game/ernieWgc.swf" />
+            <param name="quality" value="high" />
+            <param name="wmode" value="transparent" />
+	        <param name="flashvars" value="userId=1&baseUrl=/Content/game/" />
+            <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+            <!--[if !IE]>-->
+            <embed src="/Content/game/ernieWgc.swf?userId=1&baseUrl=/Content/game/" quality="high" wmode="transparent"
+	             width="690" height="690" name="ernie" play="true" loop="false" quality="high" allowScriptAccess="sameDomain"
+	             type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+	         </embed>
+            <!--<![endif]-->
+        </object>
+    </div>
+    <!--- iframe allowTransparency="true" frameBorder="0" scrolling="no" ></iframe -->
+    <div class="abd">
+    	<h1><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/ben_01.png" width="278" height="35" /></h1>
+        <div class="lists">
+        	<div class="inof" style="height:256px;">
+                <div class="title bg1x bgp1">抽奖信息</div>
+                <div id="gameinfo">
+                    <img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/ajax-loader.gif" />
+                </div>
+            </div>
+            <div style="height:15px;clear:both;"></div>
+            <div><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/ben_02.png" width="256" height="57" /></div>
+            <div class="list">
+                @foreach (var x in Model.WinList)
+                {
+                    <ul>
+                        <li>@x.UserName</li>
+                        <li>@x.TimePassed</li>
+                        <li>@x.PrizeName</li>
+                    </ul>
+                }
+                @Html.Raw(@ViewBag.WinList)
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="bs2 pt10">
+	<div class="title"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/ben_03.png" width="150" height="33" /></div>
+    <div class="text">
+    	<p style="padding-top:20px;"><strong>【参加抽奖，超级简单】</strong></p>
+        <p>
+            1、点击页面"抢购"按钮，进入抽奖流程，按提示操作即可（参与本活动无需支付任何费用）。<br />
+            2、本次活动萝莉"范儿"\御姐"范儿"\宅男"范儿"\奢侈"范儿"各产生1名中奖者（每个0元抢购产品每人只可参与一次），以"0"元的价格获得"团购1周年庆" 礼品套餐1份（具体细则及奖品见下方）。<br />
+            3、活动期间，每个手机号，获得的"券号"后7位数字作为本次活动的 "抽奖号"。
+            <br />
+            4、您可以点击"我的账户"-"团购订单"-"我的团购券"查看您的抽奖号码。<br />
+            5、会员可分别参加三次抽奖，不可重复中奖（若恰好为同一人中奖，则按照最先抽取的奖品为准）。 </p>
+		<p style="padding-top:20px;"><strong>【奖品说明】</strong></p>
+        <p>
+            奖品内容分别为： <br />
+            ● 萝莉&quot;范儿&quot;礼品套餐：Hello Kitty 宝丽来相机+ Hello Kitty 凯蒂猫 拉杆箱+ Hello Kitty 凯蒂猫单肩包+深圳六星汽车宾馆浪漫馆或豪宅馆2晚；<br />
+            ● 御姐&quot;范儿&quot;礼品套餐：古驰 GUCCI太阳镜+ GUCCI围巾+GUCCI杏色织物单肩旅行袋+三亚香水湾君澜度假酒店碧澜居独栋别墅2晚； <br />
+            ● 宅男&quot;范儿&quot;礼品套餐：MacBook Air+亚马逊kindle电纸书+上海国际饭店高级房2晚； <br />
+            ● 奢侈&quot;范儿&quot;礼品套餐：杭州西溪悦榕庄Water View Villa水悦别墅1晚（4月2-4日, 6-7日, 13-14日, 20-21日不能使用）。 
+        </p>
+        <p style="padding-top:20px;"><strong>【抽奖规则，公开透明】</strong></p>
+        <p>
+            1、活动时间为：2012年3月21日-2012年4月5日23：59：59； <br />
+            2、开奖时间：2012年4月6日； <br />
+            3、每个&quot;范儿&quot;将按照抽奖规则各生成1名幸运用户，每个活动分别获得&quot;团购1周年庆&quot;大礼包1份； <br />
+            4、本奖品不可折现，亦不可转让，奖品以实物为准（图片仅供参考）。 
+        </p>
+    </div>
+</div>
+
+<!-- 内容结束 -->
+<div id="lconf" style="display:none;">
+<div style="text-align:center;padding:5px;">
+    <p style="padding-top:13px;"><h2 style="font-size:14px; font-family:'宋体'; font-weight:normal;">感谢您对慈善事业的大力支持</h2></p>
+    <p><h2 style="font-size:14px; font-family:'宋体'; font-weight:normal;">谢谢参与。</h2></p>
+    <p style="padding:15px;">
+        <a class="btn_s" style="font-size:12px; color:#FFF; font-family:'宋体'; font-weight:normal;" href="/Charity/" title="爱心捐赠">再抽一次</a>
+        <a class="btn_s" style="font-size:12px; color:#FFF; font-family:'宋体'; font-weight:normal;margin-left:20px;" href="/" title="集善网">返回首页</a>
+    </p>
+</div>
+</div>
+<div id="wconf" style="display:none;">
+<div style="text-align:center;padding:5px;">
+    <h2 style="padding:5px;font-size:14px; font-family:'宋体'; font-weight:normal;">恭喜您，中奖了</h2>
+    <h2 style="font-size:14px; font-family:'宋体'; font-weight:normal;">“<span id="wprz"></span>”</h2>
+    <p style="padding:10px;">
+        <a class="btn_big" style="font-size:14px; color:#FFF; font-family:'宋体'; font-weight:normal;" href="/Charity/ClaimPrize" title="领取奖品">领取奖品</a>
+    </p>
+</div>
+</div>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D2633475-226D-4A9D-80F2-5605D9092252}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ichari.Admin</RootNamespace>
+    <AssemblyName>Ichari.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Mvc3">
+      <HintPath>..\packages\Unity.Mvc3.1.1\lib\Unity.Mvc3.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppGlobal.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\CharityController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\DrawingsController.cs" />
+    <Compile Include="Controller\SystemController.cs" />
+    <Compile Include="Controller\OrderController.cs" />
+    <Compile Include="Controller\ContentController.cs" />
+    <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Filter\AuthorizationFilterAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticKey.cs" />
+    <Compile Include="ViewModel\BaseQueryModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\CustomerViewModel.cs" />
+    <Compile Include="ViewModel\DrawingsViewModel.cs" />
+    <Compile Include="ViewModel\IndexViewModel.cs" />
+    <Compile Include="ViewModel\OrderViewModel.cs" />
+    <Compile Include="ViewModel\PageBar.cs" />
+    <Compile Include="ViewModel\RoleViewModel.cs" />
+    <Compile Include="ViewModel\SysUserViewModel.cs" />
+    <Compile Include="ViewModel\LoveChangeViewModel.cs" />
+    <Compile Include="ViewModel\DonationViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Unity.Mvc3.README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseRepository\BaseRepository.csproj">
+      <Project>{257F2384-6B85-451C-BF17-B4509F826BAE}</Project>
+      <Name>BaseRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.Cache\Ichari.Cache.csproj">
+      <Project>{03626CCA-934F-47AB-8683-D89681EADA46}</Project>
+      <Name>Ichari.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.Common\Ichari.Common.csproj">
+      <Project>{C4F07AA0-B3F1-4E20-803B-4638FC91A47A}</Project>
+      <Name>Ichari.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.IService\Ichari.IService.csproj">
+      <Project>{AC480008-3CDB-4B93-A0EF-FA6B132DC222}</Project>
+      <Name>Ichari.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.Model\Ichari.Model.csproj">
+      <Project>{4C0E0B41-1499-477F-9A1D-7D489F92D679}</Project>
+      <Name>Ichari.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.Uow\Ichari.Uow.csproj">
+      <Project>{A3B541DB-B4F9-4FE2-B47F-D1E19CDE87BB}</Project>
+      <Name>Ichari.Uow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

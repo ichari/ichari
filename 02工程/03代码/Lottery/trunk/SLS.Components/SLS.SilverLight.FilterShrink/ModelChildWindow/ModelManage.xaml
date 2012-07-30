@@ -1,0 +1,32 @@
+<controls:ChildWindow x:Class="SLS.SilverLight.FilterShrink.ModelChildWindow.ModelManage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+	xmlns:dataprimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" Width="500" Height="350" Title="我的模型列表">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="0" HorizontalScrollBarVisibility="Disabled" Height="316" BorderBrush="#FFFDFAF8">
+            <data:DataGrid VerticalScrollBarVisibility="Disabled" Margin="0" x:Name="DataGrid1" AutoGenerateColumns="false" HorizontalScrollBarVisibility="Disabled" Height="Auto" BorderBrush="White" Background="White" LoadingRow="DataGrid1_LoadingRow" RowBackground="White" HorizontalContentAlignment="Center" GridLinesVisibility="All" AlternatingRowBackground="#FFF2F2F2">
+                <data:DataGrid.Columns>
+                    <data:DataGridTextColumn  Header="名字" Width="120"  Binding="{Binding Name}" IsReadOnly="True"/>
+                    <data:DataGridTextColumn  Header="备注" Width="220"  Binding="{Binding Descption}" IsReadOnly="True"/>
+                    <data:DataGridTemplateColumn Header="查看"  Width="80">
+                        <data:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="进入" x:Name="Button1" Click="Button1_Click"  Tag=""></Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </data:DataGridTemplateColumn.CellTemplate>
+                    </data:DataGridTemplateColumn>
+                    <data:DataGridTemplateColumn Header="删除"  Width="80">
+                        <data:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="删除" x:Name="btn_Del" Click="btn_Del_Click"  Tag=""></Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </data:DataGridTemplateColumn.CellTemplate>
+                    </data:DataGridTemplateColumn>
+                    <data:DataGridTextColumn Width="220"  Binding="{Binding ID}" Visibility="Collapsed"/>
+                </data:DataGrid.Columns>
+            </data:DataGrid>
+        </ScrollViewer>
+    </Grid>
+</controls:ChildWindow>

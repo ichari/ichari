@@ -1,0 +1,26 @@
+﻿body {margin:0; padding:0; font-family:"宋体"; font-size:12px;}
+div,form,img,ul,ol,li,p,dl,dt,dd {margin: 0; padding: 0; border: 0; }
+.top{ margin:0 auto; background-color:#6aa4d7;}
+.container{ width:798px; height:auto; margin:0 auto; background-color:#e9f3fc; border-left:#6aa4d7 solid 1px; border-right:#6aa4d7 solid 1px;}
+.tab_top{ width:790px; height:31px; margin:0 auto; background-color:#e9f3fc; color:#666; overflow:hidden;}
+.tab_top a{ color:#666; text-decoration:none; display:block; background:url(../images/tab_top_07.gif) no-repeat;}
+.tab_top a:hover{ color:#666; text-decoration:underline;}
+.tab_topSub{ width:10px; height:31px; float:left;}
+.tab_top ul{ width:770px; height:31px; float:left; background:url(../images/tab_top_04.gif) repeat-x;}
+.tab_top ul li{ width:70px; height:31px; line-height:31px; list-style:none; float:left; margin-left:12px; text-align:center;}
+.li_hover{ width:70px; height:31px;}
+.li_hover a{ background:url(../images/tab_top_05.gif) no-repeat; color:#FFF;}
+.li_hover a:hover{ text-decoration:underline;}
+.main{ width:790px; height:auto; margin:0 auto; background:url(../images/mainbg_03.gif) repeat-y;}
+.main_bt{ width:790px; height:8px; margin:0 auto;}
+.main_table{ margin:0 auto; text-align:center; line-height:25px; font-size:16px; color:#FFF; font-weight:bold;}
+.main_table a{font-size:16px; color:#FFF; font-weight:bold; text-decoration:none;}
+.main_table a:hover{ text-decoration:underline;}
+.div_15{ width:100%; height:15px; clear:both;}
+.div_25{ width:100%; height:25px; clear:both;}
+.touzhu{ width:353px; height:55px; line-height:55px; font-size:16px; color:#FFF; font-weight:bold;
+	text-align:center; margin:0 auto; background:url(../images/touzhu_45.gif) no-repeat;}
+.touzhu a{ color:#ffd200; text-decoration:underline;}
+.touzhu a:hover{ color:#ffd200; text-decoration:none;}
+.footerr{ width:800px; height:25px; margin:0 auto; background-color:#6aa4d7;font-size:14px; color:#FFF; font-weight:bold; text-align:center; line-height:25px;}
+-->

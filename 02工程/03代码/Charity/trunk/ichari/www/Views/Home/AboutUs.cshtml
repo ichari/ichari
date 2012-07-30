@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "关于我们";    
+}
+
+@section Head{
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+}
+
+<div class="pt10"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/0000000_2.jpg" width="970" height="141" /></div>
+<div class="pt10">
+    <div class="fl bs6">
+        <div class="title bg1x bgp3">关于我们</div>
+        <ul class="lists">
+            <li class="c">关于我们</li>
+            <li><a href="/Home/CustomerSupport">客户服务</a></li>
+            <li><a href="/Home/Careers">招聘</a></li>
+            <li><a href="/Home/Contact">联系我们</a></li>            
+        </ul>
+    </div>
+    <div class="fl bs7">
+   	<div class="title bg1x bgp6"><span class="bg1x bgp1">关于我们</span></div>
+        <div class="text">
+            <p class="a126"><strong>中国残疾人福利基金会</strong></p>
+           	<p>中国残疾人福利基金会是全国性公募基金会,成立于1984年3月15日。宗旨是弘扬人道，奉献爱心，全心全意为残疾人服务。理念是&#8220;集善&#8221;，即集天下之善心,谋残疾人之福祉。工作目标是努力建设成为公开、透明、高效率和高公信力的世界一流基金会。 </p>
+           	<p class="a126"><strong>中国银联股份有限公司</strong></p>
+            <p >中国银联是经国务院同意，中国人民银行批准设立的中国银行卡联合组织，成立于2002年3月，总部设于上海。目前已拥有近400家境内外成员机构。 </p>
+           	<p class="a126"><strong>喜彩股份有限公司</strong></p>
+           	<p>喜彩股份有限公司，是中国香港上市公司在国内的投资企业。上市公司代码（8198HK）和（0200HK）为其集团公司。喜彩股份有限公司热衷并致力于帮助中国8500万残疾人，通过采用已经盛行的互联网技术，集合快速成长的中国电子商务交易，为残疾人建立起一年365天X24小时不间断的公众募捐网络。 </p>
+        </div>
+    </div>
+</div>
+
+@*<div class="pt10"><img src="/Content/images/0000000_2.jpg" width="970" height="141" /></div>
+    <div class="pt10">
+        <div class="fl bs6">
+        <div class="title bg1x bgp3">关于我们</div>
+            <ul class="lists">
+                <li class="c">关于集善网</li>
+                <li>积善网价值观</li>
+                <li>商务合作</li>
+                <li>安全保障</li>
+                <li>客户服务</li>
+                <li>法律声明</li>
+                <li>积善网招聘</li>
+                <li>网站地图</li>
+                <li>联系我们</li>
+            </ul>
+        </div>
+        <div class="fl bs7">
+        <div class="title bg1x bgp6"><span class="bg1x bgp1">关于集善网</span></div>
+            <div class="text">
+                <p class="a126"><strong>彩票是什么？</strong></p>
+            	<p>&quot;彩票，是指国家为筹集社会公益资金，促进社会公益事业发展而特许发行、依法销售，自然人自愿购买，并按照特定规则获得中奖机会的凭证。&quot;<br />
+            	  目前特许发行的彩票有中国福利彩票和中国体育彩票，分别归口民政部和体育总局系统发行销售。<br />
+            	  以中国福利彩票的拳头产品双色球为例，彩票销售收入的构成比例为：49%返还奖金，1%销售调节基金，15%发行费用，35%公益金。<br />
+            	  其中公益金的用途对于福利彩票而言，主要投入到福利、慈善事业；对于体育彩票而言，主要投入到群众健身设施、奥运项目等等。</p>
+            	<p class="a126"><strong>买彩票的目的</strong></p>
+            	<p>买彩票是支持中国公益事业的善举，买一注彩票2元钱不多，但表达的爱心无限。<br />
+            	  如果试图一定要中大奖，按照彩票的规则设计是不现实的。中大奖主要靠的是运气。<br />
+            	  所以买彩票目的，应该立足于爱心、娱乐、可承受。不应该为了侥幸中得大奖而铤而走险，动用不该动用的资金。</p>
+            	<p class="a126"><strong>澳客是什么？</strong></p>
+            	<p>澳客最直接的意思就是&quot;赢家&quot;；<br />
+            	  赢家释义：金钱面前成功,只是小赢；放下金钱，利用财富，快乐身心，用爱心去理解世界、善待他人。此为大赢。<br />
+            	  澳客的定位是做中国最好的彩民信息服务平台，同时也是最好的投注站信息服务平台；<br />
+            	  澳客不直接卖彩票，澳客做好服务让投注站卖好彩票，让彩民方便的买彩票；<br />
+            	  澳客是一家优秀的竞猜数据引擎；<br />
+            	  澳客是一个网站——www.okooo.com；<br />
+            	  澳客不仅仅是一个网站。澳客的赢家服务开放分享给了很多合作者。</p>
+            	<p class="a126"><strong>澳客定位</strong></p>
+            	<p>澳客网定位：服务彩票行业，创造中国最好的彩民和投注站信息服务平台；<br />
+            	  彩民和投注站信息服务平台：联结广大彩民朋友和投注站服务的中间平台，主要提供以下服务：彩票及足球数据展现、整合网络支</p>
+            </div>
+        </div>
+    </div>*@
+
+

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C1B613D-05C5-4F95-8705-72D0B67CB635}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ichari.Service</RootNamespace>
+    <AssemblyName>Ichari.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\ActionsService.cs" />
+    <Compile Include="Admin\RelRoleActionService.cs" />
+    <Compile Include="Admin\RelUserRoleService.cs" />
+    <Compile Include="Admin\SysRoleService.cs" />
+    <Compile Include="Admin\SysUserService.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="ichari\AccountLogService.cs" />
+    <Compile Include="ichari\AccountService.cs" />
+    <Compile Include="ichari\AddressService.cs" />
+    <Compile Include="ichari\ContentService.cs" />
+    <Compile Include="ichari\DrawingsService.cs" />
+    <Compile Include="ichari\FreeCardService.cs" />
+    <Compile Include="ichari\FriendLinkService.cs" />
+    <Compile Include="ichari\LoveChangeService.cs" />
+    <Compile Include="ichari\OrderDetailService.cs" />
+    <Compile Include="ichari\OrderService.cs" />
+    <Compile Include="ichari\PayLogService.cs" />
+    <Compile Include="ichari\PrizeCategoryService.cs" />
+    <Compile Include="ichari\PrizeService.cs" />
+    <Compile Include="ichari\UserInfoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseRepository\BaseRepository.csproj">
+      <Project>{257F2384-6B85-451C-BF17-B4509F826BAE}</Project>
+      <Name>BaseRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.Cache\Ichari.Cache.csproj">
+      <Project>{03626CCA-934F-47AB-8683-D89681EADA46}</Project>
+      <Name>Ichari.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.IRepository\Ichari.IRepository.csproj">
+      <Project>{F6B79903-4D4A-4387-A9BD-A3C5259A59DD}</Project>
+      <Name>Ichari.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.IService\Ichari.IService.csproj">
+      <Project>{AC480008-3CDB-4B93-A0EF-FA6B132DC222}</Project>
+      <Name>Ichari.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.Model\Ichari.Model.csproj">
+      <Project>{4C0E0B41-1499-477F-9A1D-7D489F92D679}</Project>
+      <Name>Ichari.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ichari.Repository\Ichari.Repository.csproj">
+      <Project>{BF83C012-1F59-42DB-95BB-B689D402A04B}</Project>
+      <Name>Ichari.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

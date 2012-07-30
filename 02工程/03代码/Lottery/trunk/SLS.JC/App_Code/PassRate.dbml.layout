@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 31.125" name="PassRate">
+  <DataContextMoniker Name="/PassRateDataContext" />
+  <nestedChildShapes>
+    <classShape Id="79b35ae0-756c-4695-bd7e-8623d93313c5" absoluteBounds="1.125, 5.75, 2, 25.066968180338542">
+      <DataClassMoniker Name="/PassRateDataContext/T_PassRate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65783542-a70f-4f10-995e-8610e6cb6b4e" absoluteBounds="1.1400000000000001, 6.2100000000000009, 1.9700000000000002, 24.506968180338539" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

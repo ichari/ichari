@@ -1,0 +1,71 @@
+﻿@model Ichari.Admin.ViewModel.BaseViewModel<Ichari.Model.Content>
+@{
+    ViewBag.Title = "图文链管理";
+}
+
+<div class="search">
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>标签</td>
+            <td>
+            @Html.DropDownList("tag", new List<SelectListItem>() { 
+                new SelectListItem(){Text="支持单位",Value="zcdw"}
+                ,new SelectListItem(){Text="合作媒体",Value="hzmt"}
+           }, "", null)</td>
+            <td><input type="submit" value="查 询" /></td>
+        </tr>
+    </table>
+}
+</div>
+
+<div class="list">
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>标题</th>
+                <th>描述</th>
+                <th>图片</th>
+                <th>类型</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.PageList)
+        {
+            <tr>
+                <td style="width:40px;">@item.Id</td>
+                <td style="width:90px;">@item.Title</td>
+                <td style="width:80px;">@item.Description</td>
+                <td style="width:110px;">
+                    <imsg src="@item.PicUrl" />
+                </td>
+                <td style="width:150px;">
+                @{var t = Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.ContentType>(item.ContentType);}
+                    @t
+                </td>
+                <td style="width:90px;">
+                    @Html.ActionLink("编辑", "Add", new { id = item.Id })
+                    
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+@{
+    
+    Dictionary<string, object> pars = new Dictionary<string, object>();
+    pars.Add("roleName", ViewData["tag"] as string);
+
+    Html.RenderPager("_PageBar", Model.PageList.Count, Model.PageCount, Model.PageIndex, "/content/index", pars);
+}
+
+<div>
+    <p>
+        @*<span>@Html.ActionLink("返回列表","Index")</span>*@
+        <span>@Html.ActionLink("新增","Add")</span>
+    </p>
+</div>

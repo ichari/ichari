@@ -1,0 +1,22 @@
+﻿@model Ichari.Model.Admin.SysUser
+           
+@using Ichari.Admin;
+
+@{
+    ViewBag.Title = "修改密码";
+    var cu = Session[Ichari.Admin.StaticKey.SessionUser] as Ichari.Model.Admin.SysUser;
+}
+
+<div class="q_dst">
+@if (cu.LogonName == Ichari.Common.WebUtils.GetAppSettingValue(StaticKey.AppSuperUserName))
+{
+    @: 超级管理员密码请联系维护人员修改 
+}
+else
+{ 
+    @Html.LabelFor(t=>t.LogonName)
+    @Html.TextBoxFor(t => t.LogonName, new { @readonly = "readonly"})
+}
+</div>
+
+

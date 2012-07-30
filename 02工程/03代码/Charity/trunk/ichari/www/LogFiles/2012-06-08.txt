@@ -1,0 +1,16 @@
+^^^^^^^^^^^^--------2012-06-08 14:04:41,549 [4100] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NotImplementedException: 未实现该方法或操作。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-08 14:06:42,179 [1960] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NotImplementedException: 未实现该方法或操作。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-06-08 14:45:35,466 [8780] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NotImplementedException: 未实现该方法或操作。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-08 15:52:50,453 [10604] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NotImplementedException: 未实现该方法或操作。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-06-08 17:12:16,247 [12928] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NotImplementedException: 未实现该方法或操作。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$

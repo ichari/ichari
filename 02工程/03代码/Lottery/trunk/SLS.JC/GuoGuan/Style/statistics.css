@@ -1,0 +1,72 @@
+/*定义文字、链接颜色*/
+a { color:#636363; text-decoration:none; cursor:pointer; }
+a:hover { color:#f60; }
+a:link, a:visited { text-decoration:none; }
+a:hover, a:active { text-decoration:underline; }
+.c_333, .c_333 a { color:#333 !important; }
+a.c_333:hover, .c_333 a:hover { color:#346dff; text-decoration:underline; }
+.c_999, a.c_999, .c_999 a { color:#999999 !important; }
+a.c_999:hover, .c_999 a:hover { color:#f60; text-decoration:underline; }
+.c_red, a.c_red { color:#ff0000 !important; }
+.c_green, a.c_green { color:#359800 !important; }
+.c_org, a.c_org, .c_org a { color:#f60 !important; }
+a.c_org:hover { color:#ff0000; }
+.c_blu, .c_blu a { color:#057BD2; }
+a.c_blu:hover, .c_blu a:hover { color:#f60; text-decoration:underline; }
+/******************************/
+.toppic{height:130px; margin:0 auto;clear:both;}
+.botpic{ width:1002px; height:206px; margin:0 auto;clear:both; margin-top:10px;}
+.wrap{ width:1002px; height:auto; margin:0 auto; clear:both;}
+/*main*/
+.main_sta{ width:841px; float:right; height:auto; margin-top:6px; padding:0 0 2px 0; background:#fff;}
+	.sta_toptab{ height:60px; border:1px solid #aecfef; background:url(../images/sta_topbg.gif) repeat-x left bottom;}
+	.sta_toptab h2{ width:auto; float:left; height:46px; margin:8px 0 0 5px;}
+		.sta_toptab h2.sta_nav1{ width:188px; background:url(../images/sta_nav.gif) no-repeat left 0px;}
+		.sta_toptab h2.sta_nav2{ width:168px; background:url(../images/sta_nav.gif) no-repeat left -50px;}
+		.sta_toptab h2.sta_nav3{ width:188px; background:url(../images/sta_nav.gif) no-repeat left -100px;}
+		.sta_toptab h2.sta_nav4{ width:188px; background:url(../images/sta_nav.gif) no-repeat left -150px;}
+		.sta_toptab h2.sta_nav5{ width:168px; background:url(../images/sta_nav.gif) no-repeat left -200px;}
+		.sta_toptab h2.sta_nav6{ width:200px; background:url(../images/sta_nav.gif) no-repeat left -250px;}
+		.sta_toptab h2.sta_nav7{ width:188px; background:url(../images/sta_nav.gif) no-repeat left -300px;}
+		.sta_toptab h2.sta_nav8{ width:188px; background:url(../images/sta_nav.gif) no-repeat left -350px;}
+		
+	.sta_toptab dl{ float:left; width:600px; margin:20px 0 0 0; font-size:12px;}
+	.sta_toptab dl span{ float:left; margin:0 5px 0 0;}
+		.sta_toptab dl span.zi{ margin-top:5px;}
+		.sta_toptab dl span.xx{ margin-top:2px;}
+		.sta_toptab dl input[type="text"]{ height:18px; line-height:18px; padding:0 2px; margin:0px;}
+		.btn_staso{ width:65px; height:27px; display:block; cursor:pointer; border:0px; margin:0; padding:0; background:url(../images/btn_staso.gif) no-repeat left 0px;}
+	
+	.statab { clear:both;}
+	.statab_nav { height:30px; clear:both; margin:10px 0 0 0; border-bottom:1px solid #b0d1f0;}
+	.statab_nav ul li{ float:left; width:81px; height:30px; line-height:30px; font-weight:bold; text-align:center; margin:0 1px 0 0; background: url(../images/btn_sta.gif) no-repeat left -30px;}
+	.statab_nav ul li a{ width:81px; height:30px; display:block; text-decoration:none; color:#909090;}
+	.statab_nav ul li a:hover{ color:#ff6600;}
+	.statab_nav ul li.curr{background: url(../images/btn_sta.gif) no-repeat left 0px;}
+	.statab_nav ul li.curr a{ color:#3e79a9;}
+	
+	.statab_cont{ font-size:12px; border:#b0d1f0 1px solid;}
+	.statab_cont a{ color:#af5000;}
+	.statab_cont a:hover{ color:#ff6600;}
+	.statab_cont .stable{ border-top: 1px solid #fff; border-left: 1px solid #deefff; background-color: #FFF; line-height:24px;}
+	.statab_cont .stable td { border-bottom:#b0d1f0 1px solid; border-right:#deefff 1px solid; empty-cells: show; line-height:24px; text-align:center;}
+	.tit td { color:#ef9900; font-weight:bold; border-right:1px solid #deefff; background:url(../images/ringtab_nav.gif) repeat-x left -60px;line-height:24px;}
+	.ni { background:#fff;}
+	.ni2 { background:#fff9f5;}
+		
+	
+/*side_sta*/
+.side_sta { float:left; width:151px;}
+	.sta_nav { margin:6px 0 0 0; border:1px solid #ff6600; background:#fff6f0;}
+	.sta_nav h2{ height:29px; border-bottom:1px solid #ff9248;}
+	.sta_nav h3{ height:29px; border-bottom:1px solid #ffcaa6; font-size:12px; line-height:29px; padding:0 0 0 30px;}
+		.sta_nav h3.bb{ background:url(../images/sta_li.gif) no-repeat left 0px;}
+		.sta_nav h3.fb{ background:url(../images/sta_li.gif) no-repeat left -50px;border-top:1px solid #ffcaa6;}
+	.sta_nav ul{ margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+	.sta_nav ul li{ width:39%; 
+float:left; font-size:12px;
+}
+	.sta_nav ul li.curr a { color:#ff6600; font-weight:bold;}

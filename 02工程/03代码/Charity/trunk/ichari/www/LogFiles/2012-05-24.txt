@@ -1,0 +1,223 @@
+^^^^^^^^^^^^--------2012-05-24 10:27:16,048 [5540] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“register”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/register.cshtml
+~/Views/home/register.vbhtml
+~/Views/Shared/register.cshtml
+~/Views/Shared/register.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-05-24 10:43:45,815 [3416] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “<”在代码块开头无效。只有标识符、关键字、注释、“(”和“{”才有效。
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:45:26,606 [1616] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(3): error CS0815: 无法将“lambda 表达式”赋值给隐式类型的局部变量
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:46:59,062 [3460] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(3): error CS0815: 无法将“lambda 表达式”赋值给隐式类型的局部变量
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:49:12,759 [8512] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “<”在代码块开头无效。只有标识符、关键字、注释、“(”和“{”才有效。
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:50:19,852 [6408] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(5): error CS1660: 无法将 lambda 表达式 转换为类型“object”，原因是它不是委托类型
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:50:43,639 [9080] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(5): error CS1660: 无法将 lambda 表达式 转换为类型“object”，原因是它不是委托类型
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:51:02,445 [9080] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(5): error CS1660: 无法将 lambda 表达式 转换为类型“object”，原因是它不是委托类型
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:51:24,322 [5248] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(5): error CS1660: 无法将 lambda 表达式 转换为类型“object”，原因是它不是委托类型
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:51:53,513 [9080] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(5): error CS1502: 与“System.Web.WebPages.WebPageExecutingBase.Write(System.Web.WebPages.HelperResult)”最匹配的重载方法具有一些无效参数
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:52:28,218 [5248] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(6): error CS1660: 无法将 lambda 表达式 转换为类型“object”，原因是它不是委托类型
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:52:36,852 [8728] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(6): error CS1660: 无法将 lambda 表达式 转换为类型“object”，原因是它不是委托类型
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:53:01,693 [8728] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “<”在代码块开头无效。只有标识符、关键字、注释、“(”和“{”才有效。
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:53:12,851 [5248] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “:”在代码块开头无效。只有标识符、关键字、注释、“(”和“{”才有效。
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:53:13,929 [5248] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “:”在代码块开头无效。只有标识符、关键字、注释、“(”和“{”才有效。
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:53:14,513 [8728] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “:”在代码块开头无效。只有标识符、关键字、注释、“(”和“{”才有效。
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:53:15,398 [1412] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “:”在代码块开头无效。只有标识符、关键字、注释、“(”和“{”才有效。
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:53:48,938 [9080] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “@”字符必须后跟“:”、“(”或 C# 标识符。如果您打算切换为标记，请使用 HTML 起始标记，例如:
+
+@if(isLoggedIn) {
+    <p>Hello, @user!</p>
+}
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:54:38,956 [1412] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “@”字符必须后跟“:”、“(”或 C# 标识符。如果您打算切换为标记，请使用 HTML 起始标记，例如:
+
+@if(isLoggedIn) {
+    <p>Hello, @user!</p>
+}
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:56:01,500 [8476] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(8): error CS1660: 无法将 lambda 表达式 转换为类型“object”，原因是它不是委托类型
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:56:09,663 [9080] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(8): error CS1660: 无法将 lambda 表达式 转换为类型“System.Web.WebPages.HelperResult”，原因是它不是委托类型
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 10:56:17,126 [8476] FATAL Ichari.Web.HomeController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Home\Header.cshtml(8): error CS1660: 无法将 lambda 表达式 转换为类型“System.Web.WebPages.HelperResult”，原因是它不是委托类型
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-05-24 11:34:56,305 [6492] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “@”字符必须后跟“:”、“(”或 C# 标识符。如果您打算切换为标记，请使用 HTML 起始标记，例如:
+
+@if(isLoggedIn) {
+    <p>Hello, @user!</p>
+}
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-05-24 11:35:07,209 [7172] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “@”字符必须后跟“:”、“(”或 C# 标识符。如果您打算切换为标记，请使用 HTML 起始标记，例如:
+
+@if(isLoggedIn) {
+    <p>Hello, @user!</p>
+}
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-05-24 11:35:46,356 [9036] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “@”字符必须后跟“:”、“(”或 C# 标识符。如果您打算切换为标记，请使用 HTML 起始标记，例如:
+
+@if(isLoggedIn) {
+    <p>Hello, @user!</p>
+}
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^--------2012-05-24 11:36:59,894 [7860] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpParseException (0x80004005): “@”字符必须后跟“:”、“(”或 C# 标识符。如果您打算切换为标记，请使用 HTML 起始标记，例如:
+
+@if(isLoggedIn) {
+    <p>Hello, @user!</p>
+}
+
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-05-24 13:16:48,595 [8908] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:20,163 [9064] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:26,278 [2816] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:32,362 [2816] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:56,408 [3672] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:56,785 [9972] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:57,333 [2816] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:57,830 [8908] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:58,104 [9064] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:58,854 [2816] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:59,135 [9972] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 13:17:59,435 [3672] FATAL Ichari.Web.HomeController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Header”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/home/Header.cshtml
+~/Views/home/Header.vbhtml
+~/Views/Shared/Header.cshtml
+~/Views/Shared/Header.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-05-24 14:18:05,856 [9808] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 14:19:46,423 [1176] FATAL Ichari.Web.AccountController (null) - [Error]
+System.InvalidOperationException: 未找到视图“Summary”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/Account/Summary.cshtml
+~/Views/Account/Summary.vbhtml
+~/Views/Shared/Summary.cshtml
+~/Views/Shared/Summary.vbhtml
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 14:22:28,497 [9808] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-24 14:22:56,140 [3756] FATAL Ichari.Web.AccountController (null) - [Error]
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^$$$$$$$$$$$$^^^^^^^^^^^^--------2012-05-24 14:31:16,016 [5616] FATAL Ichari.Web.AccountController (null) - [Error]
+System.Web.HttpException (0x80004005): 无法在发送 HTTP 标头之后进行重定向。
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$

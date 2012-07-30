@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<body>
+  <lotId>{0}</lotId>
+  <lotIssue>{1}</lotIssue>
+  <startTime>{2}</startTime>
+  <endTime>{3}</endTime>
+  <kjCode>{4}</kjCode>
+  <sale>{5}</sale>
+  <bonusBalance>{6}</bonusBalance>
+  <winName>{7}</winName>  <winMoney>{8}</winMoney>  <winCount>{9}</winCount></body>

@@ -1,0 +1,89 @@
+﻿@model Ichari.Web.ViewModel.BaseViewModel<Ichari.Model.Order>
+@using Ichari.Common.Extensions
+@{
+    ViewBag.Title = "我的爱心捐赠";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+        <div class="title bg1x bgp6"><span class="bg1x bgp1">爱心捐赠记录</span></div>
+
+        <div class="content_box">
+    @*<div class="content_box_t">
+        <ul>
+            <li><a href="#">购彩记录</a></li>
+            <li class="current"><a href="#">帐户明细</a></li>
+            <li><a href="#">将近派发</a></li>
+            <li><a href="#">充值记录</a></li>
+            <li><a href="#">提款记录</a></li>
+            <li><a href="#">积分明细</a></li>
+        </ul>
+        <div class="clears"></div>
+    </div>*@
+    @Html.TipPartial()
+    <table style="margin: 10px; width:97%;" border="0" cellspacing="1" cellpadding="0">
+    @*<caption>爱心捐赠</caption>*@
+    <thead>
+        <tr>
+            <th>捐赠单号</th>
+            <th>金额</th>
+            <th>捐赠时间</th>
+            <th>支付状态</th>
+            <th>是否抽奖</th>
+            <th colspan="2">操作</th>
+        </tr>
+    </thead>
+    @{int i = 0;}
+    @foreach (var item in Model.PageList)
+    {
+        <tr class="@if(i%2==0){<text>bgffe</text>}else{<text>c</text>}">
+            <td>@item.TradeNo</td>
+            <td>@item.Total</td>
+            <td>@item.CreateTime</td>
+            <td>@(item.Status >= (int)Ichari.Model.Enum.OrderState.Paid ? "成功" : "未发生")</td>
+            <td>@item.IsGame.ToChinease()</td>
+            <td>
+            @if (item.Status >= (int)Ichari.Model.Enum.OrderState.Paid)
+            { 
+                if(!item.IsGame)
+                {
+                    @Html.ActionLink("抽奖", "ChariDraw", "Charity", null, new { target = "_blank"})
+                }
+            }
+            else
+            {
+                //前往支付
+                using(Html.BeginForm("GoPay","Charity",FormMethod.Post,new {target = "_blank"}))
+                {
+                    @Html.Hidden("Amount",item.Total)
+                    @Html.Hidden("tradeNo",item.TradeNo)
+                    <span>
+                    <input type="submit" class="btn_s" value="前往支付" id="btnGoPay" />
+                    </span>
+                }
+                
+            }
+            </td>
+            <td>
+            @if (item.Status == (int)Ichari.Model.Enum.OrderState.Create)
+            {
+            @Html.ActionLink("删除", "DeleteOrder", new { tn = @item.TradeNo})
+            }
+            </td>
+        </tr>
+        i++;
+    }
+</table>
+
+@{
+    Html.RenderPager("_PageBar", Model.PageList.Count, Model.PageCount, Model.PageIndex, "/Account/MyDonations", null);  
+}
+
+    </div>
+    
+
+
+
+
+
+
+

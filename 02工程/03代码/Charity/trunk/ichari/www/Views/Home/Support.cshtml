@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+    var list = ViewData["clist"] as List<Ichari.Model.Content>;
+}
+
+document.write('<div class="team">');
+
+document.write('<p>支持单位：');
+@foreach(var item in list)
+{
+    if(item.TagName.Equals("zcdw",StringComparison.CurrentCultureIgnoreCase))
+    {
+        @: document.write('<a target="_blank" href="@item.LinkUrl">@item.Title</a>');
+    }
+}
+document.write('</p>');
+
+document.write('<p>合作媒体：');
+@foreach(var item in list)
+{
+    if(item.TagName.Equals("hzmt",StringComparison.CurrentCultureIgnoreCase))
+    {
+        @: document.write('<a target="_blank" href="@item.LinkUrl">@item.Title</a>');
+    }
+}
+document.write('</p>');
+
+document.write('</div>');
+

@@ -1,0 +1,62 @@
+﻿@model Ichari.Admin.ViewModel.BaseViewModel<Ichari.Model.Dto.UserAccountDto>
+
+@{
+    ViewBag.Title = "账户管理";
+    
+}
+
+<div class="search">
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>用户名</td>
+            <td>@Html.TextBox("UserName")</td>
+            <td><input type="submit" value="查 询" /></td>
+        </tr>
+    </table>
+}
+</div>
+<div class="list">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>用户名</th>
+                <th>账户余额</th>
+                <th>冻结金额</th>
+                <th>创建时间</th>
+                <th>更新时间</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.PageList)
+        {
+            <tr>
+                <td style="width:40px;">@item.Id</td>
+                <td style="width:90px;">@item.UserName</td>
+                <td style="width:80px;">@item.Amount</td>
+                <td style="width:110px;">@item.FrozenAmount</td>
+                <td style="width:150px;">@item.CreateTime</td>
+                <td style="width:110px;">@item.UpdateTime</td>
+                <td style="width:90px;">
+                    @Html.ActionLink("日志", "AccountLog", new { id = item.Id })
+                    
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+@{
+    
+    Dictionary<string, object> pars = new Dictionary<string, object>();
+    pars.Add("roleName", ViewData["UserName"] as string);
+
+    Html.RenderPager("_PageBar", Model.PageList.Count, Model.PageCount, Model.PageIndex, "/Customer/Account", pars);
+}
+
+

@@ -1,0 +1,113 @@
+﻿@model Ichari.Admin.ViewModel.BaseViewModel<Ichari.Model.AccountLog>
+
+@{
+    ViewBag.Title = "账户日志";
+    var acc = ViewData["account"] as Ichari.Model.Dto.UserAccountDto;
+}
+
+<fieldset>
+    <legend>账户详情</legend>
+            
+            
+    <div class="editor-label">
+        用户名
+    </div>
+    <div class="editor-field">
+        @acc.UserName        
+    </div>
+    
+   
+
+    <div class="editor-label">
+        账户余额
+    </div>
+    <div class="editor-field">
+        <strong class="amount">@acc.Amount</strong>            
+    </div>
+
+    <div class="editor-label">
+        冻结金额
+    </div>
+    <div class="editor-field">
+        @acc.FrozenAmount        
+    </div>
+
+    <div class="editor-label">
+        创建时间
+    </div>
+    <div class="editor-field">
+        @acc.CreateTime        
+    </div>
+
+    <div class="editor-label">
+        更新时间
+    </div>
+    <div class="editor-field">
+        @acc.UpdateTime        
+    </div>
+           
+    
+
+    <div class="list"><span class="tt">账户日志列表</span>
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>订单Id</th>
+                <th>发生金额</th>
+                <th>收支途径</th>
+                <th>访问IP</th>
+                <th>支付方式</th>
+                <th>创建时间</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.PageList)
+        {
+            <tr>
+                <td style="width:40px;">@item.LogId</td>
+                <td style="width:90px;">@item.OrderId</td>
+                <td style="width:80px;">@item.Amount</td>
+                <td style="width:110px;">
+                @{var an = Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.AccountWay>(item.AccountWay);             }
+                    @an
+                </td>
+                <td style="width:150px;">@item.Ip</td>
+                <td style="width:110px;">
+                @if(item.PayWay.HasValue)
+                {
+                    var pn = Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.PayWay>(item.PayWay.Value);
+                    @pn
+                }
+                </td>
+                <td style="width:90px;">
+                    @item.CreateTime
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    @{
+    
+    Dictionary<string, string> pars = new Dictionary<string, string>();
+    pars.Add("roleName", ViewData["UserName"] as string);
+
+
+    Html.RenderPager("_PageBar", Model.PageList.Count, Model.PageCount, Model.PageIndex, "/customer/account", pars);
+}
+
+    </div>
+
+    
+
+</fieldset>
+<div>
+    @Html.ActionLink("返回", "account")
+</div>
+
+
+
+
+
+

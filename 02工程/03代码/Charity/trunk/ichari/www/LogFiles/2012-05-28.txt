@@ -1,0 +1,8 @@
+^^^^^^^^^^^^--------2012-05-28 10:54:00,273 [11928] FATAL Ichari.Web.CharityController (null) - [Error]
+System.Web.HttpCompileException (0x80004005): e:\ichari\02工程\03代码\Charity\trunk\ichari\www\Views\Charity\Index.cshtml(46): error CS1928: “System.Web.Mvc.HtmlHelper<Ichari.Web.ViewModel.CharityViewModel>”不包含“ValidationMessageFor”的定义，并且最佳扩展方法重载“System.Web.Mvc.Html.ValidationExtensions.ValidationMessageFor<TModel,TProperty>(System.Web.Mvc.HtmlHelper<TModel>, System.Linq.Expressions.Expression<System.Func<TModel,TProperty>>, string)”的某些参数无效
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+--------2012-05-28 17:00:36,217 [6264] FATAL Ichari.Web.AccountController (null) - [Error]
+System.IO.FileNotFoundException: 未能找到文件“D:\key.txt”。
+文件名:“D:\key.txt”
+   在 Ichari.Web.BaseController.OnException(ExceptionContext filterContext) 位置 E:\ichari\02工程\03代码\Charity\trunk\ichari\Ichari.Web\Controller\BaseController.cs:行号 31
+$$$$$$$$$$$$

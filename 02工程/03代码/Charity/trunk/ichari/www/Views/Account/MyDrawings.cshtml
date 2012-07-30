@@ -1,0 +1,65 @@
+﻿@using Ichari.Common.Extensions
+@model Ichari.Web.ViewModel.BaseViewModel<Ichari.Model.Drawings>
+@{
+    ViewBag.Title = "我的抽奖记录";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    var iswin = ViewData["isWin"] as bool?;
+    var pwin = iswin.HasValue ? iswin.Value.ToString() : null;
+}
+
+    <div class="title bg1x bgp6"><span class="bg1x bgp1">我的抽奖记录</span></div>
+    <div class="content_box">
+    
+    <div class="Ben_box_t">
+    @Html.ActionLink("仅显示中奖记录", "MyDrawings", new { isWin = "true"}, new { @class = pwin!=null?"c":""})
+    @Html.ActionLink("显示全部", "MyDrawings", null, new { @class = pwin==null?"c":""})
+    </div>
+    <table style="margin: 10px; width:97%;" border="0" cellspacing="1" cellpadding="0">
+    <thead>
+        <tr>
+            <th>捐赠单号</th>
+            <th>是否中奖</th>
+            <th>抽奖时间</th>
+            
+            <th>来源</th>
+            <th></th>
+        </tr>
+    </thead>
+    @{int i = 0;}
+    @foreach (var item in Model.PageList)
+    {
+        <tr class="@if(i%2==0){<text>bgffe</text>}else{<text>c</text>}">
+            <td >@item.OrderNo</td>
+            <td >@item.IsWinner.ToChinease()</td>
+            <td>@item.CreateTime</td>
+            
+            <td>
+            @{var sn = Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.GameSource>(item.Source);}
+            @sn
+            </td>
+            <td>@if(item.IsHandled == true){
+                    @Html.ActionLink("详细", "DrawDetail", "Account", new { Id = item.Id},null)
+                }
+                else {
+                    if(item.IsWinner){
+                        @Html.ActionLink("领取奖品", "ClaimPrizeStep2", "Charity", new { drawId = item.Id},null)
+                    }
+                }
+            </td>
+        </tr>
+        i++;
+    }
+    </table>
+
+    @{
+        Html.RenderPager("_PageBar", Model.PageList.Count, Model.PageCount, Model.PageIndex, "/Account/MyDrawings", new Dictionary<string,object>(){{"isWin",pwin}});  
+    }
+    </div>
+
+
+
+
+
+
+
+

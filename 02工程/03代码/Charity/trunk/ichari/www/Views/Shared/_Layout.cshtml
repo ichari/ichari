@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - 集善网</title>
+    @*<link href="@Url.Content("~/Content/Css/style.css")" rel="stylesheet" type="text/css" />*@
+    @*<link href="@Url.Content("~/Content/site.css")" rel="stylesheet" type="text/css" />*@
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/public.css" />
+    <script type="text/javascript" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/content/Scripts/jquery-1.4.4.min.js"></script>
+    @RenderSection("Head", false)
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33537728-1']);
+        _gaq.push(['_setDomainName', 'ichari.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</head>
+
+<body class="gybg">
+    <!-- 页眉引导信息开始 -->
+    <script type="text/javascript" src="/home/top"></script>
+    <!-- 页眉引导信息结束 -->
+
+    @*<div class="wrapper">*@
+        @Html.Partial("_Header")
+        <!-- 导航开始 -->
+        @Html.Partial("_NavBar")
+        <!-- 导航结束 -->
+
+        <div class="w980 png_bg2">
+        <div class="w970">
+        @RenderBody()
+        </div>
+        </div>
+        <div class=" w980 png_bg1"></div>
+    @*</div>*@
+        
+    <!--支持单位&合作媒体-->
+    @RenderSection("Support", false)
+        
+    <!-- Footer开始 -->
+    <script type="text/javascript" src="/home/bottom"></script>
+    <!-- Footer结束 -->
+
+    @RenderSection("FooterScript", false)
+</body>
+</html>
+<!--IE6下支持PNG-->
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG.js"></script>
+<script>
+  DD_belatedPNG.fix('.png_bg1,.png_bg2');
+</script>
+<![endif]-->

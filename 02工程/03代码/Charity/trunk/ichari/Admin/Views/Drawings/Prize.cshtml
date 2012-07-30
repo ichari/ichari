@@ -1,0 +1,83 @@
+﻿@model Ichari.Admin.ViewModel.PrizeViewModel
+
+@{
+    ViewBag.Title = "奖品列表";
+}
+
+@section Head{
+    <link type="text/css" rel="Stylesheet" href="/content/css/jquery-ui-1.8.21.redmond.css" />
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.21.modal.min.js")"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#qtyPn").dialog({
+            width: 180,
+            height: 140,
+            modal: true,
+            title: "添加",
+            autoOpen: false
+        });
+    });
+    function incPrzQty(pid) {
+        $("#txtpid").val(pid);
+        $("#qtyPn").dialog("open");
+    }
+    function subPrzQty() {
+        $("#qtyPn").dialog("close");
+        window.location = "/Drawings/IncPrizeQty/" + $("#txtpid").val() + "?q=" + $("#przQty").val();
+    }
+</script>
+<div class="list">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>奖品名称</th>
+                <th>类别号</th>
+                <th>总数量</th>
+                <th>剩余量</th>
+                <th>已送出</th>
+                <th>图档地址</th>
+                <th>概率</th>
+                <th>启用</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.PrizeList)
+        {
+            <tr>
+                <td style="width:50px;">@item.Id</td>
+                <td style="width:170px;">@item.Name</td>
+                <td style="width:50px;">@item.CategoryId</td>
+                <td style="width:50px;">@item.PrizeCount</td>
+                <td style="width:50px;color:@(item.PrizeCount == item.UsedCount ? "Red" : "Green");">@(item.PrizeCount - item.UsedCount)</td>
+                <td style="width:50px;">@item.UsedCount</td>
+                <td>@item.ImgUrl</td>
+                <td>@item.Probability</td>
+                <td>@item.IsEnabled</td>
+                <td style="width:130px;">
+                    @Html.ActionLink("编辑", "AddPrize", new { prizeId = item.Id }) | 
+                    <span style="cursor:pointer;color:Blue;" onclick="incPrzQty(@item.Id);">添加</span>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@{
+    Ichari.Common.PageBar bar = new Ichari.Common.PageBar();
+    bar.TotalCount = Model.PrizeList.Count;
+    bar.PageSize = Model.PageCount;
+    bar.PageIndex = Model.PageIndex;
+    bar.Url = "/Drawings/Prize";
+
+    Html.RenderPartial("_PageBar", bar);
+}
+
+<div id="qtyPn">
+    <p style="margin:5px;">奖品编号：<input id="txtpid" type="text" readonly="readonly" size="5" /></p>
+    <p style="margin:5px;">添加数量：<input id="przQty" type="text" size="5" /></p>
+    <p style="margin:5px;"><input type="button" onclick="subPrzQty()" value="添加" style="padding: 2px;" /></p>
+</div>

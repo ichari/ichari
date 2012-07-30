@@ -1,0 +1,115 @@
+﻿@model Ichari.Model.UserInfo
+@section Head{
+    <link type="text/css" rel="stylesheet" href="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/css/part_a.css" />
+    <script type="text/javascript" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/Scripts/slides.min.jquery.js"></script>
+<script>
+    $(function () {
+        $('#slides').slides({
+            preload: true,
+            preloadImage: '@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/loading.gif',
+            play: 5000,
+            pause: 2500,
+            hoverPause: true,
+            animationStart: function (current) {
+                $('.caption').animate({
+                    bottom: -35
+                }, 100);
+                if (window.console && console.log) {
+                    console.log('animationStart on slide: ', current);
+                };
+            },
+            animationComplete: function (current) {
+                $('.caption').animate({
+                    bottom: 0
+                }, 200);
+                if (window.console && console.log) {
+                    console.log('animationComplete on slide: ', current);
+                };
+            },
+            slidesLoaded: function () {
+                $('.caption').animate({
+                    bottom: 0
+                }, 200);
+            }
+        });
+    });
+</script>
+}
+@{
+    ViewBag.Title = "首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="w960 index pt5">      
+<div id="slides">
+<div class="slides_container">
+	<div class="slide">
+		<a href="#" title="网络购物 + 零钱捐赠 + 时尚奖品 = 集善中国" target="_blank"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/home_ad1.jpg" width="960" height="285" /></a>
+		<div class="caption" style="bottom:0">
+			<p>网络购物 + 零钱捐赠 + 时尚奖品 = 集善中国</p>
+		</div>
+	</div>
+	<div class="slide">
+		<a href="#" title="网络购物 + 零钱捐赠 + 时尚奖品 = 集善中国" target="_blank"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/home_ad1.jpg" width="960" height="285" /></a>
+		<div class="caption">
+			<p>网络购物 + 零钱捐赠 + 时尚奖品 = 集善中国</p>
+		</div>
+	</div>
+	<div class="slide">
+		<a href="#" title="网络购物 + 零钱捐赠 + 时尚奖品 = 集善中国" target="_blank"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/home_ad1.jpg" width="960" height="285" /></a>
+		<div class="caption">
+			<p>网络购物 + 零钱捐赠 + 时尚奖品 = 集善中国</p>
+		</div>
+	</div>
+	<div class="slide">
+		<a href="#" title="网络购物 + 零钱捐赠 + 时尚奖品 = 集善中国" target="_blank"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/home_ad1.jpg" width="960" height="285" /></a>
+		<div class="caption">
+			<p>网络购物 + 零钱捐赠 + 时尚奖品 = 集善中国</p>
+		</div>
+	</div>
+</div>
+<a href="#" class="prev">向上</a>
+<a href="#" class="next">向下</a>
+</div>             
+</div>
+
+<div class="clears main">
+    <!-- 发起方开始 -->
+    <div class="cause">
+        <span>发起方：</span>
+        <img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo_unionpay.jpg" title="中国银联" />
+        <img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo_cfdp.jpg" title="中国残疾人福利基金会" />
+        <img class="icon_phone" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/ben_space.gif" title="服务电话" />
+        <span>服务中心电话:</span>
+        <span class="big_red">400-8008008</span>
+        <div class="clears"></div>
+    </div>
+    <!-- 发起方结束 -->
+    <div class="ad2">
+        <img class="fl" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/home_ad5.jpg" />
+        <img class="fr" src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/home_ad6.jpg" />
+        <div class="clears"></div>
+    </div>
+    <div class="ad2">
+        <ul>
+            <li><span>合作伙伴：</span></li>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo_google.jpg" /></li>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo_apple.jpg" /></li>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo_baidu.jpg" /></li>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo_cctv.jpg" /></li>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo_weibo.jpg" /></li>
+            <li><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo_yinlian.jpg" /></li>
+            <li class="last_child"><img src="@(Ichari.Common.WebUtils.GetAppSettingValue(Ichari.Web.StaticKey.StaticServer))/Content/images/logo_360.jpg" /></li>
+        </ul>
+    </div>
+            
+</div>
+
+@section Support{
+<script type="text/javascript" src="/home/support"></script>
+}
+
+

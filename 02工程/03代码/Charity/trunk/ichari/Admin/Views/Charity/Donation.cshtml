@@ -1,0 +1,71 @@
+﻿@model Ichari.Admin.ViewModel.DonationViewModel
+
+@{
+    ViewBag.Title = "爱心捐赠管理";
+}
+
+<div class="search">
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>交易号</td>
+            <td>@Html.TextBox("unionOrder")</td>
+            <td>捐款人姓名</td>
+            <td>@Html.TextBox("trueName")</td>
+            <td>订单状态</td>
+            <td>@Html.DropDownList("status",Model.OrderStatus)</td>
+        </tr>
+        <tr>
+            
+            <td><input type="submit" value="查 询" /></td>
+        </tr>
+    </table>
+}
+</div>
+
+<div class="list">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>交易号</th>
+                <th>姓名</th>
+                <th>订单状态</th>
+                <th>金额</th>
+                <th>创建时间</th>
+                <th>用户ID</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.RecordList)
+        {
+            <tr>
+                <td>@Html.ActionLink(item.TradeNo, "Detail", "Order", new { tradeNo = item.TradeNo },null)</td>
+                <td>@item.TrueName</td>
+               
+            @{var dn = Ichari.Common.Helper.EnumHelper.GetEnumDisplayName<Ichari.Model.Enum.OrderState>(item.Status);}
+                    
+                    
+                <td>@dn</td>
+                <td>@item.Total</td>
+                <td>@item.CreateTime</td>
+                <td>@item.UserId</td>
+                <td class="optd">
+                    @Html.ActionLink("详情","Detail","Order",new {tradeNo = item.TradeNo},null)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+@{
+    
+    Dictionary<string, object> pars = new Dictionary<string, object>();    
+    pars.Add("status", Model.QueryModel.Status.HasValue ? Model.QueryModel.Status.Value.ToString() : "");
+    pars.Add("trueName",Model.QueryModel.TrueName);
+   
+    Html.RenderPager("_PageBar", Model.RecordList.Count, Model.PageCount, Model.PageIndex, "/Charity/Donation", pars);
+}

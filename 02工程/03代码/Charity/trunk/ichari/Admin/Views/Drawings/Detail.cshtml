@@ -1,0 +1,108 @@
+﻿@model Ichari.Admin.ViewModel.DrawingsViewModel
+
+<fieldset>
+    <legend>抽奖详情</legend>
+    
+    <div class="editor-label">
+        奖品名称
+    </div>
+    <div class="editor-field">
+        <span>@Model.Detail.PrizeName</span>
+        <span style="color:Red">类型：</span>
+        @if (Model.Detail.IsVirtual)
+        {
+            @: 虚拟 
+        }
+        else
+        {
+            @: 实物 
+        }
+    </div>        
+            
+    <div class="editor-label">
+        交易号
+    </div>
+    <div class="editor-field">
+        @Model.Detail.OrderNo         
+    </div>
+    
+    <div class="editor-label">
+        Email
+    </div>
+    <div class="editor-field">
+        @Model.Detail.Email            
+    </div>
+
+    <div class="editor-label">
+        真实姓名
+    </div>
+    <div class="editor-field">
+        @Model.Detail.Name            
+    </div>
+
+    <div class="editor-label">
+        手机
+    </div>
+    <div class="editor-field">
+        @Model.Detail.Phone            
+    </div>
+
+    <div class="editor-label">
+        收货地址
+    </div>
+    <div class="editor-field">
+        <span>@Model.Detail.Province</span>
+        <span>@Model.Detail.City</span>  
+        <span>@Model.Detail.Area</span>  
+        <span>@Model.Detail.Street</span>          
+    </div>
+           
+    
+    
+
+    
+
+    
+
+    <div class="editor-label">
+        抽奖时间
+    </div>
+    <div class="editor-field">
+        @Model.Detail.CreateTime   
+    </div>
+
+    
+
+    
+    <div class="editor-field">
+        @if (Model.Detail.Source == (int)Ichari.Model.Enum.GameSource.ChangeOfCare)
+        {
+            if (Model.UnionOrder.State <= (int)Ichari.Model.Enum.OrderState.Paid)
+            {
+                <a href="/Drawings/Freight/@Model.Detail.Id">发货</a> 
+            }
+            else
+            {
+                <strong>已发货</strong> 
+            }
+        }
+        else if (Model.Detail.Source == (int)Ichari.Model.Enum.GameSource.IchariDonation)
+        { 
+            if (Model.ChariOrder.Status <= (int)Ichari.Model.Enum.OrderState.Paid)
+            {
+                <a href="/Drawings/Freight/@Model.Detail.Id">发货</a>
+            }
+            else
+            {
+                <strong style="color:Blue;">已发货</strong> 
+            }
+        }
+    </div>
+
+    
+
+</fieldset> 
+
+<p>
+ <a href="/Drawings/Index">返回列表</a>
+ </p>  

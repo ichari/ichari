@@ -1,0 +1,14 @@
+﻿@{
+    Layout = null;
+    var user = Session[Ichari.Web.SessionKey.User] as Ichari.Model.UserInfo;
+}
+
+
+@if(user != null)
+{
+    <text>
+    var headerStr = '<a href="/Account/Summary">欢迎您，@user.UserName</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+    headerStr += '<a href="/Account/Logout">退出</a>';
+    $("#__header").html(headerStr);
+    </text>
+}
