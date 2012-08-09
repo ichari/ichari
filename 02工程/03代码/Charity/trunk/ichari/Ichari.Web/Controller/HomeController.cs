@@ -30,7 +30,7 @@ namespace Ichari.Web
             return View();
         }
 
-        #region Statc Pages
+        #region Static Pages
         public ActionResult Promotions()
         {
             ViewData[SessionKey.VwCurrentNav] = "promo";
@@ -54,6 +54,16 @@ namespace Ichari.Web
         public ActionResult Contact()
         {
             ViewData[SessionKey.VwCurrentNav] = "about";
+            return View();
+        }
+
+        /// <summary>
+        /// 项目介绍
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Intro()
+        { 
+            ViewData[SessionKey.VwCurrentNav] = "intro";
             return View();
         }
         #endregion

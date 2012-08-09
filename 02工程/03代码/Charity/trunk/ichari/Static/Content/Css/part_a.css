@@ -59,6 +59,10 @@
 .bs7 .text{border:#e4e4e5 1px solid;border-top:#e4e4e5 1px solid; padding:30px 0px;}
 .bs7 .text p{padding:5px 20px;}
 
+.q_1 {list-style-type:decimal;margin-left:65px;}
+.q_1 ul.q_11 {margin-left:42px;}
+.q_12 {padding-right:20px;}
+
 /* 支付错误信息 */
 .bs8{padding:25px 50px 60px;}
 .bs8 .ere{border:#bc0a0a 1px solid; background:#fcefe9; padding:20px 40px;}
