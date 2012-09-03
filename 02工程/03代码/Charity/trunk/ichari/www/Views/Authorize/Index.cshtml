@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "授权访问";
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+    <span style="width:100px">UserName : </span> @Html.TextBox("userName", null, new { style = "width:150px;"})
+    </div>
+    <div>
+    <span style="width:100px">Password : </span>@Html.Password("password",null,new { style = "width:150px;"})
+    </div>
+    <input type="submit" value="Logon" />
+
+}
+
+
+
+
+

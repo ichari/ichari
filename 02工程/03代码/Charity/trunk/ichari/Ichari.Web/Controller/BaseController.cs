@@ -10,6 +10,7 @@ using Ichari.Uow;
 
 namespace Ichari.Web
 {
+    [Authorize]
     public class BaseController : System.Web.Mvc.Controller
     {
         protected log4net.ILog _log;

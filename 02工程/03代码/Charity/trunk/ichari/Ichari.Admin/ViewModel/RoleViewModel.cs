@@ -12,5 +12,7 @@ namespace Ichari.Admin.ViewModel
         public Ichari.Common.Helper.PageList<SysRole> RoleList { get; set; }
 
         public SysRole RoleModel { get; set; }
+
+        public IEnumerable<Actions> ActionTree { get; set; }
     }
 }

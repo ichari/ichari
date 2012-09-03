@@ -72,6 +72,7 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\ApiController.cs" />
+    <Compile Include="Controller\AuthorizeController.cs" />
     <Compile Include="Controller\BaseController.cs" />
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\CharityController.cs" />

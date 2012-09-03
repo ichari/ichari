@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Web.UI;
+using System.Web;
 using System.Web.Mvc;
-using System.Web.Mvc.Html;
+using System.Web.UI;
 using System.Web.WebPages;
-namespace System.Web.Mvc.Html
+
+namespace $rootnamespace$.Helpers
 {
-    #region MvcTreeView
     public static class TreeViewHelper
     {
         /// <summary>
@@ -174,12 +173,11 @@ namespace System.Web.Mvc.Html
 
         private void AppendChildren(TagBuilder parentTag, T parentItem, Func<T, IEnumerable<T>> childrenProperty)
         {
-            //var children = childrenProperty(parentItem).ToList();
-            var children = childrenProperty(parentItem);
-            if (children == null)
-                return;
+            var children = childrenProperty(parentItem).ToList();
             if (children.Count() == 0)
+            {
                 return;
+            }
 
             var innerUl = new TagBuilder("ul");
             innerUl.MergeAttributes(_childHtmlAttributes);
@@ -210,5 +208,4 @@ namespace System.Web.Mvc.Html
             return li;
         }
     }
-    #endregion
 }

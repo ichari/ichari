@@ -63,7 +63,7 @@ namespace Ichari.Web
         /// <returns></returns>
         public ActionResult Intro()
         { 
-            ViewData[SessionKey.VwCurrentNav] = "intro";
+            ViewData[SessionKey.VwCurrentNav] = "about";
             return View();
         }
         #endregion

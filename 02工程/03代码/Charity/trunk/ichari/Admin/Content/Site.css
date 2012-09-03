@@ -234,3 +234,8 @@ textarea
     vertical-align: top;
     margin-top: 3px;
 }
+/* treeview */
+#tree {border:solid 1px #ccc;padding:5px;}
+#tree .subItem {margin-left:15px;}
+#tree li {font-weight:bold;}
+#tree .subItem li {font-weight:normal;}

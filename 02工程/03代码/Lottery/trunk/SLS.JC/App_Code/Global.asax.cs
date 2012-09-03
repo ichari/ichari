@@ -33,7 +33,9 @@ public class Global : System.Web.HttpApplication
 
     protected void Application_BeginRequest(Object sender, EventArgs e)
     {
-
+        if (Request.Cookies[".ASPXAUTH"] == null) {
+            Response.Redirect("http://121.52.214.209/authorize?returnUrl=http://121.52.214.209:8083");
+        }
     }
 
     protected void Application_EndRequest(Object sender, EventArgs e)

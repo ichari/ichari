@@ -182,7 +182,21 @@ namespace Ichari.Admin
         {
             var vm = new RoleViewModel();
             vm.RoleModel = _uow.SysRoleService.Get(t => t.Id == id);
+            var allActions = _uow.ActionsService.GetList().ToList();
+            var tree = BuildActionTree(allActions, null);
+            vm.ActionTree = tree;
             return View(vm);
+        }
+
+        private IEnumerable<Actions> BuildActionTree(IEnumerable<Actions> all,int? pid)
+        {
+            var root = all.Where(t => t.ParentID == pid);
+            foreach (var item in root) {
+                item.SubNodes = item.SubNodes ?? new List<Actions>();
+                item.SubNodes = all.Where(t => t.ParentID == item.ID).ToList();
+                item.SubNodes.ForEach(t => BuildActionTree(all, t.ID));
+            }
+            return root;
         }
         #endregion
     }

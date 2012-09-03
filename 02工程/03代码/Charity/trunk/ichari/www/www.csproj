@@ -213,6 +213,7 @@
     <Content Include="Views\Account\DrawDetail.cshtml" />
     <Content Include="Views\Shared\_Info.cshtml" />
     <Content Include="Views\Home\Intro.cshtml" />
+    <Content Include="Views\Authorize\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -1,7 +1,7 @@
 ﻿@model Ichari.Admin.ViewModel.RoleViewModel
 
 @{
-    ViewBag.Title = "角色授权";
+    ViewBag.Title = "角色授权";    
 }
 
 <div class="search">
@@ -20,6 +20,18 @@
 <div class="list">
     角色名称：@Model.RoleModel.RoleName
 </div>
+
+@(Html.TreeView(Model.ActionTree)
+    .EmptyContent("No locations have been defined yet!")
+    .Children(m => m.SubNodes)
+    .HtmlAttributes(new { id = "tree" })
+    .ChildrenHtmlAttributes(new { @class = "subItem" })
+    .ItemText(m => m.MenuName)
+    .ItemTemplate(
+        @<text>
+            <a href="#@item.ID">@item.MenuName</a>
+        </text>)
+)
 
 
 
